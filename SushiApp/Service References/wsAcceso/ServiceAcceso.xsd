@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregaAcceso" type="tns:agregaAcceso" />
+  <xs:element name="agregaAccesoResponse" type="tns:agregaAccesoResponse" />
+  <xs:element name="buscarAcceso" type="tns:buscarAcceso" />
+  <xs:element name="buscarAccesoResponse" type="tns:buscarAccesoResponse" />
+  <xs:element name="eliminarAcceso" type="tns:eliminarAcceso" />
+  <xs:element name="eliminarAccesoResponse" type="tns:eliminarAccesoResponse" />
+  <xs:element name="modificarAcceso" type="tns:modificarAcceso" />
+  <xs:element name="modificarAccesoResponse" type="tns:modificarAccesoResponse" />
+  <xs:element name="obtenerAcceso" type="tns:obtenerAcceso" />
+  <xs:element name="obtenerAccesoResponse" type="tns:obtenerAccesoResponse" />
+  <xs:complexType name="obtenerAcceso">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerAccesoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:acceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="acceso">
+    <xs:sequence>
+      <xs:element name="accesoId" type="xs:int" />
+      <xs:element name="paginaId" type="xs:int" />
+      <xs:element name="perfilId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregaAcceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="acceso" type="tns:acceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregaAccesoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarAcceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAccesoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:acceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAcceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="acceso" type="tns:acceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarAccesoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarAcceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAccesoResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarEstablecimiento" type="tns:agregarEstablecimiento" />
+  <xs:element name="agregarEstablecimientoResponse" type="tns:agregarEstablecimientoResponse" />
+  <xs:element name="buscarEstablecimiento" type="tns:buscarEstablecimiento" />
+  <xs:element name="buscarEstablecimientoResponse" type="tns:buscarEstablecimientoResponse" />
+  <xs:element name="eliminarEstablecimiento" type="tns:eliminarEstablecimiento" />
+  <xs:element name="eliminarEstablecimientoResponse" type="tns:eliminarEstablecimientoResponse" />
+  <xs:element name="modificarEstablecimiento" type="tns:modificarEstablecimiento" />
+  <xs:element name="modificarEstablecimientoResponse" type="tns:modificarEstablecimientoResponse" />
+  <xs:element name="obtenerEstablecimiento" type="tns:obtenerEstablecimiento" />
+  <xs:element name="obtenerEstablecimientoResponse" type="tns:obtenerEstablecimientoResponse" />
+  <xs:complexType name="buscarEstablecimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarEstablecimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:establecimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="establecimiento">
+    <xs:sequence>
+      <xs:element name="comunaId" type="xs:int" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element name="establecimientoId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreLocal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarEstablecimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="establecimiento" type="tns:establecimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarEstablecimientoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarEstablecimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEstablecimientoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="modificarEstablecimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="establecimiento" type="tns:establecimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarEstablecimientoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerEstablecimiento">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerEstablecimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:establecimiento" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

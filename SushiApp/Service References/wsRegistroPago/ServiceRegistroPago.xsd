@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarResgistroPago" type="tns:agregarResgistroPago" />
+  <xs:element name="agregarResgistroPagoResponse" type="tns:agregarResgistroPagoResponse" />
+  <xs:element name="buscarResgistroPago" type="tns:buscarResgistroPago" />
+  <xs:element name="buscarResgistroPagoResponse" type="tns:buscarResgistroPagoResponse" />
+  <xs:element name="eliminarResgistroPago" type="tns:eliminarResgistroPago" />
+  <xs:element name="eliminarResgistroPagoResponse" type="tns:eliminarResgistroPagoResponse" />
+  <xs:element name="modificarResgistroPago" type="tns:modificarResgistroPago" />
+  <xs:element name="modificarResgistroPagoResponse" type="tns:modificarResgistroPagoResponse" />
+  <xs:element name="obtenerResgistroPago" type="tns:obtenerResgistroPago" />
+  <xs:element name="obtenerResgistroPagoResponse" type="tns:obtenerResgistroPagoResponse" />
+  <xs:complexType name="modificarResgistroPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resgistroPago" type="tns:resgistroPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resgistroPago">
+    <xs:sequence>
+      <xs:element name="codigoAutorizacion" type="xs:int" />
+      <xs:element minOccurs="0" name="estadoPago" type="xs:string" />
+      <xs:element name="montoTotal" type="xs:int" />
+      <xs:element name="numeroCuotas" type="xs:int" />
+      <xs:element name="pedidoCabeceraId" type="xs:int" />
+      <xs:element name="registroPagoId" type="xs:int" />
+      <xs:element name="tipoPagoId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarResgistroPagoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="agregarResgistroPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resgistroPago" type="tns:resgistroPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarResgistroPagoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarResgistroPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarResgistroPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resgistroPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarResgistroPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarResgistroPagoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerResgistroPago">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerResgistroPagoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:resgistroPago" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

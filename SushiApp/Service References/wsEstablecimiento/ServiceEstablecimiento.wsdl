@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceEstablecimiento" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceEstablecimiento?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="buscarEstablecimiento">
+    <part name="parameters" element="tns:buscarEstablecimiento" />
+  </message>
+  <message name="buscarEstablecimientoResponse">
+    <part name="parameters" element="tns:buscarEstablecimientoResponse" />
+  </message>
+  <message name="agregarEstablecimiento">
+    <part name="parameters" element="tns:agregarEstablecimiento" />
+  </message>
+  <message name="agregarEstablecimientoResponse">
+    <part name="parameters" element="tns:agregarEstablecimientoResponse" />
+  </message>
+  <message name="modificarEstablecimiento">
+    <part name="parameters" element="tns:modificarEstablecimiento" />
+  </message>
+  <message name="modificarEstablecimientoResponse">
+    <part name="parameters" element="tns:modificarEstablecimientoResponse" />
+  </message>
+  <message name="eliminarEstablecimiento">
+    <part name="parameters" element="tns:eliminarEstablecimiento" />
+  </message>
+  <message name="eliminarEstablecimientoResponse">
+    <part name="parameters" element="tns:eliminarEstablecimientoResponse" />
+  </message>
+  <message name="obtenerEstablecimiento">
+    <part name="parameters" element="tns:obtenerEstablecimiento" />
+  </message>
+  <message name="obtenerEstablecimientoResponse">
+    <part name="parameters" element="tns:obtenerEstablecimientoResponse" />
+  </message>
+  <portType name="ServiceEstablecimiento">
+    <operation name="buscarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest" message="tns:buscarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse" message="tns:buscarEstablecimientoResponse" />
+    </operation>
+    <operation name="agregarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest" message="tns:agregarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse" message="tns:agregarEstablecimientoResponse" />
+    </operation>
+    <operation name="modificarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest" message="tns:modificarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoResponse" message="tns:modificarEstablecimientoResponse" />
+    </operation>
+    <operation name="eliminarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest" message="tns:eliminarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse" message="tns:eliminarEstablecimientoResponse" />
+    </operation>
+    <operation name="obtenerEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest" message="tns:obtenerEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse" message="tns:obtenerEstablecimientoResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceEstablecimientoPortBinding" type="tns:ServiceEstablecimiento">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="buscarEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceEstablecimiento">
+    <port name="ServiceEstablecimientoPort" binding="tns:ServiceEstablecimientoPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend9/ServiceEstablecimiento" />
+    </port>
+  </service>
+</definitions>

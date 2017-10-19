@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarPerfil" type="tns:agregarPerfil" />
+  <xs:element name="agregarPerfilResponse" type="tns:agregarPerfilResponse" />
+  <xs:element name="buscarPerfil" type="tns:buscarPerfil" />
+  <xs:element name="buscarPerfilResponse" type="tns:buscarPerfilResponse" />
+  <xs:element name="eliminarPerfil" type="tns:eliminarPerfil" />
+  <xs:element name="eliminarPerfilResponse" type="tns:eliminarPerfilResponse" />
+  <xs:element name="modificarPerfil" type="tns:modificarPerfil" />
+  <xs:element name="modificarPerfilResponse" type="tns:modificarPerfilResponse" />
+  <xs:element name="obtenerPerfil" type="tns:obtenerPerfil" />
+  <xs:element name="obtenerPerfilResponse" type="tns:obtenerPerfilResponse" />
+  <xs:complexType name="eliminarPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPerfilResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="agregarPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="perfil" type="tns:perfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="perfil">
+    <xs:sequence>
+      <xs:element name="accesoId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombrePerfil" type="xs:string" />
+      <xs:element name="perfilId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarPerfilResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarPerfilResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:perfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="perfil" type="tns:perfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPerfilResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPerfil">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPerfilResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:perfil" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

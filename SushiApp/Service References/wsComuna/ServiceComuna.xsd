@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarComuna" type="tns:agregarComuna" />
+  <xs:element name="agregarComunaResponse" type="tns:agregarComunaResponse" />
+  <xs:element name="buscarComuna" type="tns:buscarComuna" />
+  <xs:element name="buscarComunaResponse" type="tns:buscarComunaResponse" />
+  <xs:element name="eliminarComuna" type="tns:eliminarComuna" />
+  <xs:element name="eliminarComunaResponse" type="tns:eliminarComunaResponse" />
+  <xs:element name="modificarComuna" type="tns:modificarComuna" />
+  <xs:element name="modificarComunaResponse" type="tns:modificarComunaResponse" />
+  <xs:element name="obtenerComuna" type="tns:obtenerComuna" />
+  <xs:element name="obtenerComunaResponse" type="tns:obtenerComunaResponse" />
+  <xs:complexType name="modificarComuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comuna" type="tns:comuna" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comuna">
+    <xs:sequence>
+      <xs:element name="comunaId" type="xs:int" />
+      <xs:element minOccurs="0" name="comunaNombre" type="xs:string" />
+      <xs:element name="provinciaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarComunaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarComuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarComunaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:comuna" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarComuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comuna" type="tns:comuna" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarComunaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarComuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarComunaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerComuna">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerComunaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:comuna" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

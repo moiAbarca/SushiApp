@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceAcceso" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceAcceso?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="buscarAcceso">
+    <part name="parameters" element="tns:buscarAcceso" />
+  </message>
+  <message name="buscarAccesoResponse">
+    <part name="parameters" element="tns:buscarAccesoResponse" />
+  </message>
+  <message name="obtenerAcceso">
+    <part name="parameters" element="tns:obtenerAcceso" />
+  </message>
+  <message name="obtenerAccesoResponse">
+    <part name="parameters" element="tns:obtenerAccesoResponse" />
+  </message>
+  <message name="eliminarAcceso">
+    <part name="parameters" element="tns:eliminarAcceso" />
+  </message>
+  <message name="eliminarAccesoResponse">
+    <part name="parameters" element="tns:eliminarAccesoResponse" />
+  </message>
+  <message name="modificarAcceso">
+    <part name="parameters" element="tns:modificarAcceso" />
+  </message>
+  <message name="modificarAccesoResponse">
+    <part name="parameters" element="tns:modificarAccesoResponse" />
+  </message>
+  <message name="agregaAcceso">
+    <part name="parameters" element="tns:agregaAcceso" />
+  </message>
+  <message name="agregaAccesoResponse">
+    <part name="parameters" element="tns:agregaAccesoResponse" />
+  </message>
+  <portType name="ServiceAcceso">
+    <operation name="buscarAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/buscarAccesoRequest" message="tns:buscarAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/buscarAccesoResponse" message="tns:buscarAccesoResponse" />
+    </operation>
+    <operation name="obtenerAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/obtenerAccesoRequest" message="tns:obtenerAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/obtenerAccesoResponse" message="tns:obtenerAccesoResponse" />
+    </operation>
+    <operation name="eliminarAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/eliminarAccesoRequest" message="tns:eliminarAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/eliminarAccesoResponse" message="tns:eliminarAccesoResponse" />
+    </operation>
+    <operation name="modificarAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/modificarAccesoRequest" message="tns:modificarAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/modificarAccesoResponse" message="tns:modificarAccesoResponse" />
+    </operation>
+    <operation name="agregaAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/agregaAccesoRequest" message="tns:agregaAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/agregaAccesoResponse" message="tns:agregaAccesoResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceAccesoPortBinding" type="tns:ServiceAcceso">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="buscarAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregaAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceAcceso">
+    <port name="ServiceAccesoPort" binding="tns:ServiceAccesoPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend9/ServiceAcceso" />
+    </port>
+  </service>
+</definitions>

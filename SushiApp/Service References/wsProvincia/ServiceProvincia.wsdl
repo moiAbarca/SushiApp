@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceProvincia" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceProvincia?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="modificarProvincia">
+    <part name="parameters" element="tns:modificarProvincia" />
+  </message>
+  <message name="modificarProvinciaResponse">
+    <part name="parameters" element="tns:modificarProvinciaResponse" />
+  </message>
+  <message name="eliminarProvincia">
+    <part name="parameters" element="tns:eliminarProvincia" />
+  </message>
+  <message name="eliminarProvinciaResponse">
+    <part name="parameters" element="tns:eliminarProvinciaResponse" />
+  </message>
+  <message name="obtenerProvincia">
+    <part name="parameters" element="tns:obtenerProvincia" />
+  </message>
+  <message name="obtenerProvinciaResponse">
+    <part name="parameters" element="tns:obtenerProvinciaResponse" />
+  </message>
+  <message name="agregarProvincia">
+    <part name="parameters" element="tns:agregarProvincia" />
+  </message>
+  <message name="agregarProvinciaResponse">
+    <part name="parameters" element="tns:agregarProvinciaResponse" />
+  </message>
+  <message name="buscarProvincia">
+    <part name="parameters" element="tns:buscarProvincia" />
+  </message>
+  <message name="buscarProvinciaResponse">
+    <part name="parameters" element="tns:buscarProvinciaResponse" />
+  </message>
+  <portType name="ServiceProvincia">
+    <operation name="modificarProvincia">
+      <input wsam:Action="http://WebService/ServiceProvincia/modificarProvinciaRequest" message="tns:modificarProvincia" />
+      <output wsam:Action="http://WebService/ServiceProvincia/modificarProvinciaResponse" message="tns:modificarProvinciaResponse" />
+    </operation>
+    <operation name="eliminarProvincia">
+      <input wsam:Action="http://WebService/ServiceProvincia/eliminarProvinciaRequest" message="tns:eliminarProvincia" />
+      <output wsam:Action="http://WebService/ServiceProvincia/eliminarProvinciaResponse" message="tns:eliminarProvinciaResponse" />
+    </operation>
+    <operation name="obtenerProvincia">
+      <input wsam:Action="http://WebService/ServiceProvincia/obtenerProvinciaRequest" message="tns:obtenerProvincia" />
+      <output wsam:Action="http://WebService/ServiceProvincia/obtenerProvinciaResponse" message="tns:obtenerProvinciaResponse" />
+    </operation>
+    <operation name="agregarProvincia">
+      <input wsam:Action="http://WebService/ServiceProvincia/agregarProvinciaRequest" message="tns:agregarProvincia" />
+      <output wsam:Action="http://WebService/ServiceProvincia/agregarProvinciaResponse" message="tns:agregarProvinciaResponse" />
+    </operation>
+    <operation name="buscarProvincia">
+      <input wsam:Action="http://WebService/ServiceProvincia/buscarProvinciaRequest" message="tns:buscarProvincia" />
+      <output wsam:Action="http://WebService/ServiceProvincia/buscarProvinciaResponse" message="tns:buscarProvinciaResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceProvinciaPortBinding" type="tns:ServiceProvincia">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarProvincia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProvincia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerProvincia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarProvincia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarProvincia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceProvincia">
+    <port name="ServiceProvinciaPort" binding="tns:ServiceProvinciaPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend9/ServiceProvincia" />
+    </port>
+  </service>
+</definitions>

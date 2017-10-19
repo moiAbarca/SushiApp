@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicePagina" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServicePagina?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="buscarPagina">
+    <part name="parameters" element="tns:buscarPagina" />
+  </message>
+  <message name="buscarPaginaResponse">
+    <part name="parameters" element="tns:buscarPaginaResponse" />
+  </message>
+  <message name="eliminarPagina">
+    <part name="parameters" element="tns:eliminarPagina" />
+  </message>
+  <message name="eliminarPaginaResponse">
+    <part name="parameters" element="tns:eliminarPaginaResponse" />
+  </message>
+  <message name="obtenerPagina">
+    <part name="parameters" element="tns:obtenerPagina" />
+  </message>
+  <message name="obtenerPaginaResponse">
+    <part name="parameters" element="tns:obtenerPaginaResponse" />
+  </message>
+  <message name="agregarPagina">
+    <part name="parameters" element="tns:agregarPagina" />
+  </message>
+  <message name="agregarPaginaResponse">
+    <part name="parameters" element="tns:agregarPaginaResponse" />
+  </message>
+  <message name="modificarPagina">
+    <part name="parameters" element="tns:modificarPagina" />
+  </message>
+  <message name="modificarPaginaResponse">
+    <part name="parameters" element="tns:modificarPaginaResponse" />
+  </message>
+  <portType name="ServicePagina">
+    <operation name="buscarPagina">
+      <input wsam:Action="http://WebService/ServicePagina/buscarPaginaRequest" message="tns:buscarPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/buscarPaginaResponse" message="tns:buscarPaginaResponse" />
+    </operation>
+    <operation name="eliminarPagina">
+      <input wsam:Action="http://WebService/ServicePagina/eliminarPaginaRequest" message="tns:eliminarPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/eliminarPaginaResponse" message="tns:eliminarPaginaResponse" />
+    </operation>
+    <operation name="obtenerPagina">
+      <input wsam:Action="http://WebService/ServicePagina/obtenerPaginaRequest" message="tns:obtenerPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/obtenerPaginaResponse" message="tns:obtenerPaginaResponse" />
+    </operation>
+    <operation name="agregarPagina">
+      <input wsam:Action="http://WebService/ServicePagina/agregarPaginaRequest" message="tns:agregarPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/agregarPaginaResponse" message="tns:agregarPaginaResponse" />
+    </operation>
+    <operation name="modificarPagina">
+      <input wsam:Action="http://WebService/ServicePagina/modificarPaginaRequest" message="tns:modificarPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/modificarPaginaResponse" message="tns:modificarPaginaResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicePaginaPortBinding" type="tns:ServicePagina">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="buscarPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicePagina">
+    <port name="ServicePaginaPort" binding="tns:ServicePaginaPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend9/ServicePagina" />
+    </port>
+  </service>
+</definitions>

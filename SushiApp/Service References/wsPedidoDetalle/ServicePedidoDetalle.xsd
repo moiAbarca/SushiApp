@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PedidoDetalle" type="tns:pedidoDetalle" />
+  <xs:element name="agregarPedidoDetalle" type="tns:agregarPedidoDetalle" />
+  <xs:element name="agregarPedidoDetalleResponse" type="tns:agregarPedidoDetalleResponse" />
+  <xs:element name="buscarPedidoDetalle" type="tns:buscarPedidoDetalle" />
+  <xs:element name="buscarPedidoDetalleResponse" type="tns:buscarPedidoDetalleResponse" />
+  <xs:element name="eliminarPedidoDetalle" type="tns:eliminarPedidoDetalle" />
+  <xs:element name="eliminarPedidoDetalleResponse" type="tns:eliminarPedidoDetalleResponse" />
+  <xs:element name="modificarPedidoDetalle" type="tns:modificarPedidoDetalle" />
+  <xs:element name="modificarPedidoDetalleResponse" type="tns:modificarPedidoDetalleResponse" />
+  <xs:element name="obtenerPedidoDetalle" type="tns:obtenerPedidoDetalle" />
+  <xs:element name="obtenerPedidoDetalleResponse" type="tns:obtenerPedidoDetalleResponse" />
+  <xs:complexType name="buscarPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarPedidoDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedidoDetalle">
+    <xs:sequence>
+      <xs:element name="pedidoDetalleId" type="xs:int" />
+      <xs:element name="pedidoCabeceraId" type="xs:int" />
+      <xs:element name="productoId" type="xs:int" />
+      <xs:element name="cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaPedidoDetalle" type="xs:string" />
+      <xs:element minOccurs="0" name="horaPedidoDetalle" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedidoDetalle" type="tns:pedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarPedidoDetalleResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoDetalleResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedidoDetalle" type="tns:pedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoDetalleResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPedidoDetalle">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPedidoDetalleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarCanal" type="tns:agregarCanal" />
+  <xs:element name="agregarCanalResponse" type="tns:agregarCanalResponse" />
+  <xs:element name="buscarCanal" type="tns:buscarCanal" />
+  <xs:element name="buscarCanalResponse" type="tns:buscarCanalResponse" />
+  <xs:element name="eliminarCanal" type="tns:eliminarCanal" />
+  <xs:element name="eliminarCanalResponse" type="tns:eliminarCanalResponse" />
+  <xs:element name="modificarCanal" type="tns:modificarCanal" />
+  <xs:element name="modificarCanalResponse" type="tns:modificarCanalResponse" />
+  <xs:element name="obtenerCanal" type="tns:obtenerCanal" />
+  <xs:element name="obtenerCanalResponse" type="tns:obtenerCanalResponse" />
+  <xs:complexType name="buscarCanal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarCanalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:canal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="canal">
+    <xs:sequence>
+      <xs:element name="canalId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCanal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCanal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCanalResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerCanal">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerCanalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:canal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCanal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="canal" type="tns:canal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCanalResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="agregarCanal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="canal" type="tns:canal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarCanalResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

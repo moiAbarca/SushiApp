@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceCanal" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceCanal?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="obtenerCanal">
+    <part name="parameters" element="tns:obtenerCanal" />
+  </message>
+  <message name="obtenerCanalResponse">
+    <part name="parameters" element="tns:obtenerCanalResponse" />
+  </message>
+  <message name="agregarCanal">
+    <part name="parameters" element="tns:agregarCanal" />
+  </message>
+  <message name="agregarCanalResponse">
+    <part name="parameters" element="tns:agregarCanalResponse" />
+  </message>
+  <message name="modificarCanal">
+    <part name="parameters" element="tns:modificarCanal" />
+  </message>
+  <message name="modificarCanalResponse">
+    <part name="parameters" element="tns:modificarCanalResponse" />
+  </message>
+  <message name="eliminarCanal">
+    <part name="parameters" element="tns:eliminarCanal" />
+  </message>
+  <message name="eliminarCanalResponse">
+    <part name="parameters" element="tns:eliminarCanalResponse" />
+  </message>
+  <message name="buscarCanal">
+    <part name="parameters" element="tns:buscarCanal" />
+  </message>
+  <message name="buscarCanalResponse">
+    <part name="parameters" element="tns:buscarCanalResponse" />
+  </message>
+  <portType name="ServiceCanal">
+    <operation name="obtenerCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/obtenerCanalRequest" message="tns:obtenerCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/obtenerCanalResponse" message="tns:obtenerCanalResponse" />
+    </operation>
+    <operation name="agregarCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/agregarCanalRequest" message="tns:agregarCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/agregarCanalResponse" message="tns:agregarCanalResponse" />
+    </operation>
+    <operation name="modificarCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/modificarCanalRequest" message="tns:modificarCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/modificarCanalResponse" message="tns:modificarCanalResponse" />
+    </operation>
+    <operation name="eliminarCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/eliminarCanalRequest" message="tns:eliminarCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/eliminarCanalResponse" message="tns:eliminarCanalResponse" />
+    </operation>
+    <operation name="buscarCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/buscarCanalRequest" message="tns:buscarCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/buscarCanalResponse" message="tns:buscarCanalResponse" />
+    </operation>
+  </portType>
+  <binding name="ServiceCanalPortBinding" type="tns:ServiceCanal">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceCanal">
+    <port name="ServiceCanalPort" binding="tns:ServiceCanalPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend9/ServiceCanal" />
+    </port>
+  </service>
+</definitions>
