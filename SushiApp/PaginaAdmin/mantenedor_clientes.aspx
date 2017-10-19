@@ -116,35 +116,35 @@
 
                                             <ul class="list-group clear-list">
                                                 <li class="list-group-item fist-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prRut">insertar dato </span>
                                                     Run:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prNombre">insertar dato </span>
                                                     Nombre:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prApellido">insertar dato </span>
                                                     Apellido:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prDireccion">insertar dato </span>
                                                     Dirección:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prFechaNacimiento">insertar dato </span>
                                                     Fecha de nacimiento:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prSexo">insertar dato </span>
                                                     Sexo:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prEmail">insertar dato </span>
                                                     Email:
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right">insertar dato </span>
+                                                    <span class="pull-right" id="prTelefono">insertar dato </span>
                                                     Teléfono:
                                             </li>
                                             </ul>
