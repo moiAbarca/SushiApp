@@ -34,10 +34,10 @@
                             <h2>Usuarios</h2>
 
                             <div class="input-group">
-                                <%--<button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Buscar</button>--%>
-                                <asp:TextBox CssClass="input form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                                <%--<button type="button" class="btn btn-primary btn-sm btn-block">Enviar mensaje</button>--%>
+                                <asp:TextBox CssClass="input form-control" ID="txtId" runat="server"></asp:TextBox>
                                 <span class="input-group-btn">
-                                <%--<button type="button" class="btn btn-primary btn-sm btn-block"> Enviar mensaje</button>--%>
+                                <%--<button type="button" class="btn btn-primary btn-sm btn-block">Enviar mensaje</button>--%>
                                     <asp:Button CssClass="btn btn btn-primary" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                                 </span>
                             </div>
@@ -116,36 +116,43 @@
 
                                             <ul class="list-group clear-list">
                                                 <li class="list-group-item fist-item">
-                                                    <span class="pull-right" id="prRut">insertar dato </span>
+                                                    <span class="pull-right" id="prRut"><asp:TextBox ID="txtRut" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Run:
-                                            </li>
+                                                    </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prNombre">insertar dato </span>
+                                                    <span class="pull-right" id="prNombre"><asp:TextBox ID="txtNombre" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Nombre:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prApellido">insertar dato </span>
+                                                    <span class="pull-right" id="prApellido"><asp:TextBox ID="txtApellido" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Apellido:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prDireccion">insertar dato </span>
+                                                    <span class="pull-right" id="prDireccion"><asp:TextBox ID="txtDireccion" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Dirección:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prFechaNacimiento">insertar dato </span>
+                                                    <span class="pull-right" id="prFechaNacimiento"><asp:TextBox ID="txtFechaNacimiento" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Fecha de nacimiento:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prSexo">insertar dato </span>
+                                                    <span class="pull-right" id="prSexo"><asp:TextBox ID="txtSexo" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Sexo:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prEmail">insertar dato </span>
+                                                    <span class="pull-right" id="prEmail"><asp:TextBox ID="txtEmail" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Email:
+                                                    
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span class="pull-right" id="prTelefono">insertar dato </span>
+                                                    <span class="pull-right" id="prTelefono"><asp:TextBox ID="txtTelefono" runat="server" Enabled="False"></asp:TextBox></span>
                                                     Teléfono:
+                                                    
                                             </li>
                                             </ul>
                                         </div>

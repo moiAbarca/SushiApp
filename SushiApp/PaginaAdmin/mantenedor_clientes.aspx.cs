@@ -9,6 +9,8 @@ namespace SushiApp.PaginaAdmin
 {
     public partial class mantenedor_clientes1 : System.Web.UI.Page
     {
+        wsCliente.ServiceClienteClient clienteClient = new wsCliente.ServiceClienteClient();
+        wsCliente.cliente auxCliente = new wsCliente.cliente();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,19 +18,29 @@ namespace SushiApp.PaginaAdmin
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            /*
+            
             try
             {
-                auxCategoria = categoriaCliente.buscarCategoriaProducto(Convert.ToInt32(txtId.Text));
-                txtId.Text = Convert.ToString(auxCategoria.categoriaProductoId);
-                txtNombre.Text = auxCategoria.nombreCategoria;
+                auxCliente = clienteClient.buscarCliente(Convert.ToInt32(txtId.Text));
+                txtRut.Text = auxCliente.rut;
+                txtNombre.Text = auxCliente.nombre;
+                txtEmail.Text = auxCliente.email;
+                txtApellido.Text = auxCliente.apellido;
+                txtDireccion.Text = auxCliente.direccion;
+                txtSexo.Text = auxCliente.sexo;
+                txtTelefono.Text = Convert.ToString(auxCliente.telefono);
+                txtFechaNacimiento.Text = auxCliente.fechaNacimiento;
+
+
+                //txtId.Text = Convert.ToString(auxUsuario.);
+                //txtNombre.Text = auxCategoria.nombreCategoria;
             }
             catch (Exception)
             {
                 Response.Write("<script>alert('No se pudo buscar');</script>");
                 return;
             }
-            */
+            
         }
     }
 }
