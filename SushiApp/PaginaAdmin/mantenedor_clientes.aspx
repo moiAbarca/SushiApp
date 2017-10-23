@@ -54,7 +54,7 @@
                                                 <table class="table table-striped table-hover">
                                                     <tbody>
                                                         <tr>
-                                                            <td><a data-toggle="tab" href="#usuario" class="client-link"><asp:GridView ID="gvCliente" runat="server" Height="212px" Width="1021px" Enabled="False" HorizontalAlign="Justify">
+                                                            <td><a data-toggle="tab" href="#usuario"  class="client-link"><asp:GridView ID="gvCliente" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server" Enabled="False" >
                                                                 <RowStyle BorderColor="Black" />
                                                                 </asp:GridView></a></td>
                                                             
@@ -71,13 +71,9 @@
                                                 <table class="table table-striped table-hover">
                                                     <tbody>
                                                         <tr>
-                                                            <td><a data-toggle="tab" href="#administrador" class="client-link">Administrador</a></td>
-                                                            <td>Run</td>
-                                                            <td>Nombre</td>
-                                                            <td>Apellido</td>
-                                                            <td class="contact-type"><i class="fa fa-envelope"></i></td>
-                                                            <td>Correo electrónico</td>
-                                                            <td class="client-status"><span class="label label-primary">Activado</span></td>
+                                                            <td><a data-toggle="tab" href="#administrador" class="client-link"> <asp:GridView ID="gvAdministrador" runat="server" CssClass="footable table table-stripped toggle-arrow-tiny"></asp:GridView>
+                                                            </a></td>
+                                                        
                                                         </tr>
                                                     </tbody>
                                                 </table>
