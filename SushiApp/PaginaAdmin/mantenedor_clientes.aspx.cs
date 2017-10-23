@@ -12,6 +12,7 @@ namespace SushiApp.PaginaAdmin
         wsCliente.ServiceClienteClient clienteClient = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
         wsAdministrador.ServiceAdministradorClient administradorClient = new wsAdministrador.ServiceAdministradorClient();
+        wsAdministrador.administrador auxAdministrador = new wsAdministrador.administrador();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -72,10 +73,6 @@ namespace SushiApp.PaginaAdmin
                 txtSexo.Text = auxCliente.sexo;
                 txtTelefono.Text = Convert.ToString(auxCliente.telefono);
                 txtFechaNacimiento.Text = auxCliente.fechaNacimiento;
-
-
-                //txtId.Text = Convert.ToString(auxUsuario.);
-                //txtNombre.Text = auxCategoria.nombreCategoria;
             }
             catch (Exception)
             {
@@ -83,6 +80,23 @@ namespace SushiApp.PaginaAdmin
                 return;
             }
             
+        }
+
+        protected void btnBuscarAdministrador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                auxAdministrador = administradorClient.buscarAdministrador(Convert.ToInt32(txtIdAdministrador.Text));
+                txtNombreAdmin.Text = auxAdministrador.nombreAdmin;
+                txtApellidoAdmin.Text = auxAdministrador.apellidoAdmin;
+                txtEmailAdmin.Text = auxAdministrador.corrreoAdmin;
+                txtTelAdmin.Text = auxAdministrador.telefonoAdmin;
+            }
+            catch (Exception)
+            {
+                Response.Write("<script>alert('No se pudo buscar');</script>");
+                return;
+            }
         }
     }
 }
