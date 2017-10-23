@@ -11,7 +11,7 @@
                 <div class="col-md-9 clearfix" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="Checkout3.aspx">
+                        <div >
 
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="Checkout1.aspx"><i class="fa fa-user"></i>
@@ -86,11 +86,11 @@
                                         <a href="ShopBasket.aspx" class="btn btn-default"><i class="fa fa-chevron-left"></i>Volver a la canasta</a>
                                     </div>
                                     <div class="pull-right">
-                                        <asp:Button ID="btnDireccion" runat="server" Text="Continuar" CssClass="btn btn-template-main" />
+                                        <asp:Button ID="btnDireccion" runat="server" Text="Continuar" CssClass="btn btn-template-main" OnClick="btnDireccion_Click" />
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <!-- /.box -->
 

@@ -25,6 +25,14 @@
   <xs:complexType name="modificarComunaResponse">
     <xs:sequence />
   </xs:complexType>
+  <xs:complexType name="agregarComuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comuna" type="tns:comuna" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarComunaResponse">
+    <xs:sequence />
+  </xs:complexType>
   <xs:complexType name="buscarComuna">
     <xs:sequence>
       <xs:element minOccurs="0" name="id" type="xs:int" />
@@ -34,14 +42,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:comuna" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="agregarComuna">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="comuna" type="tns:comuna" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="agregarComunaResponse">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="eliminarComuna">
     <xs:sequence>

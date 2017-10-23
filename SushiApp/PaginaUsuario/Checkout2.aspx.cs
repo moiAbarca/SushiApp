@@ -11,7 +11,16 @@ namespace SushiApp.PaginaUsuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
+        }
+
+        protected void btnDireccion_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("Checkout3.aspx");
+            
         }
     }
 }

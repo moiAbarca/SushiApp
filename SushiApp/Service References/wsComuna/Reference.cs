@@ -15,6 +15,15 @@ namespace SushiApp.wsComuna {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsComuna.ServiceComuna")]
     public interface ServiceComuna {
         
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/obtenerComunaRequest", ReplyAction="http://WebService/ServiceComuna/obtenerComunaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsComuna.obtenerComunaResponse obtenerComuna(SushiApp.wsComuna.obtenerComunaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/obtenerComunaRequest", ReplyAction="http://WebService/ServiceComuna/obtenerComunaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> obtenerComunaAsync(SushiApp.wsComuna.obtenerComunaRequest request);
+        
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/eliminarComunaRequest", ReplyAction="http://WebService/ServiceComuna/eliminarComunaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -22,23 +31,6 @@ namespace SushiApp.wsComuna {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/eliminarComunaRequest", ReplyAction="http://WebService/ServiceComuna/eliminarComunaResponse")]
         System.Threading.Tasks.Task<SushiApp.wsComuna.eliminarComunaResponse> eliminarComunaAsync(SushiApp.wsComuna.eliminarComunaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/buscarComunaRequest", ReplyAction="http://WebService/ServiceComuna/buscarComunaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsComuna.buscarComunaResponse buscarComuna(SushiApp.wsComuna.buscarComunaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/buscarComunaRequest", ReplyAction="http://WebService/ServiceComuna/buscarComunaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> buscarComunaAsync(SushiApp.wsComuna.buscarComunaRequest request);
-        
-        // CODEGEN: El parámetro 'comuna' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/modificarComunaRequest", ReplyAction="http://WebService/ServiceComuna/modificarComunaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsComuna.modificarComunaResponse modificarComuna(SushiApp.wsComuna.modificarComunaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/modificarComunaRequest", ReplyAction="http://WebService/ServiceComuna/modificarComunaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> modificarComunaAsync(SushiApp.wsComuna.modificarComunaRequest request);
         
         // CODEGEN: El parámetro 'comuna' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/agregarComunaRequest", ReplyAction="http://WebService/ServiceComuna/agregarComunaResponse")]
@@ -48,42 +40,22 @@ namespace SushiApp.wsComuna {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/agregarComunaRequest", ReplyAction="http://WebService/ServiceComuna/agregarComunaResponse")]
         System.Threading.Tasks.Task<SushiApp.wsComuna.agregarComunaResponse> agregarComunaAsync(SushiApp.wsComuna.agregarComunaRequest request);
         
+        // CODEGEN: El parámetro 'comuna' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/modificarComunaRequest", ReplyAction="http://WebService/ServiceComuna/modificarComunaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsComuna.modificarComunaResponse modificarComuna(SushiApp.wsComuna.modificarComunaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/modificarComunaRequest", ReplyAction="http://WebService/ServiceComuna/modificarComunaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> modificarComunaAsync(SushiApp.wsComuna.modificarComunaRequest request);
+        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/obtenerComunaRequest", ReplyAction="http://WebService/ServiceComuna/obtenerComunaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/buscarComunaRequest", ReplyAction="http://WebService/ServiceComuna/buscarComunaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsComuna.obtenerComunaResponse obtenerComuna(SushiApp.wsComuna.obtenerComunaRequest request);
+        SushiApp.wsComuna.buscarComunaResponse buscarComuna(SushiApp.wsComuna.buscarComunaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/obtenerComunaRequest", ReplyAction="http://WebService/ServiceComuna/obtenerComunaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> obtenerComunaAsync(SushiApp.wsComuna.obtenerComunaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarComunaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarComunaRequest() {
-        }
-        
-        public eliminarComunaRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarComunaResponse {
-        
-        public eliminarComunaResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceComuna/buscarComunaRequest", ReplyAction="http://WebService/ServiceComuna/buscarComunaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> buscarComunaAsync(SushiApp.wsComuna.buscarComunaRequest request);
     }
     
     /// <comentarios/>
@@ -149,35 +121,27 @@ namespace SushiApp.wsComuna {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarComunaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerComunaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public buscarComunaRequest() {
-        }
-        
-        public buscarComunaRequest(int id) {
-            this.id = id;
+        public obtenerComunaRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarComunaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerComunaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsComuna.comuna @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsComuna.comuna[] @return;
         
-        public buscarComunaResponse() {
+        public obtenerComunaResponse() {
         }
         
-        public buscarComunaResponse(SushiApp.wsComuna.comuna @return) {
+        public obtenerComunaResponse(SushiApp.wsComuna.comuna[] @return) {
             this.@return = @return;
         }
     }
@@ -185,28 +149,28 @@ namespace SushiApp.wsComuna {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarComunaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarComunaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsComuna.comuna comuna;
+        public int id;
         
-        public modificarComunaRequest() {
+        public eliminarComunaRequest() {
         }
         
-        public modificarComunaRequest(SushiApp.wsComuna.comuna comuna) {
-            this.comuna = comuna;
+        public eliminarComunaRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarComunaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarComunaResponse {
         
-        public modificarComunaResponse() {
+        public eliminarComunaResponse() {
         }
     }
     
@@ -241,27 +205,63 @@ namespace SushiApp.wsComuna {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerComunaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarComunaRequest {
         
-        public obtenerComunaRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsComuna.comuna comuna;
+        
+        public modificarComunaRequest() {
+        }
+        
+        public modificarComunaRequest(SushiApp.wsComuna.comuna comuna) {
+            this.comuna = comuna;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerComunaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarComunaResponse {
+        
+        public modificarComunaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarComuna", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarComunaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsComuna.comuna[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
         
-        public obtenerComunaResponse() {
+        public buscarComunaRequest() {
         }
         
-        public obtenerComunaResponse(SushiApp.wsComuna.comuna[] @return) {
+        public buscarComunaRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarComunaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarComunaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsComuna.comuna @return;
+        
+        public buscarComunaResponse() {
+        }
+        
+        public buscarComunaResponse(SushiApp.wsComuna.comuna @return) {
             this.@return = @return;
         }
     }
@@ -294,6 +294,27 @@ namespace SushiApp.wsComuna {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsComuna.obtenerComunaResponse SushiApp.wsComuna.ServiceComuna.obtenerComuna(SushiApp.wsComuna.obtenerComunaRequest request) {
+            return base.Channel.obtenerComuna(request);
+        }
+        
+        public SushiApp.wsComuna.comuna[] obtenerComuna() {
+            SushiApp.wsComuna.obtenerComunaRequest inValue = new SushiApp.wsComuna.obtenerComunaRequest();
+            SushiApp.wsComuna.obtenerComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).obtenerComuna(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> SushiApp.wsComuna.ServiceComuna.obtenerComunaAsync(SushiApp.wsComuna.obtenerComunaRequest request) {
+            return base.Channel.obtenerComunaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> obtenerComunaAsync() {
+            SushiApp.wsComuna.obtenerComunaRequest inValue = new SushiApp.wsComuna.obtenerComunaRequest();
+            return ((SushiApp.wsComuna.ServiceComuna)(this)).obtenerComunaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsComuna.eliminarComunaResponse SushiApp.wsComuna.ServiceComuna.eliminarComuna(SushiApp.wsComuna.eliminarComunaRequest request) {
             return base.Channel.eliminarComuna(request);
         }
@@ -313,51 +334,6 @@ namespace SushiApp.wsComuna {
             SushiApp.wsComuna.eliminarComunaRequest inValue = new SushiApp.wsComuna.eliminarComunaRequest();
             inValue.id = id;
             return ((SushiApp.wsComuna.ServiceComuna)(this)).eliminarComunaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsComuna.buscarComunaResponse SushiApp.wsComuna.ServiceComuna.buscarComuna(SushiApp.wsComuna.buscarComunaRequest request) {
-            return base.Channel.buscarComuna(request);
-        }
-        
-        public SushiApp.wsComuna.comuna buscarComuna(int id) {
-            SushiApp.wsComuna.buscarComunaRequest inValue = new SushiApp.wsComuna.buscarComunaRequest();
-            inValue.id = id;
-            SushiApp.wsComuna.buscarComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).buscarComuna(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> SushiApp.wsComuna.ServiceComuna.buscarComunaAsync(SushiApp.wsComuna.buscarComunaRequest request) {
-            return base.Channel.buscarComunaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> buscarComunaAsync(int id) {
-            SushiApp.wsComuna.buscarComunaRequest inValue = new SushiApp.wsComuna.buscarComunaRequest();
-            inValue.id = id;
-            return ((SushiApp.wsComuna.ServiceComuna)(this)).buscarComunaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsComuna.modificarComunaResponse SushiApp.wsComuna.ServiceComuna.modificarComuna(SushiApp.wsComuna.modificarComunaRequest request) {
-            return base.Channel.modificarComuna(request);
-        }
-        
-        public void modificarComuna(SushiApp.wsComuna.comuna comuna) {
-            SushiApp.wsComuna.modificarComunaRequest inValue = new SushiApp.wsComuna.modificarComunaRequest();
-            inValue.comuna = comuna;
-            SushiApp.wsComuna.modificarComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).modificarComuna(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> SushiApp.wsComuna.ServiceComuna.modificarComunaAsync(SushiApp.wsComuna.modificarComunaRequest request) {
-            return base.Channel.modificarComunaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> modificarComunaAsync(SushiApp.wsComuna.comuna comuna) {
-            SushiApp.wsComuna.modificarComunaRequest inValue = new SushiApp.wsComuna.modificarComunaRequest();
-            inValue.comuna = comuna;
-            return ((SushiApp.wsComuna.ServiceComuna)(this)).modificarComunaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -383,24 +359,48 @@ namespace SushiApp.wsComuna {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsComuna.obtenerComunaResponse SushiApp.wsComuna.ServiceComuna.obtenerComuna(SushiApp.wsComuna.obtenerComunaRequest request) {
-            return base.Channel.obtenerComuna(request);
+        SushiApp.wsComuna.modificarComunaResponse SushiApp.wsComuna.ServiceComuna.modificarComuna(SushiApp.wsComuna.modificarComunaRequest request) {
+            return base.Channel.modificarComuna(request);
         }
         
-        public SushiApp.wsComuna.comuna[] obtenerComuna() {
-            SushiApp.wsComuna.obtenerComunaRequest inValue = new SushiApp.wsComuna.obtenerComunaRequest();
-            SushiApp.wsComuna.obtenerComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).obtenerComuna(inValue);
+        public void modificarComuna(SushiApp.wsComuna.comuna comuna) {
+            SushiApp.wsComuna.modificarComunaRequest inValue = new SushiApp.wsComuna.modificarComunaRequest();
+            inValue.comuna = comuna;
+            SushiApp.wsComuna.modificarComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).modificarComuna(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> SushiApp.wsComuna.ServiceComuna.modificarComunaAsync(SushiApp.wsComuna.modificarComunaRequest request) {
+            return base.Channel.modificarComunaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsComuna.modificarComunaResponse> modificarComunaAsync(SushiApp.wsComuna.comuna comuna) {
+            SushiApp.wsComuna.modificarComunaRequest inValue = new SushiApp.wsComuna.modificarComunaRequest();
+            inValue.comuna = comuna;
+            return ((SushiApp.wsComuna.ServiceComuna)(this)).modificarComunaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsComuna.buscarComunaResponse SushiApp.wsComuna.ServiceComuna.buscarComuna(SushiApp.wsComuna.buscarComunaRequest request) {
+            return base.Channel.buscarComuna(request);
+        }
+        
+        public SushiApp.wsComuna.comuna buscarComuna(int id) {
+            SushiApp.wsComuna.buscarComunaRequest inValue = new SushiApp.wsComuna.buscarComunaRequest();
+            inValue.id = id;
+            SushiApp.wsComuna.buscarComunaResponse retVal = ((SushiApp.wsComuna.ServiceComuna)(this)).buscarComuna(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> SushiApp.wsComuna.ServiceComuna.obtenerComunaAsync(SushiApp.wsComuna.obtenerComunaRequest request) {
-            return base.Channel.obtenerComunaAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> SushiApp.wsComuna.ServiceComuna.buscarComunaAsync(SushiApp.wsComuna.buscarComunaRequest request) {
+            return base.Channel.buscarComunaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsComuna.obtenerComunaResponse> obtenerComunaAsync() {
-            SushiApp.wsComuna.obtenerComunaRequest inValue = new SushiApp.wsComuna.obtenerComunaRequest();
-            return ((SushiApp.wsComuna.ServiceComuna)(this)).obtenerComunaAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsComuna.buscarComunaResponse> buscarComunaAsync(int id) {
+            SushiApp.wsComuna.buscarComunaRequest inValue = new SushiApp.wsComuna.buscarComunaRequest();
+            inValue.id = id;
+            return ((SushiApp.wsComuna.ServiceComuna)(this)).buscarComunaAsync(inValue);
         }
     }
 }

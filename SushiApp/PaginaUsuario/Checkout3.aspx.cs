@@ -13,5 +13,11 @@ namespace SushiApp.PaginaUsuario
         {
 
         }
+
+        protected void btnResumen_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checkout4.aspx");
+            
+        }
     }
 }

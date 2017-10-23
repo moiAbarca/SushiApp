@@ -39,20 +39,20 @@
   <xs:complexType name="agregarPedidoDetalleResponse">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="eliminarPedidoDetalle">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarPedidoDetalleResponse">
-    <xs:sequence />
-  </xs:complexType>
   <xs:complexType name="modificarPedidoDetalle">
     <xs:sequence>
       <xs:element minOccurs="0" name="pedidoDetalle" type="tns:pedidoDetalle" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPedidoDetalleResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoDetalleResponse">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="obtenerPedidoDetalle">

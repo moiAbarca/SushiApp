@@ -13,7 +13,20 @@ namespace SushiApp.PaginaAdmin
         wsCliente.cliente auxCliente = new wsCliente.cliente();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string fecha = string.Empty;
+            var listadto = clienteClient.obtenerCliente();
+            var nuevolistadto = (from o in listadto
+                                          select new
+                                          {
+                                              Id = o.clienteId,
+                                              Nombre = o.nombre,
+                                              Apellido = o.apellido,
+                                              Email = o.email,
+                                              Fecha_Nacimiento = o.fechaNacimiento
+        }).ToList();
 
+            gvCliente.DataSource = nuevolistadto;            
+            gvCliente.DataBind();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

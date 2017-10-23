@@ -5,29 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServicePerfil?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="agregarPerfil">
-    <part name="parameters" element="tns:agregarPerfil" />
-  </message>
-  <message name="agregarPerfilResponse">
-    <part name="parameters" element="tns:agregarPerfilResponse" />
-  </message>
-  <message name="modificarPerfil">
-    <part name="parameters" element="tns:modificarPerfil" />
-  </message>
-  <message name="modificarPerfilResponse">
-    <part name="parameters" element="tns:modificarPerfilResponse" />
-  </message>
   <message name="eliminarPerfil">
     <part name="parameters" element="tns:eliminarPerfil" />
   </message>
   <message name="eliminarPerfilResponse">
     <part name="parameters" element="tns:eliminarPerfilResponse" />
-  </message>
-  <message name="buscarPerfil">
-    <part name="parameters" element="tns:buscarPerfil" />
-  </message>
-  <message name="buscarPerfilResponse">
-    <part name="parameters" element="tns:buscarPerfilResponse" />
   </message>
   <message name="obtenerPerfil">
     <part name="parameters" element="tns:obtenerPerfil" />
@@ -35,31 +17,58 @@
   <message name="obtenerPerfilResponse">
     <part name="parameters" element="tns:obtenerPerfilResponse" />
   </message>
+  <message name="modificarPerfil">
+    <part name="parameters" element="tns:modificarPerfil" />
+  </message>
+  <message name="modificarPerfilResponse">
+    <part name="parameters" element="tns:modificarPerfilResponse" />
+  </message>
+  <message name="agregarPerfil">
+    <part name="parameters" element="tns:agregarPerfil" />
+  </message>
+  <message name="agregarPerfilResponse">
+    <part name="parameters" element="tns:agregarPerfilResponse" />
+  </message>
+  <message name="buscarPerfil">
+    <part name="parameters" element="tns:buscarPerfil" />
+  </message>
+  <message name="buscarPerfilResponse">
+    <part name="parameters" element="tns:buscarPerfilResponse" />
+  </message>
   <portType name="ServicePerfil">
-    <operation name="agregarPerfil">
-      <input wsam:Action="http://WebService/ServicePerfil/agregarPerfilRequest" message="tns:agregarPerfil" />
-      <output wsam:Action="http://WebService/ServicePerfil/agregarPerfilResponse" message="tns:agregarPerfilResponse" />
-    </operation>
-    <operation name="modificarPerfil">
-      <input wsam:Action="http://WebService/ServicePerfil/modificarPerfilRequest" message="tns:modificarPerfil" />
-      <output wsam:Action="http://WebService/ServicePerfil/modificarPerfilResponse" message="tns:modificarPerfilResponse" />
-    </operation>
     <operation name="eliminarPerfil">
       <input wsam:Action="http://WebService/ServicePerfil/eliminarPerfilRequest" message="tns:eliminarPerfil" />
       <output wsam:Action="http://WebService/ServicePerfil/eliminarPerfilResponse" message="tns:eliminarPerfilResponse" />
-    </operation>
-    <operation name="buscarPerfil">
-      <input wsam:Action="http://WebService/ServicePerfil/buscarPerfilRequest" message="tns:buscarPerfil" />
-      <output wsam:Action="http://WebService/ServicePerfil/buscarPerfilResponse" message="tns:buscarPerfilResponse" />
     </operation>
     <operation name="obtenerPerfil">
       <input wsam:Action="http://WebService/ServicePerfil/obtenerPerfilRequest" message="tns:obtenerPerfil" />
       <output wsam:Action="http://WebService/ServicePerfil/obtenerPerfilResponse" message="tns:obtenerPerfilResponse" />
     </operation>
+    <operation name="modificarPerfil">
+      <input wsam:Action="http://WebService/ServicePerfil/modificarPerfilRequest" message="tns:modificarPerfil" />
+      <output wsam:Action="http://WebService/ServicePerfil/modificarPerfilResponse" message="tns:modificarPerfilResponse" />
+    </operation>
+    <operation name="agregarPerfil">
+      <input wsam:Action="http://WebService/ServicePerfil/agregarPerfilRequest" message="tns:agregarPerfil" />
+      <output wsam:Action="http://WebService/ServicePerfil/agregarPerfilResponse" message="tns:agregarPerfilResponse" />
+    </operation>
+    <operation name="buscarPerfil">
+      <input wsam:Action="http://WebService/ServicePerfil/buscarPerfilRequest" message="tns:buscarPerfil" />
+      <output wsam:Action="http://WebService/ServicePerfil/buscarPerfilResponse" message="tns:buscarPerfilResponse" />
+    </operation>
   </portType>
   <binding name="ServicePerfilPortBinding" type="tns:ServicePerfil">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="agregarPerfil">
+    <operation name="eliminarPerfil">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPerfil">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPerfil">
+    <operation name="agregarPerfil">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,15 +96,6 @@
       </output>
     </operation>
     <operation name="buscarPerfil">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerPerfil">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

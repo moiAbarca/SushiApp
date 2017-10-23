@@ -24,7 +24,7 @@
     </div>
     <!-- FIN DE BREADCRUMB -->
 
-    <form class="m-t" role="form">
+    <div class="m-t" >
         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
 
             <!-- INICIO FILTROS DE BUSQUEDA -->
@@ -138,5 +138,5 @@
             <!-- FIN LISTA DE PRODUCTOS -->
 
         </div>
-    </form>
+    </div>
 </asp:Content>

@@ -5349,10 +5349,11 @@ dd.project-people {
   height: 620px;
 }
 .clients-list table tr td {
-  height: 46px;
-  vertical-align: middle;
-  border: none;
-}
+  border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    vertical-align: middle;
+  }
 .client-link {
   font-weight: 600;
   color: inherit;

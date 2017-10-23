@@ -6,7 +6,7 @@
     <!-- INICIO DE BREADCRUMB -->
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Mantenedor Usuarios</h2>
+            <h2>Mantenedor Clientes</h2>
             <ol class="breadcrumb">
                 <li>
                     <a href="inicio.aspx">Inicio</a>
@@ -31,7 +31,7 @@
                 <div class="col-sm-8">
                     <div class="ibox">
                         <div class="ibox-content">
-                            <h2>Usuarios</h2>
+                            <h2>Clientes</h2>
 
                             <div class="input-group">
                                 <%--<button type="button" class="btn btn-primary btn-sm btn-block">Enviar mensaje</button>--%>
@@ -54,16 +54,14 @@
                                                 <table class="table table-striped table-hover">
                                                     <tbody>
                                                         <tr>
-                                                            <td><a data-toggle="tab" href="#usuario" class="client-link">Usuario</a></td>
-                                                            <td>Run</td>
-                                                            <td>Nombre</td>
-                                                            <td>Apellido</td>
-                                                            <td class="contact-type"><i class="fa fa-envelope"></i></td>
-                                                            <td>Correo electrónico</td>
-                                                            <td class="client-status"><span class="label label-primary">Activado</span></td>
+                                                            <td><a data-toggle="tab" href="#usuario" class="client-link"><asp:GridView ID="gvCliente" runat="server" Height="212px" Width="1021px" Enabled="False" HorizontalAlign="Justify">
+                                                                <RowStyle BorderColor="Black" />
+                                                                </asp:GridView></a></td>
+                                                            
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                
                                             </div>
                                         </div>
                                     </div>

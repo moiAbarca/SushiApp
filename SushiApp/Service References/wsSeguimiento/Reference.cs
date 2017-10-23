@@ -15,13 +15,14 @@ namespace SushiApp.wsSeguimiento {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsSeguimiento.ServiceSeguimiento")]
     public interface ServiceSeguimiento {
         
-        // CODEGEN: El parámetro 'seguimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/agregarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/agregarSeguimientoResponse")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/obtenerSeguimientoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsSeguimiento.agregarSeguimientoResponse agregarSeguimiento(SushiApp.wsSeguimiento.agregarSeguimientoRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsSeguimiento.obtenerSeguimientoResponse obtenerSeguimiento(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/agregarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/agregarSeguimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> agregarSeguimientoAsync(SushiApp.wsSeguimiento.agregarSeguimientoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/obtenerSeguimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> obtenerSeguimientoAsync(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request);
         
         // CODEGEN: El parámetro 'seguimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/modificarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/modificarSeguimientoResponse")]
@@ -30,14 +31,6 @@ namespace SushiApp.wsSeguimiento {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/modificarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/modificarSeguimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsSeguimiento.modificarSeguimientoResponse> modificarSeguimientoAsync(SushiApp.wsSeguimiento.modificarSeguimientoRequest request);
-        
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsSeguimiento.eliminarSeguimientoResponse eliminarSeguimiento(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> eliminarSeguimientoAsync(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/buscarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/buscarSeguimientoResponse")]
@@ -48,14 +41,21 @@ namespace SushiApp.wsSeguimiento {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/buscarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/buscarSeguimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsSeguimiento.buscarSeguimientoResponse> buscarSeguimientoAsync(SushiApp.wsSeguimiento.buscarSeguimientoRequest request);
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/obtenerSeguimientoResponse")]
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsSeguimiento.obtenerSeguimientoResponse obtenerSeguimiento(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request);
+        SushiApp.wsSeguimiento.eliminarSeguimientoResponse eliminarSeguimiento(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/obtenerSeguimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> obtenerSeguimientoAsync(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> eliminarSeguimientoAsync(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request);
+        
+        // CODEGEN: El parámetro 'seguimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/agregarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/agregarSeguimientoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsSeguimiento.agregarSeguimientoResponse agregarSeguimiento(SushiApp.wsSeguimiento.agregarSeguimientoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceSeguimiento/agregarSeguimientoRequest", ReplyAction="http://WebService/ServiceSeguimiento/agregarSeguimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> agregarSeguimientoAsync(SushiApp.wsSeguimiento.agregarSeguimientoRequest request);
     }
     
     /// <comentarios/>
@@ -149,28 +149,28 @@ namespace SushiApp.wsSeguimiento {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarSeguimientoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerSeguimientoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsSeguimiento.seguimiento seguimiento;
-        
-        public agregarSeguimientoRequest() {
-        }
-        
-        public agregarSeguimientoRequest(SushiApp.wsSeguimiento.seguimiento seguimiento) {
-            this.seguimiento = seguimiento;
+        public obtenerSeguimientoRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarSeguimientoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerSeguimientoResponse {
         
-        public agregarSeguimientoResponse() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsSeguimiento.seguimiento[] @return;
+        
+        public obtenerSeguimientoResponse() {
+        }
+        
+        public obtenerSeguimientoResponse(SushiApp.wsSeguimiento.seguimiento[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -199,34 +199,6 @@ namespace SushiApp.wsSeguimiento {
     public partial class modificarSeguimientoResponse {
         
         public modificarSeguimientoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarSeguimientoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarSeguimientoRequest() {
-        }
-        
-        public eliminarSeguimientoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarSeguimientoResponse {
-        
-        public eliminarSeguimientoResponse() {
         }
     }
     
@@ -269,28 +241,56 @@ namespace SushiApp.wsSeguimiento {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerSeguimientoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarSeguimientoRequest {
         
-        public obtenerSeguimientoRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarSeguimientoRequest() {
+        }
+        
+        public eliminarSeguimientoRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerSeguimientoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarSeguimientoResponse {
+        
+        public eliminarSeguimientoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarSeguimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarSeguimientoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsSeguimiento.seguimiento[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsSeguimiento.seguimiento seguimiento;
         
-        public obtenerSeguimientoResponse() {
+        public agregarSeguimientoRequest() {
         }
         
-        public obtenerSeguimientoResponse(SushiApp.wsSeguimiento.seguimiento[] @return) {
-            this.@return = @return;
+        public agregarSeguimientoRequest(SushiApp.wsSeguimiento.seguimiento seguimiento) {
+            this.seguimiento = seguimiento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarSeguimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarSeguimientoResponse {
+        
+        public agregarSeguimientoResponse() {
         }
     }
     
@@ -322,25 +322,24 @@ namespace SushiApp.wsSeguimiento {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsSeguimiento.agregarSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.agregarSeguimiento(SushiApp.wsSeguimiento.agregarSeguimientoRequest request) {
-            return base.Channel.agregarSeguimiento(request);
+        SushiApp.wsSeguimiento.obtenerSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.obtenerSeguimiento(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request) {
+            return base.Channel.obtenerSeguimiento(request);
         }
         
-        public void agregarSeguimiento(SushiApp.wsSeguimiento.seguimiento seguimiento) {
-            SushiApp.wsSeguimiento.agregarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.agregarSeguimientoRequest();
-            inValue.seguimiento = seguimiento;
-            SushiApp.wsSeguimiento.agregarSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).agregarSeguimiento(inValue);
+        public SushiApp.wsSeguimiento.seguimiento[] obtenerSeguimiento() {
+            SushiApp.wsSeguimiento.obtenerSeguimientoRequest inValue = new SushiApp.wsSeguimiento.obtenerSeguimientoRequest();
+            SushiApp.wsSeguimiento.obtenerSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).obtenerSeguimiento(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.agregarSeguimientoAsync(SushiApp.wsSeguimiento.agregarSeguimientoRequest request) {
-            return base.Channel.agregarSeguimientoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.obtenerSeguimientoAsync(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request) {
+            return base.Channel.obtenerSeguimientoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> agregarSeguimientoAsync(SushiApp.wsSeguimiento.seguimiento seguimiento) {
-            SushiApp.wsSeguimiento.agregarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.agregarSeguimientoRequest();
-            inValue.seguimiento = seguimiento;
-            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).agregarSeguimientoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> obtenerSeguimientoAsync() {
+            SushiApp.wsSeguimiento.obtenerSeguimientoRequest inValue = new SushiApp.wsSeguimiento.obtenerSeguimientoRequest();
+            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).obtenerSeguimientoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -363,28 +362,6 @@ namespace SushiApp.wsSeguimiento {
             SushiApp.wsSeguimiento.modificarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.modificarSeguimientoRequest();
             inValue.seguimiento = seguimiento;
             return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).modificarSeguimientoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsSeguimiento.eliminarSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.eliminarSeguimiento(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request) {
-            return base.Channel.eliminarSeguimiento(request);
-        }
-        
-        public void eliminarSeguimiento(int id) {
-            SushiApp.wsSeguimiento.eliminarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.eliminarSeguimientoRequest();
-            inValue.id = id;
-            SushiApp.wsSeguimiento.eliminarSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).eliminarSeguimiento(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.eliminarSeguimientoAsync(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request) {
-            return base.Channel.eliminarSeguimientoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> eliminarSeguimientoAsync(int id) {
-            SushiApp.wsSeguimiento.eliminarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.eliminarSeguimientoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).eliminarSeguimientoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -411,24 +388,47 @@ namespace SushiApp.wsSeguimiento {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsSeguimiento.obtenerSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.obtenerSeguimiento(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request) {
-            return base.Channel.obtenerSeguimiento(request);
+        SushiApp.wsSeguimiento.eliminarSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.eliminarSeguimiento(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request) {
+            return base.Channel.eliminarSeguimiento(request);
         }
         
-        public SushiApp.wsSeguimiento.seguimiento[] obtenerSeguimiento() {
-            SushiApp.wsSeguimiento.obtenerSeguimientoRequest inValue = new SushiApp.wsSeguimiento.obtenerSeguimientoRequest();
-            SushiApp.wsSeguimiento.obtenerSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).obtenerSeguimiento(inValue);
-            return retVal.@return;
+        public void eliminarSeguimiento(int id) {
+            SushiApp.wsSeguimiento.eliminarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.eliminarSeguimientoRequest();
+            inValue.id = id;
+            SushiApp.wsSeguimiento.eliminarSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).eliminarSeguimiento(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.obtenerSeguimientoAsync(SushiApp.wsSeguimiento.obtenerSeguimientoRequest request) {
-            return base.Channel.obtenerSeguimientoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.eliminarSeguimientoAsync(SushiApp.wsSeguimiento.eliminarSeguimientoRequest request) {
+            return base.Channel.eliminarSeguimientoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.obtenerSeguimientoResponse> obtenerSeguimientoAsync() {
-            SushiApp.wsSeguimiento.obtenerSeguimientoRequest inValue = new SushiApp.wsSeguimiento.obtenerSeguimientoRequest();
-            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).obtenerSeguimientoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.eliminarSeguimientoResponse> eliminarSeguimientoAsync(int id) {
+            SushiApp.wsSeguimiento.eliminarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.eliminarSeguimientoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).eliminarSeguimientoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsSeguimiento.agregarSeguimientoResponse SushiApp.wsSeguimiento.ServiceSeguimiento.agregarSeguimiento(SushiApp.wsSeguimiento.agregarSeguimientoRequest request) {
+            return base.Channel.agregarSeguimiento(request);
+        }
+        
+        public void agregarSeguimiento(SushiApp.wsSeguimiento.seguimiento seguimiento) {
+            SushiApp.wsSeguimiento.agregarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.agregarSeguimientoRequest();
+            inValue.seguimiento = seguimiento;
+            SushiApp.wsSeguimiento.agregarSeguimientoResponse retVal = ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).agregarSeguimiento(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> SushiApp.wsSeguimiento.ServiceSeguimiento.agregarSeguimientoAsync(SushiApp.wsSeguimiento.agregarSeguimientoRequest request) {
+            return base.Channel.agregarSeguimientoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsSeguimiento.agregarSeguimientoResponse> agregarSeguimientoAsync(SushiApp.wsSeguimiento.seguimiento seguimiento) {
+            SushiApp.wsSeguimiento.agregarSeguimientoRequest inValue = new SushiApp.wsSeguimiento.agregarSeguimientoRequest();
+            inValue.seguimiento = seguimiento;
+            return ((SushiApp.wsSeguimiento.ServiceSeguimiento)(this)).agregarSeguimientoAsync(inValue);
         }
     }
 }

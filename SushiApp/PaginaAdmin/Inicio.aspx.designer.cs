@@ -10,6 +10,6 @@
 namespace SushiApp.PaginaAdmin {
     
     
-    public partial class Inicio {
+    public partial class Inicio2 {
     }
 }

@@ -15,13 +15,14 @@ namespace SushiApp.wsOfertaProducto {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsOfertaProducto.ServiceOfertaProducto")]
     public interface ServiceOfertaProducto {
         
-        // CODEGEN: El parámetro 'ofertaProducto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/modificarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/modificarOfertaProductoResponse")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsOfertaProducto.modificarOfertaProductoResponse modificarOfertaProducto(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse obtenerOfertaProducto(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/modificarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/modificarOfertaProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> obtenerOfertaProductoAsync(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request);
         
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoResponse")]
@@ -32,13 +33,13 @@ namespace SushiApp.wsOfertaProducto {
         System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.eliminarOfertaProductoResponse> eliminarOfertaProductoAsync(SushiApp.wsOfertaProducto.eliminarOfertaProductoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse obtenerOfertaProducto(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request);
+        SushiApp.wsOfertaProducto.buscarOfertaProductoResponse buscarOfertaProducto(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> obtenerOfertaProductoAsync(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> buscarOfertaProductoAsync(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request);
         
         // CODEGEN: El parámetro 'ofertaProducto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/agregarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/agregarOfertaProductoResponse")]
@@ -48,14 +49,13 @@ namespace SushiApp.wsOfertaProducto {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/agregarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/agregarOfertaProductoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.agregarOfertaProductoResponse> agregarOfertaProductoAsync(SushiApp.wsOfertaProducto.agregarOfertaProductoRequest request);
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse")]
+        // CODEGEN: El parámetro 'ofertaProducto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/modificarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/modificarOfertaProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsOfertaProducto.buscarOfertaProductoResponse buscarOfertaProducto(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request);
+        SushiApp.wsOfertaProducto.modificarOfertaProductoResponse modificarOfertaProducto(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> buscarOfertaProductoAsync(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceOfertaProducto/modificarOfertaProductoRequest", ReplyAction="http://WebService/ServiceOfertaProducto/modificarOfertaProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request);
     }
     
     /// <comentarios/>
@@ -107,62 +107,6 @@ namespace SushiApp.wsOfertaProducto {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarOfertaProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto;
-        
-        public modificarOfertaProductoRequest() {
-        }
-        
-        public modificarOfertaProductoRequest(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
-            this.ofertaProducto = ofertaProducto;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarOfertaProductoResponse {
-        
-        public modificarOfertaProductoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarOfertaProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarOfertaProductoRequest() {
-        }
-        
-        public eliminarOfertaProductoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarOfertaProductoResponse {
-        
-        public eliminarOfertaProductoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class obtenerOfertaProductoRequest {
         
@@ -191,28 +135,28 @@ namespace SushiApp.wsOfertaProducto {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarOfertaProductoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarOfertaProductoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto;
+        public int id;
         
-        public agregarOfertaProductoRequest() {
+        public eliminarOfertaProductoRequest() {
         }
         
-        public agregarOfertaProductoRequest(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
-            this.ofertaProducto = ofertaProducto;
+        public eliminarOfertaProductoRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarOfertaProductoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarOfertaProductoResponse {
         
-        public agregarOfertaProductoResponse() {
+        public eliminarOfertaProductoResponse() {
         }
     }
     
@@ -252,6 +196,62 @@ namespace SushiApp.wsOfertaProducto {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarOfertaProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto;
+        
+        public agregarOfertaProductoRequest() {
+        }
+        
+        public agregarOfertaProductoRequest(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
+            this.ofertaProducto = ofertaProducto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarOfertaProductoResponse {
+        
+        public agregarOfertaProductoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarOfertaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarOfertaProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto;
+        
+        public modificarOfertaProductoRequest() {
+        }
+        
+        public modificarOfertaProductoRequest(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
+            this.ofertaProducto = ofertaProducto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarOfertaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarOfertaProductoResponse {
+        
+        public modificarOfertaProductoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceOfertaProductoChannel : SushiApp.wsOfertaProducto.ServiceOfertaProducto, System.ServiceModel.IClientChannel {
     }
@@ -280,25 +280,24 @@ namespace SushiApp.wsOfertaProducto {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsOfertaProducto.modificarOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.modificarOfertaProducto(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request) {
-            return base.Channel.modificarOfertaProducto(request);
+        SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.obtenerOfertaProducto(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request) {
+            return base.Channel.obtenerOfertaProducto(request);
         }
         
-        public void modificarOfertaProducto(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
-            SushiApp.wsOfertaProducto.modificarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.modificarOfertaProductoRequest();
-            inValue.ofertaProducto = ofertaProducto;
-            SushiApp.wsOfertaProducto.modificarOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).modificarOfertaProducto(inValue);
+        public SushiApp.wsOfertaProducto.ofertaProducto[] obtenerOfertaProducto() {
+            SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest();
+            SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).obtenerOfertaProducto(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request) {
-            return base.Channel.modificarOfertaProductoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.obtenerOfertaProductoAsync(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request) {
+            return base.Channel.obtenerOfertaProductoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
-            SushiApp.wsOfertaProducto.modificarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.modificarOfertaProductoRequest();
-            inValue.ofertaProducto = ofertaProducto;
-            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).modificarOfertaProductoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> obtenerOfertaProductoAsync() {
+            SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest();
+            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).obtenerOfertaProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -324,24 +323,26 @@ namespace SushiApp.wsOfertaProducto {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.obtenerOfertaProducto(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request) {
-            return base.Channel.obtenerOfertaProducto(request);
+        SushiApp.wsOfertaProducto.buscarOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.buscarOfertaProducto(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request) {
+            return base.Channel.buscarOfertaProducto(request);
         }
         
-        public SushiApp.wsOfertaProducto.ofertaProducto[] obtenerOfertaProducto() {
-            SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest();
-            SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).obtenerOfertaProducto(inValue);
+        public SushiApp.wsOfertaProducto.ofertaProducto buscarOfertaProducto(int id) {
+            SushiApp.wsOfertaProducto.buscarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.buscarOfertaProductoRequest();
+            inValue.id = id;
+            SushiApp.wsOfertaProducto.buscarOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).buscarOfertaProducto(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.obtenerOfertaProductoAsync(SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest request) {
-            return base.Channel.obtenerOfertaProductoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.buscarOfertaProductoAsync(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request) {
+            return base.Channel.buscarOfertaProductoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.obtenerOfertaProductoResponse> obtenerOfertaProductoAsync() {
-            SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.obtenerOfertaProductoRequest();
-            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).obtenerOfertaProductoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> buscarOfertaProductoAsync(int id) {
+            SushiApp.wsOfertaProducto.buscarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.buscarOfertaProductoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).buscarOfertaProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -367,26 +368,25 @@ namespace SushiApp.wsOfertaProducto {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsOfertaProducto.buscarOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.buscarOfertaProducto(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request) {
-            return base.Channel.buscarOfertaProducto(request);
+        SushiApp.wsOfertaProducto.modificarOfertaProductoResponse SushiApp.wsOfertaProducto.ServiceOfertaProducto.modificarOfertaProducto(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request) {
+            return base.Channel.modificarOfertaProducto(request);
         }
         
-        public SushiApp.wsOfertaProducto.ofertaProducto buscarOfertaProducto(int id) {
-            SushiApp.wsOfertaProducto.buscarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.buscarOfertaProductoRequest();
-            inValue.id = id;
-            SushiApp.wsOfertaProducto.buscarOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).buscarOfertaProducto(inValue);
-            return retVal.@return;
+        public void modificarOfertaProducto(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
+            SushiApp.wsOfertaProducto.modificarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.modificarOfertaProductoRequest();
+            inValue.ofertaProducto = ofertaProducto;
+            SushiApp.wsOfertaProducto.modificarOfertaProductoResponse retVal = ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).modificarOfertaProducto(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.buscarOfertaProductoAsync(SushiApp.wsOfertaProducto.buscarOfertaProductoRequest request) {
-            return base.Channel.buscarOfertaProductoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> SushiApp.wsOfertaProducto.ServiceOfertaProducto.modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.modificarOfertaProductoRequest request) {
+            return base.Channel.modificarOfertaProductoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.buscarOfertaProductoResponse> buscarOfertaProductoAsync(int id) {
-            SushiApp.wsOfertaProducto.buscarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.buscarOfertaProductoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).buscarOfertaProductoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsOfertaProducto.modificarOfertaProductoResponse> modificarOfertaProductoAsync(SushiApp.wsOfertaProducto.ofertaProducto ofertaProducto) {
+            SushiApp.wsOfertaProducto.modificarOfertaProductoRequest inValue = new SushiApp.wsOfertaProducto.modificarOfertaProductoRequest();
+            inValue.ofertaProducto = ofertaProducto;
+            return ((SushiApp.wsOfertaProducto.ServiceOfertaProducto)(this)).modificarOfertaProductoAsync(inValue);
         }
     }
 }

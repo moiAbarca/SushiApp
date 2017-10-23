@@ -42,7 +42,7 @@
 
                                             <p class="lead">Aun no estás registrado?</p>
                                             <p>Con tu registro podrás acceder a promociones especiales y excelentes descuentos! Tan solo te tomará un minuto!</p>
-                                            <form action="Checkout2.aspx" method="post">
+                                            <div>
                                                 <p class="text-muted">Si tienes alguna pregunta, por favor contáctate con nosotros<a href="Contacto.aspx"></a>.</p>
 
                                                 <hr>
@@ -69,9 +69,9 @@
                                                 </div>
 
                                                 <div class="text-center">
-                                                    <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-template-main" Text="Registrar" />
+                                                    <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-template-main" Text="Registrar" OnClick="btnRegistrar_Click" />
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -86,7 +86,7 @@
 
                                             <hr>
 
-                                            <form action="Checkout2.aspx" method="post">
+                                            <div>
                                                 <div class="form-group">
                                                     <asp:Label ID="lblEmailLogin" runat="server" Text="Email"></asp:Label>
                                                     <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control"></asp:TextBox>
@@ -96,9 +96,9 @@
                                                     <asp:TextBox ID="txtPasswordLogin" runat="server" CssClass="form-control"></asp:TextBox>
                                                 </div>
                                                 <div class="text-center">
-                                                    <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-template-main" Text="Ingresar" />
+                                                    <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-template-main" Text="Ingresar" OnClick="btnIngresar_Click" />
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
 

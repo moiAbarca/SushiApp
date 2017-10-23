@@ -15,13 +15,14 @@ namespace SushiApp.wsPedidoDetalle {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsPedidoDetalle.ServicePedidoDetalle")]
     public interface ServicePedidoDetalle {
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse eliminarPedidoDetalle(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse obtenerPedidoDetalle(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> eliminarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> obtenerPedidoDetalleAsync(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request);
         
         // CODEGEN: El parámetro 'pedidoDetalle' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleResponse")]
@@ -30,6 +31,14 @@ namespace SushiApp.wsPedidoDetalle {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.modificarPedidoDetalleResponse> modificarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.modificarPedidoDetalleRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse eliminarPedidoDetalle(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> eliminarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleResponse")]
@@ -47,43 +56,6 @@ namespace SushiApp.wsPedidoDetalle {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.agregarPedidoDetalleResponse> agregarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.agregarPedidoDetalleRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse obtenerPedidoDetalle(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest", ReplyAction="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> obtenerPedidoDetalleAsync(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoDetalle", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPedidoDetalleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarPedidoDetalleRequest() {
-        }
-        
-        public eliminarPedidoDetalleRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoDetalleResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPedidoDetalleResponse {
-        
-        public eliminarPedidoDetalleResponse() {
-        }
     }
     
     /// <comentarios/>
@@ -191,6 +163,34 @@ namespace SushiApp.wsPedidoDetalle {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPedidoDetalle", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPedidoDetalleRequest {
+        
+        public obtenerPedidoDetalleRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPedidoDetalleResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPedidoDetalleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPedidoDetalle.pedidoDetalle[] @return;
+        
+        public obtenerPedidoDetalleResponse() {
+        }
+        
+        public obtenerPedidoDetalleResponse(SushiApp.wsPedidoDetalle.pedidoDetalle[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPedidoDetalle", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class modificarPedidoDetalleRequest {
         
@@ -213,6 +213,34 @@ namespace SushiApp.wsPedidoDetalle {
     public partial class modificarPedidoDetalleResponse {
         
         public modificarPedidoDetalleResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoDetalle", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPedidoDetalleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarPedidoDetalleRequest() {
+        }
+        
+        public eliminarPedidoDetalleRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoDetalleResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPedidoDetalleResponse {
+        
+        public eliminarPedidoDetalleResponse() {
         }
     }
     
@@ -280,34 +308,6 @@ namespace SushiApp.wsPedidoDetalle {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPedidoDetalle", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPedidoDetalleRequest {
-        
-        public obtenerPedidoDetalleRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPedidoDetalleResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPedidoDetalleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPedidoDetalle.pedidoDetalle[] @return;
-        
-        public obtenerPedidoDetalleResponse() {
-        }
-        
-        public obtenerPedidoDetalleResponse(SushiApp.wsPedidoDetalle.pedidoDetalle[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicePedidoDetalleChannel : SushiApp.wsPedidoDetalle.ServicePedidoDetalle, System.ServiceModel.IClientChannel {
     }
@@ -336,25 +336,24 @@ namespace SushiApp.wsPedidoDetalle {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse SushiApp.wsPedidoDetalle.ServicePedidoDetalle.eliminarPedidoDetalle(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request) {
-            return base.Channel.eliminarPedidoDetalle(request);
+        SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse SushiApp.wsPedidoDetalle.ServicePedidoDetalle.obtenerPedidoDetalle(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request) {
+            return base.Channel.obtenerPedidoDetalle(request);
         }
         
-        public void eliminarPedidoDetalle(int id) {
-            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest();
-            inValue.id = id;
-            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse retVal = ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).eliminarPedidoDetalle(inValue);
+        public SushiApp.wsPedidoDetalle.pedidoDetalle[] obtenerPedidoDetalle() {
+            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest();
+            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse retVal = ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).obtenerPedidoDetalle(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> SushiApp.wsPedidoDetalle.ServicePedidoDetalle.eliminarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request) {
-            return base.Channel.eliminarPedidoDetalleAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> SushiApp.wsPedidoDetalle.ServicePedidoDetalle.obtenerPedidoDetalleAsync(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request) {
+            return base.Channel.obtenerPedidoDetalleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> eliminarPedidoDetalleAsync(int id) {
-            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest();
-            inValue.id = id;
-            return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).eliminarPedidoDetalleAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> obtenerPedidoDetalleAsync() {
+            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest();
+            return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).obtenerPedidoDetalleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -377,6 +376,28 @@ namespace SushiApp.wsPedidoDetalle {
             SushiApp.wsPedidoDetalle.modificarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.modificarPedidoDetalleRequest();
             inValue.pedidoDetalle = pedidoDetalle;
             return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).modificarPedidoDetalleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse SushiApp.wsPedidoDetalle.ServicePedidoDetalle.eliminarPedidoDetalle(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request) {
+            return base.Channel.eliminarPedidoDetalle(request);
+        }
+        
+        public void eliminarPedidoDetalle(int id) {
+            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest();
+            inValue.id = id;
+            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse retVal = ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).eliminarPedidoDetalle(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> SushiApp.wsPedidoDetalle.ServicePedidoDetalle.eliminarPedidoDetalleAsync(SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest request) {
+            return base.Channel.eliminarPedidoDetalleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.eliminarPedidoDetalleResponse> eliminarPedidoDetalleAsync(int id) {
+            SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.eliminarPedidoDetalleRequest();
+            inValue.id = id;
+            return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).eliminarPedidoDetalleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -422,27 +443,6 @@ namespace SushiApp.wsPedidoDetalle {
             SushiApp.wsPedidoDetalle.agregarPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.agregarPedidoDetalleRequest();
             inValue.pedidoDetalle = pedidoDetalle;
             return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).agregarPedidoDetalleAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse SushiApp.wsPedidoDetalle.ServicePedidoDetalle.obtenerPedidoDetalle(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request) {
-            return base.Channel.obtenerPedidoDetalle(request);
-        }
-        
-        public SushiApp.wsPedidoDetalle.pedidoDetalle[] obtenerPedidoDetalle() {
-            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest();
-            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse retVal = ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).obtenerPedidoDetalle(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> SushiApp.wsPedidoDetalle.ServicePedidoDetalle.obtenerPedidoDetalleAsync(SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest request) {
-            return base.Channel.obtenerPedidoDetalleAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPedidoDetalle.obtenerPedidoDetalleResponse> obtenerPedidoDetalleAsync() {
-            SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest inValue = new SushiApp.wsPedidoDetalle.obtenerPedidoDetalleRequest();
-            return ((SushiApp.wsPedidoDetalle.ServicePedidoDetalle)(this)).obtenerPedidoDetalleAsync(inValue);
         }
     }
 }

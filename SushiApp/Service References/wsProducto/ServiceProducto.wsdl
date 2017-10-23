@@ -11,12 +11,6 @@
   <message name="modificarProductoResponse">
     <part name="parameters" element="tns:modificarProductoResponse" />
   </message>
-  <message name="eliminarProducto">
-    <part name="parameters" element="tns:eliminarProducto" />
-  </message>
-  <message name="eliminarProductoResponse">
-    <part name="parameters" element="tns:eliminarProductoResponse" />
-  </message>
   <message name="obtenerProducto">
     <part name="parameters" element="tns:obtenerProducto" />
   </message>
@@ -29,6 +23,12 @@
   <message name="buscarProductoResponse">
     <part name="parameters" element="tns:buscarProductoResponse" />
   </message>
+  <message name="eliminarProducto">
+    <part name="parameters" element="tns:eliminarProducto" />
+  </message>
+  <message name="eliminarProductoResponse">
+    <part name="parameters" element="tns:eliminarProductoResponse" />
+  </message>
   <message name="agregarProducto">
     <part name="parameters" element="tns:agregarProducto" />
   </message>
@@ -40,10 +40,6 @@
       <input wsam:Action="http://WebService/ServiceProducto/modificarProductoRequest" message="tns:modificarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/modificarProductoResponse" message="tns:modificarProductoResponse" />
     </operation>
-    <operation name="eliminarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
-    </operation>
     <operation name="obtenerProducto">
       <input wsam:Action="http://WebService/ServiceProducto/obtenerProductoRequest" message="tns:obtenerProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/obtenerProductoResponse" message="tns:obtenerProductoResponse" />
@@ -51,6 +47,10 @@
     <operation name="buscarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/buscarProductoRequest" message="tns:buscarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/buscarProductoResponse" message="tns:buscarProductoResponse" />
+    </operation>
+    <operation name="eliminarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
     </operation>
     <operation name="agregarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
@@ -68,15 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="obtenerProducto">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +78,15 @@
       </output>
     </operation>
     <operation name="buscarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

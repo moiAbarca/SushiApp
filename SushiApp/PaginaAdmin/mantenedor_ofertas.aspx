@@ -25,7 +25,7 @@
     <!-- FIN DE BREADCRUMB -->
 
     <!-- INICIO OFERTAS -->
-    <form class="m-t" role="form">
+    <div class="m-t" >
         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
             <div class="row">
                 <div class="col-lg-12">
@@ -101,6 +101,6 @@
                 </div>
             </div>
         </div>
-    </form>
+    </div>
     <!-- FIN OFERTAS -->
 </asp:Content>

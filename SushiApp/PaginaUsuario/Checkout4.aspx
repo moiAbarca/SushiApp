@@ -15,7 +15,7 @@
 
                     <div class="box">
 
-                        <form method="post" action="#">
+                        <div>
 
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="Checkout1.aspx"><i class="fa fa-user"></i>
@@ -106,7 +106,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
 
                     </div>
                     <!-- /.box -->
