@@ -16,14 +16,16 @@ namespace SushiApp.PaginaAdmin
             string fecha = string.Empty;
             var listadto = clienteClient.obtenerCliente();
             var nuevolistadto = (from o in listadto
+                                 orderby o.clienteId
                                           select new
                                           {
                                               Id = o.clienteId,
                                               Nombre = o.nombre,
                                               Apellido = o.apellido,
                                               Email = o.email,
-                                              Fecha_Nacimiento = o.fechaNacimiento
-        }).ToList();
+                                              Rut = o.rut,
+                                              Fecha_Nacimiento = o.fechaNacimiento                                              
+                                            }).ToList();
 
             gvCliente.DataSource = nuevolistadto;            
             gvCliente.DataBind();
