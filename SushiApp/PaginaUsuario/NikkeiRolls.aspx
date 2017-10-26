@@ -47,6 +47,444 @@
 
         <!-- *** LEFT COLUMN END *** -->
 
+        <!-- *** RIGHT COLUMN ***
+			_________________________________________________________ -->
+
+        <div class="col-sm-9">
+
+            <p class="text-muted lead"></p>
+
+            <div class="row products">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalSamuraiRoll">
+                                <img src="img/ImagenesSushi/ID10_Samurai_Roll.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Samurai Roll</h4>
+                            <p class="price">$4.200</p>
+                            <asp:Button ID="btnSamuraiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalThaiRoll" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Samurai Roll</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID10_Samurai_Roll.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcioMdlSamuraiRoll" runat="server" Text="Pollo furai, queso crema, cilantro, envuelto en palta, espolvoreado con maní, salsa de curry y toques de limón sutíl"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlSamuraiRoll" runat="server" Text="$4.200" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalTeriyakiRoll">
+                                <img src="img/ImagenesSushi/ID2_Teriyaki_Roll.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Teriyaki Roll</h4>
+                            <p class="price">$4.500</p>
+                            <asp:Button ID="btnTeriyakiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalTeriyakiRoll" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Teriyaki Roll</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID2_Teriyaki_Roll.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlTeriyakiRoll" runat="server" Text="Pollo furai, palta, cebollín, envuelto en palta, cubierto en salsa huancaína, teriyaki y espolvoreado con crispys de masa tempura"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlTeriyakiRoll" runat="server" Text="$4.500" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalEbiNikkei">
+                                <img src="img/ImagenesSushi/ID11_Ebi_Nikkei.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Ebi Nikkei</h4>
+                            <p class="price">$4.900</p>
+                            <asp:Button ID="btnEbiNikkeiAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalEbiNikkei" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Ebi Nikkei</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID11_Ebi_Nikkei.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcioMdlEbiNikkei" runat="server" Text="Salmón, queso crema, cebollín, envuelto en palta o crispys cubierto con tartar de camarones furai, salsa acevichada clásica y toques de chichimi"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlEbiNikkei" runat="server" Text="$4.900" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+                <!-- /.col-md-4 -->
+            </div>
+            <!-- /.products row 1-->
+<%--HAsta aqui he avanzado--%>
+            <div class="row products">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalSpicyTempura">
+                                <img src="img/ImagenesSushi/ID4_Spicy_Tempura.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Spicy Tempura</h4>
+                            <p class="price">$4.100</p>
+                            <asp:Button ID="btnSpicyTempuraAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalSpicyTempura" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Spicy Tempura</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID4_Spicy_Tempura.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlSpicyTempura" runat="server" Text="Camarón tempura, salsa spicy, queso crema, cebollín envuelto en palta, salmón, mixto o crispys"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlSpicyTempura" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalAvocadoTempura">
+                                <img src="img/ImagenesSushi/ID5_Avocado_Tempura.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Avocado Tempura</h4>
+                            <p class="price">$4.100</p>
+                            <asp:Button ID="btnAvocadoTempuraAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalAvocadoTempura" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Avocado Tempura</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID5_Avocado_Tempura.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlAvocadoTempura" runat="server" Text="Camarón tempura, queso crema, palta, envuelto en palta, salmón, mixto o crispys"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlAvocadoTempura" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalRainbowSpecial">
+                                <img src="img/ImagenesSushi/ID6_Rainbow_Especial.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Rainbow Special</h4>
+                            <p class="price">$4.200</p>
+                            <asp:Button ID="btnRainbowSpecialAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalRainbowSpecial" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Rainbow Special</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID6_Rainbow_Especial.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlRainbowSpecial" runat="server" Text="Salmón, queso crema, palta cubierto en mixto de atún y palta"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblPrecioMdlRainbowSpecial" runat="server" Text="$4.200" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+                <!-- /.col-md-4 -->
+            </div>
+            <!-- /.products row 2-->
+
+            <div class="row products">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalTokioWhite">
+                                <img src="img/ImagenesSushi/ID7_Tokio_White.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Tokio White</h4>
+                            <p class="price">$4.100</p>
+                            <asp:Button ID="btnTokioWhiteAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalTokioWhite" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Tokio White</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID7_Tokio_White.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblTokioWhiteDescripcion" runat="server" Text="Salmón ahumado, palta, envuelto en queso crema y ciboulette"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblTokioWhitePrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalFuraiWhite">
+                                <img src="img/ImagenesSushi/ID8_Furai_White.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Furai White</h4>
+                            <p class="price">$4.100</p>
+                            <asp:Button ID="btnFuraiWhiteAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalFuraiWhite" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Furai White</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID8_Furai_White.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblFuraiWhiteDescripción" runat="server" Text="Camarón furai, palta y cebollín envuelto en queso crema y salsa unagui"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblFuraiWhitePrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalToriCrispy">
+                                <img src="img/ImagenesSushi/ID9_Tori_Crispy.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Tori Crispy</h4>
+                            <p class="price">$4.100</p>
+                            <asp:Button ID="btnToriCrispyAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalToriCrispy" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Tori Crispy</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID9_Tori_Crispy.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblToriCrispyDescripcion" runat="server" Text="Pollo furai, queso crema, cebollín, envuelto en palta y cubierto de papas hilo"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblToriCrispyPrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+                <!-- /.col-md-4 -->
+            </div>
+            <!-- /.products row 2-->
+
+            <div class="row">
+
+                <div class="col-md-12 banner">
+                    <a href="#">
+                        <img src="img/Banner50desctoUsuario.gif" alt="" class="img-responsive">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="pages">
+
+                <p class="loadMore">
+                    <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i>Load more</a>
+                </p>
+
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a>
+                    </li>
+                    <li class="active"><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- /.col-md-9 -->
+
+        <!-- *** RIGHT COLUMN END *** -->
+
 
     </div>
 </asp:Content>
