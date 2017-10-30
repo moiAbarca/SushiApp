@@ -149,6 +149,7 @@
     <Content Include="PaginaAdmin\LESS\top_navigation.less" />
     <Content Include="PaginaAdmin\LESS\typography.less" />
     <Content Include="PaginaAdmin\LESS\variables.less" />
+    <Content Include="PaginaAdmin\mantendor_Administrador.aspx" />
     <Content Include="PaginaAdmin\mantenedor_categoria.aspx" />
     <Content Include="PaginaAdmin\mantenedor_categoria_editar.aspx" />
     <Content Include="PaginaAdmin\mantenedor_clientes.aspx" />
@@ -1417,6 +1418,13 @@
     </Compile>
     <Compile Include="PaginaAdmin\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\mantendor_Administrador.aspx.cs">
+      <DependentUpon>mantendor_Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\mantendor_Administrador.aspx.designer.cs">
+      <DependentUpon>mantendor_Administrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaAdmin\mantenedor_categoria.aspx.cs">
       <DependentUpon>mantenedor_categoria.aspx</DependentUpon>
