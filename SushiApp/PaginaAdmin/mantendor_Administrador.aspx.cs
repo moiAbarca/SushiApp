@@ -14,6 +14,7 @@ namespace SushiApp.PaginaAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarGVAdministrador();
+            //txtId.Text = "Ingrese Id";
         }
 
         public void cargarGVAdministrador()
@@ -80,6 +81,8 @@ namespace SushiApp.PaginaAdmin
                         auxAdministrador.apellidoAdmin = this.txtApellido.Text;
                         auxAdministrador.corrreoAdmin = this.txtEmail.Text;
                         auxAdministrador.telefonoAdmin = this.txtTelefono.Text;
+                        //falta llenar la tabla de administrador y averiguar si el 
+                        //id=1 es de administrador
                         auxAdministrador.usuarioId = 1;
 
                         administradorClient.agregarAdministrador(auxAdministrador);
@@ -126,6 +129,60 @@ namespace SushiApp.PaginaAdmin
             {
                 Response.Write("<script>alert('No se pudo buscar');</script>");
                 return;
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                administradorClient.eliminarAdministrador(Convert.ToInt32(txtId.Text));
+                Response.Write("<script>alert('Eliminado Administrador');</script>");
+                cargarGVAdministrador();
+                limpiar();
+            }
+            catch (Exception)
+            {
+                Response.Write("<script>alert('No se pudo eliminar');</script>");
+                return;
+            }
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtId.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || txtTelefono.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0)
+                {
+                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    return;
+                }
+                else
+                {
+                    int id2 = administradorClient.buscarAdministrador(Convert.ToInt32(this.txtId.Text)).administradorId;
+                    if (id2 != 0)
+                    {
+                        auxAdministrador.administradorId = Convert.ToInt32(this.txtId.Text);
+                        auxAdministrador.nombreAdmin = this.txtNombre.Text;
+                        auxAdministrador.apellidoAdmin = this.txtApellido.Text;
+                        auxAdministrador.corrreoAdmin = this.txtEmail.Text;
+                        auxAdministrador.telefonoAdmin = this.txtTelefono.Text;
+                        auxAdministrador.usuarioId = 1;
+
+                        administradorClient.modificarAdministrador(auxAdministrador);
+                        limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('No se pudo actualizar Cargo');</script>");
+                        return;
+                    }
+                }
+                cargarGVAdministrador();
+            }
+            catch (Exception)
+            {
+                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
             }
         }
     }

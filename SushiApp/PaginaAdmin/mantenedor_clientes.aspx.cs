@@ -11,8 +11,7 @@ namespace SushiApp.PaginaAdmin
     {
         wsCliente.ServiceClienteClient clienteClient = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
-        wsAdministrador.ServiceAdministradorClient administradorClient = new wsAdministrador.ServiceAdministradorClient();
-        wsAdministrador.administrador auxAdministrador = new wsAdministrador.administrador();
+        
         protected void Page_Load(object sender, EventArgs e)
         {            
             cargarGVCliente();           
@@ -59,8 +58,8 @@ namespace SushiApp.PaginaAdmin
                 txtApellido.Text = auxCliente.apellido;
                 txtDireccion.Text = auxCliente.direccion;
                 txtSexo.Text = auxCliente.sexo;
-                txtTelefono.Text = Convert.ToString(auxCliente.telefono);
-                txtFechaNacimiento.Text = auxCliente.fechaNacimiento;
+                calFechaNacimiento.SelectedDate = Convert.ToDateTime(auxCliente.fechaNacimiento);
+                txtTelefono.Text = Convert.ToString(auxCliente.telefono);                
             }
             catch (Exception)
             {
@@ -73,6 +72,128 @@ namespace SushiApp.PaginaAdmin
         protected void btnBuscarAdministrador_Click(object sender, EventArgs e)
         {
             
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtId.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtTelefono.Text.Trim().Length == 0)
+                {
+                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    return;
+                }
+                else
+                {
+                    int id2 = clienteClient.buscarCliente(Convert.ToInt32(this.txtId.Text)).clienteId;
+                    if (id2 == 0)
+                    {
+                        auxCliente.clienteId = Convert.ToInt32(this.txtId.Text);
+                        auxCliente.nombre = this.txtNombre.Text;
+                        auxCliente.apellido = this.txtApellido.Text;
+                        auxCliente.email = this.txtEmail.Text;
+                        auxCliente.telefono = Convert.ToInt32(this.txtTelefono.Text);
+                        auxCliente.direccion = txtDireccion.Text;
+                        auxCliente.rut = txtRut.Text;
+                        auxCliente.sexo = txtSexo.Text;
+                        auxCliente.fechaNacimiento = calFechaNacimiento.SelectedDate.ToString("yyyyMMdd");
+
+                        auxCliente.usuarioId = 1;
+                        auxCliente.comunaId = 1;
+                        
+                        clienteClient.agregarCliente(auxCliente);
+                        limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Ya existe');</script>");
+                        return;
+                    }
+                }
+                cargarGVCliente();
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                clienteClient.eliminarCliente(Convert.ToInt32(txtId.Text));
+                Response.Write("<script>alert('Eliminado Administrador');</script>");
+                cargarGVCliente();
+                limpiar();
+            }
+            catch (Exception)
+            {
+                Response.Write("<script>alert('No se pudo eliminar');</script>");
+                
+            }
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtId.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtApellido.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtTelefono.Text.Trim().Length == 0)
+                {
+                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    return;
+                }
+                else
+                {
+                    int id2 = clienteClient.buscarCliente(Convert.ToInt32(this.txtId.Text)).clienteId;
+                    if (id2 != 0)
+                    {
+                        auxCliente.clienteId = Convert.ToInt32(this.txtId.Text);
+                        auxCliente.nombre = this.txtNombre.Text;
+                        auxCliente.apellido = this.txtApellido.Text;
+                        auxCliente.email = this.txtEmail.Text;
+                        auxCliente.telefono = Convert.ToInt32(this.txtTelefono.Text);
+                        auxCliente.direccion = txtDireccion.Text;
+                        auxCliente.rut = txtRut.Text;
+                        auxCliente.sexo = txtSexo.Text;
+                        auxCliente.fechaNacimiento = calFechaNacimiento.SelectedDate.ToString("yyyyMMdd");
+
+                        auxCliente.usuarioId = 1;
+                        auxCliente.comunaId = 1;
+
+                        clienteClient.modificarCliente(auxCliente);
+                        limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Ya existe');</script>");
+                        return;
+                    }
+                }
+                cargarGVCliente();
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+            }
+        }
+
+        private bool limpiar()
+        {
+            bool cad = true;
+            txtId.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtRut.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtSexo.Text = string.Empty;
+            calFechaNacimiento.SelectedDates.Clear();
+            this.txtId.Focus();
+            return cad;
         }
     }
 }

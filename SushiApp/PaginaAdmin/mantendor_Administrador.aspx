@@ -26,10 +26,10 @@
     <div class="m-t" >
         <div class="wrapper wrapper-content  animated fadeInRight">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-10">
                     <div class="ibox">
                         <div class="ibox-content">
-                            <h2>Clientes</h2>
+                            <h2>Administradores</h2>
 
                             
 
@@ -41,7 +41,7 @@
                                             <div class="table-responsive">
                                                 <div class="input-group">
                                                     <%--<button type="button" class="btn btn-primary btn-sm btn-block">Enviar mensaje</button>--%>
-                                <asp:TextBox CssClass="input form-control" ID="txtId" runat="server"></asp:TextBox>
+                                <asp:TextBox CssClass="input form-control" placeholder="Ingrese Id" ID="txtId" runat="server"></asp:TextBox>
                                 <span class="input-group-btn">
                                                     <%--<button type="button" class="btn btn-primary btn-sm btn-block">Enviar mensaje</button>--%>
                                     <asp:Button CssClass="btn btn btn-primary" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"  />
@@ -52,8 +52,8 @@
                                         <div class="full-height-scroll">
                                             <br />
                                             <asp:Button CssClass="btn btn btn-primary" ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click"  />
-                                            &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="btnEliminar" runat="server" Text="Eliminar"  />
-                                            &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="btnEditar" runat="server" Text="Editar"  />
+                                            &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click"  />
+                                            &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click"  />
                                             &nbsp;
                                             <br />
                                             <br />
