@@ -26,10 +26,7 @@
 
     <div class="m-t" >
         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="ibox">
-                        <div class="ibox-content">
+            
             <!-- INICIO FILTROS DE BUSQUEDA -->
             <div class="ibox-content m-b-sm border-bottom">
                 <!-- botones -->
@@ -99,7 +96,18 @@
             </div>
             
             <!-- FIN DE FILTROS DE BUSQUEDA -->
-                       
+                       <!-- inicio imagen-->
+                         <div class="form-group">
+                            <label class="control-label" for="price">Imagen</label> <br />                           
+                                <asp:FileUpload ID="FileUpload1" runat="server" /> 
+                                <br />
+                                <asp:Button CssClass="btn btn btn-primary" ID="btnImagen" runat="server" Text="Cargar " OnClick="btnImagen_Click" /> 
+                                <br />                                
+                                <asp:Image ID="imgFoto" runat="server"  />
+                                <br />
+                            <asp:TextBox ID="txtRuta" runat="server" Enabled="False"></asp:TextBox>
+                        </div>
+                     <!--fin imagen-->  
             
             <!--GRID VIEW DE PRODUCTOS -->
             <div class="row">
@@ -113,37 +121,7 @@
             </div>
             <!--FIN DE GRIDVIEW -->
 
-        </div>
-    </div>
-      </div>
-    </div>
-              </div>
-    </div>
-    
-
-    <!-- nuevo panel 2-->
-    <div class="col-sm-4">
-                    <div class="ibox ">
-                        <div class="ibox-content">
-                            <div class="tab-content">
-                                <div id="usuario" class="tab-pane active">                                    
-                                    <div class="client-detail">
-                                        <div class="full-height-scroll">
-
-                                            <!-- inicio imagen-->
-                                             <div class="form-group">
-                            <label class="control-label" for="price">Imagen</label>                            
-                                <asp:FileUpload ID="FileUpload1" runat="server" />  
-                                <asp:Button CssClass="btn btn btn-primary" ID="btnImagen" runat="server" Text="Cargar " OnClick="btnImagen_Click" />                                 
-                                <asp:Image ID="imgFoto" runat="server"  />
-                            <asp:TextBox ID="txtRuta" runat="server" Enabled="False"></asp:TextBox>
-                        </div>
-                                            <!--fin imagen-->                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
                 </div>
+            </div>
+
 </asp:Content>
