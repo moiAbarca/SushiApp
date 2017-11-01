@@ -50,7 +50,9 @@
                             <span class="input-group-btn">
                                 <%--<button type="button" class="btn btn btn-primary"> Buscar</button>--%>
                                 <asp:Button CssClass="btn btn btn-primary" ID="btnBuscarCategoria" runat="server" Text="Buscar" OnClick="btnBuscarCategoria_Click" />
-                                <asp:Button ID="btnAgregarCategoria" CssClass="btn btn btn-primary" runat="server" Text="Agregar" OnClick="btnAgregarCategoria_Click" />
+                                &nbsp;&nbsp;<asp:Button ID="btnAgregarCategoria" CssClass="btn btn btn-primary" runat="server" Text="Agregar" OnClick="btnAgregarCategoria_Click" />
+                                &nbsp; <asp:Button ID="btnEliminar" CssClass="btn btn btn-primary" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                                &nbsp;&nbsp;<asp:Button ID="btnEditar" CssClass="btn btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
                             </span>
                         </div>
                     </div>
@@ -63,35 +65,6 @@
                 <div class="col-lg-12">
                     <div class="ibox">
                         <div class="ibox-content">
-
-                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
-
-                                <thead>
-                                    <tr>
-                                        <th data-toggle="true">ID Categoria</th>
-                                        <th data-toggle="true">Categoria</th>
-                                        <th class="text-right" data-sort-ignore="true">Acción</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>CAA-001
-                                        </td>
-                                        <td>Hand Roll
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="btn-group">
-
-                                                <%--<button class="btn-white btn btn-xs"><a href="mantenedor_categoria_editar.aspx">Editar</a></button>--%>
-                                                <asp:Button CssClass="btn-white btn btn-xs" ID="btnEditarCategoria" runat="server" Text="Editar" OnClick="btnEditarCategoria_Click" />
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-
                             <div>
 
                                 <asp:GridView ID="gv1" runat="server" CssClass="footable table table-stripped toggle-arrow-tiny">

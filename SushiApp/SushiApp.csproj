@@ -151,7 +151,6 @@
     <Content Include="PaginaAdmin\LESS\variables.less" />
     <Content Include="PaginaAdmin\mantendor_Administrador.aspx" />
     <Content Include="PaginaAdmin\mantenedor_categoria.aspx" />
-    <Content Include="PaginaAdmin\mantenedor_categoria_editar.aspx" />
     <Content Include="PaginaAdmin\mantenedor_clientes.aspx" />
     <Content Include="PaginaAdmin\mantenedor_ofertas.aspx" />
     <Content Include="PaginaAdmin\mantenedor_productos.aspx" />
@@ -1432,13 +1431,6 @@
     </Compile>
     <Compile Include="PaginaAdmin\mantenedor_categoria.aspx.designer.cs">
       <DependentUpon>mantenedor_categoria.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PaginaAdmin\mantenedor_categoria_editar.aspx.cs">
-      <DependentUpon>mantenedor_categoria_editar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaginaAdmin\mantenedor_categoria_editar.aspx.designer.cs">
-      <DependentUpon>mantenedor_categoria_editar.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaAdmin\mantenedor_clientes.aspx.cs">
       <DependentUpon>mantenedor_clientes.aspx</DependentUpon>

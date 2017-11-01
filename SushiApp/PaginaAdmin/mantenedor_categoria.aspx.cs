@@ -18,8 +18,10 @@ namespace SushiApp.PaginaAdmin
 
         public void CargaGVCategoria()
         {
-            gv1.DataSource = categoriaCliente.obtenerCategoriaProducto();
+            gv1.DataSource = categoriaCliente.obtenerCategoriaProducto();            
             gv1.DataBind();
+            gv1.HeaderRow.Cells[0].Text = "Id";
+            gv1.HeaderRow.Cells[1].Text = "Nombre";
 
         }
 
@@ -128,6 +130,77 @@ namespace SushiApp.PaginaAdmin
                 Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
             }
             
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    int id2 = categoriaCliente.buscarCategoriaProducto(Convert.ToInt32(this.txtIdCategoria.Text)).categoriaProductoId;
+                    if (id2 == 0)
+                    {
+                        Response.Write("<script>alert('No se pudo eliminar');</script>");
+                        return;
+                    }
+
+                    else
+                    {
+                        categoriaCliente.eliminarCategoriaProducto(Convert.ToInt32(txtIdCategoria.Text));
+                        limpiar();
+                        Response.Write("<script>alert('Eliminado correctamente');</script>");
+                        this.txtIdCategoria.Focus();
+                    }
+                    CargaGVCategoria();
+                }
+                catch (Exception)
+                {
+                    Response.Write("<script>alert('No se pudo eliminar');</script>");
+
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+            }
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtIdCategoria.Text.Trim().Length == 0 || txtNombreCategoria.Text.Trim().Length == 0 )
+                {
+                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    return;
+                }
+                else
+                {
+                    int id2 = categoriaCliente.buscarCategoriaProducto(Convert.ToInt32(this.txtIdCategoria.Text)).categoriaProductoId;
+                    if (id2 != 0)
+                    {
+                        auxCategoria.categoriaProductoId = Convert.ToInt32(this.txtIdCategoria.Text);
+                        auxCategoria.nombreCategoria = this.txtNombreCategoria.Text;
+                        
+                        categoriaCliente.modificarCategoriaProducto(auxCategoria);
+                        limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Ya existe');</script>");
+                        return;
+                    }
+                }
+                CargaGVCategoria();
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+            }
         }
     }
 }

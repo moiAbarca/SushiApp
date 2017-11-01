@@ -163,6 +163,7 @@ namespace SushiApp.PaginaAdmin
                         auxCliente.comunaId = 1;
 
                         clienteClient.modificarCliente(auxCliente);
+                        Response.Write("<script>alert('Modificado correctamente');</script>");
                         limpiar();
                     }
                     else
