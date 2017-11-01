@@ -76,13 +76,13 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Button btnDragonRollAgrega;
         
         /// <summary>
-        /// Control lblDescripcioMdlDragonRoll.
+        /// Control lblDescripcionMdlDragonRoll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcioMdlDragonRoll;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlDragonRoll;
         
         /// <summary>
         /// Control lblValorMdlDragonRoll.
@@ -184,22 +184,22 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Button btnTokioWhiteAgrega;
         
         /// <summary>
-        /// Control lblTokioWhiteDescripcion.
+        /// Control lblDescripcionMdlTokioWhite.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTokioWhiteDescripcion;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlTokioWhite;
         
         /// <summary>
-        /// Control lblTokioWhitePrecio.
+        /// Control lblPrecioMdlTokioWhite.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTokioWhitePrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlTokioWhite;
         
         /// <summary>
         /// Control btnFuraiWhiteAgrega.
@@ -211,22 +211,22 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Button btnFuraiWhiteAgrega;
         
         /// <summary>
-        /// Control lblFuraiWhiteDescripción.
+        /// Control lblDescripciónMdlFuraiWhite.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuraiWhiteDescripción;
+        protected global::System.Web.UI.WebControls.Label lblDescripciónMdlFuraiWhite;
         
         /// <summary>
-        /// Control lblFuraiWhitePrecio.
+        /// Control lblPrecioMdlFuraiWhite.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuraiWhitePrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlFuraiWhite;
         
         /// <summary>
         /// Control btnToriCrispyAgrega.
@@ -238,21 +238,21 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Button btnToriCrispyAgrega;
         
         /// <summary>
-        /// Control lblToriCrispyDescripcion.
+        /// Control lblDescripcionMdlToriCrispy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToriCrispyDescripcion;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlToriCrispy;
         
         /// <summary>
-        /// Control lblToriCrispyPrecio.
+        /// Control lblPrecioMdlToriCrispy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToriCrispyPrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlToriCrispy;
     }
 }

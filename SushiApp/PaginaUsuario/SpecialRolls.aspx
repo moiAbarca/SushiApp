@@ -148,7 +148,7 @@
                         </div>
                         <!-- /.image -->
                         <div class="text">
-                            <h4>Thai Roll</h4>
+                            <h4>Dragon Roll</h4>
                             <p class="price">$4.600</p>
                             <asp:Button ID="btnDragonRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
                         </div>
@@ -166,7 +166,7 @@
                                             <img src="img/ImagenesSushi/ID3_Dragon_Roll.jpg" alt="" class="img-responsive image1">
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblDescripcioMdlDragonRoll" runat="server" Text="Camarón tempura, queso crema, cebollín cubierto en mixto de palta y atún, sésamo, masago y salsa acevichada"></asp:Label>
+                                            <asp:Label ID="lblDescripcionMdlDragonRoll" runat="server" Text="Camarón tempura, queso crema, cebollín cubierto en mixto de palta y atún, sésamo, masago y salsa acevichada"></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="lblValorMdlDragonRoll" runat="server" Text="$4.600" CssClass="text-primary" Font-Size="Larger"></asp:Label>
@@ -342,10 +342,10 @@
                                             <img src="img/ImagenesSushi/ID7_Tokio_White.jpg" alt="" class="img-responsive image1">
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblTokioWhiteDescripcion" runat="server" Text="Salmón ahumado, palta, envuelto en queso crema y ciboulette"></asp:Label>
+                                            <asp:Label ID="lblDescripcionMdlTokioWhite" runat="server" Text="Salmón ahumado, palta, envuelto en queso crema y ciboulette"></asp:Label>
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblTokioWhitePrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                            <asp:Label ID="lblPrecioMdlTokioWhite" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -384,10 +384,10 @@
                                             <img src="img/ImagenesSushi/ID8_Furai_White.jpg" alt="" class="img-responsive image1">
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblFuraiWhiteDescripción" runat="server" Text="Camarón furai, palta y cebollín envuelto en queso crema y salsa unagui"></asp:Label>
+                                            <asp:Label ID="lblDescripciónMdlFuraiWhite" runat="server" Text="Camarón furai, palta y cebollín envuelto en queso crema y salsa unagui"></asp:Label>
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblFuraiWhitePrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                            <asp:Label ID="lblPrecioMdlFuraiWhite" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -426,10 +426,10 @@
                                             <img src="img/ImagenesSushi/ID9_Tori_Crispy.jpg" alt="" class="img-responsive image1">
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblToriCrispyDescripcion" runat="server" Text="Pollo furai, queso crema, cebollín, envuelto en palta y cubierto de papas hilo"></asp:Label>
+                                            <asp:Label ID="lblDescripcionMdlToriCrispy" runat="server" Text="Pollo furai, queso crema, cebollín, envuelto en palta y cubierto de papas hilo"></asp:Label>
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="lblToriCrispyPrecio" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                            <asp:Label ID="lblPrecioMdlToriCrispy" runat="server" Text="$4.100" CssClass="text-primary" Font-Size="Larger"></asp:Label>
                                         </div>
                                     </div>
                                 </div>

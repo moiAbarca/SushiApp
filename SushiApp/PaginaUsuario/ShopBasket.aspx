@@ -8,16 +8,13 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-muted lead">You currently have 3 item(s) in your cart.</p>
+                    <p class="text-muted lead">Tienes actualmente <asp:Label ID="lblProductosActuales" runat="server" Text=""></asp:Label> producto(s) en tu carrito.</p>
                 </div>
 
 
                 <div class="col-md-9 clearfix" id="basket">
 
                     <div class="box">
-
-                        <form method="post" action="Checkout1.aspx">
-
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -88,63 +85,140 @@
                                     </button>
                                 </div>
                             </div>
-
-                        </form>
-
                     </div>
                     <!-- /.box -->
 
                     <div class="row">
                         <div class="col-md-3">
                             <div class="box text-uppercase">
-                                <h3>You may also like these products</h3>
+                                <h3>Te pueden interesar estos productos</h3>
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product2.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalThaiRoll">
+                                <img src="img/ImagenesSushi/ID1_Thai_Roll.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Thai Roll</h4>
+                            <p class="price">$4.600</p>
+                            <asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
 
+                        <div class="modal fade" id="modalThaiRoll" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Thai Roll</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID1_Thai_Roll.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcioMdlThaiRoll" runat="server" Text="Pollo furai, queso crema, cilantro, envuelto en palta, espolvoreado con maní, salsa de curry y toques de limón sutíl"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlThaiRoll" runat="server" Text="$4.600" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /.product -->
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
                         </div>
 
                         <div class="col-md-3">
                             <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product3.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalTeriyakiRoll">
+                                <img src="img/ImagenesSushi/ID2_Teriyaki_Roll.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Teriyaki Roll</h4>
+                            <p class="price">$4.500</p>
+                            <asp:Button ID="btnTeriyakiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalTeriyakiRoll" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Teriyaki Roll</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID2_Teriyaki_Roll.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlTeriyakiRoll" runat="server" Text="Camarón, queso crema, cebollín envuelto en palta, cubierto con cubos de pollo teriyaki y sésamo"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlTeriyakiRoll" runat="server" Text="$4.500" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /.product -->
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
                         </div>
 
                         <div class="col-md-3">
                             <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product1.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
+                        <div class="image">
+                            <a href="#" data-toggle="modal" data-target="#modalDragonRoll">
+                                <img src="img/ImagenesSushi/ID3_Dragon_Roll.jpg" alt="" class="img-responsive image1">
+                            </a>
+                        </div>
+                        <!-- /.image -->
+                        <div class="text">
+                            <h4>Dragon Roll</h4>
+                            <p class="price">$4.600</p>
+                            <asp:Button ID="btnDragonRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                        <!-- /.text -->
+                        <!-- *** Product MODAL *** -->
+
+                        <div class="modal fade" id="modalDragonRoll" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Dragon Roll</h4>
+                                        <p>8 porciones</p>
+                                        <div class="form-group">
+                                            <img src="img/ImagenesSushi/ID3_Dragon_Roll.jpg" alt="" class="img-responsive image1">
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblDescripcionMdlDragonRoll" runat="server" Text="Camarón tempura, queso crema, cebollín cubierto en mixto de palta y atún, sésamo, masago y salsa acevichada"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="lblValorMdlDragonRoll" runat="server" Text="$4.600" CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /.product -->
+                        </div>
+
+                        <!-- *** Product MODAL END *** -->
+                    </div>
+                    <!-- /.product -->
                         </div>
 
                     </div>
@@ -190,7 +264,7 @@
                             <h4>Coupon code</h4>
                         </div>
                         <p class="text-muted">Si tiene un cupón de descuento, por favor introduzca el código aquí</p>
-                        <form>
+                     
                             <div class="input-group">
 
                                 <input type="text" class="form-control">
@@ -202,7 +276,7 @@
                                 </span>
                             </div>
                             <!-- /input-group -->
-                        </form>
+                        
                     </div>
 
                 </div>

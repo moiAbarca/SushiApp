@@ -40,33 +40,6 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Label lblValorMdlSamuraiRoll;
         
         /// <summary>
-        /// Control btnTeriyakiRollAgrega.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTeriyakiRollAgrega;
-        
-        /// <summary>
-        /// Control lblDescripcionMdlTeriyakiRoll.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlTeriyakiRoll;
-        
-        /// <summary>
-        /// Control lblValorMdlTeriyakiRoll.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValorMdlTeriyakiRoll;
-        
-        /// <summary>
         /// Control btnEbiNikkeiAgrega.
         /// </summary>
         /// <remarks>
@@ -76,13 +49,13 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Button btnEbiNikkeiAgrega;
         
         /// <summary>
-        /// Control lblDescripcioMdlEbiNikkei.
+        /// Control lblDescripcionMdlEbiNikkei.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcioMdlEbiNikkei;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlEbiNikkei;
         
         /// <summary>
         /// Control lblValorMdlEbiNikkei.
@@ -94,165 +67,192 @@ namespace SushiApp.PaginaUsuario {
         protected global::System.Web.UI.WebControls.Label lblValorMdlEbiNikkei;
         
         /// <summary>
-        /// Control btnSpicyTempuraAgrega.
+        /// Control btnCevicheRollAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSpicyTempuraAgrega;
+        protected global::System.Web.UI.WebControls.Button btnCevicheRollAgrega;
         
         /// <summary>
-        /// Control lblDescripcionMdlSpicyTempura.
+        /// Control lblDescripcionMdlCevicheRoll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlSpicyTempura;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlCevicheRoll;
         
         /// <summary>
-        /// Control lblValorMdlSpicyTempura.
+        /// Control lblValorMdlCevicheRoll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValorMdlSpicyTempura;
+        protected global::System.Web.UI.WebControls.Label lblValorMdlCevicheRoll;
         
         /// <summary>
-        /// Control btnAvocadoTempuraAgrega.
+        /// Control btnSakeNikkeiAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAvocadoTempuraAgrega;
+        protected global::System.Web.UI.WebControls.Button btnSakeNikkeiAgrega;
         
         /// <summary>
-        /// Control lblDescripcionMdlAvocadoTempura.
+        /// Control lblDescripcionMdlSakeNikkei.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlAvocadoTempura;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlSakeNikkei;
         
         /// <summary>
-        /// Control lblValorMdlAvocadoTempura.
+        /// Control lblValorMdlSakeNikkei.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValorMdlAvocadoTempura;
+        protected global::System.Web.UI.WebControls.Label lblValorMdlSakeNikkei;
         
         /// <summary>
-        /// Control btnRainbowSpecialAgrega.
+        /// Control btnCrunchyEbiAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRainbowSpecialAgrega;
+        protected global::System.Web.UI.WebControls.Button btnCrunchyEbiAgrega;
         
         /// <summary>
-        /// Control lblDescripcionMdlRainbowSpecial.
+        /// Control lblDescripcionMdlCrunchyEbi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlRainbowSpecial;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlCrunchyEbi;
         
         /// <summary>
-        /// Control lblPrecioMdlRainbowSpecial.
+        /// Control lblValorMdlCrunchyEbi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrecioMdlRainbowSpecial;
+        protected global::System.Web.UI.WebControls.Label lblValorMdlCrunchyEbi;
         
         /// <summary>
-        /// Control btnTokioWhiteAgrega.
+        /// Control btnCrunchyToriAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTokioWhiteAgrega;
+        protected global::System.Web.UI.WebControls.Button btnCrunchyToriAgrega;
         
         /// <summary>
-        /// Control lblTokioWhiteDescripcion.
+        /// Control lblDescripcionMdlCrunchyTori.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTokioWhiteDescripcion;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlCrunchyTori;
         
         /// <summary>
-        /// Control lblTokioWhitePrecio.
+        /// Control lblPrecioMdlCrunchyTori.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTokioWhitePrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlCrunchyTori;
         
         /// <summary>
-        /// Control btnFuraiWhiteAgrega.
+        /// Control btnAcevichadoFukusukeAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFuraiWhiteAgrega;
+        protected global::System.Web.UI.WebControls.Button btnAcevichadoFukusukeAgrega;
         
         /// <summary>
-        /// Control lblFuraiWhiteDescripción.
+        /// Control lblDescripcionMdlAcevichadoFukusuke.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuraiWhiteDescripción;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlAcevichadoFukusuke;
         
         /// <summary>
-        /// Control lblFuraiWhitePrecio.
+        /// Control lblPrecioMdlAcevichadoFukusuke.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFuraiWhitePrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlAcevichadoFukusuke;
         
         /// <summary>
-        /// Control btnToriCrispyAgrega.
+        /// Control btnInkaRollAgrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnToriCrispyAgrega;
+        protected global::System.Web.UI.WebControls.Button btnInkaRollAgrega;
         
         /// <summary>
-        /// Control lblToriCrispyDescripcion.
+        /// Control lblDescripcionMdlInkaRoll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToriCrispyDescripcion;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlInkaRoll;
         
         /// <summary>
-        /// Control lblToriCrispyPrecio.
+        /// Control lblPrecioMdlInkaRoll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToriCrispyPrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlInkaRoll;
+        
+        /// <summary>
+        /// Control btnAcevichadoCamaronAgrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAcevichadoCamaronAgrega;
+        
+        /// <summary>
+        /// Control lblDescripcionMdlAcevichadoCamaron.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcionMdlAcevichadoCamaron;
+        
+        /// <summary>
+        /// Control lblPrecioMdlAcevichadoCamaron.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecioMdlAcevichadoCamaron;
     }
 }
