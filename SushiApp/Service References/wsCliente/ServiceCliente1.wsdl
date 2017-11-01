@@ -2,7 +2,7 @@
 <definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceCliente" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceCliente?xsd=1" namespace="http://WebService/" />
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend10/ServiceCliente?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
   <message name="obtenerCliente">
@@ -17,6 +17,12 @@
   <message name="agregarClienteResponse">
     <part name="parameters" element="tns:agregarClienteResponse" />
   </message>
+  <message name="eliminarCliente">
+    <part name="parameters" element="tns:eliminarCliente" />
+  </message>
+  <message name="eliminarClienteResponse">
+    <part name="parameters" element="tns:eliminarClienteResponse" />
+  </message>
   <message name="buscarCliente">
     <part name="parameters" element="tns:buscarCliente" />
   </message>
@@ -29,12 +35,6 @@
   <message name="modificarClienteResponse">
     <part name="parameters" element="tns:modificarClienteResponse" />
   </message>
-  <message name="eliminarCliente">
-    <part name="parameters" element="tns:eliminarCliente" />
-  </message>
-  <message name="eliminarClienteResponse">
-    <part name="parameters" element="tns:eliminarClienteResponse" />
-  </message>
   <portType name="ServiceCliente">
     <operation name="obtenerCliente">
       <input wsam:Action="http://WebService/ServiceCliente/obtenerClienteRequest" message="tns:obtenerCliente" />
@@ -44,6 +44,10 @@
       <input wsam:Action="http://WebService/ServiceCliente/agregarClienteRequest" message="tns:agregarCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/agregarClienteResponse" message="tns:agregarClienteResponse" />
     </operation>
+    <operation name="eliminarCliente">
+      <input wsam:Action="http://WebService/ServiceCliente/eliminarClienteRequest" message="tns:eliminarCliente" />
+      <output wsam:Action="http://WebService/ServiceCliente/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
+    </operation>
     <operation name="buscarCliente">
       <input wsam:Action="http://WebService/ServiceCliente/buscarClienteRequest" message="tns:buscarCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/buscarClienteResponse" message="tns:buscarClienteResponse" />
@@ -51,10 +55,6 @@
     <operation name="modificarCliente">
       <input wsam:Action="http://WebService/ServiceCliente/modificarClienteRequest" message="tns:modificarCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/modificarClienteResponse" message="tns:modificarClienteResponse" />
-    </operation>
-    <operation name="eliminarCliente">
-      <input wsam:Action="http://WebService/ServiceCliente/eliminarClienteRequest" message="tns:eliminarCliente" />
-      <output wsam:Action="http://WebService/ServiceCliente/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
     </operation>
   </portType>
   <binding name="ServiceClientePortBinding" type="tns:ServiceCliente">
@@ -77,6 +77,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="eliminarCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarCliente">
       <soap:operation soapAction="" />
       <input>
@@ -95,19 +104,10 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarCliente">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
   </binding>
   <service name="ServiceCliente">
     <port name="ServiceClientePort" binding="tns:ServiceClientePortBinding">
-      <soap:address location="http://localhost:8084/SushiBackend9/ServiceCliente" />
+      <soap:address location="http://localhost:8084/SushiBackend10/ServiceCliente" />
     </port>
   </service>
 </definitions>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Bebidas.aspx.cs" Inherits="SushiApp.PaginaUsuario.Bebidas1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -46,7 +47,45 @@
 
         <!-- *** LEFT COLUMN END *** -->
 
+        <!-- *** RIGHT COLUMN ***
+			_________________________________________________________ -->
 
+        <asp:Repeater ID="bebidasRepeater" runat="server">
+            <ItemTemplate>
+                <div class="col-sm-9">
+                    <div class="row products">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="text">
+                                    <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label>
+                                    <%--<h4>Thai Roll</h4>
+                                    <p class="price">$4.600</p>--%>
+                                    <%--<asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />--%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+
+        </asp:Repeater>
+
+
+
+
+        <%--<div class="col-sm-9">
+            <div class="row products">
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="text">
+                            <h4>Thai Roll</h4>
+                            <p class="price">$4.600</p>
+                            <asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>--%>
 
     </div>
 </asp:Content>

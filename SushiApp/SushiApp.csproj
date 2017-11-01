@@ -149,6 +149,7 @@
     <Content Include="PaginaAdmin\LESS\top_navigation.less" />
     <Content Include="PaginaAdmin\LESS\typography.less" />
     <Content Include="PaginaAdmin\LESS\variables.less" />
+    <Content Include="PaginaAdmin\LoginAdmin.aspx" />
     <Content Include="PaginaAdmin\mantenedor_categoria.aspx" />
     <Content Include="PaginaAdmin\mantenedor_categoria_editar.aspx" />
     <Content Include="PaginaAdmin\mantenedor_clientes.aspx" />
@@ -225,6 +226,7 @@
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID8_Furai_White.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID9_Tori_Crispy.jpg" />
     <Content Include="PaginaUsuario\Inicio.aspx" />
+    <Content Include="PaginaUsuario\Login.aspx" />
     <Content Include="PaginaUsuario\NikkeiRolls.aspx" />
     <Content Include="PaginaUsuario\Postres.aspx" />
     <Content Include="PaginaUsuario\ShopBasket.aspx" />
@@ -275,6 +277,10 @@
     <Content Include="Service References\wsAdministrador\SushiApp.wsAdministrador.obtenerAdministradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsAdministrador\ServiceAdministrador1.wsdl" />
+    <None Include="Service References\wsAdministrador\ServiceAdministrador1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\wsCanal\ServiceCanal.wsdl" />
     <None Include="Service References\wsCanal\ServiceCanal.xsd">
       <SubType>Designer</SubType>
@@ -297,10 +303,6 @@
     <Content Include="Service References\wsCanal\SushiApp.wsCanal.obtenerCanalResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsCategoria\ServiceCategoriaProducto.wsdl" />
-    <None Include="Service References\wsCategoria\ServiceCategoriaProducto.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\wsAcceso\configuration91.svcinfo" />
     <None Include="Service References\wsAcceso\configuration.svcinfo" />
     <None Include="Service References\wsAcceso\Reference.svcmap">
@@ -337,10 +339,6 @@
     <Content Include="Service References\wsCategoria\SushiApp.wsCategoria.obtenerCategoriaProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsCliente\ServiceCliente.wsdl" />
-    <None Include="Service References\wsCliente\ServiceCliente.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsCliente\SushiApp.wsCliente.agregarClienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -359,6 +357,14 @@
     <Content Include="Service References\wsCliente\SushiApp.wsCliente.obtenerClienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsCategoria\ServiceCategoriaProducto1.wsdl" />
+    <None Include="Service References\wsCategoria\ServiceCategoriaProducto1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsCliente\ServiceCliente1.wsdl" />
+    <None Include="Service References\wsCliente\ServiceCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\wsComuna\ServiceComuna.wsdl" />
     <None Include="Service References\wsComuna\ServiceComuna.xsd">
       <SubType>Designer</SubType>
@@ -541,10 +547,6 @@
     <Content Include="Service References\wsPerfil\SushiApp.wsPerfil.perfil.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsProducto\ServiceProducto.wsdl" />
-    <None Include="Service References\wsProducto\ServiceProducto.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\wsCliente\configuration91.svcinfo" />
     <None Include="Service References\wsCliente\configuration.svcinfo" />
     <None Include="Service References\wsCliente\Reference.svcmap">
@@ -593,6 +595,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\wsProducto\ServiceProducto.wsdl" />
+    <None Include="Service References\wsProducto\ServiceProducto.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Service References\wsProducto\SushiApp.wsProducto.agregarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -614,6 +620,12 @@
     <None Include="Service References\wsProvincia\ServiceProvincia.wsdl" />
     <None Include="Service References\wsProvincia\ServiceProvincia.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsProducto\configuration91.svcinfo" />
+    <None Include="Service References\wsProducto\configuration.svcinfo" />
+    <None Include="Service References\wsProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Service References\wsProvincia\SushiApp.wsProvincia.agregarProvinciaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -721,10 +733,6 @@
     <Content Include="Service References\wsTipoPago\SushiApp.wsTipoPago.tipoPago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsUsuario\ServiceUsuario.wsdl" />
-    <None Include="Service References\wsUsuario\ServiceUsuario.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.agregarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -743,6 +751,10 @@
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsUsuario\ServiceUsuario1.wsdl" />
+    <None Include="Service References\wsUsuario\ServiceUsuario1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1363,12 +1375,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\wsProducto\configuration91.svcinfo" />
-    <None Include="Service References\wsProducto\configuration.svcinfo" />
-    <None Include="Service References\wsProducto\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\wsProvincia\configuration91.svcinfo" />
     <None Include="Service References\wsProvincia\configuration.svcinfo" />
     <None Include="Service References\wsProvincia\Reference.svcmap">
@@ -1417,6 +1423,13 @@
     </Compile>
     <Compile Include="PaginaAdmin\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaAdmin\mantenedor_categoria.aspx.cs">
       <DependentUpon>mantenedor_categoria.aspx</DependentUpon>
@@ -1529,6 +1542,13 @@
     </Compile>
     <Compile Include="PaginaUsuario\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\NikkeiRolls.aspx.cs">
       <DependentUpon>NikkeiRolls.aspx</DependentUpon>

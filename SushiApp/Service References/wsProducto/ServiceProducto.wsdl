@@ -2,7 +2,7 @@
 <definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceProducto" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceProducto?xsd=1" namespace="http://WebService/" />
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend10/ServiceProducto?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
   <message name="modificarProducto">
@@ -17,6 +17,12 @@
   <message name="obtenerProductoResponse">
     <part name="parameters" element="tns:obtenerProductoResponse" />
   </message>
+  <message name="agregarProducto">
+    <part name="parameters" element="tns:agregarProducto" />
+  </message>
+  <message name="agregarProductoResponse">
+    <part name="parameters" element="tns:agregarProductoResponse" />
+  </message>
   <message name="buscarProducto">
     <part name="parameters" element="tns:buscarProducto" />
   </message>
@@ -29,12 +35,6 @@
   <message name="eliminarProductoResponse">
     <part name="parameters" element="tns:eliminarProductoResponse" />
   </message>
-  <message name="agregarProducto">
-    <part name="parameters" element="tns:agregarProducto" />
-  </message>
-  <message name="agregarProductoResponse">
-    <part name="parameters" element="tns:agregarProductoResponse" />
-  </message>
   <portType name="ServiceProducto">
     <operation name="modificarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/modificarProductoRequest" message="tns:modificarProducto" />
@@ -44,6 +44,10 @@
       <input wsam:Action="http://WebService/ServiceProducto/obtenerProductoRequest" message="tns:obtenerProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/obtenerProductoResponse" message="tns:obtenerProductoResponse" />
     </operation>
+    <operation name="agregarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
+    </operation>
     <operation name="buscarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/buscarProductoRequest" message="tns:buscarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/buscarProductoResponse" message="tns:buscarProductoResponse" />
@@ -51,10 +55,6 @@
     <operation name="eliminarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
-    </operation>
-    <operation name="agregarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
     </operation>
   </portType>
   <binding name="ServiceProductoPortBinding" type="tns:ServiceProducto">
@@ -77,6 +77,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="agregarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarProducto">
       <soap:operation soapAction="" />
       <input>
@@ -95,19 +104,10 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="agregarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
   </binding>
   <service name="ServiceProducto">
     <port name="ServiceProductoPort" binding="tns:ServiceProductoPortBinding">
-      <soap:address location="http://localhost:8084/SushiBackend9/ServiceProducto" />
+      <soap:address location="http://localhost:8084/SushiBackend10/ServiceProducto" />
     </port>
   </service>
 </definitions>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="C4s6VqyTP43BvlJSycmJB747nyc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="nxwDMDXIGWzSIze8vx+kodJfk4w=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceCategoriaProductoPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceCategoriaProductoPort" contract="wsCategoria.ServiceCategoriaProducto" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend9/ServiceCategoriaProducto" bindingConfiguration="ServiceCategoriaProductoPortBinding">
+    <endpoint name="ServiceCategoriaProductoPort" contract="wsCategoria.ServiceCategoriaProducto" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend10/ServiceCategoriaProducto" bindingConfiguration="ServiceCategoriaProductoPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8084/SushiBackend9/ServiceCategoriaProducto</serializedValue>
+          <serializedValue>http://localhost:8084/SushiBackend10/ServiceCategoriaProducto</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

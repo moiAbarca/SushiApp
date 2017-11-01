@@ -16,31 +16,6 @@ namespace SushiApp.wsUsuario {
     public interface ServiceUsuario {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/buscarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/buscarUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsUsuario.buscarUsuarioResponse buscarUsuario(SushiApp.wsUsuario.buscarUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/buscarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/buscarUsuarioResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> buscarUsuarioAsync(SushiApp.wsUsuario.buscarUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'usuario' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/agregarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/agregarUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsUsuario.agregarUsuarioResponse agregarUsuario(SushiApp.wsUsuario.agregarUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/agregarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/agregarUsuarioResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.agregarUsuarioResponse> agregarUsuarioAsync(SushiApp.wsUsuario.agregarUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/eliminarUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsUsuario.eliminarUsuarioResponse eliminarUsuario(SushiApp.wsUsuario.eliminarUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/eliminarUsuarioResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> eliminarUsuarioAsync(SushiApp.wsUsuario.eliminarUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/obtenerUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/obtenerUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -50,16 +25,41 @@ namespace SushiApp.wsUsuario {
         System.Threading.Tasks.Task<SushiApp.wsUsuario.obtenerUsuarioResponse> obtenerUsuarioAsync(SushiApp.wsUsuario.obtenerUsuarioRequest request);
         
         // CODEGEN: El parámetro 'usuario' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/agregarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/agregarUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsUsuario.agregarUsuarioResponse agregarUsuario(SushiApp.wsUsuario.agregarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/agregarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/agregarUsuarioResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.agregarUsuarioResponse> agregarUsuarioAsync(SushiApp.wsUsuario.agregarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/buscarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/buscarUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsUsuario.buscarUsuarioResponse buscarUsuario(SushiApp.wsUsuario.buscarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/buscarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/buscarUsuarioResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> buscarUsuarioAsync(SushiApp.wsUsuario.buscarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'usuario' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/modificarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/modificarUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         SushiApp.wsUsuario.modificarUsuarioResponse modificarUsuario(SushiApp.wsUsuario.modificarUsuarioRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/modificarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/modificarUsuarioResponse")]
         System.Threading.Tasks.Task<SushiApp.wsUsuario.modificarUsuarioResponse> modificarUsuarioAsync(SushiApp.wsUsuario.modificarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/eliminarUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsUsuario.eliminarUsuarioResponse eliminarUsuario(SushiApp.wsUsuario.eliminarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest", ReplyAction="http://WebService/ServiceUsuario/eliminarUsuarioResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> eliminarUsuarioAsync(SushiApp.wsUsuario.eliminarUsuarioRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -135,6 +135,62 @@ namespace SushiApp.wsUsuario {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerUsuarioRequest {
+        
+        public obtenerUsuarioRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsUsuario.usuario[] @return;
+        
+        public obtenerUsuarioResponse() {
+        }
+        
+        public obtenerUsuarioResponse(SushiApp.wsUsuario.usuario[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsUsuario.usuario usuario;
+        
+        public agregarUsuarioRequest() {
+        }
+        
+        public agregarUsuarioRequest(SushiApp.wsUsuario.usuario usuario) {
+            this.usuario = usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarUsuarioResponse {
+        
+        public agregarUsuarioResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="buscarUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class buscarUsuarioRequest {
         
@@ -171,17 +227,17 @@ namespace SushiApp.wsUsuario {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarUsuarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarUsuarioRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public SushiApp.wsUsuario.usuario usuario;
         
-        public agregarUsuarioRequest() {
+        public modificarUsuarioRequest() {
         }
         
-        public agregarUsuarioRequest(SushiApp.wsUsuario.usuario usuario) {
+        public modificarUsuarioRequest(SushiApp.wsUsuario.usuario usuario) {
             this.usuario = usuario;
         }
     }
@@ -189,10 +245,10 @@ namespace SushiApp.wsUsuario {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarUsuarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarUsuarioResponse {
         
-        public agregarUsuarioResponse() {
+        public modificarUsuarioResponse() {
         }
     }
     
@@ -224,62 +280,6 @@ namespace SushiApp.wsUsuario {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerUsuarioRequest {
-        
-        public obtenerUsuarioRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsUsuario.usuario[] @return;
-        
-        public obtenerUsuarioResponse() {
-        }
-        
-        public obtenerUsuarioResponse(SushiApp.wsUsuario.usuario[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuario", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsUsuario.usuario usuario;
-        
-        public modificarUsuarioRequest() {
-        }
-        
-        public modificarUsuarioRequest(SushiApp.wsUsuario.usuario usuario) {
-            this.usuario = usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuarioResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarUsuarioResponse {
-        
-        public modificarUsuarioResponse() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceUsuarioChannel : SushiApp.wsUsuario.ServiceUsuario, System.ServiceModel.IClientChannel {
     }
@@ -308,26 +308,24 @@ namespace SushiApp.wsUsuario {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsUsuario.buscarUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.buscarUsuario(SushiApp.wsUsuario.buscarUsuarioRequest request) {
-            return base.Channel.buscarUsuario(request);
+        SushiApp.wsUsuario.obtenerUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.obtenerUsuario(SushiApp.wsUsuario.obtenerUsuarioRequest request) {
+            return base.Channel.obtenerUsuario(request);
         }
         
-        public SushiApp.wsUsuario.usuario buscarUsuario(int id) {
-            SushiApp.wsUsuario.buscarUsuarioRequest inValue = new SushiApp.wsUsuario.buscarUsuarioRequest();
-            inValue.id = id;
-            SushiApp.wsUsuario.buscarUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).buscarUsuario(inValue);
+        public SushiApp.wsUsuario.usuario[] obtenerUsuario() {
+            SushiApp.wsUsuario.obtenerUsuarioRequest inValue = new SushiApp.wsUsuario.obtenerUsuarioRequest();
+            SushiApp.wsUsuario.obtenerUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).obtenerUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.buscarUsuarioAsync(SushiApp.wsUsuario.buscarUsuarioRequest request) {
-            return base.Channel.buscarUsuarioAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.obtenerUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.obtenerUsuarioAsync(SushiApp.wsUsuario.obtenerUsuarioRequest request) {
+            return base.Channel.obtenerUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> buscarUsuarioAsync(int id) {
-            SushiApp.wsUsuario.buscarUsuarioRequest inValue = new SushiApp.wsUsuario.buscarUsuarioRequest();
-            inValue.id = id;
-            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).buscarUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsUsuario.obtenerUsuarioResponse> obtenerUsuarioAsync() {
+            SushiApp.wsUsuario.obtenerUsuarioRequest inValue = new SushiApp.wsUsuario.obtenerUsuarioRequest();
+            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).obtenerUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -353,46 +351,26 @@ namespace SushiApp.wsUsuario {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsUsuario.eliminarUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.eliminarUsuario(SushiApp.wsUsuario.eliminarUsuarioRequest request) {
-            return base.Channel.eliminarUsuario(request);
+        SushiApp.wsUsuario.buscarUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.buscarUsuario(SushiApp.wsUsuario.buscarUsuarioRequest request) {
+            return base.Channel.buscarUsuario(request);
         }
         
-        public void eliminarUsuario(int id) {
-            SushiApp.wsUsuario.eliminarUsuarioRequest inValue = new SushiApp.wsUsuario.eliminarUsuarioRequest();
+        public SushiApp.wsUsuario.usuario buscarUsuario(int id) {
+            SushiApp.wsUsuario.buscarUsuarioRequest inValue = new SushiApp.wsUsuario.buscarUsuarioRequest();
             inValue.id = id;
-            SushiApp.wsUsuario.eliminarUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).eliminarUsuario(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.eliminarUsuarioAsync(SushiApp.wsUsuario.eliminarUsuarioRequest request) {
-            return base.Channel.eliminarUsuarioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> eliminarUsuarioAsync(int id) {
-            SushiApp.wsUsuario.eliminarUsuarioRequest inValue = new SushiApp.wsUsuario.eliminarUsuarioRequest();
-            inValue.id = id;
-            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).eliminarUsuarioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsUsuario.obtenerUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.obtenerUsuario(SushiApp.wsUsuario.obtenerUsuarioRequest request) {
-            return base.Channel.obtenerUsuario(request);
-        }
-        
-        public SushiApp.wsUsuario.usuario[] obtenerUsuario() {
-            SushiApp.wsUsuario.obtenerUsuarioRequest inValue = new SushiApp.wsUsuario.obtenerUsuarioRequest();
-            SushiApp.wsUsuario.obtenerUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).obtenerUsuario(inValue);
+            SushiApp.wsUsuario.buscarUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).buscarUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsUsuario.obtenerUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.obtenerUsuarioAsync(SushiApp.wsUsuario.obtenerUsuarioRequest request) {
-            return base.Channel.obtenerUsuarioAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.buscarUsuarioAsync(SushiApp.wsUsuario.buscarUsuarioRequest request) {
+            return base.Channel.buscarUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsUsuario.obtenerUsuarioResponse> obtenerUsuarioAsync() {
-            SushiApp.wsUsuario.obtenerUsuarioRequest inValue = new SushiApp.wsUsuario.obtenerUsuarioRequest();
-            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).obtenerUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsUsuario.buscarUsuarioResponse> buscarUsuarioAsync(int id) {
+            SushiApp.wsUsuario.buscarUsuarioRequest inValue = new SushiApp.wsUsuario.buscarUsuarioRequest();
+            inValue.id = id;
+            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).buscarUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -415,6 +393,28 @@ namespace SushiApp.wsUsuario {
             SushiApp.wsUsuario.modificarUsuarioRequest inValue = new SushiApp.wsUsuario.modificarUsuarioRequest();
             inValue.usuario = usuario;
             return ((SushiApp.wsUsuario.ServiceUsuario)(this)).modificarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsUsuario.eliminarUsuarioResponse SushiApp.wsUsuario.ServiceUsuario.eliminarUsuario(SushiApp.wsUsuario.eliminarUsuarioRequest request) {
+            return base.Channel.eliminarUsuario(request);
+        }
+        
+        public void eliminarUsuario(int id) {
+            SushiApp.wsUsuario.eliminarUsuarioRequest inValue = new SushiApp.wsUsuario.eliminarUsuarioRequest();
+            inValue.id = id;
+            SushiApp.wsUsuario.eliminarUsuarioResponse retVal = ((SushiApp.wsUsuario.ServiceUsuario)(this)).eliminarUsuario(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> SushiApp.wsUsuario.ServiceUsuario.eliminarUsuarioAsync(SushiApp.wsUsuario.eliminarUsuarioRequest request) {
+            return base.Channel.eliminarUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsUsuario.eliminarUsuarioResponse> eliminarUsuarioAsync(int id) {
+            SushiApp.wsUsuario.eliminarUsuarioRequest inValue = new SushiApp.wsUsuario.eliminarUsuarioRequest();
+            inValue.id = id;
+            return ((SushiApp.wsUsuario.ServiceUsuario)(this)).eliminarUsuarioAsync(inValue);
         }
     }
 }

@@ -2,14 +2,14 @@
 <definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServiceUsuario" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceUsuario?xsd=1" namespace="http://WebService/" />
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend10/ServiceUsuario?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="buscarUsuario">
-    <part name="parameters" element="tns:buscarUsuario" />
+  <message name="obtenerUsuario">
+    <part name="parameters" element="tns:obtenerUsuario" />
   </message>
-  <message name="buscarUsuarioResponse">
-    <part name="parameters" element="tns:buscarUsuarioResponse" />
+  <message name="obtenerUsuarioResponse">
+    <part name="parameters" element="tns:obtenerUsuarioResponse" />
   </message>
   <message name="agregarUsuario">
     <part name="parameters" element="tns:agregarUsuario" />
@@ -17,17 +17,11 @@
   <message name="agregarUsuarioResponse">
     <part name="parameters" element="tns:agregarUsuarioResponse" />
   </message>
-  <message name="eliminarUsuario">
-    <part name="parameters" element="tns:eliminarUsuario" />
+  <message name="buscarUsuario">
+    <part name="parameters" element="tns:buscarUsuario" />
   </message>
-  <message name="eliminarUsuarioResponse">
-    <part name="parameters" element="tns:eliminarUsuarioResponse" />
-  </message>
-  <message name="obtenerUsuario">
-    <part name="parameters" element="tns:obtenerUsuario" />
-  </message>
-  <message name="obtenerUsuarioResponse">
-    <part name="parameters" element="tns:obtenerUsuarioResponse" />
+  <message name="buscarUsuarioResponse">
+    <part name="parameters" element="tns:buscarUsuarioResponse" />
   </message>
   <message name="modificarUsuario">
     <part name="parameters" element="tns:modificarUsuario" />
@@ -35,31 +29,37 @@
   <message name="modificarUsuarioResponse">
     <part name="parameters" element="tns:modificarUsuarioResponse" />
   </message>
+  <message name="eliminarUsuario">
+    <part name="parameters" element="tns:eliminarUsuario" />
+  </message>
+  <message name="eliminarUsuarioResponse">
+    <part name="parameters" element="tns:eliminarUsuarioResponse" />
+  </message>
   <portType name="ServiceUsuario">
-    <operation name="buscarUsuario">
-      <input wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioRequest" message="tns:buscarUsuario" />
-      <output wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioResponse" message="tns:buscarUsuarioResponse" />
+    <operation name="obtenerUsuario">
+      <input wsam:Action="http://WebService/ServiceUsuario/obtenerUsuarioRequest" message="tns:obtenerUsuario" />
+      <output wsam:Action="http://WebService/ServiceUsuario/obtenerUsuarioResponse" message="tns:obtenerUsuarioResponse" />
     </operation>
     <operation name="agregarUsuario">
       <input wsam:Action="http://WebService/ServiceUsuario/agregarUsuarioRequest" message="tns:agregarUsuario" />
       <output wsam:Action="http://WebService/ServiceUsuario/agregarUsuarioResponse" message="tns:agregarUsuarioResponse" />
     </operation>
-    <operation name="eliminarUsuario">
-      <input wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest" message="tns:eliminarUsuario" />
-      <output wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioResponse" message="tns:eliminarUsuarioResponse" />
-    </operation>
-    <operation name="obtenerUsuario">
-      <input wsam:Action="http://WebService/ServiceUsuario/obtenerUsuarioRequest" message="tns:obtenerUsuario" />
-      <output wsam:Action="http://WebService/ServiceUsuario/obtenerUsuarioResponse" message="tns:obtenerUsuarioResponse" />
+    <operation name="buscarUsuario">
+      <input wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioRequest" message="tns:buscarUsuario" />
+      <output wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioResponse" message="tns:buscarUsuarioResponse" />
     </operation>
     <operation name="modificarUsuario">
       <input wsam:Action="http://WebService/ServiceUsuario/modificarUsuarioRequest" message="tns:modificarUsuario" />
       <output wsam:Action="http://WebService/ServiceUsuario/modificarUsuarioResponse" message="tns:modificarUsuarioResponse" />
     </operation>
+    <operation name="eliminarUsuario">
+      <input wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest" message="tns:eliminarUsuario" />
+      <output wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioResponse" message="tns:eliminarUsuarioResponse" />
+    </operation>
   </portType>
   <binding name="ServiceUsuarioPortBinding" type="tns:ServiceUsuario">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="buscarUsuario">
+    <operation name="obtenerUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,16 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerUsuario">
+    <operation name="buscarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +87,15 @@
       </output>
     </operation>
     <operation name="modificarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -107,7 +107,7 @@
   </binding>
   <service name="ServiceUsuario">
     <port name="ServiceUsuarioPort" binding="tns:ServiceUsuarioPortBinding">
-      <soap:address location="http://localhost:8084/SushiBackend9/ServiceUsuario" />
+      <soap:address location="http://localhost:8084/SushiBackend10/ServiceUsuario" />
     </port>
   </service>
 </definitions>

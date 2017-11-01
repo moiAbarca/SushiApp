@@ -16,7 +16,7 @@ namespace SushiApp.PaginaAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            cargarGVAdministrador();
+            //cargarGVAdministrador();
             cargarGVCliente();
            
         }
@@ -40,25 +40,25 @@ namespace SushiApp.PaginaAdmin
             gvCliente.DataBind();
         }
 
-        public void cargarGVAdministrador()
-        {
-            //grid View de administrador
-            var listadtoAdministrador = administradorClient.obtenerAdministrador();
-            var nuevolistadtoAdministrador = (from o in listadtoAdministrador
-                                                  //orderby o.clienteId
-                                              select new
-                                              {
-                                                  Id = o.administradorId,
-                                                  Nombre = o.nombreAdmin,
-                                                  Apellido = o.apellidoAdmin,
-                                                  Email = o.corrreoAdmin,
-                                                  Rut = o.telefonoAdmin,
+        //public void cargarGVAdministrador()
+        //{
+        //    //grid View de administrador
+        //    var listadtoAdministrador = administradorClient.obtenerAdministrador();
+        //    var nuevolistadtoAdministrador = (from o in listadtoAdministrador
+        //                                          //orderby o.clienteId
+        //                                      select new
+        //                                      {
+        //                                          Id = o.administradorId,
+        //                                          Nombre = o.nombreAdmin,
+        //                                          Apellido = o.apellidoAdmin,
+        //                                          Email = o.corrreoAdmin,
+        //                                          Rut = o.telefonoAdmin,
 
-                                              }).ToList();
+        //                                      }).ToList();
 
-            gvAdministrador.DataSource = nuevolistadtoAdministrador;
-            gvAdministrador.DataBind();
-        }
+        //    gvAdministrador.DataSource = nuevolistadtoAdministrador;
+        //    gvAdministrador.DataBind();
+        //}
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             
