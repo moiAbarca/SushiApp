@@ -32,11 +32,7 @@
                     <div class="ibox">
                         <div class="ibox-content">
                             <h2>Clientes</h2>
-
-                            
-
-                            <div class="clients-list">
-                        
+                            <div class="clients-list">                        
                                 <div class="tab-content">
                                     <div id="tab-1" class="tab-pane active">
                                         <div class="full-height-scroll">

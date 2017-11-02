@@ -84,18 +84,25 @@
                                                     Teléfono:
                                                     
                                             </li>
-                                            </ul>
-                                            <!--GV cliente-->
+                                                <li class="list-group-item">
+                                                    <span class="pull-right" id="prGridView">
+                                             <!--GV cliente-->
                                                       <table class="table table-striped table-hover">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><a data-toggle="tab" href="#usuario"  class="client-link"><asp:GridView ID="gvAdministrador" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server" Enabled="False" >
-                                                                <RowStyle BorderColor="Black" />
-                                                                </asp:GridView></a></td>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a data-toggle="tab" href="#usuario"  class="client-link"><asp:GridView ID="gvAdministrador" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server" Enabled="False" >
+                                                                    <RowStyle BorderColor="Black" />
+                                                                    </asp:GridView></a></td>
                                                             
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                             <!--FIN GV cliente-->
+                                                    </span>
+                                                                                                        
+                                            </li>
+                                            </ul>
+                                           
                                         </div>
                                     </div>
                                       

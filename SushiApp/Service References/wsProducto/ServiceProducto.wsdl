@@ -5,6 +5,24 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceProducto?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="modificarProducto">
+    <part name="parameters" element="tns:modificarProducto" />
+  </message>
+  <message name="modificarProductoResponse">
+    <part name="parameters" element="tns:modificarProductoResponse" />
+  </message>
+  <message name="eliminarProducto">
+    <part name="parameters" element="tns:eliminarProducto" />
+  </message>
+  <message name="eliminarProductoResponse">
+    <part name="parameters" element="tns:eliminarProductoResponse" />
+  </message>
+  <message name="agregarProducto">
+    <part name="parameters" element="tns:agregarProducto" />
+  </message>
+  <message name="agregarProductoResponse">
+    <part name="parameters" element="tns:agregarProductoResponse" />
+  </message>
   <message name="obtenerProducto">
     <part name="parameters" element="tns:obtenerProducto" />
   </message>
@@ -17,25 +35,19 @@
   <message name="buscarProductoResponse">
     <part name="parameters" element="tns:buscarProductoResponse" />
   </message>
-  <message name="agregarProducto">
-    <part name="parameters" element="tns:agregarProducto" />
-  </message>
-  <message name="agregarProductoResponse">
-    <part name="parameters" element="tns:agregarProductoResponse" />
-  </message>
-  <message name="eliminarProducto">
-    <part name="parameters" element="tns:eliminarProducto" />
-  </message>
-  <message name="eliminarProductoResponse">
-    <part name="parameters" element="tns:eliminarProductoResponse" />
-  </message>
-  <message name="modificarProducto">
-    <part name="parameters" element="tns:modificarProducto" />
-  </message>
-  <message name="modificarProductoResponse">
-    <part name="parameters" element="tns:modificarProductoResponse" />
-  </message>
   <portType name="ServiceProducto">
+    <operation name="modificarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/modificarProductoRequest" message="tns:modificarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/modificarProductoResponse" message="tns:modificarProductoResponse" />
+    </operation>
+    <operation name="eliminarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
+    </operation>
+    <operation name="agregarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
+    </operation>
     <operation name="obtenerProducto">
       <input wsam:Action="http://WebService/ServiceProducto/obtenerProductoRequest" message="tns:obtenerProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/obtenerProductoResponse" message="tns:obtenerProductoResponse" />
@@ -44,21 +56,36 @@
       <input wsam:Action="http://WebService/ServiceProducto/buscarProductoRequest" message="tns:buscarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/buscarProductoResponse" message="tns:buscarProductoResponse" />
     </operation>
-    <operation name="agregarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
-    </operation>
-    <operation name="eliminarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
-    </operation>
-    <operation name="modificarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/modificarProductoRequest" message="tns:modificarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/modificarProductoResponse" message="tns:modificarProductoResponse" />
-    </operation>
   </portType>
   <binding name="ServiceProductoPortBinding" type="tns:ServiceProducto">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="obtenerProducto">
       <soap:operation soapAction="" />
       <input>
@@ -69,33 +96,6 @@
       </output>
     </operation>
     <operation name="buscarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="agregarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

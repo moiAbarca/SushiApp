@@ -15,6 +15,14 @@ namespace SushiApp.wsPerfil {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsPerfil.ServicePerfil")]
     public interface ServicePerfil {
         
+        // CODEGEN: El parámetro 'perfil' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/agregarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/agregarPerfilResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsPerfil.agregarPerfilResponse agregarPerfil(SushiApp.wsPerfil.agregarPerfilRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/agregarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/agregarPerfilResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> agregarPerfilAsync(SushiApp.wsPerfil.agregarPerfilRequest request);
+        
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -22,6 +30,15 @@ namespace SushiApp.wsPerfil {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> eliminarPerfilAsync(SushiApp.wsPerfil.eliminarPerfilRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/buscarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/buscarPerfilResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsPerfil.buscarPerfilResponse buscarPerfil(SushiApp.wsPerfil.buscarPerfilRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/buscarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/buscarPerfilResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> buscarPerfilAsync(SushiApp.wsPerfil.buscarPerfilRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/obtenerPerfilRequest", ReplyAction="http://WebService/ServicePerfil/obtenerPerfilResponse")]
@@ -39,23 +56,80 @@ namespace SushiApp.wsPerfil {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/modificarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/modificarPerfilResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> modificarPerfilAsync(SushiApp.wsPerfil.modificarPerfilRequest request);
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://WebService/")]
+    public partial class perfil : object, System.ComponentModel.INotifyPropertyChanged {
         
-        // CODEGEN: El parámetro 'perfil' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/agregarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/agregarPerfilResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPerfil.agregarPerfilResponse agregarPerfil(SushiApp.wsPerfil.agregarPerfilRequest request);
+        private string nombrePerfilField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/agregarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/agregarPerfilResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> agregarPerfilAsync(SushiApp.wsPerfil.agregarPerfilRequest request);
+        private int perfilIdField;
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/buscarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/buscarPerfilResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsPerfil.buscarPerfilResponse buscarPerfil(SushiApp.wsPerfil.buscarPerfilRequest request);
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string nombrePerfil {
+            get {
+                return this.nombrePerfilField;
+            }
+            set {
+                this.nombrePerfilField = value;
+                this.RaisePropertyChanged("nombrePerfil");
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/buscarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/buscarPerfilResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> buscarPerfilAsync(SushiApp.wsPerfil.buscarPerfilRequest request);
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int perfilId {
+            get {
+                return this.perfilIdField;
+            }
+            set {
+                this.perfilIdField = value;
+                this.RaisePropertyChanged("perfilId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarPerfilRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPerfil.perfil perfil;
+        
+        public agregarPerfilRequest() {
+        }
+        
+        public agregarPerfilRequest(SushiApp.wsPerfil.perfil perfil) {
+            this.perfil = perfil;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarPerfilResponse {
+        
+        public agregarPerfilResponse() {
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -86,63 +160,39 @@ namespace SushiApp.wsPerfil {
         }
     }
     
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://WebService/")]
-    public partial class perfil : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarPerfilRequest {
         
-        private int accesoIdField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
         
-        private string nombrePerfilField;
-        
-        private int perfilIdField;
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int accesoId {
-            get {
-                return this.accesoIdField;
-            }
-            set {
-                this.accesoIdField = value;
-                this.RaisePropertyChanged("accesoId");
-            }
+        public buscarPerfilRequest() {
         }
         
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string nombrePerfil {
-            get {
-                return this.nombrePerfilField;
-            }
-            set {
-                this.nombrePerfilField = value;
-                this.RaisePropertyChanged("nombrePerfil");
-            }
+        public buscarPerfilRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarPerfilResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPerfil.perfil @return;
+        
+        public buscarPerfilResponse() {
         }
         
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int perfilId {
-            get {
-                return this.perfilIdField;
-            }
-            set {
-                this.perfilIdField = value;
-                this.RaisePropertyChanged("perfilId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public buscarPerfilResponse(SushiApp.wsPerfil.perfil @return) {
+            this.@return = @return;
         }
     }
     
@@ -202,70 +252,6 @@ namespace SushiApp.wsPerfil {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarPerfilRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPerfil.perfil perfil;
-        
-        public agregarPerfilRequest() {
-        }
-        
-        public agregarPerfilRequest(SushiApp.wsPerfil.perfil perfil) {
-            this.perfil = perfil;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarPerfilResponse {
-        
-        public agregarPerfilResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarPerfilRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public buscarPerfilRequest() {
-        }
-        
-        public buscarPerfilRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarPerfilResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPerfil.perfil @return;
-        
-        public buscarPerfilResponse() {
-        }
-        
-        public buscarPerfilResponse(SushiApp.wsPerfil.perfil @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicePerfilChannel : SushiApp.wsPerfil.ServicePerfil, System.ServiceModel.IClientChannel {
     }
@@ -294,6 +280,28 @@ namespace SushiApp.wsPerfil {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPerfil.agregarPerfilResponse SushiApp.wsPerfil.ServicePerfil.agregarPerfil(SushiApp.wsPerfil.agregarPerfilRequest request) {
+            return base.Channel.agregarPerfil(request);
+        }
+        
+        public void agregarPerfil(SushiApp.wsPerfil.perfil perfil) {
+            SushiApp.wsPerfil.agregarPerfilRequest inValue = new SushiApp.wsPerfil.agregarPerfilRequest();
+            inValue.perfil = perfil;
+            SushiApp.wsPerfil.agregarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).agregarPerfil(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.agregarPerfilAsync(SushiApp.wsPerfil.agregarPerfilRequest request) {
+            return base.Channel.agregarPerfilAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> agregarPerfilAsync(SushiApp.wsPerfil.perfil perfil) {
+            SushiApp.wsPerfil.agregarPerfilRequest inValue = new SushiApp.wsPerfil.agregarPerfilRequest();
+            inValue.perfil = perfil;
+            return ((SushiApp.wsPerfil.ServicePerfil)(this)).agregarPerfilAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsPerfil.eliminarPerfilResponse SushiApp.wsPerfil.ServicePerfil.eliminarPerfil(SushiApp.wsPerfil.eliminarPerfilRequest request) {
             return base.Channel.eliminarPerfil(request);
         }
@@ -313,6 +321,29 @@ namespace SushiApp.wsPerfil {
             SushiApp.wsPerfil.eliminarPerfilRequest inValue = new SushiApp.wsPerfil.eliminarPerfilRequest();
             inValue.id = id;
             return ((SushiApp.wsPerfil.ServicePerfil)(this)).eliminarPerfilAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPerfil.buscarPerfilResponse SushiApp.wsPerfil.ServicePerfil.buscarPerfil(SushiApp.wsPerfil.buscarPerfilRequest request) {
+            return base.Channel.buscarPerfil(request);
+        }
+        
+        public SushiApp.wsPerfil.perfil buscarPerfil(int id) {
+            SushiApp.wsPerfil.buscarPerfilRequest inValue = new SushiApp.wsPerfil.buscarPerfilRequest();
+            inValue.id = id;
+            SushiApp.wsPerfil.buscarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).buscarPerfil(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.buscarPerfilAsync(SushiApp.wsPerfil.buscarPerfilRequest request) {
+            return base.Channel.buscarPerfilAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> buscarPerfilAsync(int id) {
+            SushiApp.wsPerfil.buscarPerfilRequest inValue = new SushiApp.wsPerfil.buscarPerfilRequest();
+            inValue.id = id;
+            return ((SushiApp.wsPerfil.ServicePerfil)(this)).buscarPerfilAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -356,51 +387,6 @@ namespace SushiApp.wsPerfil {
             SushiApp.wsPerfil.modificarPerfilRequest inValue = new SushiApp.wsPerfil.modificarPerfilRequest();
             inValue.perfil = perfil;
             return ((SushiApp.wsPerfil.ServicePerfil)(this)).modificarPerfilAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPerfil.agregarPerfilResponse SushiApp.wsPerfil.ServicePerfil.agregarPerfil(SushiApp.wsPerfil.agregarPerfilRequest request) {
-            return base.Channel.agregarPerfil(request);
-        }
-        
-        public void agregarPerfil(SushiApp.wsPerfil.perfil perfil) {
-            SushiApp.wsPerfil.agregarPerfilRequest inValue = new SushiApp.wsPerfil.agregarPerfilRequest();
-            inValue.perfil = perfil;
-            SushiApp.wsPerfil.agregarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).agregarPerfil(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.agregarPerfilAsync(SushiApp.wsPerfil.agregarPerfilRequest request) {
-            return base.Channel.agregarPerfilAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPerfil.agregarPerfilResponse> agregarPerfilAsync(SushiApp.wsPerfil.perfil perfil) {
-            SushiApp.wsPerfil.agregarPerfilRequest inValue = new SushiApp.wsPerfil.agregarPerfilRequest();
-            inValue.perfil = perfil;
-            return ((SushiApp.wsPerfil.ServicePerfil)(this)).agregarPerfilAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPerfil.buscarPerfilResponse SushiApp.wsPerfil.ServicePerfil.buscarPerfil(SushiApp.wsPerfil.buscarPerfilRequest request) {
-            return base.Channel.buscarPerfil(request);
-        }
-        
-        public SushiApp.wsPerfil.perfil buscarPerfil(int id) {
-            SushiApp.wsPerfil.buscarPerfilRequest inValue = new SushiApp.wsPerfil.buscarPerfilRequest();
-            inValue.id = id;
-            SushiApp.wsPerfil.buscarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).buscarPerfil(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.buscarPerfilAsync(SushiApp.wsPerfil.buscarPerfilRequest request) {
-            return base.Channel.buscarPerfilAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> buscarPerfilAsync(int id) {
-            SushiApp.wsPerfil.buscarPerfilRequest inValue = new SushiApp.wsPerfil.buscarPerfilRequest();
-            inValue.id = id;
-            return ((SushiApp.wsPerfil.ServicePerfil)(this)).buscarPerfilAsync(inValue);
         }
     }
 }

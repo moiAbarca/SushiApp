@@ -24,22 +24,6 @@ namespace SushiApp.wsAcceso {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/obtenerAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/obtenerAccesoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsAcceso.obtenerAccesoResponse> obtenerAccesoAsync(SushiApp.wsAcceso.obtenerAccesoRequest request);
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/eliminarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/eliminarAccesoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsAcceso.eliminarAccesoResponse eliminarAcceso(SushiApp.wsAcceso.eliminarAccesoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/eliminarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/eliminarAccesoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> eliminarAccesoAsync(SushiApp.wsAcceso.eliminarAccesoRequest request);
-        
-        // CODEGEN: El parámetro 'acceso' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/agregaAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/agregaAccesoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsAcceso.agregaAccesoResponse agregaAcceso(SushiApp.wsAcceso.agregaAccesoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/agregaAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/agregaAccesoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> agregaAccesoAsync(SushiApp.wsAcceso.agregaAccesoRequest request);
-        
         // CODEGEN: El parámetro 'acceso' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/modificarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/modificarAccesoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -56,6 +40,22 @@ namespace SushiApp.wsAcceso {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/buscarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/buscarAccesoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsAcceso.buscarAccesoResponse> buscarAccesoAsync(SushiApp.wsAcceso.buscarAccesoRequest request);
+        
+        // CODEGEN: El parámetro 'acceso' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/agregaAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/agregaAccesoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsAcceso.agregaAccesoResponse agregaAcceso(SushiApp.wsAcceso.agregaAccesoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/agregaAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/agregaAccesoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> agregaAccesoAsync(SushiApp.wsAcceso.agregaAccesoRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/eliminarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/eliminarAccesoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsAcceso.eliminarAccesoResponse eliminarAcceso(SushiApp.wsAcceso.eliminarAccesoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAcceso/eliminarAccesoRequest", ReplyAction="http://WebService/ServiceAcceso/eliminarAccesoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> eliminarAccesoAsync(SushiApp.wsAcceso.eliminarAccesoRequest request);
     }
     
     /// <comentarios/>
@@ -149,62 +149,6 @@ namespace SushiApp.wsAcceso {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAcceso", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarAccesoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarAccesoRequest() {
-        }
-        
-        public eliminarAccesoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAccesoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarAccesoResponse {
-        
-        public eliminarAccesoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregaAcceso", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregaAccesoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsAcceso.acceso acceso;
-        
-        public agregaAccesoRequest() {
-        }
-        
-        public agregaAccesoRequest(SushiApp.wsAcceso.acceso acceso) {
-            this.acceso = acceso;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregaAccesoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregaAccesoResponse {
-        
-        public agregaAccesoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAcceso", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class modificarAccesoRequest {
         
@@ -266,6 +210,62 @@ namespace SushiApp.wsAcceso {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregaAcceso", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregaAccesoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsAcceso.acceso acceso;
+        
+        public agregaAccesoRequest() {
+        }
+        
+        public agregaAccesoRequest(SushiApp.wsAcceso.acceso acceso) {
+            this.acceso = acceso;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregaAccesoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregaAccesoResponse {
+        
+        public agregaAccesoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAcceso", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarAccesoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarAccesoRequest() {
+        }
+        
+        public eliminarAccesoRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAccesoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarAccesoResponse {
+        
+        public eliminarAccesoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceAccesoChannel : SushiApp.wsAcceso.ServiceAcceso, System.ServiceModel.IClientChannel {
     }
@@ -315,50 +315,6 @@ namespace SushiApp.wsAcceso {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsAcceso.eliminarAccesoResponse SushiApp.wsAcceso.ServiceAcceso.eliminarAcceso(SushiApp.wsAcceso.eliminarAccesoRequest request) {
-            return base.Channel.eliminarAcceso(request);
-        }
-        
-        public void eliminarAcceso(int id) {
-            SushiApp.wsAcceso.eliminarAccesoRequest inValue = new SushiApp.wsAcceso.eliminarAccesoRequest();
-            inValue.id = id;
-            SushiApp.wsAcceso.eliminarAccesoResponse retVal = ((SushiApp.wsAcceso.ServiceAcceso)(this)).eliminarAcceso(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> SushiApp.wsAcceso.ServiceAcceso.eliminarAccesoAsync(SushiApp.wsAcceso.eliminarAccesoRequest request) {
-            return base.Channel.eliminarAccesoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> eliminarAccesoAsync(int id) {
-            SushiApp.wsAcceso.eliminarAccesoRequest inValue = new SushiApp.wsAcceso.eliminarAccesoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsAcceso.ServiceAcceso)(this)).eliminarAccesoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsAcceso.agregaAccesoResponse SushiApp.wsAcceso.ServiceAcceso.agregaAcceso(SushiApp.wsAcceso.agregaAccesoRequest request) {
-            return base.Channel.agregaAcceso(request);
-        }
-        
-        public void agregaAcceso(SushiApp.wsAcceso.acceso acceso) {
-            SushiApp.wsAcceso.agregaAccesoRequest inValue = new SushiApp.wsAcceso.agregaAccesoRequest();
-            inValue.acceso = acceso;
-            SushiApp.wsAcceso.agregaAccesoResponse retVal = ((SushiApp.wsAcceso.ServiceAcceso)(this)).agregaAcceso(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> SushiApp.wsAcceso.ServiceAcceso.agregaAccesoAsync(SushiApp.wsAcceso.agregaAccesoRequest request) {
-            return base.Channel.agregaAccesoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> agregaAccesoAsync(SushiApp.wsAcceso.acceso acceso) {
-            SushiApp.wsAcceso.agregaAccesoRequest inValue = new SushiApp.wsAcceso.agregaAccesoRequest();
-            inValue.acceso = acceso;
-            return ((SushiApp.wsAcceso.ServiceAcceso)(this)).agregaAccesoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsAcceso.modificarAccesoResponse SushiApp.wsAcceso.ServiceAcceso.modificarAcceso(SushiApp.wsAcceso.modificarAccesoRequest request) {
             return base.Channel.modificarAcceso(request);
         }
@@ -401,6 +357,50 @@ namespace SushiApp.wsAcceso {
             SushiApp.wsAcceso.buscarAccesoRequest inValue = new SushiApp.wsAcceso.buscarAccesoRequest();
             inValue.id = id;
             return ((SushiApp.wsAcceso.ServiceAcceso)(this)).buscarAccesoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsAcceso.agregaAccesoResponse SushiApp.wsAcceso.ServiceAcceso.agregaAcceso(SushiApp.wsAcceso.agregaAccesoRequest request) {
+            return base.Channel.agregaAcceso(request);
+        }
+        
+        public void agregaAcceso(SushiApp.wsAcceso.acceso acceso) {
+            SushiApp.wsAcceso.agregaAccesoRequest inValue = new SushiApp.wsAcceso.agregaAccesoRequest();
+            inValue.acceso = acceso;
+            SushiApp.wsAcceso.agregaAccesoResponse retVal = ((SushiApp.wsAcceso.ServiceAcceso)(this)).agregaAcceso(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> SushiApp.wsAcceso.ServiceAcceso.agregaAccesoAsync(SushiApp.wsAcceso.agregaAccesoRequest request) {
+            return base.Channel.agregaAccesoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsAcceso.agregaAccesoResponse> agregaAccesoAsync(SushiApp.wsAcceso.acceso acceso) {
+            SushiApp.wsAcceso.agregaAccesoRequest inValue = new SushiApp.wsAcceso.agregaAccesoRequest();
+            inValue.acceso = acceso;
+            return ((SushiApp.wsAcceso.ServiceAcceso)(this)).agregaAccesoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsAcceso.eliminarAccesoResponse SushiApp.wsAcceso.ServiceAcceso.eliminarAcceso(SushiApp.wsAcceso.eliminarAccesoRequest request) {
+            return base.Channel.eliminarAcceso(request);
+        }
+        
+        public void eliminarAcceso(int id) {
+            SushiApp.wsAcceso.eliminarAccesoRequest inValue = new SushiApp.wsAcceso.eliminarAccesoRequest();
+            inValue.id = id;
+            SushiApp.wsAcceso.eliminarAccesoResponse retVal = ((SushiApp.wsAcceso.ServiceAcceso)(this)).eliminarAcceso(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> SushiApp.wsAcceso.ServiceAcceso.eliminarAccesoAsync(SushiApp.wsAcceso.eliminarAccesoRequest request) {
+            return base.Channel.eliminarAccesoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsAcceso.eliminarAccesoResponse> eliminarAccesoAsync(int id) {
+            SushiApp.wsAcceso.eliminarAccesoRequest inValue = new SushiApp.wsAcceso.eliminarAccesoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsAcceso.ServiceAcceso)(this)).eliminarAccesoAsync(inValue);
         }
     }
 }

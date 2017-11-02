@@ -30,7 +30,7 @@ namespace SushiApp.PaginaAdmin
                                          Porciones = o.porcionesProdcuto,
                                          Precio = o.precioProducto,
                                          Descripción = o.descripcionProducto,
-                                         Disponibilidad = Convert.ToBoolean(o.disponibilidadProducto)
+                                         Disponibilidad = o.disponibilidadProducto
                                      }).ToList();
 
                 gvProductos.DataSource = nuevolistadto;
@@ -88,7 +88,7 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
                         auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
                         //datos en duro de disponibilidad                        
-                        auxProducto.disponibilidadProducto = 'f';
+                        auxProducto.disponibilidadProducto = true;
 
                         productoClient.agregarProducto(auxProducto);
                         limpiar();
@@ -144,9 +144,9 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                string path = FileUpload1.PostedFile.FileName;
+                string path = Server.MapPath("~/PaginaUsuario/img/ImagenesSushi/") + FileUpload1.PostedFile.FileName;
                 FileUpload1.SaveAs(path);
-                imgFoto.ImageUrl = FileUpload1.PostedFile.FileName;
+                imgFoto.ImageUrl = "~/PaginaUsuario/img/ImagenesSushi/"+FileUpload1.PostedFile.FileName;
                 txtRuta.Text = imgFoto.ImageUrl;
             }
             catch (Exception)
@@ -183,7 +183,7 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
                         auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
                         //datos en duro de disponibilidad                        
-                        auxProducto.disponibilidadProducto = 'f';
+                        auxProducto.disponibilidadProducto = false;
 
                         productoClient.modificarProducto(auxProducto);
                         Response.Write("<script>alert('Modificado correctamente');</script>");

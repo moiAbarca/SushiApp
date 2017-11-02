@@ -19,8 +19,7 @@
                 </li>
             </ol>
         </div>
-        <div class="col-lg-2">
-        </div>
+      
     </div>
     <!-- FIN DE BREADCRUMB -->
 
@@ -28,6 +27,13 @@
         <div class="wrapper wrapper-content animated fadeInRight ecommerce">
             
             <!-- INICIO FILTROS DE BUSQUEDA -->
+               <ul class="list-group clear-list">                                                
+                       <li class="list-group-item">
+                           <span class="pull-right" id="prNombre"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></span>
+                            Nombre:
+                                                    
+                       </li>
+                </ul>
             <div class="ibox-content m-b-sm border-bottom">
                 <!-- botones -->
                 &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />    
@@ -91,7 +97,8 @@
                             </select>
                         </div>
                     </div>  
-                                     
+                       <br />
+                    <br />              
                 </div>                
             </div>
             
@@ -99,13 +106,15 @@
                        <!-- inicio imagen-->
                          <div class="form-group">
                             <label class="control-label" for="price">Imagen</label> <br />                           
-                                <asp:FileUpload ID="FileUpload1" runat="server" /> 
-                                <br />
+                                <asp:FileUpload ID="FileUpload1" runat="server" />                                 
                                 <asp:Button CssClass="btn btn btn-primary" ID="btnImagen" runat="server" Text="Cargar " OnClick="btnImagen_Click" /> 
-                                <br />                                
-                                <asp:Image ID="imgFoto" runat="server"  />
+                                <br />   
+                             <asp:Image ID="imgFoto" runat="server"  />
                                 <br />
-                            <asp:TextBox ID="txtRuta" runat="server" Enabled="False"></asp:TextBox>
+                                <br />                             
+                                
+                                <br />
+                            <asp:TextBox ID="txtRuta" runat="server" Enabled="False" Visible="False"></asp:TextBox>
                         </div>
                      <!--fin imagen-->  
             
