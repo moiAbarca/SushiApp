@@ -23,14 +23,13 @@ namespace SushiApp.wsProducto {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/modificarProductoRequest", ReplyAction="http://WebService/ServiceProducto/modificarProductoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsProducto.modificarProductoResponse> modificarProductoAsync(SushiApp.wsProducto.modificarProductoRequest request);
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/obtenerProductoRequest", ReplyAction="http://WebService/ServiceProducto/obtenerProductoResponse")]
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/eliminarProductoRequest", ReplyAction="http://WebService/ServiceProducto/eliminarProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsProducto.obtenerProductoResponse obtenerProducto(SushiApp.wsProducto.obtenerProductoRequest request);
+        SushiApp.wsProducto.eliminarProductoResponse eliminarProducto(SushiApp.wsProducto.eliminarProductoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/obtenerProductoRequest", ReplyAction="http://WebService/ServiceProducto/obtenerProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> obtenerProductoAsync(SushiApp.wsProducto.obtenerProductoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/eliminarProductoRequest", ReplyAction="http://WebService/ServiceProducto/eliminarProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> eliminarProductoAsync(SushiApp.wsProducto.eliminarProductoRequest request);
         
         // CODEGEN: El parámetro 'producto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/agregarProductoRequest", ReplyAction="http://WebService/ServiceProducto/agregarProductoResponse")]
@@ -41,6 +40,15 @@ namespace SushiApp.wsProducto {
         System.Threading.Tasks.Task<SushiApp.wsProducto.agregarProductoResponse> agregarProductoAsync(SushiApp.wsProducto.agregarProductoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/obtenerProductoRequest", ReplyAction="http://WebService/ServiceProducto/obtenerProductoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsProducto.obtenerProductoResponse obtenerProducto(SushiApp.wsProducto.obtenerProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/obtenerProductoRequest", ReplyAction="http://WebService/ServiceProducto/obtenerProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> obtenerProductoAsync(SushiApp.wsProducto.obtenerProductoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/buscarProductoRequest", ReplyAction="http://WebService/ServiceProducto/buscarProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -48,14 +56,6 @@ namespace SushiApp.wsProducto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/buscarProductoRequest", ReplyAction="http://WebService/ServiceProducto/buscarProductoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsProducto.buscarProductoResponse> buscarProductoAsync(SushiApp.wsProducto.buscarProductoRequest request);
-        
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/eliminarProductoRequest", ReplyAction="http://WebService/ServiceProducto/eliminarProductoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsProducto.eliminarProductoResponse eliminarProducto(SushiApp.wsProducto.eliminarProductoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProducto/eliminarProductoRequest", ReplyAction="http://WebService/ServiceProducto/eliminarProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> eliminarProductoAsync(SushiApp.wsProducto.eliminarProductoRequest request);
     }
     
     /// <comentarios/>
@@ -219,28 +219,28 @@ namespace SushiApp.wsProducto {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerProductoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarProductoRequest {
         
-        public obtenerProductoRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarProductoRequest() {
+        }
+        
+        public eliminarProductoRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerProductoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarProductoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsProducto.producto[] @return;
-        
-        public obtenerProductoResponse() {
-        }
-        
-        public obtenerProductoResponse(SushiApp.wsProducto.producto[] @return) {
-            this.@return = @return;
+        public eliminarProductoResponse() {
         }
     }
     
@@ -269,6 +269,34 @@ namespace SushiApp.wsProducto {
     public partial class agregarProductoResponse {
         
         public agregarProductoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerProductoRequest {
+        
+        public obtenerProductoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsProducto.producto[] @return;
+        
+        public obtenerProductoResponse() {
+        }
+        
+        public obtenerProductoResponse(SushiApp.wsProducto.producto[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -305,34 +333,6 @@ namespace SushiApp.wsProducto {
         
         public buscarProductoResponse(SushiApp.wsProducto.producto @return) {
             this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarProductoRequest() {
-        }
-        
-        public eliminarProductoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarProductoResponse {
-        
-        public eliminarProductoResponse() {
         }
     }
     
@@ -386,24 +386,25 @@ namespace SushiApp.wsProducto {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsProducto.obtenerProductoResponse SushiApp.wsProducto.ServiceProducto.obtenerProducto(SushiApp.wsProducto.obtenerProductoRequest request) {
-            return base.Channel.obtenerProducto(request);
+        SushiApp.wsProducto.eliminarProductoResponse SushiApp.wsProducto.ServiceProducto.eliminarProducto(SushiApp.wsProducto.eliminarProductoRequest request) {
+            return base.Channel.eliminarProducto(request);
         }
         
-        public SushiApp.wsProducto.producto[] obtenerProducto() {
-            SushiApp.wsProducto.obtenerProductoRequest inValue = new SushiApp.wsProducto.obtenerProductoRequest();
-            SushiApp.wsProducto.obtenerProductoResponse retVal = ((SushiApp.wsProducto.ServiceProducto)(this)).obtenerProducto(inValue);
-            return retVal.@return;
+        public void eliminarProducto(int id) {
+            SushiApp.wsProducto.eliminarProductoRequest inValue = new SushiApp.wsProducto.eliminarProductoRequest();
+            inValue.id = id;
+            SushiApp.wsProducto.eliminarProductoResponse retVal = ((SushiApp.wsProducto.ServiceProducto)(this)).eliminarProducto(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> SushiApp.wsProducto.ServiceProducto.obtenerProductoAsync(SushiApp.wsProducto.obtenerProductoRequest request) {
-            return base.Channel.obtenerProductoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> SushiApp.wsProducto.ServiceProducto.eliminarProductoAsync(SushiApp.wsProducto.eliminarProductoRequest request) {
+            return base.Channel.eliminarProductoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> obtenerProductoAsync() {
-            SushiApp.wsProducto.obtenerProductoRequest inValue = new SushiApp.wsProducto.obtenerProductoRequest();
-            return ((SushiApp.wsProducto.ServiceProducto)(this)).obtenerProductoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> eliminarProductoAsync(int id) {
+            SushiApp.wsProducto.eliminarProductoRequest inValue = new SushiApp.wsProducto.eliminarProductoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsProducto.ServiceProducto)(this)).eliminarProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -429,6 +430,27 @@ namespace SushiApp.wsProducto {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsProducto.obtenerProductoResponse SushiApp.wsProducto.ServiceProducto.obtenerProducto(SushiApp.wsProducto.obtenerProductoRequest request) {
+            return base.Channel.obtenerProducto(request);
+        }
+        
+        public SushiApp.wsProducto.producto[] obtenerProducto() {
+            SushiApp.wsProducto.obtenerProductoRequest inValue = new SushiApp.wsProducto.obtenerProductoRequest();
+            SushiApp.wsProducto.obtenerProductoResponse retVal = ((SushiApp.wsProducto.ServiceProducto)(this)).obtenerProducto(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> SushiApp.wsProducto.ServiceProducto.obtenerProductoAsync(SushiApp.wsProducto.obtenerProductoRequest request) {
+            return base.Channel.obtenerProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsProducto.obtenerProductoResponse> obtenerProductoAsync() {
+            SushiApp.wsProducto.obtenerProductoRequest inValue = new SushiApp.wsProducto.obtenerProductoRequest();
+            return ((SushiApp.wsProducto.ServiceProducto)(this)).obtenerProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsProducto.buscarProductoResponse SushiApp.wsProducto.ServiceProducto.buscarProducto(SushiApp.wsProducto.buscarProductoRequest request) {
             return base.Channel.buscarProducto(request);
         }
@@ -449,28 +471,6 @@ namespace SushiApp.wsProducto {
             SushiApp.wsProducto.buscarProductoRequest inValue = new SushiApp.wsProducto.buscarProductoRequest();
             inValue.id = id;
             return ((SushiApp.wsProducto.ServiceProducto)(this)).buscarProductoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsProducto.eliminarProductoResponse SushiApp.wsProducto.ServiceProducto.eliminarProducto(SushiApp.wsProducto.eliminarProductoRequest request) {
-            return base.Channel.eliminarProducto(request);
-        }
-        
-        public void eliminarProducto(int id) {
-            SushiApp.wsProducto.eliminarProductoRequest inValue = new SushiApp.wsProducto.eliminarProductoRequest();
-            inValue.id = id;
-            SushiApp.wsProducto.eliminarProductoResponse retVal = ((SushiApp.wsProducto.ServiceProducto)(this)).eliminarProducto(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> SushiApp.wsProducto.ServiceProducto.eliminarProductoAsync(SushiApp.wsProducto.eliminarProductoRequest request) {
-            return base.Channel.eliminarProductoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsProducto.eliminarProductoResponse> eliminarProductoAsync(int id) {
-            SushiApp.wsProducto.eliminarProductoRequest inValue = new SushiApp.wsProducto.eliminarProductoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsProducto.ServiceProducto)(this)).eliminarProductoAsync(inValue);
         }
     }
 }
