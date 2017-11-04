@@ -79,7 +79,11 @@
                        </li>
                         <li class="list-group-item">                           
                             <span class="pull-right" id="prEstado">                                                        
-                                <asp:CheckBox ID="ckDiponible" runat="server" />
+                             <label class="control-label" for="status"></label>
+                                    <select name="status" id="status" class="form-control">
+                                        <option value="1" selected>Disponible</option>
+                                        <option value="0">No Disponible</option>
+                                    </select>
                              </span>    
                            Estado
                        </li>                       
@@ -93,7 +97,7 @@
                        <!-- inicio imagen-->
                          <div class="form-group">
                             <label class="control-label" for="price">Imagen</label> <br />                           
-                                <asp:FileUpload ID="FileUpload1" runat="server" /><br />                                 
+                                <asp:FileUpload ID="FileUpload1" runat="server" />                                 
                                 <asp:Button CssClass="btn btn btn-primary" ID="btnImagen" runat="server" Text="Cargar " OnClick="btnImagen_Click" /> 
                                 <br />   
                              <asp:Image ID="imgFoto" runat="server"  />

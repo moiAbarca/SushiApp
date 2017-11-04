@@ -85,17 +85,18 @@
                                                     
                                             </li>
                                                 <li class="list-group-item">
-                                                    <span  id="prGridView">
+                                                    <span class="pull-right" id="prGridView">
                                              <!--GV cliente-->
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <div class="ibox">
-                                                                    <div class="ibox-content">
-                                                                        <asp:GridView ID="gvAdministrador" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server"></asp:GridView> 
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                      <table class="table table-striped table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a data-toggle="tab" href="#usuario"  class="client-link"><asp:GridView ID="gvAdministrador" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server" Enabled="False" >
+                                                                    <RowStyle BorderColor="Black" />
+                                                                    </asp:GridView></a></td>
+                                                            
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                              <!--FIN GV cliente-->
                                                     </span>
                                                                                                         

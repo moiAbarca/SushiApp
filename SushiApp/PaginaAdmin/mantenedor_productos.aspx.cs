@@ -55,8 +55,17 @@ namespace SushiApp.PaginaAdmin
                 txtRuta.Text = auxProducto.imagenProdcuto;
                 txtPorcion.Text = Convert.ToString(auxProducto.porcionesProdcuto);
                 txtPrecio.Text = Convert.ToString(auxProducto.precioProducto);
-                txtCategoria.Text = Convert.ToString(auxProducto.categoriaProductoId);                
-                //falta disponibilidad
+                txtCategoria.Text = Convert.ToString(auxProducto.categoriaProductoId);
+                
+                if (auxProducto.disponibilidadProducto == true)
+                {
+                    ckDiponible.Checked = true;                    
+                }
+                else
+                {
+                    ckDiponible.Checked = false;
+                }
+                
                 
             }
             catch (Exception)
@@ -87,8 +96,16 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
                         auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
-                        //datos en duro de disponibilidad                        
-                        auxProducto.disponibilidadProducto = true;
+                        
+                        if (ckDiponible.Checked)
+                        {
+                            auxProducto.disponibilidadProducto = true;
+                        }
+                        else
+                        {
+                            auxProducto.disponibilidadProducto = false;
+                        }
+                        
 
                         productoClient.agregarProducto(auxProducto);
                         limpiar();
@@ -120,6 +137,7 @@ namespace SushiApp.PaginaAdmin
             txtPrecio.Text = string.Empty;
             imgFoto.ImageUrl = "";
             txtRuta.Text = String.Empty;
+            ckDiponible.Checked = false;
             this.txtIdproducto.Focus();
             return cad;
         }
@@ -182,9 +200,14 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
                         auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
-                        //datos en duro de disponibilidad                        
-                        auxProducto.disponibilidadProducto = false;
-
+                        if (ckDiponible.Checked)
+                        {
+                            auxProducto.disponibilidadProducto = true;
+                        }
+                        else
+                        {
+                            auxProducto.disponibilidadProducto = false;
+                        }
                         productoClient.modificarProducto(auxProducto);
                         Response.Write("<script>alert('Modificado correctamente');</script>");
                         limpiar();

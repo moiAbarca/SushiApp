@@ -32,14 +32,14 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="control-label" for="product_name">ID Categoria</label>
+                            <label class="control-label" for="product_name">ID Categoria</label><br />
                             <%--<input type="text" id="product_name" name="idproducto" value="" placeholder="ID Producto" class="form-control">--%>
                             <asp:TextBox CssClass="form-control" ID="txtIdCategoria" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="control-label" for="quantity">Categoria</label>
+                            <label class="control-label" for="quantity">Categoria</label><br />
                             <%--<input type="text" id="quantity" name="categoria" value="" placeholder="Categoria" class="form-control">--%>
                             <asp:TextBox CssClass="form-control" ID="txtNombreCategoria" runat="server"></asp:TextBox>
                         </div>

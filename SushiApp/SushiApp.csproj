@@ -231,6 +231,7 @@
     <Content Include="PaginaUsuario\SpecialRolls.aspx" />
     <Content Include="PaginaUsuario\TempuraPankoRolls.aspx" />
     <Content Include="PaginaUsuario\VentasSushi.Master" />
+    <None Include="Properties\PublishProfiles\SushiAppPerfil2.pubxml" />
     <None Include="Service References\wsAcceso\ServiceAcceso.wsdl" />
     <None Include="Service References\wsAcceso\ServiceAcceso.xsd">
       <SubType>Designer</SubType>

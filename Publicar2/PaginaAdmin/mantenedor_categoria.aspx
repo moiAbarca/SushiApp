@@ -33,14 +33,14 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="control-label" for="product_name">ID Categoria</label>
-                            <%--<button type="button" class="btn btn btn-primary"> Buscar</button>--%>
+                            <%--<input type="text" id="product_name" name="idproducto" value="" placeholder="ID Producto" class="form-control">--%>
                             <asp:TextBox CssClass="form-control" ID="txtIdCategoria" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="control-label" for="quantity">Categoria</label>
-                            <%--<button class="btn-white btn btn-xs"><a href="mantenedor_categoria_editar.aspx">Editar</a></button>--%>
+                            <%--<input type="text" id="quantity" name="categoria" value="" placeholder="Categoria" class="form-control">--%>
                             <asp:TextBox CssClass="form-control" ID="txtNombreCategoria" runat="server"></asp:TextBox>
                         </div>
                     </div>
@@ -48,11 +48,11 @@
                         <div class="form-group">
                             <label class="control-label" for="quantity">Acción</label>
                             <span class="input-group-btn">
-                            <%--<button class="btn-white btn btn-xs"><a href="mantenedor_categoria_editar.aspx">Editar</a></button>--%>
-                                <asp:Button CssClass="btn btn btn-primary" ID="btnBuscarCategoria" runat="server" Text="Buscar" OnClick="btnBuscarCategoria_Click" />&nbsp                           
-                                <asp:Button ID="btnAgregarCategoria" CssClass="btn btn btn-primary" runat="server" Text="Agregar" OnClick="btnAgregarCategoria_Click" />&nbsp
-                                <asp:Button ID="btnEditar2"  CssClass="btn btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar2_Click" />&nbsp
-                                <asp:Button ID="btnEliminar" CssClass="btn btn btn-primary" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                                <%--<button type="button" class="btn btn btn-primary"> Buscar</button>--%>
+                                <asp:Button CssClass="btn btn btn-primary" ID="btnBuscarCategoria" runat="server" Text="Buscar" OnClick="btnBuscarCategoria_Click" />
+                                &nbsp;&nbsp;<asp:Button ID="btnAgregarCategoria" CssClass="btn btn btn-primary" runat="server" Text="Agregar" OnClick="btnAgregarCategoria_Click" />
+                                &nbsp; <asp:Button ID="btnEliminar" CssClass="btn btn btn-primary" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                                &nbsp;&nbsp;<asp:Button ID="btnEditar" CssClass="btn btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
                             </span>
                         </div>
                     </div>
@@ -65,9 +65,6 @@
                 <div class="col-lg-12">
                     <div class="ibox">
                         <div class="ibox-content">
-
-                           
-
                             <div>
 
                                 <asp:GridView ID="gv1" runat="server" CssClass="footable table table-stripped toggle-arrow-tiny">

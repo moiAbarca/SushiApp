@@ -16,8 +16,10 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 
 </head>
 
@@ -52,21 +54,14 @@
                         <li>
                             <a href="#"><i class="fa fa-edit"></i><span class="nav-label">Mantenedores</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="mantenedor_clientes.aspx">Usuarios</a></li>
+                                <li><a href="mantenedor_clientes.aspx">Clientes</a></li>
+                                <li><a href="mantendor_Administrador.aspx">Administrador</a></li>
                                 <li><a href="mantenedor_categoria.aspx">Categorias</a></li>
                                 <li><a href="mantenedor_productos.aspx">Productos</a></li>
                                 <li><a href="mantenedor_ofertas.aspx">Ofertas</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="css_animation.html"><i class="fa fa-magic"></i><span class="nav-label">Diseño Web</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li><a href="#">Inicio</a></li>
-                                <li><a href="#">Categorias</a></li>
-                                <li><a href="#">Productos</a></li>
-                                <li><a href="#">Ofertas</a></li>
-                            </ul>
-                        </li>
+                
                         <li>
                             <a href="#"><i class="fa fa-pie-chart"></i><span class="nav-label">Analisis</span></a>
                         </li>
