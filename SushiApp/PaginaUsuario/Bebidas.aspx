@@ -50,11 +50,12 @@
         <!-- *** RIGHT COLUMN ***
 			_________________________________________________________ -->
 
-        <asp:Repeater ID="bebidasRepeater" runat="server">
+        <%--<asp:Repeater ID="bebidasRepeater" runat="server">--%>
+        <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="3" OnItemCommand="dtlProductos_ItemCommand">
             <ItemTemplate>
                 <div class="col-sm-9">
                     <div class="row products">
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-9 col-sm-9">
                             <div class="product">
                                 <div class="image">
                                     <a href="#" data-toggle="modal" data-target="#modalProducto">
@@ -62,10 +63,10 @@
                                     </a>
                                 </div>
                                 <div class="text">
-                                    <h4><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h4>
-                                    <%--<h4>Thai Roll</h4>
-                                    <p class="price">$4.600</p>--%>
-                                    <%--<asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />--%>
+                                    <h5><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
+                                    <%--<hr />--%>
+                                    <h6><asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>'></asp:Label></h6>              
+                                    <asp:Button ID="btnAgrega" runat="server" Text="Agregar" CssClass="btn btn-lg btn-success" CommandArgument='<%# Eval("IDPRODUCTO") %>' OnCommand="Agregar"/>
                                 </div>
                             </div>
                         </div>
@@ -95,8 +96,8 @@
                     </div>
                 </div>
             </ItemTemplate>
-
-        </asp:Repeater>
+        </asp:DataList>
+        <%--</asp:Repeater>--%>
 
 
 

@@ -9,6 +9,18 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class ShopBasket1 : System.Web.UI.Page
     {
+        public CarroCollection CarroCompra
+        {
+            get
+            {
+                return (CarroCollection)Session["_carroCompra"];
+            }
+            set
+            {
+                Session["_carroCompra"] = value;
+            }
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

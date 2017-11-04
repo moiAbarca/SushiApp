@@ -14,28 +14,50 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listadoBebidas();
+            ListadoBebidas();
         }
 
-        public void listadoBebidas()
+        public void ListadoBebidas()
         {
-            var listadto = ProductoClient.obtenerProducto();
-            var auxListadto = (from o in listadto
-                               orderby o.productoId
-                               where o.categoriaProductoId == 7
-                               select new
-                               {
-                                   IdProducto = o.productoId,
-                                   NombreProducto = o.nombreProducto,
-                                   PorcionesProducto = o.porcionesProdcuto,
-                                   PrecioProducto = o.precioProducto,
-                                   DescripcionProducto = o.descripcionProducto,
-                                   ImagenProducto = o.imagenProdcuto,
-                                   DisponibilidadProducto = o.disponibilidadProducto
-                               }).ToList();
+            try
+            {
+                var listadto = ProductoClient.obtenerProducto();
+                var auxListadto = (from o in listadto
+                                   orderby o.productoId
+                                   where o.categoriaProductoId == 7
+                                   select new
+                                   {
+                                       IdProducto = o.productoId,
+                                       NombreProducto = o.nombreProducto,
+                                       PorcionesProducto = o.porcionesProdcuto,
+                                       PrecioProducto = o.precioProducto,
+                                       DescripcionProducto = o.descripcionProducto,
+                                       ImagenProducto = o.imagenProdcuto,
+                                       DisponibilidadProducto = o.disponibilidadProducto
+                                   }).ToList();
 
-            bebidasRepeater.DataSource = auxListadto;
-            bebidasRepeater.DataBind();
+                dtlProductos.DataSource = auxListadto;
+                dtlProductos.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
+
+        protected void Agregar(object sender, CommandEventArgs e)
+        {
+
+        }
+
+        protected void dtlProductos_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Agregar")
+            {
+                //Response.Redirect
+            }
         }
     }
 }
