@@ -15,7 +15,10 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListadoProductos();
+            if (!IsPostBack)
+            {
+                ListadoProductos();
+            }
         }
 
         public void ListadoProductos()
@@ -48,6 +51,16 @@ namespace SushiApp.PaginaUsuario
 
         }
 
-        
+        protected void dtlProducto_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Agregar")
+            {
+
+                string id = e.CommandArgument.ToString();
+
+                Response.Write(id);
+
+            }
+        }
     }
 }

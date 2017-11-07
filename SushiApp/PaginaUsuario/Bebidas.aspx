@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Bebidas.aspx.cs" Inherits="SushiApp.PaginaUsuario.Bebidas1" EnableEventValidation="false" validateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Bebidas.aspx.cs" Inherits="SushiApp.PaginaUsuario.Bebidas1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -50,54 +50,36 @@
         <!-- *** RIGHT COLUMN ***
 			_________________________________________________________ -->
 
-        <%--<asp:Repeater ID="bebidasRepeater" runat="server">--%>
-        <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="3" OnItemCommand="dtlProductos_ItemCommand">
-            <ItemTemplate>
-                <div class="col-sm-9">
-                    <div class="row products">
-                        <div class="col-md-4 col-sm-6">
+        <div class="container-fluid">
+            <p class="text-muted lead"></p>
+            <div class="row products">
+                <div class="col-md-4 col-sm-6">
+
+                    <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProductos_ItemCommand1">
+
+                        <ItemTemplate>
                             <div class="product">
                                 <div class="image">
-                                    <a href="#" data-toggle="modal" data-target="#modalProducto">
-                                        <asp:Image ID="imgProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
-                                    </a>
+
+                                    <asp:Image ID="Image1" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
+
                                 </div>
+
                                 <div class="text">
-                                    <h5><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
-                                    <%--<hr />--%>
-                                    <h6><asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>'></asp:Label></h6>              
-                                    <asp:Button ID="btnAgrega" runat="server" Text="Agregar" CssClass="btn btn-lg btn-success" CommandArgument='<%# Eval("IDPRODUCTO") %>' CommandName="Agregar"/>
+                                <h5>
+                                    <asp:Label ID="lblNombreProducto" runat="server" CssClass="btn-template-primary" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
+                                    </div>
                                 </div>
+                            <div class="buttons">
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </ItemTemplate>
 
-                <!-- *** Product MODAL *** -->
+                    </asp:DataList>
 
-                <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4> <asp:Label ID="lblMdlNombreProducto" runat="server" cssClass="modal-title" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label> </h4>
-                                <p><asp:Label ID="lblMdlPorcionesProducto" runat="server" Text='<%# Eval("PORCIONESPRODUCTO") %>'></asp:Label> </p>
-                                <div class="form-group">
-                                    <asp:Image ID="imgMdlProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="lblMdlDescripcion" runat="server" Text='<%# Eval("DESCRIPCIONPRODUCTO") %>'></asp:Label>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="lblMdlValor" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>' CssClass="text-primary" Font-Size="Larger"></asp:Label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </ItemTemplate>
-        </asp:DataList>
-        <%--</asp:Repeater>--%>
+            </div>
+        </div>
 
 
 

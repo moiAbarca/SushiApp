@@ -14,7 +14,11 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListadoProductos();
+            if (!IsPostBack)
+            {
+                ListadoProductos();
+            }
+            
         }
 
         public void ListadoProductos()
@@ -47,23 +51,17 @@ namespace SushiApp.PaginaUsuario
             
         }
 
-        protected void Agregar(object sender, CommandEventArgs e)
-        {
 
-        }
 
-        protected void dtlProductos_ItemCommand(object source, DataListCommandEventArgs e)
+        protected void dtlProductos_ItemCommand1(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "Agregar")
             {
-               
-                DataListItem fila = (DataListItem)Parent;
 
-                Label IdProducto = (Label)fila.Controls[1];
-                Response.Write("<script>alert('Here');</script>");
-                Response.Write(IdProducto);
+                string id = e.CommandArgument.ToString();
 
-                
+                Response.Write(id);
+
             }
         }
     }

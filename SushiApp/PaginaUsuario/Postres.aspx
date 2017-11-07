@@ -54,7 +54,7 @@
             <div class="row products">
                 <div class="col-md-4 col-sm-6">
 
-                    <asp:DataList ID="dtlProducto" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
+                    <asp:DataList ID="dtlProducto" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProducto_ItemCommand">
 
                         <ItemTemplate>
                             <div class="product">
@@ -65,10 +65,12 @@
                                 </div>
 
                                 <div class="text">
-                                <h5>
-                                    <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
-                                    </div>
+
+                                    <h5>
+                                        <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
+                                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CssClass="btn-block success" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
                                 </div>
+                            </div>
                         </ItemTemplate>
 
                     </asp:DataList>
@@ -127,5 +129,4 @@
                 </div>
             </ItemTemplate>
         </asp:DataList>--%>
-    
 </asp:Content>
