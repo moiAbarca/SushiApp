@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Bebidas.aspx.cs" Inherits="SushiApp.PaginaUsuario.Bebidas1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Bebidas.aspx.cs" Inherits="SushiApp.PaginaUsuario.Bebidas1" EnableEventValidation="false" validateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -55,7 +55,7 @@
             <ItemTemplate>
                 <div class="col-sm-9">
                     <div class="row products">
-                        <div class="col-md-9 col-sm-9">
+                        <div class="col-md-4 col-sm-6">
                             <div class="product">
                                 <div class="image">
                                     <a href="#" data-toggle="modal" data-target="#modalProducto">
@@ -66,7 +66,7 @@
                                     <h5><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
                                     <%--<hr />--%>
                                     <h6><asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>'></asp:Label></h6>              
-                                    <asp:Button ID="btnAgrega" runat="server" Text="Agregar" CssClass="btn btn-lg btn-success" CommandArgument='<%# Eval("IDPRODUCTO") %>' OnCommand="Agregar"/>
+                                    <asp:Button ID="btnAgrega" runat="server" Text="Agregar" CssClass="btn btn-lg btn-success" CommandArgument='<%# Eval("IDPRODUCTO") %>' CommandName="Agregar"/>
                                 </div>
                             </div>
                         </div>

@@ -14,10 +14,10 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListadoBebidas();
+            ListadoProductos();
         }
 
-        public void ListadoBebidas()
+        public void ListadoProductos()
         {
             try
             {
@@ -56,7 +56,14 @@ namespace SushiApp.PaginaUsuario
         {
             if (e.CommandName == "Agregar")
             {
-                //Response.Redirect
+               
+                DataListItem fila = (DataListItem)Parent;
+
+                Label IdProducto = (Label)fila.Controls[1];
+                Response.Write("<script>alert('Here');</script>");
+                Response.Write(IdProducto);
+
+                
             }
         }
     }

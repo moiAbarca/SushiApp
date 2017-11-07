@@ -2244,6 +2244,8 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .product .image {
   overflow: hidden;
+    height: 217px;
+    width: 352px;
 }
 .product .image img {
   -webkit-transition: all 0.2s ease-out;
@@ -3366,6 +3368,7 @@ h6,
   font-weight: 900;
   line-height: 1.1;
   color: #333333;
+    width: 334px;
 }
 h1,
 .h1,
