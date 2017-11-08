@@ -60,17 +60,19 @@
                             <div class="product">
                                 <div class="image">
 
-                                    <asp:Image ID="Image1" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
+                                    <asp:Image ID="imgProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
 
-                                </div>
-
-                                <div class="text">
-
-                                    <h5>
-                                        <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
-                                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CssClass="btn-block success" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
                                 </div>
                             </div>
+
+                            <div class="text">
+
+                                <h5>
+                                    <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
+
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CssClass="btn-block success" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
+                            </div>
+
                         </ItemTemplate>
 
                     </asp:DataList>

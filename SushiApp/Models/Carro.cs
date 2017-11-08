@@ -7,26 +7,15 @@ namespace SushiApp.Models
 {
     public class Carro
     {
-        private int _pedidoId;
+ 
         private int _productoId;
         private String _nombreProducto;
         private String _imagenProducto;
         private int _precioUnitario;
-        private string _cantidad;
+        private int _cantidad;
         private int _descuento;
         private int _precioTotal;
 
-        public int PedidoId
-        {
-            get
-            {
-                return _pedidoId;
-            }
-            set
-            {
-                _pedidoId = value;
-            }
-        }
             
         public int ProductoId
         {
@@ -76,7 +65,7 @@ namespace SushiApp.Models
             }
         }
         
-        public string Cantidad
+        public int Cantidad
         {
             get
             {

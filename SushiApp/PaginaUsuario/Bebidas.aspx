@@ -60,16 +60,15 @@
                         <ItemTemplate>
                             <div class="product">
                                 <div class="image">
-
-                                    <asp:Image ID="Image1" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
-
+                                    <asp:Image ID="imgImagenProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
                                 </div>
-
-                                <div class="text">
+                            </div>
+                            <div class="text">
                                 <h5>
                                     <asp:Label ID="lblNombreProducto" runat="server" CssClass="btn-template-primary" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
-                                    </div>
-                                </div>
+                                <asp:Label ID="lblPrecioProducto" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>'></asp:Label>
+                            </div>
+
                             <div class="buttons">
                                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
                             </div>
