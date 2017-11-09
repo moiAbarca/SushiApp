@@ -15,14 +15,6 @@ namespace SushiApp.wsEstablecimiento {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsEstablecimiento.ServiceEstablecimiento")]
     public interface ServiceEstablecimiento {
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse eliminarEstablecimiento(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> eliminarEstablecimientoAsync(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request);
-        
         // CODEGEN: El parámetro 'establecimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -40,6 +32,14 @@ namespace SushiApp.wsEstablecimiento {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request);
         
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse eliminarEstablecimiento(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> eliminarEstablecimientoAsync(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request);
+        
         // CODEGEN: El parámetro 'establecimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/modificarEstablecimientoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -56,34 +56,6 @@ namespace SushiApp.wsEstablecimiento {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> buscarEstablecimientoAsync(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarEstablecimientoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarEstablecimientoRequest() {
-        }
-        
-        public eliminarEstablecimientoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarEstablecimientoResponse {
-        
-        public eliminarEstablecimientoResponse() {
-        }
     }
     
     /// <comentarios/>
@@ -219,6 +191,34 @@ namespace SushiApp.wsEstablecimiento {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarEstablecimientoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarEstablecimientoRequest() {
+        }
+        
+        public eliminarEstablecimientoRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarEstablecimientoResponse {
+        
+        public eliminarEstablecimientoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class modificarEstablecimientoRequest {
         
@@ -308,28 +308,6 @@ namespace SushiApp.wsEstablecimiento {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.eliminarEstablecimiento(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request) {
-            return base.Channel.eliminarEstablecimiento(request);
-        }
-        
-        public void eliminarEstablecimiento(int id) {
-            SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest();
-            inValue.id = id;
-            SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).eliminarEstablecimiento(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.eliminarEstablecimientoAsync(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request) {
-            return base.Channel.eliminarEstablecimientoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> eliminarEstablecimientoAsync(int id) {
-            SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).eliminarEstablecimientoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsEstablecimiento.agregarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.agregarEstablecimiento(SushiApp.wsEstablecimiento.agregarEstablecimientoRequest request) {
             return base.Channel.agregarEstablecimiento(request);
         }
@@ -370,6 +348,28 @@ namespace SushiApp.wsEstablecimiento {
         public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync() {
             SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest();
             return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).obtenerEstablecimientoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.eliminarEstablecimiento(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request) {
+            return base.Channel.eliminarEstablecimiento(request);
+        }
+        
+        public void eliminarEstablecimiento(int id) {
+            SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest();
+            inValue.id = id;
+            SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).eliminarEstablecimiento(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.eliminarEstablecimientoAsync(SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest request) {
+            return base.Channel.eliminarEstablecimientoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.eliminarEstablecimientoResponse> eliminarEstablecimientoAsync(int id) {
+            SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.eliminarEstablecimientoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).eliminarEstablecimientoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -11,12 +11,6 @@
   <message name="obtenerComunaResponse">
     <part name="parameters" element="tns:obtenerComunaResponse" />
   </message>
-  <message name="eliminarComuna">
-    <part name="parameters" element="tns:eliminarComuna" />
-  </message>
-  <message name="eliminarComunaResponse">
-    <part name="parameters" element="tns:eliminarComunaResponse" />
-  </message>
   <message name="agregarComuna">
     <part name="parameters" element="tns:agregarComuna" />
   </message>
@@ -29,6 +23,12 @@
   <message name="modificarComunaResponse">
     <part name="parameters" element="tns:modificarComunaResponse" />
   </message>
+  <message name="eliminarComuna">
+    <part name="parameters" element="tns:eliminarComuna" />
+  </message>
+  <message name="eliminarComunaResponse">
+    <part name="parameters" element="tns:eliminarComunaResponse" />
+  </message>
   <message name="buscarComuna">
     <part name="parameters" element="tns:buscarComuna" />
   </message>
@@ -40,10 +40,6 @@
       <input wsam:Action="http://WebService/ServiceComuna/obtenerComunaRequest" message="tns:obtenerComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/obtenerComunaResponse" message="tns:obtenerComunaResponse" />
     </operation>
-    <operation name="eliminarComuna">
-      <input wsam:Action="http://WebService/ServiceComuna/eliminarComunaRequest" message="tns:eliminarComuna" />
-      <output wsam:Action="http://WebService/ServiceComuna/eliminarComunaResponse" message="tns:eliminarComunaResponse" />
-    </operation>
     <operation name="agregarComuna">
       <input wsam:Action="http://WebService/ServiceComuna/agregarComunaRequest" message="tns:agregarComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/agregarComunaResponse" message="tns:agregarComunaResponse" />
@@ -51,6 +47,10 @@
     <operation name="modificarComuna">
       <input wsam:Action="http://WebService/ServiceComuna/modificarComunaRequest" message="tns:modificarComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/modificarComunaResponse" message="tns:modificarComunaResponse" />
+    </operation>
+    <operation name="eliminarComuna">
+      <input wsam:Action="http://WebService/ServiceComuna/eliminarComunaRequest" message="tns:eliminarComuna" />
+      <output wsam:Action="http://WebService/ServiceComuna/eliminarComunaResponse" message="tns:eliminarComunaResponse" />
     </operation>
     <operation name="buscarComuna">
       <input wsam:Action="http://WebService/ServiceComuna/buscarComunaRequest" message="tns:buscarComuna" />
@@ -68,15 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarComuna">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="agregarComuna">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +78,15 @@
       </output>
     </operation>
     <operation name="modificarComuna">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarComuna">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

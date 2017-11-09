@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceEstablecimiento?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="eliminarEstablecimiento">
-    <part name="parameters" element="tns:eliminarEstablecimiento" />
-  </message>
-  <message name="eliminarEstablecimientoResponse">
-    <part name="parameters" element="tns:eliminarEstablecimientoResponse" />
-  </message>
   <message name="agregarEstablecimiento">
     <part name="parameters" element="tns:agregarEstablecimiento" />
   </message>
@@ -22,6 +16,12 @@
   </message>
   <message name="obtenerEstablecimientoResponse">
     <part name="parameters" element="tns:obtenerEstablecimientoResponse" />
+  </message>
+  <message name="eliminarEstablecimiento">
+    <part name="parameters" element="tns:eliminarEstablecimiento" />
+  </message>
+  <message name="eliminarEstablecimientoResponse">
+    <part name="parameters" element="tns:eliminarEstablecimientoResponse" />
   </message>
   <message name="modificarEstablecimiento">
     <part name="parameters" element="tns:modificarEstablecimiento" />
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:buscarEstablecimientoResponse" />
   </message>
   <portType name="ServiceEstablecimiento">
-    <operation name="eliminarEstablecimiento">
-      <input wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest" message="tns:eliminarEstablecimiento" />
-      <output wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse" message="tns:eliminarEstablecimientoResponse" />
-    </operation>
     <operation name="agregarEstablecimiento">
       <input wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest" message="tns:agregarEstablecimiento" />
       <output wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse" message="tns:agregarEstablecimientoResponse" />
@@ -47,6 +43,10 @@
     <operation name="obtenerEstablecimiento">
       <input wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest" message="tns:obtenerEstablecimiento" />
       <output wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse" message="tns:obtenerEstablecimientoResponse" />
+    </operation>
+    <operation name="eliminarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest" message="tns:eliminarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse" message="tns:eliminarEstablecimientoResponse" />
     </operation>
     <operation name="modificarEstablecimiento">
       <input wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest" message="tns:modificarEstablecimiento" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="ServiceEstablecimientoPortBinding" type="tns:ServiceEstablecimiento">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarEstablecimiento">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="agregarEstablecimiento">
       <soap:operation soapAction="" />
       <input>
@@ -78,6 +69,15 @@
       </output>
     </operation>
     <operation name="obtenerEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEstablecimiento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceUsuario?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="eliminarUsuario">
+    <part name="parameters" element="tns:eliminarUsuario" />
+  </message>
+  <message name="eliminarUsuarioResponse">
+    <part name="parameters" element="tns:eliminarUsuarioResponse" />
+  </message>
   <message name="buscarUsuario">
     <part name="parameters" element="tns:buscarUsuario" />
   </message>
@@ -16,12 +22,6 @@
   </message>
   <message name="agregarUsuarioResponse">
     <part name="parameters" element="tns:agregarUsuarioResponse" />
-  </message>
-  <message name="eliminarUsuario">
-    <part name="parameters" element="tns:eliminarUsuario" />
-  </message>
-  <message name="eliminarUsuarioResponse">
-    <part name="parameters" element="tns:eliminarUsuarioResponse" />
   </message>
   <message name="obtenerUsuario">
     <part name="parameters" element="tns:obtenerUsuario" />
@@ -36,6 +36,10 @@
     <part name="parameters" element="tns:modificarUsuarioResponse" />
   </message>
   <portType name="ServiceUsuario">
+    <operation name="eliminarUsuario">
+      <input wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest" message="tns:eliminarUsuario" />
+      <output wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioResponse" message="tns:eliminarUsuarioResponse" />
+    </operation>
     <operation name="buscarUsuario">
       <input wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioRequest" message="tns:buscarUsuario" />
       <output wsam:Action="http://WebService/ServiceUsuario/buscarUsuarioResponse" message="tns:buscarUsuarioResponse" />
@@ -43,10 +47,6 @@
     <operation name="agregarUsuario">
       <input wsam:Action="http://WebService/ServiceUsuario/agregarUsuarioRequest" message="tns:agregarUsuario" />
       <output wsam:Action="http://WebService/ServiceUsuario/agregarUsuarioResponse" message="tns:agregarUsuarioResponse" />
-    </operation>
-    <operation name="eliminarUsuario">
-      <input wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioRequest" message="tns:eliminarUsuario" />
-      <output wsam:Action="http://WebService/ServiceUsuario/eliminarUsuarioResponse" message="tns:eliminarUsuarioResponse" />
     </operation>
     <operation name="obtenerUsuario">
       <input wsam:Action="http://WebService/ServiceUsuario/obtenerUsuarioRequest" message="tns:obtenerUsuario" />
@@ -59,6 +59,15 @@
   </portType>
   <binding name="ServiceUsuarioPortBinding" type="tns:ServiceUsuario">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -69,15 +78,6 @@
       </output>
     </operation>
     <operation name="agregarUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

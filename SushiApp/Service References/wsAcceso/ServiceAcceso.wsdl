@@ -11,18 +11,6 @@
   <message name="obtenerAccesoResponse">
     <part name="parameters" element="tns:obtenerAccesoResponse" />
   </message>
-  <message name="modificarAcceso">
-    <part name="parameters" element="tns:modificarAcceso" />
-  </message>
-  <message name="modificarAccesoResponse">
-    <part name="parameters" element="tns:modificarAccesoResponse" />
-  </message>
-  <message name="buscarAcceso">
-    <part name="parameters" element="tns:buscarAcceso" />
-  </message>
-  <message name="buscarAccesoResponse">
-    <part name="parameters" element="tns:buscarAccesoResponse" />
-  </message>
   <message name="agregaAcceso">
     <part name="parameters" element="tns:agregaAcceso" />
   </message>
@@ -35,18 +23,22 @@
   <message name="eliminarAccesoResponse">
     <part name="parameters" element="tns:eliminarAccesoResponse" />
   </message>
+  <message name="modificarAcceso">
+    <part name="parameters" element="tns:modificarAcceso" />
+  </message>
+  <message name="modificarAccesoResponse">
+    <part name="parameters" element="tns:modificarAccesoResponse" />
+  </message>
+  <message name="buscarAcceso">
+    <part name="parameters" element="tns:buscarAcceso" />
+  </message>
+  <message name="buscarAccesoResponse">
+    <part name="parameters" element="tns:buscarAccesoResponse" />
+  </message>
   <portType name="ServiceAcceso">
     <operation name="obtenerAcceso">
       <input wsam:Action="http://WebService/ServiceAcceso/obtenerAccesoRequest" message="tns:obtenerAcceso" />
       <output wsam:Action="http://WebService/ServiceAcceso/obtenerAccesoResponse" message="tns:obtenerAccesoResponse" />
-    </operation>
-    <operation name="modificarAcceso">
-      <input wsam:Action="http://WebService/ServiceAcceso/modificarAccesoRequest" message="tns:modificarAcceso" />
-      <output wsam:Action="http://WebService/ServiceAcceso/modificarAccesoResponse" message="tns:modificarAccesoResponse" />
-    </operation>
-    <operation name="buscarAcceso">
-      <input wsam:Action="http://WebService/ServiceAcceso/buscarAccesoRequest" message="tns:buscarAcceso" />
-      <output wsam:Action="http://WebService/ServiceAcceso/buscarAccesoResponse" message="tns:buscarAccesoResponse" />
     </operation>
     <operation name="agregaAcceso">
       <input wsam:Action="http://WebService/ServiceAcceso/agregaAccesoRequest" message="tns:agregaAcceso" />
@@ -55,6 +47,14 @@
     <operation name="eliminarAcceso">
       <input wsam:Action="http://WebService/ServiceAcceso/eliminarAccesoRequest" message="tns:eliminarAcceso" />
       <output wsam:Action="http://WebService/ServiceAcceso/eliminarAccesoResponse" message="tns:eliminarAccesoResponse" />
+    </operation>
+    <operation name="modificarAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/modificarAccesoRequest" message="tns:modificarAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/modificarAccesoResponse" message="tns:modificarAccesoResponse" />
+    </operation>
+    <operation name="buscarAcceso">
+      <input wsam:Action="http://WebService/ServiceAcceso/buscarAccesoRequest" message="tns:buscarAcceso" />
+      <output wsam:Action="http://WebService/ServiceAcceso/buscarAccesoResponse" message="tns:buscarAccesoResponse" />
     </operation>
   </portType>
   <binding name="ServiceAccesoPortBinding" type="tns:ServiceAcceso">
@@ -68,24 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarAcceso">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarAcceso">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="agregaAcceso">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +78,24 @@
       </output>
     </operation>
     <operation name="eliminarAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarAcceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarAcceso">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

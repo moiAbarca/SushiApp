@@ -11,11 +11,11 @@
   <message name="obtenerCategoriaProductoResponse">
     <part name="parameters" element="tns:obtenerCategoriaProductoResponse" />
   </message>
-  <message name="modificarCategoriaProducto">
-    <part name="parameters" element="tns:modificarCategoriaProducto" />
+  <message name="eliminarCategoriaProducto">
+    <part name="parameters" element="tns:eliminarCategoriaProducto" />
   </message>
-  <message name="modificarCategoriaProductoResponse">
-    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
+  <message name="eliminarCategoriaProductoResponse">
+    <part name="parameters" element="tns:eliminarCategoriaProductoResponse" />
   </message>
   <message name="buscarCategoriaProducto">
     <part name="parameters" element="tns:buscarCategoriaProducto" />
@@ -23,38 +23,38 @@
   <message name="buscarCategoriaProductoResponse">
     <part name="parameters" element="tns:buscarCategoriaProductoResponse" />
   </message>
-  <message name="eliminarCategoriaProducto">
-    <part name="parameters" element="tns:eliminarCategoriaProducto" />
-  </message>
-  <message name="eliminarCategoriaProductoResponse">
-    <part name="parameters" element="tns:eliminarCategoriaProductoResponse" />
-  </message>
   <message name="agregarCategoriaProducto">
     <part name="parameters" element="tns:agregarCategoriaProducto" />
   </message>
   <message name="agregarCategoriaProductoResponse">
     <part name="parameters" element="tns:agregarCategoriaProductoResponse" />
   </message>
+  <message name="modificarCategoriaProducto">
+    <part name="parameters" element="tns:modificarCategoriaProducto" />
+  </message>
+  <message name="modificarCategoriaProductoResponse">
+    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
+  </message>
   <portType name="ServiceCategoriaProducto">
     <operation name="obtenerCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoRequest" message="tns:obtenerCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoResponse" message="tns:obtenerCategoriaProductoResponse" />
     </operation>
-    <operation name="modificarCategoriaProducto">
-      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
-      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
+    <operation name="eliminarCategoriaProducto">
+      <input wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoRequest" message="tns:eliminarCategoriaProducto" />
+      <output wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoResponse" message="tns:eliminarCategoriaProductoResponse" />
     </operation>
     <operation name="buscarCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoRequest" message="tns:buscarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoResponse" message="tns:buscarCategoriaProductoResponse" />
     </operation>
-    <operation name="eliminarCategoriaProducto">
-      <input wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoRequest" message="tns:eliminarCategoriaProducto" />
-      <output wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoResponse" message="tns:eliminarCategoriaProductoResponse" />
-    </operation>
     <operation name="agregarCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/agregarCategoriaProductoRequest" message="tns:agregarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/agregarCategoriaProductoResponse" message="tns:agregarCategoriaProductoResponse" />
+    </operation>
+    <operation name="modificarCategoriaProducto">
+      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
+      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
     </operation>
   </portType>
   <binding name="ServiceCategoriaProductoPortBinding" type="tns:ServiceCategoriaProducto">
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCategoriaProducto">
+    <operation name="eliminarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarCategoriaProducto">
+    <operation name="agregarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="agregarCategoriaProducto">
+    <operation name="modificarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

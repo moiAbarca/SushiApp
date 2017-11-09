@@ -39,7 +39,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('No se pudo cargar GridView Cliente');</script>");
+                Response.Write("<script>alert('No se pudo cargar GridView');</script>");
             }
 
         }
@@ -79,7 +79,7 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                if (txtIdproducto.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0 || txtCategoria.Text.Trim().Length == 0 || txtRuta.Text.Trim().Length == 0)
+                if (txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0 || txtCategoria.Text.Trim().Length == 0 || txtRuta.Text.Trim().Length == 0)
                 {
                     Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
                     return;
@@ -91,25 +91,25 @@ namespace SushiApp.PaginaAdmin
                     {
                         auxProducto.productoId = Convert.ToInt32(this.txtIdproducto.Text);
                         auxProducto.nombreProducto = this.txtNombre.Text;
-                        auxProducto.descripcionProducto = this.txtDescripcion.Text;                        
-                        auxProducto.imagenProdcuto = txtRuta.Text;
-                        auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
-                        auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
-                        auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
-                        
-                        if (ckDiponible.Checked)
-                        {
-                            auxProducto.disponibilidadProducto = true;
-                        }
-                        else
-                        {
-                            auxProducto.disponibilidadProducto = false;
-                        }
-                        
+                    auxProducto.descripcionProducto = this.txtDescripcion.Text;
+                    auxProducto.imagenProdcuto = txtRuta.Text;
+                    auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
+                    auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
+                    auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
 
-                        productoClient.agregarProducto(auxProducto);
-                        limpiar();
-                        cargarGVProductos();
+                    if (ckDiponible.Checked)
+                    {
+                        auxProducto.disponibilidadProducto = true;
+                    }
+                    else
+                    {
+                        auxProducto.disponibilidadProducto = false;
+                    }
+
+
+                    productoClient.agregarProducto(auxProducto);
+                    limpiar();
+                    cargarGVProductos();
                     }
                     else
                     {

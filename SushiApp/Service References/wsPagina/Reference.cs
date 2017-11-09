@@ -15,6 +15,32 @@ namespace SushiApp.wsPagina {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsPagina.ServicePagina")]
     public interface ServicePagina {
         
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/buscarPaginaRequest", ReplyAction="http://WebService/ServicePagina/buscarPaginaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsPagina.buscarPaginaResponse buscarPagina(SushiApp.wsPagina.buscarPaginaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/buscarPaginaRequest", ReplyAction="http://WebService/ServicePagina/buscarPaginaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> buscarPaginaAsync(SushiApp.wsPagina.buscarPaginaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/obtenerPaginaRequest", ReplyAction="http://WebService/ServicePagina/obtenerPaginaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsPagina.obtenerPaginaResponse obtenerPagina(SushiApp.wsPagina.obtenerPaginaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/obtenerPaginaRequest", ReplyAction="http://WebService/ServicePagina/obtenerPaginaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> obtenerPaginaAsync(SushiApp.wsPagina.obtenerPaginaRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/eliminarPaginaRequest", ReplyAction="http://WebService/ServicePagina/eliminarPaginaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsPagina.eliminarPaginaResponse eliminarPagina(SushiApp.wsPagina.eliminarPaginaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/eliminarPaginaRequest", ReplyAction="http://WebService/ServicePagina/eliminarPaginaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> eliminarPaginaAsync(SushiApp.wsPagina.eliminarPaginaRequest request);
+        
         // CODEGEN: El parámetro 'pagina' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/agregarPaginaRequest", ReplyAction="http://WebService/ServicePagina/agregarPaginaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -30,32 +56,6 @@ namespace SushiApp.wsPagina {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/modificarPaginaRequest", ReplyAction="http://WebService/ServicePagina/modificarPaginaResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPagina.modificarPaginaResponse> modificarPaginaAsync(SushiApp.wsPagina.modificarPaginaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/obtenerPaginaRequest", ReplyAction="http://WebService/ServicePagina/obtenerPaginaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsPagina.obtenerPaginaResponse obtenerPagina(SushiApp.wsPagina.obtenerPaginaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/obtenerPaginaRequest", ReplyAction="http://WebService/ServicePagina/obtenerPaginaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> obtenerPaginaAsync(SushiApp.wsPagina.obtenerPaginaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/buscarPaginaRequest", ReplyAction="http://WebService/ServicePagina/buscarPaginaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsPagina.buscarPaginaResponse buscarPagina(SushiApp.wsPagina.buscarPaginaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/buscarPaginaRequest", ReplyAction="http://WebService/ServicePagina/buscarPaginaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> buscarPaginaAsync(SushiApp.wsPagina.buscarPaginaRequest request);
-        
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/eliminarPaginaRequest", ReplyAction="http://WebService/ServicePagina/eliminarPaginaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPagina.eliminarPaginaResponse eliminarPagina(SushiApp.wsPagina.eliminarPaginaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePagina/eliminarPaginaRequest", ReplyAction="http://WebService/ServicePagina/eliminarPaginaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> eliminarPaginaAsync(SushiApp.wsPagina.eliminarPaginaRequest request);
     }
     
     /// <comentarios/>
@@ -121,6 +121,98 @@ namespace SushiApp.wsPagina {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarPaginaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public buscarPaginaRequest() {
+        }
+        
+        public buscarPaginaRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarPaginaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPagina.pagina @return;
+        
+        public buscarPaginaResponse() {
+        }
+        
+        public buscarPaginaResponse(SushiApp.wsPagina.pagina @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPaginaRequest {
+        
+        public obtenerPaginaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPaginaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPagina.pagina[] @return;
+        
+        public obtenerPaginaResponse() {
+        }
+        
+        public obtenerPaginaResponse(SushiApp.wsPagina.pagina[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPaginaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarPaginaRequest() {
+        }
+        
+        public eliminarPaginaRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPaginaResponse {
+        
+        public eliminarPaginaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class agregarPaginaRequest {
         
@@ -174,98 +266,6 @@ namespace SushiApp.wsPagina {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPaginaRequest {
-        
-        public obtenerPaginaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPaginaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPagina.pagina[] @return;
-        
-        public obtenerPaginaResponse() {
-        }
-        
-        public obtenerPaginaResponse(SushiApp.wsPagina.pagina[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarPaginaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public buscarPaginaRequest() {
-        }
-        
-        public buscarPaginaRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarPaginaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPagina.pagina @return;
-        
-        public buscarPaginaResponse() {
-        }
-        
-        public buscarPaginaResponse(SushiApp.wsPagina.pagina @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPagina", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPaginaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarPaginaRequest() {
-        }
-        
-        public eliminarPaginaRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPaginaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPaginaResponse {
-        
-        public eliminarPaginaResponse() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicePaginaChannel : SushiApp.wsPagina.ServicePagina, System.ServiceModel.IClientChannel {
     }
@@ -291,6 +291,72 @@ namespace SushiApp.wsPagina {
         
         public ServicePaginaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPagina.buscarPaginaResponse SushiApp.wsPagina.ServicePagina.buscarPagina(SushiApp.wsPagina.buscarPaginaRequest request) {
+            return base.Channel.buscarPagina(request);
+        }
+        
+        public SushiApp.wsPagina.pagina buscarPagina(int id) {
+            SushiApp.wsPagina.buscarPaginaRequest inValue = new SushiApp.wsPagina.buscarPaginaRequest();
+            inValue.id = id;
+            SushiApp.wsPagina.buscarPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).buscarPagina(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> SushiApp.wsPagina.ServicePagina.buscarPaginaAsync(SushiApp.wsPagina.buscarPaginaRequest request) {
+            return base.Channel.buscarPaginaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> buscarPaginaAsync(int id) {
+            SushiApp.wsPagina.buscarPaginaRequest inValue = new SushiApp.wsPagina.buscarPaginaRequest();
+            inValue.id = id;
+            return ((SushiApp.wsPagina.ServicePagina)(this)).buscarPaginaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPagina.obtenerPaginaResponse SushiApp.wsPagina.ServicePagina.obtenerPagina(SushiApp.wsPagina.obtenerPaginaRequest request) {
+            return base.Channel.obtenerPagina(request);
+        }
+        
+        public SushiApp.wsPagina.pagina[] obtenerPagina() {
+            SushiApp.wsPagina.obtenerPaginaRequest inValue = new SushiApp.wsPagina.obtenerPaginaRequest();
+            SushiApp.wsPagina.obtenerPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).obtenerPagina(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> SushiApp.wsPagina.ServicePagina.obtenerPaginaAsync(SushiApp.wsPagina.obtenerPaginaRequest request) {
+            return base.Channel.obtenerPaginaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> obtenerPaginaAsync() {
+            SushiApp.wsPagina.obtenerPaginaRequest inValue = new SushiApp.wsPagina.obtenerPaginaRequest();
+            return ((SushiApp.wsPagina.ServicePagina)(this)).obtenerPaginaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPagina.eliminarPaginaResponse SushiApp.wsPagina.ServicePagina.eliminarPagina(SushiApp.wsPagina.eliminarPaginaRequest request) {
+            return base.Channel.eliminarPagina(request);
+        }
+        
+        public void eliminarPagina(int id) {
+            SushiApp.wsPagina.eliminarPaginaRequest inValue = new SushiApp.wsPagina.eliminarPaginaRequest();
+            inValue.id = id;
+            SushiApp.wsPagina.eliminarPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).eliminarPagina(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> SushiApp.wsPagina.ServicePagina.eliminarPaginaAsync(SushiApp.wsPagina.eliminarPaginaRequest request) {
+            return base.Channel.eliminarPaginaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> eliminarPaginaAsync(int id) {
+            SushiApp.wsPagina.eliminarPaginaRequest inValue = new SushiApp.wsPagina.eliminarPaginaRequest();
+            inValue.id = id;
+            return ((SushiApp.wsPagina.ServicePagina)(this)).eliminarPaginaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -335,72 +401,6 @@ namespace SushiApp.wsPagina {
             SushiApp.wsPagina.modificarPaginaRequest inValue = new SushiApp.wsPagina.modificarPaginaRequest();
             inValue.pagina = pagina;
             return ((SushiApp.wsPagina.ServicePagina)(this)).modificarPaginaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPagina.obtenerPaginaResponse SushiApp.wsPagina.ServicePagina.obtenerPagina(SushiApp.wsPagina.obtenerPaginaRequest request) {
-            return base.Channel.obtenerPagina(request);
-        }
-        
-        public SushiApp.wsPagina.pagina[] obtenerPagina() {
-            SushiApp.wsPagina.obtenerPaginaRequest inValue = new SushiApp.wsPagina.obtenerPaginaRequest();
-            SushiApp.wsPagina.obtenerPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).obtenerPagina(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> SushiApp.wsPagina.ServicePagina.obtenerPaginaAsync(SushiApp.wsPagina.obtenerPaginaRequest request) {
-            return base.Channel.obtenerPaginaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPagina.obtenerPaginaResponse> obtenerPaginaAsync() {
-            SushiApp.wsPagina.obtenerPaginaRequest inValue = new SushiApp.wsPagina.obtenerPaginaRequest();
-            return ((SushiApp.wsPagina.ServicePagina)(this)).obtenerPaginaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPagina.buscarPaginaResponse SushiApp.wsPagina.ServicePagina.buscarPagina(SushiApp.wsPagina.buscarPaginaRequest request) {
-            return base.Channel.buscarPagina(request);
-        }
-        
-        public SushiApp.wsPagina.pagina buscarPagina(int id) {
-            SushiApp.wsPagina.buscarPaginaRequest inValue = new SushiApp.wsPagina.buscarPaginaRequest();
-            inValue.id = id;
-            SushiApp.wsPagina.buscarPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).buscarPagina(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> SushiApp.wsPagina.ServicePagina.buscarPaginaAsync(SushiApp.wsPagina.buscarPaginaRequest request) {
-            return base.Channel.buscarPaginaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPagina.buscarPaginaResponse> buscarPaginaAsync(int id) {
-            SushiApp.wsPagina.buscarPaginaRequest inValue = new SushiApp.wsPagina.buscarPaginaRequest();
-            inValue.id = id;
-            return ((SushiApp.wsPagina.ServicePagina)(this)).buscarPaginaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPagina.eliminarPaginaResponse SushiApp.wsPagina.ServicePagina.eliminarPagina(SushiApp.wsPagina.eliminarPaginaRequest request) {
-            return base.Channel.eliminarPagina(request);
-        }
-        
-        public void eliminarPagina(int id) {
-            SushiApp.wsPagina.eliminarPaginaRequest inValue = new SushiApp.wsPagina.eliminarPaginaRequest();
-            inValue.id = id;
-            SushiApp.wsPagina.eliminarPaginaResponse retVal = ((SushiApp.wsPagina.ServicePagina)(this)).eliminarPagina(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> SushiApp.wsPagina.ServicePagina.eliminarPaginaAsync(SushiApp.wsPagina.eliminarPaginaRequest request) {
-            return base.Channel.eliminarPaginaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPagina.eliminarPaginaResponse> eliminarPaginaAsync(int id) {
-            SushiApp.wsPagina.eliminarPaginaRequest inValue = new SushiApp.wsPagina.eliminarPaginaRequest();
-            inValue.id = id;
-            return ((SushiApp.wsPagina.ServicePagina)(this)).eliminarPaginaAsync(inValue);
         }
     }
 }

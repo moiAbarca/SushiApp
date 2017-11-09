@@ -78,10 +78,7 @@
                         <div class="navbar-header">
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
                             <!--<form role="search" class="navbar-form-custom" method="post" action="#"> -->
-                                <div class="form-group">
-                                    <input type="text" placeholder="Buscar algo..." class="form-control" name="top-search" id="top-search">
-                                    <%--<asp:TextBox Cssclass="form-control" ID="buscar" runat="server"></asp:TextBox>--%>
-                                </div>
+                                
                             <!--</form>-->
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
@@ -96,8 +93,10 @@
                 <!-- FIN MENU DE MENU SUPERIOR -->
 
                 <!-- INICIO DE CONTENIDO -->
+               
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
+
                 <!-- FIN DE CONTENIDO -->
 
                 <!-- INICIO PIE DE PAGINA -->

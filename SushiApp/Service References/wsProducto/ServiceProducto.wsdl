@@ -11,11 +11,11 @@
   <message name="modificarProductoResponse">
     <part name="parameters" element="tns:modificarProductoResponse" />
   </message>
-  <message name="obtenerProducto">
-    <part name="parameters" element="tns:obtenerProducto" />
+  <message name="agregarProducto">
+    <part name="parameters" element="tns:agregarProducto" />
   </message>
-  <message name="obtenerProductoResponse">
-    <part name="parameters" element="tns:obtenerProductoResponse" />
+  <message name="agregarProductoResponse">
+    <part name="parameters" element="tns:agregarProductoResponse" />
   </message>
   <message name="eliminarProducto">
     <part name="parameters" element="tns:eliminarProducto" />
@@ -23,38 +23,38 @@
   <message name="eliminarProductoResponse">
     <part name="parameters" element="tns:eliminarProductoResponse" />
   </message>
+  <message name="obtenerProducto">
+    <part name="parameters" element="tns:obtenerProducto" />
+  </message>
+  <message name="obtenerProductoResponse">
+    <part name="parameters" element="tns:obtenerProductoResponse" />
+  </message>
   <message name="buscarProducto">
     <part name="parameters" element="tns:buscarProducto" />
   </message>
   <message name="buscarProductoResponse">
     <part name="parameters" element="tns:buscarProductoResponse" />
   </message>
-  <message name="agregarProducto">
-    <part name="parameters" element="tns:agregarProducto" />
-  </message>
-  <message name="agregarProductoResponse">
-    <part name="parameters" element="tns:agregarProductoResponse" />
-  </message>
   <portType name="ServiceProducto">
     <operation name="modificarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/modificarProductoRequest" message="tns:modificarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/modificarProductoResponse" message="tns:modificarProductoResponse" />
     </operation>
-    <operation name="obtenerProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/obtenerProductoRequest" message="tns:obtenerProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/obtenerProductoResponse" message="tns:obtenerProductoResponse" />
+    <operation name="agregarProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
     </operation>
     <operation name="eliminarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/eliminarProductoRequest" message="tns:eliminarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
     </operation>
+    <operation name="obtenerProducto">
+      <input wsam:Action="http://WebService/ServiceProducto/obtenerProductoRequest" message="tns:obtenerProducto" />
+      <output wsam:Action="http://WebService/ServiceProducto/obtenerProductoResponse" message="tns:obtenerProductoResponse" />
+    </operation>
     <operation name="buscarProducto">
       <input wsam:Action="http://WebService/ServiceProducto/buscarProductoRequest" message="tns:buscarProducto" />
       <output wsam:Action="http://WebService/ServiceProducto/buscarProductoResponse" message="tns:buscarProductoResponse" />
-    </operation>
-    <operation name="agregarProducto">
-      <input wsam:Action="http://WebService/ServiceProducto/agregarProductoRequest" message="tns:agregarProducto" />
-      <output wsam:Action="http://WebService/ServiceProducto/agregarProductoResponse" message="tns:agregarProductoResponse" />
     </operation>
   </portType>
   <binding name="ServiceProductoPortBinding" type="tns:ServiceProducto">
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerProducto">
+    <operation name="agregarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarProducto">
+    <operation name="obtenerProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="agregarProducto">
+    <operation name="buscarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

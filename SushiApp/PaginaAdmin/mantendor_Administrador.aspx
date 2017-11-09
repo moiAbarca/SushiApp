@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     &nbsp;<!-- INICIO DE BREADCRUMB --><div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Mantenedor Administrador</h2>
