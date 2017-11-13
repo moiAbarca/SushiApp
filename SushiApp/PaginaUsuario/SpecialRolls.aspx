@@ -36,8 +36,8 @@
             <!-- *** MENUS AND FILTERS END *** -->
 
             <div class="banner">
-                <a href="shop-category.html">
-                    <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                <a href="#">
+                    <img src="img/banner5.jpg" alt="sales 2014" class="img-responsive">
                 </a>
             </div>
             <!-- /.banner -->
@@ -52,7 +52,7 @@
 
         <div class="col-sm-9">
 
-            <p class="text-muted lead"></p>
+            
 
             <div class="row products">
                 <div class="col-md-4 col-sm-6">
@@ -150,7 +150,7 @@
                         <div class="text">
                             <h4>Thai Roll</h4>
                             <p class="price">$4.600</p>
-                            <asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                            <asp:Button ID="btnThaiRollAgrega" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" OnClick="btnThaiRollAgrega_Click" />
                         </div>
                         <!-- /.text -->
                         <!-- *** Product MODAL *** -->
@@ -188,7 +188,7 @@
 
                 <div class="col-md-12 banner">
                     <a href="#">
-                        <img src="img/sushi1.jpg" alt="" class="img-responsive">
+                        <img src="img/sushi10.jpg" alt="" class="img-responsive">
                     </a>
                 </div>
 

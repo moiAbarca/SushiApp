@@ -30,7 +30,7 @@ namespace SushiApp.PaginaAdmin
                                                       Nombre = o.nombreAdmin,
                                                       Apellido = o.apellidoAdmin,
                                                       Email = o.corrreoAdmin,
-                                                      Rut = o.telefonoAdmin,
+                                                      Rut = o.telefonoAdmin
 
                                                   }).ToList();
 

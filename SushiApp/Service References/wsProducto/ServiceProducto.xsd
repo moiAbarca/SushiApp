@@ -48,14 +48,6 @@
   <xs:complexType name="modificarProductoResponse">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="obtenerProducto">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="obtenerProductoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="agregarProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="producto" type="tns:producto" />
@@ -63,5 +55,13 @@
   </xs:complexType>
   <xs:complexType name="agregarProductoResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerProducto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerProductoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>

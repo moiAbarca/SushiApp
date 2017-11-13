@@ -257,7 +257,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+                Response.Write("<script>alert('Error al realizar la operación');</script>");
             }
         }
     }

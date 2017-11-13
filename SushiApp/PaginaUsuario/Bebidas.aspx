@@ -36,7 +36,7 @@
 
             <div class="banner">
                 <a href="shop-category.html">
-                    <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                    <img src="img/banner5.jpg" alt="sales 2014" class="img-responsive">
                 </a>
             </div>
             <!-- /.banner -->

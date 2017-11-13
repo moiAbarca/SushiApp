@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="73fed3d9-f12c-4f32-9d2a-b5337afb0849" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="44692f9f-0a30-4a4b-9b27-f8284c8c2134" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:8084/SushiBackend9/ServiceProducto?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceProducto.wsdl" MetadataType="Wsdl" ID="624551d2-2f7e-4c47-ae84-a07ddef840be" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceProducto?wsdl" />
-    <MetadataFile FileName="ServiceProducto.xsd" MetadataType="Schema" ID="60f37117-2303-4383-adb5-001b1a21c07a" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceProducto?xsd=1" />
+    <MetadataFile FileName="ServiceProducto.wsdl" MetadataType="Wsdl" ID="b039e814-cc2b-4c64-9a51-207d62b70923" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceProducto?wsdl" />
+    <MetadataFile FileName="ServiceProducto.xsd" MetadataType="Schema" ID="41dfbb45-ebe0-4210-9b2a-3e1e069330fb" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceProducto?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

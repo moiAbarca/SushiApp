@@ -37,8 +37,8 @@
             <!-- *** MENUS AND FILTERS END *** -->
 
             <div class="banner">
-                <a href="shop-category.html">
-                    <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                <a href="#">
+                    <img src="img/banner5.jpg" alt="sales 2014" class="img-responsive">
                 </a>
             </div>
             <!-- /.banner -->
@@ -61,7 +61,7 @@
 
                 <div class="col-md-12 banner">
                     <a href="#">
-                        <img src="img/sushi1.jpg" alt="" class="img-responsive">
+                        <img src="img/sushi10.jpg" alt="" class="img-responsive">
                     </a>
                 </div>
 
