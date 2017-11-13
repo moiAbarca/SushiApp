@@ -31,7 +31,7 @@ namespace SushiApp.PaginaUsuario
                     auxCliente.rut = "";
                     auxCliente.direccion = "";
                     auxCliente.apellido = txtApellido.Text;
-                    auxCliente.comunaId = 1;
+                    auxCliente.comuna = String.Empty;
                     auxCliente.telefono = 1;
                     auxCliente.email = txtEmail.Text;
                     auxCliente.usuarioId = 1;

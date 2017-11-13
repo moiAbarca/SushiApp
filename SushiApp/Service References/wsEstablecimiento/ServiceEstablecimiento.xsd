@@ -22,7 +22,7 @@
   </xs:complexType>
   <xs:complexType name="establecimiento">
     <xs:sequence>
-      <xs:element name="comunaId" type="xs:int" />
+      <xs:element minOccurs="0" name="comuna" type="xs:string" />
       <xs:element minOccurs="0" name="direccion" type="xs:string" />
       <xs:element name="establecimientoId" type="xs:int" />
       <xs:element minOccurs="0" name="nombreLocal" type="xs:string" />

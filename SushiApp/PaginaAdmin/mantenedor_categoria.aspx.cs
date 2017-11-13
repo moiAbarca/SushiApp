@@ -66,7 +66,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+                Response.Write("<script>alert('Error al efectuar la operación');</script>");
             }
 
             
@@ -127,7 +127,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+                Response.Write("<script>alert('Error al efectuar la operación');</script>");
             }
             
         }
@@ -164,7 +164,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+                Response.Write("<script>alert('Error al efectuar la operación');</script>");
             }
         }
 

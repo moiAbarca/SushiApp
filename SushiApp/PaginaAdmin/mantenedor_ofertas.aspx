@@ -31,7 +31,7 @@
                 <div class="col-lg-12">
                     <div class="tabs-container">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#tab-1">Descuento</a></li>
+                            <li class="active"><a data-toggle="tab" href="#tab-1">Oferta</a></li>
                         </ul>
                         <div class="tab-content">
                         </div>
@@ -44,13 +44,13 @@
                                         <thead>
 
                                             <tr>
-                                                <th>Categoria
+                                                <th>Id
                                                     </th>
                                                 <th>Descuento
                                                     </th>
-                                                <th style="width: 20%">Fecha de inicio
+                                                <th style="width: 15%">Fecha de inicio
                                                     </th>
-                                                <th style="width: 20%">Fecha de termino
+                                                <th style="width: 15%">Fecha de termino
                                                     </th>
                                                 <th>Acción
                                                     </th>
@@ -62,31 +62,43 @@
 
                                             <tr>
                                                 <td>
+                                                    <asp:TextBox CssClass="form-control" ID="txtId" runat="server"></asp:TextBox>
+                                                    <!--
+                                                    <asp:DropDownList ID="dlCategoria" AutoPostBack="false" runat="server">
+                                                    </asp:DropDownList>
+                                                   
                                                     <select class="form-control">
                                                         <option selected>Seleccione</option>
                                                         <option>Hand Roll</option>
                                                         <option>Tempura</option>
                                                         <option>Sashimi</option>
                                                     </select>
+                                                    -->
                                                 </td>
                                                 <td>
                                                     <%--<input type="text" class="form-control" placeholder="% 0">--%>
-                                                    <asp:TextBox CssClass="form-control" ID="descuento" runat="server"></asp:TextBox>
+                                                    <asp:TextBox CssClass="form-control" ID="txtOferta" runat="server"></asp:TextBox>
                                                 </td>
                                                 <td>
                                                     <div class="input-group date">
-                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                        <input type="text" class="form-control" value="07/01/2014">
+                                                        <asp:Calendar ID="calFechaInicio" runat="server"></asp:Calendar> 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="input-group date">
-                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                        <input type="text" class="form-control" value="07/01/2014">
+                                                        <asp:Calendar ID="calFechaTermino" runat="server"></asp:Calendar> 
                                                     </div>
                                                 </td>
                                                 <td>
+                                                    <asp:Button ID="btnBuscar" CssClass="btn btn btn-primary" runat="server" Text="Buscar" OnClick="btnBuscar_Click"/><hr />
+                                                    <asp:Button ID="btnAgregar"  CssClass="btn btn btn-primary" runat="server" Text="Agregar" OnClick="btnAgregar_Click" /><hr />
+                                                    <asp:Button ID="btnEditar" CssClass="btn btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" /><hr />
+                                                    <asp:Button ID="btnEliminar" CssClass="btn btn btn-primary"  runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                                                    <!--
                                                     <button class="btn btn-white"><i class="fa fa-trash"></i></button>
+                                                    <button class="btn btn-white"><i class="fa fa-trash"></i></button>
+                                                    <button class="btn btn-white"><i class="fa fa-trash"></i></button>
+                                                    -->
                                                 </td>
                                             </tr>
 

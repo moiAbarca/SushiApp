@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceCanal?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="modificarCanal">
+    <part name="parameters" element="tns:modificarCanal" />
+  </message>
+  <message name="modificarCanalResponse">
+    <part name="parameters" element="tns:modificarCanalResponse" />
+  </message>
+  <message name="obtenerCanal">
+    <part name="parameters" element="tns:obtenerCanal" />
+  </message>
+  <message name="obtenerCanalResponse">
+    <part name="parameters" element="tns:obtenerCanalResponse" />
+  </message>
   <message name="agregarCanal">
     <part name="parameters" element="tns:agregarCanal" />
   </message>
@@ -17,25 +29,21 @@
   <message name="eliminarCanalResponse">
     <part name="parameters" element="tns:eliminarCanalResponse" />
   </message>
-  <message name="obtenerCanal">
-    <part name="parameters" element="tns:obtenerCanal" />
-  </message>
-  <message name="obtenerCanalResponse">
-    <part name="parameters" element="tns:obtenerCanalResponse" />
-  </message>
   <message name="buscarCanal">
     <part name="parameters" element="tns:buscarCanal" />
   </message>
   <message name="buscarCanalResponse">
     <part name="parameters" element="tns:buscarCanalResponse" />
   </message>
-  <message name="modificarCanal">
-    <part name="parameters" element="tns:modificarCanal" />
-  </message>
-  <message name="modificarCanalResponse">
-    <part name="parameters" element="tns:modificarCanalResponse" />
-  </message>
   <portType name="ServiceCanal">
+    <operation name="modificarCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/modificarCanalRequest" message="tns:modificarCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/modificarCanalResponse" message="tns:modificarCanalResponse" />
+    </operation>
+    <operation name="obtenerCanal">
+      <input wsam:Action="http://WebService/ServiceCanal/obtenerCanalRequest" message="tns:obtenerCanal" />
+      <output wsam:Action="http://WebService/ServiceCanal/obtenerCanalResponse" message="tns:obtenerCanalResponse" />
+    </operation>
     <operation name="agregarCanal">
       <input wsam:Action="http://WebService/ServiceCanal/agregarCanalRequest" message="tns:agregarCanal" />
       <output wsam:Action="http://WebService/ServiceCanal/agregarCanalResponse" message="tns:agregarCanalResponse" />
@@ -44,21 +52,31 @@
       <input wsam:Action="http://WebService/ServiceCanal/eliminarCanalRequest" message="tns:eliminarCanal" />
       <output wsam:Action="http://WebService/ServiceCanal/eliminarCanalResponse" message="tns:eliminarCanalResponse" />
     </operation>
-    <operation name="obtenerCanal">
-      <input wsam:Action="http://WebService/ServiceCanal/obtenerCanalRequest" message="tns:obtenerCanal" />
-      <output wsam:Action="http://WebService/ServiceCanal/obtenerCanalResponse" message="tns:obtenerCanalResponse" />
-    </operation>
     <operation name="buscarCanal">
       <input wsam:Action="http://WebService/ServiceCanal/buscarCanalRequest" message="tns:buscarCanal" />
       <output wsam:Action="http://WebService/ServiceCanal/buscarCanalResponse" message="tns:buscarCanalResponse" />
     </operation>
-    <operation name="modificarCanal">
-      <input wsam:Action="http://WebService/ServiceCanal/modificarCanalRequest" message="tns:modificarCanal" />
-      <output wsam:Action="http://WebService/ServiceCanal/modificarCanalResponse" message="tns:modificarCanalResponse" />
-    </operation>
   </portType>
   <binding name="ServiceCanalPortBinding" type="tns:ServiceCanal">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerCanal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="agregarCanal">
       <soap:operation soapAction="" />
       <input>
@@ -77,25 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerCanal">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="buscarCanal">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarCanal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServicePagina?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="buscarPagina">
-    <part name="parameters" element="tns:buscarPagina" />
-  </message>
-  <message name="buscarPaginaResponse">
-    <part name="parameters" element="tns:buscarPaginaResponse" />
-  </message>
-  <message name="obtenerPagina">
-    <part name="parameters" element="tns:obtenerPagina" />
-  </message>
-  <message name="obtenerPaginaResponse">
-    <part name="parameters" element="tns:obtenerPaginaResponse" />
-  </message>
   <message name="eliminarPagina">
     <part name="parameters" element="tns:eliminarPagina" />
   </message>
@@ -35,15 +23,19 @@
   <message name="modificarPaginaResponse">
     <part name="parameters" element="tns:modificarPaginaResponse" />
   </message>
+  <message name="obtenerPagina">
+    <part name="parameters" element="tns:obtenerPagina" />
+  </message>
+  <message name="obtenerPaginaResponse">
+    <part name="parameters" element="tns:obtenerPaginaResponse" />
+  </message>
+  <message name="buscarPagina">
+    <part name="parameters" element="tns:buscarPagina" />
+  </message>
+  <message name="buscarPaginaResponse">
+    <part name="parameters" element="tns:buscarPaginaResponse" />
+  </message>
   <portType name="ServicePagina">
-    <operation name="buscarPagina">
-      <input wsam:Action="http://WebService/ServicePagina/buscarPaginaRequest" message="tns:buscarPagina" />
-      <output wsam:Action="http://WebService/ServicePagina/buscarPaginaResponse" message="tns:buscarPaginaResponse" />
-    </operation>
-    <operation name="obtenerPagina">
-      <input wsam:Action="http://WebService/ServicePagina/obtenerPaginaRequest" message="tns:obtenerPagina" />
-      <output wsam:Action="http://WebService/ServicePagina/obtenerPaginaResponse" message="tns:obtenerPaginaResponse" />
-    </operation>
     <operation name="eliminarPagina">
       <input wsam:Action="http://WebService/ServicePagina/eliminarPaginaRequest" message="tns:eliminarPagina" />
       <output wsam:Action="http://WebService/ServicePagina/eliminarPaginaResponse" message="tns:eliminarPaginaResponse" />
@@ -56,27 +48,17 @@
       <input wsam:Action="http://WebService/ServicePagina/modificarPaginaRequest" message="tns:modificarPagina" />
       <output wsam:Action="http://WebService/ServicePagina/modificarPaginaResponse" message="tns:modificarPaginaResponse" />
     </operation>
+    <operation name="obtenerPagina">
+      <input wsam:Action="http://WebService/ServicePagina/obtenerPaginaRequest" message="tns:obtenerPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/obtenerPaginaResponse" message="tns:obtenerPaginaResponse" />
+    </operation>
+    <operation name="buscarPagina">
+      <input wsam:Action="http://WebService/ServicePagina/buscarPaginaRequest" message="tns:buscarPagina" />
+      <output wsam:Action="http://WebService/ServicePagina/buscarPaginaResponse" message="tns:buscarPaginaResponse" />
+    </operation>
   </portType>
   <binding name="ServicePaginaPortBinding" type="tns:ServicePagina">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="buscarPagina">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerPagina">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="eliminarPagina">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +78,24 @@
       </output>
     </operation>
     <operation name="modificarPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPagina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPagina">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

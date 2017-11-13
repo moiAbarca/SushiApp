@@ -17,17 +17,17 @@
   <message name="buscarPedidoCabeceraResponse">
     <part name="parameters" element="tns:buscarPedidoCabeceraResponse" />
   </message>
-  <message name="eliminarPedidoCabecera">
-    <part name="parameters" element="tns:eliminarPedidoCabecera" />
-  </message>
-  <message name="eliminarPedidoCabeceraResponse">
-    <part name="parameters" element="tns:eliminarPedidoCabeceraResponse" />
-  </message>
   <message name="obtenerPedidoCabecera">
     <part name="parameters" element="tns:obtenerPedidoCabecera" />
   </message>
   <message name="obtenerPedidoCabeceraResponse">
     <part name="parameters" element="tns:obtenerPedidoCabeceraResponse" />
+  </message>
+  <message name="eliminarPedidoCabecera">
+    <part name="parameters" element="tns:eliminarPedidoCabecera" />
+  </message>
+  <message name="eliminarPedidoCabeceraResponse">
+    <part name="parameters" element="tns:eliminarPedidoCabeceraResponse" />
   </message>
   <message name="modificarPedidoCabecera">
     <part name="parameters" element="tns:modificarPedidoCabecera" />
@@ -44,13 +44,13 @@
       <input wsam:Action="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraRequest" message="tns:buscarPedidoCabecera" />
       <output wsam:Action="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraResponse" message="tns:buscarPedidoCabeceraResponse" />
     </operation>
-    <operation name="eliminarPedidoCabecera">
-      <input wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraRequest" message="tns:eliminarPedidoCabecera" />
-      <output wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraResponse" message="tns:eliminarPedidoCabeceraResponse" />
-    </operation>
     <operation name="obtenerPedidoCabecera">
       <input wsam:Action="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraRequest" message="tns:obtenerPedidoCabecera" />
       <output wsam:Action="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraResponse" message="tns:obtenerPedidoCabeceraResponse" />
+    </operation>
+    <operation name="eliminarPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraRequest" message="tns:eliminarPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraResponse" message="tns:eliminarPedidoCabeceraResponse" />
     </operation>
     <operation name="modificarPedidoCabecera">
       <input wsam:Action="http://WebService/ServicePedidoCabecera/modificarPedidoCabeceraRequest" message="tns:modificarPedidoCabecera" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPedidoCabecera">
+    <operation name="obtenerPedidoCabecera">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerPedidoCabecera">
+    <operation name="eliminarPedidoCabecera">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServicePedidoDetalle?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="obtenerPedidoDetalle">
+    <part name="parameters" element="tns:obtenerPedidoDetalle" />
+  </message>
+  <message name="obtenerPedidoDetalleResponse">
+    <part name="parameters" element="tns:obtenerPedidoDetalleResponse" />
+  </message>
   <message name="agregarPedidoDetalle">
     <part name="parameters" element="tns:agregarPedidoDetalle" />
   </message>
@@ -23,12 +29,6 @@
   <message name="buscarPedidoDetalleResponse">
     <part name="parameters" element="tns:buscarPedidoDetalleResponse" />
   </message>
-  <message name="obtenerPedidoDetalle">
-    <part name="parameters" element="tns:obtenerPedidoDetalle" />
-  </message>
-  <message name="obtenerPedidoDetalleResponse">
-    <part name="parameters" element="tns:obtenerPedidoDetalleResponse" />
-  </message>
   <message name="eliminarPedidoDetalle">
     <part name="parameters" element="tns:eliminarPedidoDetalle" />
   </message>
@@ -36,6 +36,10 @@
     <part name="parameters" element="tns:eliminarPedidoDetalleResponse" />
   </message>
   <portType name="ServicePedidoDetalle">
+    <operation name="obtenerPedidoDetalle">
+      <input wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest" message="tns:obtenerPedidoDetalle" />
+      <output wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse" message="tns:obtenerPedidoDetalleResponse" />
+    </operation>
     <operation name="agregarPedidoDetalle">
       <input wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleRequest" message="tns:agregarPedidoDetalle" />
       <output wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleResponse" message="tns:agregarPedidoDetalleResponse" />
@@ -48,10 +52,6 @@
       <input wsam:Action="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleRequest" message="tns:buscarPedidoDetalle" />
       <output wsam:Action="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleResponse" message="tns:buscarPedidoDetalleResponse" />
     </operation>
-    <operation name="obtenerPedidoDetalle">
-      <input wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest" message="tns:obtenerPedidoDetalle" />
-      <output wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse" message="tns:obtenerPedidoDetalleResponse" />
-    </operation>
     <operation name="eliminarPedidoDetalle">
       <input wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest" message="tns:eliminarPedidoDetalle" />
       <output wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse" message="tns:eliminarPedidoDetalleResponse" />
@@ -59,6 +59,15 @@
   </portType>
   <binding name="ServicePedidoDetallePortBinding" type="tns:ServicePedidoDetalle">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerPedidoDetalle">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="agregarPedidoDetalle">
       <soap:operation soapAction="" />
       <input>
@@ -78,15 +87,6 @@
       </output>
     </operation>
     <operation name="buscarPedidoDetalle">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerPedidoDetalle">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

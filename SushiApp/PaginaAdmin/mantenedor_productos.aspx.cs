@@ -5,15 +5,42 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace SushiApp.PaginaAdmin
 {
     public partial class mantenedor_productos1 : System.Web.UI.Page
     {
         wsProducto.ServiceProductoClient productoClient = new wsProducto.ServiceProductoClient();
         wsProducto.producto auxProducto = new wsProducto.producto();
+
+        wsCategoria.ServiceCategoriaProductoClient catClient = new wsCategoria.ServiceCategoriaProductoClient();
+        wsCategoria.categoriaProducto auxCategoria = new wsCategoria.categoriaProducto();
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
+            llenadoDropDownList();
             cargarGVProductos();
+        }
+
+        private void llenadoDropDownList()
+        {
+            try
+            {
+
+                var listadto = catClient.obtenerCategoriaProducto();
+                dlCategoria.DataSource = (from o in listadto
+                                     orderby o.categoriaProductoId
+                                          select new { o.nombreCategoria, o.categoriaProductoId });
+                dlCategoria.DataTextField = "nombreCategoria";
+                dlCategoria.DataValueField = "categoriaProductoId";                                
+                dlCategoria.DataBind();
+
+                
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('No se pudo cargar DropDownList');</script>");
+            }
         }
 
         public void cargarGVProductos()
@@ -55,8 +82,14 @@ namespace SushiApp.PaginaAdmin
                 txtRuta.Text = auxProducto.imagenProdcuto;
                 txtPorcion.Text = Convert.ToString(auxProducto.porcionesProdcuto);
                 txtPrecio.Text = Convert.ToString(auxProducto.precioProducto);
-                txtCategoria.Text = Convert.ToString(auxProducto.categoriaProductoId);
-                
+
+                dlCategoria.SelectedValue = Convert.ToString(auxProducto.categoriaProductoId);
+
+                //int idcateg = auxProducto.categoriaProductoId;
+                //auxCategoria = catClient.buscarCategoriaProducto(idcateg);
+                //dlCategoria.SelectedValue = auxCategoria.nombreCategoria;
+
+                //dlCategoria.SelectedValue = Convert.ToString(auxProducto.categoriaProductoId);
                 if (auxProducto.disponibilidadProducto == true)
                 {
                     ckDiponible.Checked = true;                    
@@ -79,7 +112,7 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                if (txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0 || txtCategoria.Text.Trim().Length == 0 || txtRuta.Text.Trim().Length == 0)
+                if (txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0 || txtRuta.Text.Trim().Length == 0)// || txtCategoria.Text.Trim().Length == 0
                 {
                     Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
                     return;
@@ -91,13 +124,13 @@ namespace SushiApp.PaginaAdmin
                     {
                         auxProducto.productoId = Convert.ToInt32(this.txtIdproducto.Text);
                         auxProducto.nombreProducto = this.txtNombre.Text;
-                    auxProducto.descripcionProducto = this.txtDescripcion.Text;
-                    auxProducto.imagenProdcuto = txtRuta.Text;
-                    auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
-                    auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
-                    auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
-
-                    if (ckDiponible.Checked)
+                        auxProducto.descripcionProducto = this.txtDescripcion.Text;
+                        auxProducto.imagenProdcuto = txtRuta.Text;
+                        auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
+                        auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
+                        auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);
+                                                
+                        if (ckDiponible.Checked)
                     {
                         auxProducto.disponibilidadProducto = true;
                     }
@@ -132,7 +165,7 @@ namespace SushiApp.PaginaAdmin
             txtIdproducto.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
-            txtCategoria.Text = string.Empty;
+            dlCategoria.SelectedIndex = -1;
             txtPorcion.Text = string.Empty;
             txtPrecio.Text = string.Empty;
             imgFoto.ImageUrl = "";
@@ -183,7 +216,7 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                if (txtIdproducto.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0 || txtCategoria.Text.Trim().Length == 0 || txtRuta.Text.Trim().Length == 0)
+                if (txtIdproducto.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtDescripcion.Text.Trim().Length == 0 || txtPorcion.Text.Trim().Length == 0 || txtPrecio.Text.Trim().Length == 0  || txtRuta.Text.Trim().Length == 0)
                 {
                     Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
                     return;
@@ -199,7 +232,8 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.imagenProdcuto = txtRuta.Text;
                         auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
-                        auxProducto.categoriaProductoId = Convert.ToInt32(txtCategoria.Text);
+                        auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);
+                        
                         if (ckDiponible.Checked)
                         {
                             auxProducto.disponibilidadProducto = true;

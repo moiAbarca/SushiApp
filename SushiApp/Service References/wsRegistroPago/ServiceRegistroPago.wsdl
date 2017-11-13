@@ -5,6 +5,24 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceRegistroPago?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="agregarResgistroPago">
+    <part name="parameters" element="tns:agregarResgistroPago" />
+  </message>
+  <message name="agregarResgistroPagoResponse">
+    <part name="parameters" element="tns:agregarResgistroPagoResponse" />
+  </message>
+  <message name="eliminarResgistroPago">
+    <part name="parameters" element="tns:eliminarResgistroPago" />
+  </message>
+  <message name="eliminarResgistroPagoResponse">
+    <part name="parameters" element="tns:eliminarResgistroPagoResponse" />
+  </message>
+  <message name="modificarResgistroPago">
+    <part name="parameters" element="tns:modificarResgistroPago" />
+  </message>
+  <message name="modificarResgistroPagoResponse">
+    <part name="parameters" element="tns:modificarResgistroPagoResponse" />
+  </message>
   <message name="obtenerResgistroPago">
     <part name="parameters" element="tns:obtenerResgistroPago" />
   </message>
@@ -17,25 +35,19 @@
   <message name="buscarResgistroPagoResponse">
     <part name="parameters" element="tns:buscarResgistroPagoResponse" />
   </message>
-  <message name="agregarResgistroPago">
-    <part name="parameters" element="tns:agregarResgistroPago" />
-  </message>
-  <message name="agregarResgistroPagoResponse">
-    <part name="parameters" element="tns:agregarResgistroPagoResponse" />
-  </message>
-  <message name="modificarResgistroPago">
-    <part name="parameters" element="tns:modificarResgistroPago" />
-  </message>
-  <message name="modificarResgistroPagoResponse">
-    <part name="parameters" element="tns:modificarResgistroPagoResponse" />
-  </message>
-  <message name="eliminarResgistroPago">
-    <part name="parameters" element="tns:eliminarResgistroPago" />
-  </message>
-  <message name="eliminarResgistroPagoResponse">
-    <part name="parameters" element="tns:eliminarResgistroPagoResponse" />
-  </message>
   <portType name="ServiceRegistroPago">
+    <operation name="agregarResgistroPago">
+      <input wsam:Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoRequest" message="tns:agregarResgistroPago" />
+      <output wsam:Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoResponse" message="tns:agregarResgistroPagoResponse" />
+    </operation>
+    <operation name="eliminarResgistroPago">
+      <input wsam:Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoRequest" message="tns:eliminarResgistroPago" />
+      <output wsam:Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoResponse" message="tns:eliminarResgistroPagoResponse" />
+    </operation>
+    <operation name="modificarResgistroPago">
+      <input wsam:Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest" message="tns:modificarResgistroPago" />
+      <output wsam:Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse" message="tns:modificarResgistroPagoResponse" />
+    </operation>
     <operation name="obtenerResgistroPago">
       <input wsam:Action="http://WebService/ServiceRegistroPago/obtenerResgistroPagoRequest" message="tns:obtenerResgistroPago" />
       <output wsam:Action="http://WebService/ServiceRegistroPago/obtenerResgistroPagoResponse" message="tns:obtenerResgistroPagoResponse" />
@@ -44,21 +56,36 @@
       <input wsam:Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoRequest" message="tns:buscarResgistroPago" />
       <output wsam:Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoResponse" message="tns:buscarResgistroPagoResponse" />
     </operation>
-    <operation name="agregarResgistroPago">
-      <input wsam:Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoRequest" message="tns:agregarResgistroPago" />
-      <output wsam:Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoResponse" message="tns:agregarResgistroPagoResponse" />
-    </operation>
-    <operation name="modificarResgistroPago">
-      <input wsam:Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest" message="tns:modificarResgistroPago" />
-      <output wsam:Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse" message="tns:modificarResgistroPagoResponse" />
-    </operation>
-    <operation name="eliminarResgistroPago">
-      <input wsam:Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoRequest" message="tns:eliminarResgistroPago" />
-      <output wsam:Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoResponse" message="tns:eliminarResgistroPagoResponse" />
-    </operation>
   </portType>
   <binding name="ServiceRegistroPagoPortBinding" type="tns:ServiceRegistroPago">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="agregarResgistroPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarResgistroPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarResgistroPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="obtenerResgistroPago">
       <soap:operation soapAction="" />
       <input>
@@ -69,33 +96,6 @@
       </output>
     </operation>
     <operation name="buscarResgistroPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="agregarResgistroPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarResgistroPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarResgistroPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

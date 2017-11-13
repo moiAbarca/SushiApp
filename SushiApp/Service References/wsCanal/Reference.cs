@@ -16,6 +16,23 @@ namespace SushiApp.wsCanal {
     public interface ServiceCanal {
         
         // CODEGEN: El parámetro 'canal' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/modificarCanalRequest", ReplyAction="http://WebService/ServiceCanal/modificarCanalResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsCanal.modificarCanalResponse modificarCanal(SushiApp.wsCanal.modificarCanalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/modificarCanalRequest", ReplyAction="http://WebService/ServiceCanal/modificarCanalResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> modificarCanalAsync(SushiApp.wsCanal.modificarCanalRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/obtenerCanalRequest", ReplyAction="http://WebService/ServiceCanal/obtenerCanalResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsCanal.obtenerCanalResponse obtenerCanal(SushiApp.wsCanal.obtenerCanalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/obtenerCanalRequest", ReplyAction="http://WebService/ServiceCanal/obtenerCanalResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> obtenerCanalAsync(SushiApp.wsCanal.obtenerCanalRequest request);
+        
+        // CODEGEN: El parámetro 'canal' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/agregarCanalRequest", ReplyAction="http://WebService/ServiceCanal/agregarCanalResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         SushiApp.wsCanal.agregarCanalResponse agregarCanal(SushiApp.wsCanal.agregarCanalRequest request);
@@ -32,15 +49,6 @@ namespace SushiApp.wsCanal {
         System.Threading.Tasks.Task<SushiApp.wsCanal.eliminarCanalResponse> eliminarCanalAsync(SushiApp.wsCanal.eliminarCanalRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/obtenerCanalRequest", ReplyAction="http://WebService/ServiceCanal/obtenerCanalResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsCanal.obtenerCanalResponse obtenerCanal(SushiApp.wsCanal.obtenerCanalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/obtenerCanalRequest", ReplyAction="http://WebService/ServiceCanal/obtenerCanalResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> obtenerCanalAsync(SushiApp.wsCanal.obtenerCanalRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/buscarCanalRequest", ReplyAction="http://WebService/ServiceCanal/buscarCanalResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -48,14 +56,6 @@ namespace SushiApp.wsCanal {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/buscarCanalRequest", ReplyAction="http://WebService/ServiceCanal/buscarCanalResponse")]
         System.Threading.Tasks.Task<SushiApp.wsCanal.buscarCanalResponse> buscarCanalAsync(SushiApp.wsCanal.buscarCanalRequest request);
-        
-        // CODEGEN: El parámetro 'canal' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/modificarCanalRequest", ReplyAction="http://WebService/ServiceCanal/modificarCanalResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsCanal.modificarCanalResponse modificarCanal(SushiApp.wsCanal.modificarCanalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCanal/modificarCanalRequest", ReplyAction="http://WebService/ServiceCanal/modificarCanalResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> modificarCanalAsync(SushiApp.wsCanal.modificarCanalRequest request);
     }
     
     /// <comentarios/>
@@ -101,6 +101,62 @@ namespace SushiApp.wsCanal {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCanal", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarCanalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsCanal.canal canal;
+        
+        public modificarCanalRequest() {
+        }
+        
+        public modificarCanalRequest(SushiApp.wsCanal.canal canal) {
+            this.canal = canal;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCanalResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarCanalResponse {
+        
+        public modificarCanalResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCanal", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerCanalRequest {
+        
+        public obtenerCanalRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCanalResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerCanalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsCanal.canal[] @return;
+        
+        public obtenerCanalResponse() {
+        }
+        
+        public obtenerCanalResponse(SushiApp.wsCanal.canal[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -163,34 +219,6 @@ namespace SushiApp.wsCanal {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCanal", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerCanalRequest {
-        
-        public obtenerCanalRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCanalResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerCanalResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsCanal.canal[] @return;
-        
-        public obtenerCanalResponse() {
-        }
-        
-        public obtenerCanalResponse(SushiApp.wsCanal.canal[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="buscarCanal", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class buscarCanalRequest {
         
@@ -224,34 +252,6 @@ namespace SushiApp.wsCanal {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCanal", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarCanalRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsCanal.canal canal;
-        
-        public modificarCanalRequest() {
-        }
-        
-        public modificarCanalRequest(SushiApp.wsCanal.canal canal) {
-            this.canal = canal;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCanalResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarCanalResponse {
-        
-        public modificarCanalResponse() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceCanalChannel : SushiApp.wsCanal.ServiceCanal, System.ServiceModel.IClientChannel {
     }
@@ -277,6 +277,49 @@ namespace SushiApp.wsCanal {
         
         public ServiceCanalClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsCanal.modificarCanalResponse SushiApp.wsCanal.ServiceCanal.modificarCanal(SushiApp.wsCanal.modificarCanalRequest request) {
+            return base.Channel.modificarCanal(request);
+        }
+        
+        public void modificarCanal(SushiApp.wsCanal.canal canal) {
+            SushiApp.wsCanal.modificarCanalRequest inValue = new SushiApp.wsCanal.modificarCanalRequest();
+            inValue.canal = canal;
+            SushiApp.wsCanal.modificarCanalResponse retVal = ((SushiApp.wsCanal.ServiceCanal)(this)).modificarCanal(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> SushiApp.wsCanal.ServiceCanal.modificarCanalAsync(SushiApp.wsCanal.modificarCanalRequest request) {
+            return base.Channel.modificarCanalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> modificarCanalAsync(SushiApp.wsCanal.canal canal) {
+            SushiApp.wsCanal.modificarCanalRequest inValue = new SushiApp.wsCanal.modificarCanalRequest();
+            inValue.canal = canal;
+            return ((SushiApp.wsCanal.ServiceCanal)(this)).modificarCanalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsCanal.obtenerCanalResponse SushiApp.wsCanal.ServiceCanal.obtenerCanal(SushiApp.wsCanal.obtenerCanalRequest request) {
+            return base.Channel.obtenerCanal(request);
+        }
+        
+        public SushiApp.wsCanal.canal[] obtenerCanal() {
+            SushiApp.wsCanal.obtenerCanalRequest inValue = new SushiApp.wsCanal.obtenerCanalRequest();
+            SushiApp.wsCanal.obtenerCanalResponse retVal = ((SushiApp.wsCanal.ServiceCanal)(this)).obtenerCanal(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> SushiApp.wsCanal.ServiceCanal.obtenerCanalAsync(SushiApp.wsCanal.obtenerCanalRequest request) {
+            return base.Channel.obtenerCanalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> obtenerCanalAsync() {
+            SushiApp.wsCanal.obtenerCanalRequest inValue = new SushiApp.wsCanal.obtenerCanalRequest();
+            return ((SushiApp.wsCanal.ServiceCanal)(this)).obtenerCanalAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -324,27 +367,6 @@ namespace SushiApp.wsCanal {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsCanal.obtenerCanalResponse SushiApp.wsCanal.ServiceCanal.obtenerCanal(SushiApp.wsCanal.obtenerCanalRequest request) {
-            return base.Channel.obtenerCanal(request);
-        }
-        
-        public SushiApp.wsCanal.canal[] obtenerCanal() {
-            SushiApp.wsCanal.obtenerCanalRequest inValue = new SushiApp.wsCanal.obtenerCanalRequest();
-            SushiApp.wsCanal.obtenerCanalResponse retVal = ((SushiApp.wsCanal.ServiceCanal)(this)).obtenerCanal(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> SushiApp.wsCanal.ServiceCanal.obtenerCanalAsync(SushiApp.wsCanal.obtenerCanalRequest request) {
-            return base.Channel.obtenerCanalAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsCanal.obtenerCanalResponse> obtenerCanalAsync() {
-            SushiApp.wsCanal.obtenerCanalRequest inValue = new SushiApp.wsCanal.obtenerCanalRequest();
-            return ((SushiApp.wsCanal.ServiceCanal)(this)).obtenerCanalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsCanal.buscarCanalResponse SushiApp.wsCanal.ServiceCanal.buscarCanal(SushiApp.wsCanal.buscarCanalRequest request) {
             return base.Channel.buscarCanal(request);
         }
@@ -365,28 +387,6 @@ namespace SushiApp.wsCanal {
             SushiApp.wsCanal.buscarCanalRequest inValue = new SushiApp.wsCanal.buscarCanalRequest();
             inValue.id = id;
             return ((SushiApp.wsCanal.ServiceCanal)(this)).buscarCanalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsCanal.modificarCanalResponse SushiApp.wsCanal.ServiceCanal.modificarCanal(SushiApp.wsCanal.modificarCanalRequest request) {
-            return base.Channel.modificarCanal(request);
-        }
-        
-        public void modificarCanal(SushiApp.wsCanal.canal canal) {
-            SushiApp.wsCanal.modificarCanalRequest inValue = new SushiApp.wsCanal.modificarCanalRequest();
-            inValue.canal = canal;
-            SushiApp.wsCanal.modificarCanalResponse retVal = ((SushiApp.wsCanal.ServiceCanal)(this)).modificarCanal(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> SushiApp.wsCanal.ServiceCanal.modificarCanalAsync(SushiApp.wsCanal.modificarCanalRequest request) {
-            return base.Channel.modificarCanalAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsCanal.modificarCanalResponse> modificarCanalAsync(SushiApp.wsCanal.canal canal) {
-            SushiApp.wsCanal.modificarCanalRequest inValue = new SushiApp.wsCanal.modificarCanalRequest();
-            inValue.canal = canal;
-            return ((SushiApp.wsCanal.ServiceCanal)(this)).modificarCanalAsync(inValue);
         }
     }
 }

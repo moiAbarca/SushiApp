@@ -22,7 +22,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="apellido" type="xs:string" />
       <xs:element name="clienteId" type="xs:int" />
-      <xs:element name="comunaId" type="xs:int" />
+      <xs:element minOccurs="0" name="comuna" type="xs:string" />
       <xs:element minOccurs="0" name="direccion" type="xs:string" />
       <xs:element minOccurs="0" name="email" type="xs:string" />
       <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string" />

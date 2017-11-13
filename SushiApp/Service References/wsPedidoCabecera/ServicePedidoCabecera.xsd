@@ -33,7 +33,6 @@
     <xs:sequence>
       <xs:element name="pedidoCabeceraId" type="xs:int" />
       <xs:element name="establecimientoId" type="xs:int" />
-      <xs:element name="canalId" type="xs:int" />
       <xs:element name="clienteId" type="xs:int" />
       <xs:element minOccurs="0" name="fechaPedido" type="xs:string" />
       <xs:element minOccurs="0" name="horaPedido" type="xs:string" />

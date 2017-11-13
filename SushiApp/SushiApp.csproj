@@ -49,6 +49,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -156,6 +157,7 @@
     <Content Include="PaginaAdmin\mantenedor_productos.aspx" />
     <Content Include="PaginaAdmin\mantenedor_productos_editar.aspx" />
     <Content Include="PaginaAdmin\mantenedor_productos_ver.aspx" />
+    <Content Include="PaginaAdmin\Ofertas-Productos.aspx" />
     <Content Include="PaginaUsuario\Bebidas.aspx" />
     <Content Include="PaginaUsuario\CaliforniaRolls.aspx" />
     <Content Include="PaginaUsuario\Checkout1.aspx" />
@@ -1475,6 +1477,13 @@
     </Compile>
     <Compile Include="PaginaAdmin\MenuInterior.Master.designer.cs">
       <DependentUpon>MenuInterior.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Ofertas-Productos.aspx.cs">
+      <DependentUpon>Ofertas-Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Ofertas-Productos.aspx.designer.cs">
+      <DependentUpon>Ofertas-Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\Bebidas.aspx.cs">
       <DependentUpon>Bebidas.aspx</DependentUpon>

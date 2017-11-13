@@ -17,11 +17,11 @@
   <message name="eliminarCategoriaProductoResponse">
     <part name="parameters" element="tns:eliminarCategoriaProductoResponse" />
   </message>
-  <message name="buscarCategoriaProducto">
-    <part name="parameters" element="tns:buscarCategoriaProducto" />
+  <message name="modificarCategoriaProducto">
+    <part name="parameters" element="tns:modificarCategoriaProducto" />
   </message>
-  <message name="buscarCategoriaProductoResponse">
-    <part name="parameters" element="tns:buscarCategoriaProductoResponse" />
+  <message name="modificarCategoriaProductoResponse">
+    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
   </message>
   <message name="agregarCategoriaProducto">
     <part name="parameters" element="tns:agregarCategoriaProducto" />
@@ -29,11 +29,11 @@
   <message name="agregarCategoriaProductoResponse">
     <part name="parameters" element="tns:agregarCategoriaProductoResponse" />
   </message>
-  <message name="modificarCategoriaProducto">
-    <part name="parameters" element="tns:modificarCategoriaProducto" />
+  <message name="buscarCategoriaProducto">
+    <part name="parameters" element="tns:buscarCategoriaProducto" />
   </message>
-  <message name="modificarCategoriaProductoResponse">
-    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
+  <message name="buscarCategoriaProductoResponse">
+    <part name="parameters" element="tns:buscarCategoriaProductoResponse" />
   </message>
   <portType name="ServiceCategoriaProducto">
     <operation name="obtenerCategoriaProducto">
@@ -44,17 +44,17 @@
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoRequest" message="tns:eliminarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoResponse" message="tns:eliminarCategoriaProductoResponse" />
     </operation>
-    <operation name="buscarCategoriaProducto">
-      <input wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoRequest" message="tns:buscarCategoriaProducto" />
-      <output wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoResponse" message="tns:buscarCategoriaProductoResponse" />
+    <operation name="modificarCategoriaProducto">
+      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
+      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
     </operation>
     <operation name="agregarCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/agregarCategoriaProductoRequest" message="tns:agregarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/agregarCategoriaProductoResponse" message="tns:agregarCategoriaProductoResponse" />
     </operation>
-    <operation name="modificarCategoriaProducto">
-      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
-      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
+    <operation name="buscarCategoriaProducto">
+      <input wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoRequest" message="tns:buscarCategoriaProducto" />
+      <output wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoResponse" message="tns:buscarCategoriaProductoResponse" />
     </operation>
   </portType>
   <binding name="ServiceCategoriaProductoPortBinding" type="tns:ServiceCategoriaProducto">
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarCategoriaProducto">
+    <operation name="modificarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCategoriaProducto">
+    <operation name="buscarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -94,13 +94,13 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
         
         /// <summary>
-        /// Control txtCategoria.
+        /// Control dlCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategoria;
+        protected global::System.Web.UI.WebControls.DropDownList dlCategoria;
         
         /// <summary>
         /// Control ckDiponible.

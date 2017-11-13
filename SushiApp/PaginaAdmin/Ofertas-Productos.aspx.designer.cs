@@ -10,7 +10,7 @@
 namespace SushiApp.PaginaAdmin {
     
     
-    public partial class mantenedor_ofertas1 {
+    public partial class Ofertas_Productos {
         
         /// <summary>
         /// Control txtId.
@@ -20,42 +20,6 @@ namespace SushiApp.PaginaAdmin {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtId;
-        
-        /// <summary>
-        /// Control dlCategoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dlCategoria;
-        
-        /// <summary>
-        /// Control txtOferta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOferta;
-        
-        /// <summary>
-        /// Control calFechaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFechaInicio;
-        
-        /// <summary>
-        /// Control calFechaTermino.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFechaTermino;
         
         /// <summary>
         /// Control btnBuscar.
@@ -76,6 +40,15 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Button btnAgregar;
         
         /// <summary>
+        /// Control btnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        
+        /// <summary>
         /// Control btnEditar.
         /// </summary>
         /// <remarks>
@@ -85,12 +58,30 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// Control btnEliminar.
+        /// Control dlProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.DropDownList dlProducto;
+        
+        /// <summary>
+        /// Control dlOferta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlOferta;
+        
+        /// <summary>
+        /// Control gvOfertaProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvOfertaProducto;
     }
 }

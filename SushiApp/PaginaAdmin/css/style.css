@@ -8557,4 +8557,6 @@ body.md-skin {
   #page-wrapper {
     margin: 0;
   }
+
+  .ChkBoxClass input {width:40px; height:40px;}
 }

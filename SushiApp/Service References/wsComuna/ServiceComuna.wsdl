@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceComuna?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="eliminarComuna">
+    <part name="parameters" element="tns:eliminarComuna" />
+  </message>
+  <message name="eliminarComunaResponse">
+    <part name="parameters" element="tns:eliminarComunaResponse" />
+  </message>
   <message name="obtenerComuna">
     <part name="parameters" element="tns:obtenerComuna" />
   </message>
@@ -23,12 +29,6 @@
   <message name="modificarComunaResponse">
     <part name="parameters" element="tns:modificarComunaResponse" />
   </message>
-  <message name="eliminarComuna">
-    <part name="parameters" element="tns:eliminarComuna" />
-  </message>
-  <message name="eliminarComunaResponse">
-    <part name="parameters" element="tns:eliminarComunaResponse" />
-  </message>
   <message name="buscarComuna">
     <part name="parameters" element="tns:buscarComuna" />
   </message>
@@ -36,6 +36,10 @@
     <part name="parameters" element="tns:buscarComunaResponse" />
   </message>
   <portType name="ServiceComuna">
+    <operation name="eliminarComuna">
+      <input wsam:Action="http://WebService/ServiceComuna/eliminarComunaRequest" message="tns:eliminarComuna" />
+      <output wsam:Action="http://WebService/ServiceComuna/eliminarComunaResponse" message="tns:eliminarComunaResponse" />
+    </operation>
     <operation name="obtenerComuna">
       <input wsam:Action="http://WebService/ServiceComuna/obtenerComunaRequest" message="tns:obtenerComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/obtenerComunaResponse" message="tns:obtenerComunaResponse" />
@@ -48,10 +52,6 @@
       <input wsam:Action="http://WebService/ServiceComuna/modificarComunaRequest" message="tns:modificarComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/modificarComunaResponse" message="tns:modificarComunaResponse" />
     </operation>
-    <operation name="eliminarComuna">
-      <input wsam:Action="http://WebService/ServiceComuna/eliminarComunaRequest" message="tns:eliminarComuna" />
-      <output wsam:Action="http://WebService/ServiceComuna/eliminarComunaResponse" message="tns:eliminarComunaResponse" />
-    </operation>
     <operation name="buscarComuna">
       <input wsam:Action="http://WebService/ServiceComuna/buscarComunaRequest" message="tns:buscarComuna" />
       <output wsam:Action="http://WebService/ServiceComuna/buscarComunaResponse" message="tns:buscarComunaResponse" />
@@ -59,6 +59,15 @@
   </portType>
   <binding name="ServiceComunaPortBinding" type="tns:ServiceComuna">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarComuna">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="obtenerComuna">
       <soap:operation soapAction="" />
       <input>
@@ -78,15 +87,6 @@
       </output>
     </operation>
     <operation name="modificarComuna">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarComuna">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -59,6 +59,7 @@
                                 <li><a href="mantenedor_categoria.aspx">Categorias</a></li>
                                 <li><a href="mantenedor_productos.aspx">Productos</a></li>
                                 <li><a href="mantenedor_ofertas.aspx">Ofertas</a></li>
+                                <li><a href="Ofertas-Productos.aspx">Ofertas/Productos</a></li>
                             </ul>
                         </li>
                 

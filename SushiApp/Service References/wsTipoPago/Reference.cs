@@ -15,13 +15,14 @@ namespace SushiApp.wsTipoPago {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsTipoPago.ServiceTipoPago")]
     public interface ServiceTipoPago {
         
-        // CODEGEN: El parámetro 'tipoPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/modificarTipoPagoResponse")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsTipoPago.modificarTipoPagoResponse modificarTipoPago(SushiApp.wsTipoPago.modificarTipoPagoRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsTipoPago.obtenerTipoPagoResponse obtenerTipoPago(SushiApp.wsTipoPago.obtenerTipoPagoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/modificarTipoPagoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> modificarTipoPagoAsync(SushiApp.wsTipoPago.modificarTipoPagoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> obtenerTipoPagoAsync(SushiApp.wsTipoPago.obtenerTipoPagoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/buscarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/buscarTipoPagoResponse")]
@@ -31,15 +32,6 @@ namespace SushiApp.wsTipoPago {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/buscarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/buscarTipoPagoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsTipoPago.buscarTipoPagoResponse> buscarTipoPagoAsync(SushiApp.wsTipoPago.buscarTipoPagoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsTipoPago.obtenerTipoPagoResponse obtenerTipoPago(SushiApp.wsTipoPago.obtenerTipoPagoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> obtenerTipoPagoAsync(SushiApp.wsTipoPago.obtenerTipoPagoRequest request);
         
         // CODEGEN: El parámetro 'tipoPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/agregarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/agregarTipoPagoResponse")]
@@ -56,6 +48,14 @@ namespace SushiApp.wsTipoPago {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/eliminarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/eliminarTipoPagoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsTipoPago.eliminarTipoPagoResponse> eliminarTipoPagoAsync(SushiApp.wsTipoPago.eliminarTipoPagoRequest request);
+        
+        // CODEGEN: El parámetro 'tipoPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/modificarTipoPagoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsTipoPago.modificarTipoPagoResponse modificarTipoPago(SushiApp.wsTipoPago.modificarTipoPagoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest", ReplyAction="http://WebService/ServiceTipoPago/modificarTipoPagoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> modificarTipoPagoAsync(SushiApp.wsTipoPago.modificarTipoPagoRequest request);
     }
     
     /// <comentarios/>
@@ -107,28 +107,28 @@ namespace SushiApp.wsTipoPago {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTipoPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarTipoPagoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerTipoPagoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsTipoPago.tipoPago tipoPago;
-        
-        public modificarTipoPagoRequest() {
-        }
-        
-        public modificarTipoPagoRequest(SushiApp.wsTipoPago.tipoPago tipoPago) {
-            this.tipoPago = tipoPago;
+        public obtenerTipoPagoRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTipoPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarTipoPagoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerTipoPagoResponse {
         
-        public modificarTipoPagoResponse() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsTipoPago.tipoPago[] @return;
+        
+        public obtenerTipoPagoResponse() {
+        }
+        
+        public obtenerTipoPagoResponse(SushiApp.wsTipoPago.tipoPago[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -164,34 +164,6 @@ namespace SushiApp.wsTipoPago {
         }
         
         public buscarTipoPagoResponse(SushiApp.wsTipoPago.tipoPago @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerTipoPagoRequest {
-        
-        public obtenerTipoPagoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTipoPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerTipoPagoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsTipoPago.tipoPago[] @return;
-        
-        public obtenerTipoPagoResponse() {
-        }
-        
-        public obtenerTipoPagoResponse(SushiApp.wsTipoPago.tipoPago[] @return) {
             this.@return = @return;
         }
     }
@@ -252,6 +224,34 @@ namespace SushiApp.wsTipoPago {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTipoPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarTipoPagoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsTipoPago.tipoPago tipoPago;
+        
+        public modificarTipoPagoRequest() {
+        }
+        
+        public modificarTipoPagoRequest(SushiApp.wsTipoPago.tipoPago tipoPago) {
+            this.tipoPago = tipoPago;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTipoPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarTipoPagoResponse {
+        
+        public modificarTipoPagoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceTipoPagoChannel : SushiApp.wsTipoPago.ServiceTipoPago, System.ServiceModel.IClientChannel {
     }
@@ -280,25 +280,24 @@ namespace SushiApp.wsTipoPago {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsTipoPago.modificarTipoPagoResponse SushiApp.wsTipoPago.ServiceTipoPago.modificarTipoPago(SushiApp.wsTipoPago.modificarTipoPagoRequest request) {
-            return base.Channel.modificarTipoPago(request);
+        SushiApp.wsTipoPago.obtenerTipoPagoResponse SushiApp.wsTipoPago.ServiceTipoPago.obtenerTipoPago(SushiApp.wsTipoPago.obtenerTipoPagoRequest request) {
+            return base.Channel.obtenerTipoPago(request);
         }
         
-        public void modificarTipoPago(SushiApp.wsTipoPago.tipoPago tipoPago) {
-            SushiApp.wsTipoPago.modificarTipoPagoRequest inValue = new SushiApp.wsTipoPago.modificarTipoPagoRequest();
-            inValue.tipoPago = tipoPago;
-            SushiApp.wsTipoPago.modificarTipoPagoResponse retVal = ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).modificarTipoPago(inValue);
+        public SushiApp.wsTipoPago.tipoPago[] obtenerTipoPago() {
+            SushiApp.wsTipoPago.obtenerTipoPagoRequest inValue = new SushiApp.wsTipoPago.obtenerTipoPagoRequest();
+            SushiApp.wsTipoPago.obtenerTipoPagoResponse retVal = ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).obtenerTipoPago(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> SushiApp.wsTipoPago.ServiceTipoPago.modificarTipoPagoAsync(SushiApp.wsTipoPago.modificarTipoPagoRequest request) {
-            return base.Channel.modificarTipoPagoAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> SushiApp.wsTipoPago.ServiceTipoPago.obtenerTipoPagoAsync(SushiApp.wsTipoPago.obtenerTipoPagoRequest request) {
+            return base.Channel.obtenerTipoPagoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> modificarTipoPagoAsync(SushiApp.wsTipoPago.tipoPago tipoPago) {
-            SushiApp.wsTipoPago.modificarTipoPagoRequest inValue = new SushiApp.wsTipoPago.modificarTipoPagoRequest();
-            inValue.tipoPago = tipoPago;
-            return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).modificarTipoPagoAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> obtenerTipoPagoAsync() {
+            SushiApp.wsTipoPago.obtenerTipoPagoRequest inValue = new SushiApp.wsTipoPago.obtenerTipoPagoRequest();
+            return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).obtenerTipoPagoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -322,27 +321,6 @@ namespace SushiApp.wsTipoPago {
             SushiApp.wsTipoPago.buscarTipoPagoRequest inValue = new SushiApp.wsTipoPago.buscarTipoPagoRequest();
             inValue.id = id;
             return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).buscarTipoPagoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsTipoPago.obtenerTipoPagoResponse SushiApp.wsTipoPago.ServiceTipoPago.obtenerTipoPago(SushiApp.wsTipoPago.obtenerTipoPagoRequest request) {
-            return base.Channel.obtenerTipoPago(request);
-        }
-        
-        public SushiApp.wsTipoPago.tipoPago[] obtenerTipoPago() {
-            SushiApp.wsTipoPago.obtenerTipoPagoRequest inValue = new SushiApp.wsTipoPago.obtenerTipoPagoRequest();
-            SushiApp.wsTipoPago.obtenerTipoPagoResponse retVal = ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).obtenerTipoPago(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> SushiApp.wsTipoPago.ServiceTipoPago.obtenerTipoPagoAsync(SushiApp.wsTipoPago.obtenerTipoPagoRequest request) {
-            return base.Channel.obtenerTipoPagoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsTipoPago.obtenerTipoPagoResponse> obtenerTipoPagoAsync() {
-            SushiApp.wsTipoPago.obtenerTipoPagoRequest inValue = new SushiApp.wsTipoPago.obtenerTipoPagoRequest();
-            return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).obtenerTipoPagoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -387,6 +365,28 @@ namespace SushiApp.wsTipoPago {
             SushiApp.wsTipoPago.eliminarTipoPagoRequest inValue = new SushiApp.wsTipoPago.eliminarTipoPagoRequest();
             inValue.id = id;
             return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).eliminarTipoPagoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsTipoPago.modificarTipoPagoResponse SushiApp.wsTipoPago.ServiceTipoPago.modificarTipoPago(SushiApp.wsTipoPago.modificarTipoPagoRequest request) {
+            return base.Channel.modificarTipoPago(request);
+        }
+        
+        public void modificarTipoPago(SushiApp.wsTipoPago.tipoPago tipoPago) {
+            SushiApp.wsTipoPago.modificarTipoPagoRequest inValue = new SushiApp.wsTipoPago.modificarTipoPagoRequest();
+            inValue.tipoPago = tipoPago;
+            SushiApp.wsTipoPago.modificarTipoPagoResponse retVal = ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).modificarTipoPago(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> SushiApp.wsTipoPago.ServiceTipoPago.modificarTipoPagoAsync(SushiApp.wsTipoPago.modificarTipoPagoRequest request) {
+            return base.Channel.modificarTipoPagoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsTipoPago.modificarTipoPagoResponse> modificarTipoPagoAsync(SushiApp.wsTipoPago.tipoPago tipoPago) {
+            SushiApp.wsTipoPago.modificarTipoPagoRequest inValue = new SushiApp.wsTipoPago.modificarTipoPagoRequest();
+            inValue.tipoPago = tipoPago;
+            return ((SushiApp.wsTipoPago.ServiceTipoPago)(this)).modificarTipoPagoAsync(inValue);
         }
     }
 }

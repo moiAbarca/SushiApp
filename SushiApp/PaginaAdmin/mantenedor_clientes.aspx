@@ -112,10 +112,9 @@
                                                       <table class="table table-striped table-hover">
                                                     <tbody>
                                                         <tr>
-                                                            <td><a data-toggle="tab" href="#usuario"  class="client-link"><asp:GridView ID="gvCliente" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server" Enabled="False" >
-                                                                <RowStyle BorderColor="Black" />
-                                                                </asp:GridView></a></td>
-                                                            
+                                                            <td><a data-toggle="tab" href="#usuario"  class="client-link">
+                                                                <asp:GridView ID="gvCliente" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server"></asp:GridView>
+                                                                </a></td>                                                            
                                                         </tr>
                                                     </tbody>
                                                 </table>

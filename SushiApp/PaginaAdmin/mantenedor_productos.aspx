@@ -43,7 +43,7 @@
                        </li>                                              
                        <li class="list-group-item">                           
                             <span class="pull-right" id="prId">                                                        
-                            <asp:TextBox placeholder="Ingrese Id" ID="txtIdproducto" runat="server"></asp:TextBox>
+                            <asp:TextBox  ID="txtIdproducto" placeholder="Ingrese Id" runat="server"></asp:TextBox><!--placeholder="Ingrese Id"-->
                              </span>    
                            ID Producto
                        </li>
@@ -73,24 +73,22 @@
                        </li>
                         <li class="list-group-item">                           
                             <span class="pull-right" id="prCategoria">                                                        
-                             <asp:TextBox ID="txtCategoria" runat="server"></asp:TextBox>
+                             <asp:DropDownList ID="dlCategoria" AutoPostBack="false" runat="server">
+                            </asp:DropDownList>
                              </span>    
                            Categoria
+                            
                        </li>
                         <li class="list-group-item">                           
                             <span class="pull-right" id="prEstado">                                                        
-                                <asp:CheckBox ID="ckDiponible" runat="server" />
+                                <asp:CheckBox ID="ckDiponible" CssClass="ChkBoxClass" runat="server" />
                              </span>    
-                           Estado
-                       </li>                       
-                   </ul>                    
-                       <br />
-                    <br />              
-                </div>                
-            </div>
-            
-            <!-- FIN DE FILTROS DE BUSQUEDA -->
-                       <!-- inicio imagen-->
+                           Disponibilidad
+                       </li>   
+                                          
+                   </ul>    
+                    <hr />                                        
+                    <!-- inicio imagen-->
                          <div class="form-group">
                             <label class="control-label" for="price">Imagen</label> <br />                           
                                 <asp:FileUpload ID="FileUpload1" runat="server" /><br />                                 
@@ -103,19 +101,14 @@
                             <asp:TextBox ID="txtRuta" runat="server" Enabled="False" Visible="False"></asp:TextBox>
                         </div>
                      <!--fin imagen-->  
-            <br />
-            <!--GRID VIEW DE PRODUCTOS -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox">
-                        <div class="ibox-content">
-                            <asp:GridView CssClass="footable table table-stripped toggle-arrow-tiny" ID="gvProductos" runat="server"></asp:GridView> 
-                        </div>
-                    </div>
+                    <hr />                             
+                </div>   
+                
+                <asp:GridView ID="gvProductos" CssClass="footable table table-stripped toggle-arrow-tiny" runat="server"></asp:GridView>
+                             
                 </div>
-            </div>
-            <!--FIN DE GRIDVIEW -->
-
+            
+            <!-- FIN DE FILTROS DE BUSQUEDA -->            
                 </div>
             </div>
 

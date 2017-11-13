@@ -4,6 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- INICIO DE CONTENIDO -->
     <div class="wrapper wrapper-content animated fadeInRight">
+        <br />
+        <br />
+        <br />
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center m-t-lg">

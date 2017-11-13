@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceAdministrador?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="obtenerAdministrador">
-    <part name="parameters" element="tns:obtenerAdministrador" />
-  </message>
-  <message name="obtenerAdministradorResponse">
-    <part name="parameters" element="tns:obtenerAdministradorResponse" />
-  </message>
   <message name="agregarAdministrador">
     <part name="parameters" element="tns:agregarAdministrador" />
   </message>
@@ -22,6 +16,12 @@
   </message>
   <message name="eliminarAdministradorResponse">
     <part name="parameters" element="tns:eliminarAdministradorResponse" />
+  </message>
+  <message name="obtenerAdministrador">
+    <part name="parameters" element="tns:obtenerAdministrador" />
+  </message>
+  <message name="obtenerAdministradorResponse">
+    <part name="parameters" element="tns:obtenerAdministradorResponse" />
   </message>
   <message name="modificarAdministrador">
     <part name="parameters" element="tns:modificarAdministrador" />
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:buscarAdministradorResponse" />
   </message>
   <portType name="ServiceAdministrador">
-    <operation name="obtenerAdministrador">
-      <input wsam:Action="http://WebService/ServiceAdministrador/obtenerAdministradorRequest" message="tns:obtenerAdministrador" />
-      <output wsam:Action="http://WebService/ServiceAdministrador/obtenerAdministradorResponse" message="tns:obtenerAdministradorResponse" />
-    </operation>
     <operation name="agregarAdministrador">
       <input wsam:Action="http://WebService/ServiceAdministrador/agregarAdministradorRequest" message="tns:agregarAdministrador" />
       <output wsam:Action="http://WebService/ServiceAdministrador/agregarAdministradorResponse" message="tns:agregarAdministradorResponse" />
@@ -47,6 +43,10 @@
     <operation name="eliminarAdministrador">
       <input wsam:Action="http://WebService/ServiceAdministrador/eliminarAdministradorRequest" message="tns:eliminarAdministrador" />
       <output wsam:Action="http://WebService/ServiceAdministrador/eliminarAdministradorResponse" message="tns:eliminarAdministradorResponse" />
+    </operation>
+    <operation name="obtenerAdministrador">
+      <input wsam:Action="http://WebService/ServiceAdministrador/obtenerAdministradorRequest" message="tns:obtenerAdministrador" />
+      <output wsam:Action="http://WebService/ServiceAdministrador/obtenerAdministradorResponse" message="tns:obtenerAdministradorResponse" />
     </operation>
     <operation name="modificarAdministrador">
       <input wsam:Action="http://WebService/ServiceAdministrador/modificarAdministradorRequest" message="tns:modificarAdministrador" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="ServiceAdministradorPortBinding" type="tns:ServiceAdministrador">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="obtenerAdministrador">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="agregarAdministrador">
       <soap:operation soapAction="" />
       <input>
@@ -78,6 +69,15 @@
       </output>
     </operation>
     <operation name="eliminarAdministrador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerAdministrador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

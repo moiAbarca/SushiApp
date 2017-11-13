@@ -11,12 +11,14 @@ namespace SushiApp.PaginaAdmin
     {
         wsCliente.ServiceClienteClient clienteClient = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
+        wsProducto.ServiceProductoClient productoClient = new wsProducto.ServiceProductoClient();
+        
         
         protected void Page_Load(object sender, EventArgs e)
         {            
-            cargarGVCliente();           
+            cargarGVCliente();                     
         }
-
+        
         public void cargarGVCliente()
         {
             try
@@ -99,9 +101,10 @@ namespace SushiApp.PaginaAdmin
                         auxCliente.fechaNacimiento = calFechaNacimiento.SelectedDate.ToString("yyyyMMdd");
 
                         auxCliente.usuarioId = 1;
-                        auxCliente.comunaId = 1;
+                        auxCliente.comuna = "Maipu";
                         
                         clienteClient.agregarCliente(auxCliente);
+                        Response.Write("<script>alert('Agregado correctamente');</script>");
                         limpiar();
                     }
                     else
@@ -160,7 +163,7 @@ namespace SushiApp.PaginaAdmin
                         auxCliente.fechaNacimiento = calFechaNacimiento.SelectedDate.ToString("yyyyMMdd");
 
                         auxCliente.usuarioId = 1;
-                        auxCliente.comunaId = 1;
+                        auxCliente.comuna = "Maipu";
 
                         clienteClient.modificarCliente(auxCliente);
                         Response.Write("<script>alert('Modificado correctamente');</script>");
@@ -177,7 +180,7 @@ namespace SushiApp.PaginaAdmin
             catch (Exception)
             {
 
-                Response.Write("<script>alert('Debe ingresar solo números en el Id');</script>");
+                Response.Write("<script>alert('No se pudo editar');</script>");
             }
         }
 
