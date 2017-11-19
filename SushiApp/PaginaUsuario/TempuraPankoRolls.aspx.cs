@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SushiApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,8 +16,7 @@ namespace SushiApp.PaginaUsuario
         {
             if (!IsPostBack)
             {
-                cargarListViewProductos();
-                mostrarModal();
+                cargarListViewProductos();                
             }
 
             //cargarListViewProductos();
@@ -24,16 +24,8 @@ namespace SushiApp.PaginaUsuario
 
         }
 
-        private void mostrarModal()
-        {
-            wsProducto.producto[] productos = productoClient.obtenerProducto();
-            var modalSR1 = productos;            
-        }
-
         private void cargarListViewProductos()
         {
-           
-
             try
             {
                 wsProducto.producto[] productos = productoClient.obtenerProducto();
@@ -74,6 +66,8 @@ namespace SushiApp.PaginaUsuario
             {
                 if (e.CommandName == "Agregar")
                 {
+                    //ButtonProducto boton = (ButtonProducto)sender;
+                    //Producto.Add(boton.producto);
 
                     // En el Control ASP:Button, se agrega la propiedad "CommandArgument", 
                     // la que toma los valores de IDPRODUCTO '<%# Eval("IDPRODUCTO") %>'
@@ -82,6 +76,9 @@ namespace SushiApp.PaginaUsuario
                     string id = e.CommandArgument.ToString();
                     Response.Write(id);
                     // El Id será visible al comienzo de la página...
+
+                   
+
 
                 }
             }

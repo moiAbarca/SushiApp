@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Checkout3.aspx.cs" Inherits="SushiApp.PaginaUsuario.Checkout31" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Checkout3.aspx.cs" Inherits="SushiApp.PaginaUsuario.Checkout31" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

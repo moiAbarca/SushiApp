@@ -121,5 +121,13 @@ namespace SushiApp.Models
                 _disponibilidadProducto = value;
             }
         }
+
+        public static List<Producto> Add(Producto producto)
+        {
+            List<Producto> lst = new List<Producto>();
+
+
+            return lst;
+        }
     }
 }

@@ -51,44 +51,44 @@
             <div class="row products">
        
         <!-- ListView Prueba-->
-        
-                        <asp:ListView runat="server"  
-                          ID="ProductsListView" GroupItemCount="3" OnSelectedIndexChanged="ProductsListView_SelectedIndexChanged" OnItemCommand="ProductsListView_ItemCommand" >
+
+                  <asp:ListView runat="server" ID="ProductsListView" GroupItemCount="3" OnSelectedIndexChanged="ProductsListView_SelectedIndexChanged" OnItemCommand="ProductsListView_ItemCommand" >
+                  
                   <LayoutTemplate>
                     <table cellpadding="5" runat="server"
-                           id="tblProducts" style="height:320px"><!--style="height:320px"-->
+                           id="tblProducts" style="">
                       <tr runat="server" id="groupPlaceholder">
                       </tr>
                     </table>
-                    <asp:DataPager runat="server" ID="DataPager"
-                                   PageSize="9">
-                       
-                    </asp:DataPager>
+                    <asp:DataPager runat="server" ID="DataPager" PageSize="9"></asp:DataPager>
                   </LayoutTemplate>
+
                   <GroupTemplate>
                     <tr runat="server" id="productRow"
-                        style="height:80px">
+                        style="">
                       <td runat="server" id="itemPlaceholder">
                       </td>
                     </tr>
                   </GroupTemplate>
+
                   <ItemTemplate>
-                    <td valign="top" align="center" style=" width:100px" runat="server">
-                  
+                    <div class="col-md-4 col-sm-6">
+                        <div class="product">
                             <div class="image">
-                                <a href="#" data-toggle="modal" data-target="#modalSR1">
-                                    <asp:Image ID="Image1" runat="server" class="img-responsive image1" ImageUrl='<%# Bind("imagenProdcuto") %>' />
+                                <a href="#" data-toggle="modal" data-target="#modalSR<%#Eval("productoId") %>">
+                                    <asp:Image ID="Image1" runat="server" Cssclass="img-responsive image1" ImageUrl='<%# Bind("imagenProdcuto") %>' />
                                 </a>
-                            </div>                      
-                        <br />                        
-                        <div class="text">
-                            <h4><asp:Label ID="Label1" runat="server" Text='<%# Bind("nombreProducto") %>'></asp:Label></h4>
-                            <p class="price"><asp:Label ID="Label2" runat="server" Text='<%# Bind("precioProducto") %>'></asp:Label></p>
-                            <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("productoId") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                            </div>                                       
+                            <div class="text">
+                                <h4><asp:Label ID="Label1" runat="server" Text='<%# Bind("nombreProducto") %>'></asp:Label></h4>
+                                <p class="price"><asp:Label ID="Label2" runat="server" Text='<%# Bind("precioProducto") %>'></asp:Label></p>
+                                <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("productoId") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                            </div>
                         </div>
-                        <br />
+                    </div>
+
                         <!-- *** Product MODAL *** -->
-                        <div class="modal fade" id="modalSR1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="modalSR<%#Eval("productoId") %>" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -109,19 +109,26 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- *** Product MODAL END *** -->
-                        
-                    </td>
+
                   </ItemTemplate>
-                    <ItemSeparatorTemplate>
-                      <td class="separator" runat="server">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                    </ItemSeparatorTemplate>
+
                 </asp:ListView>
+
                 <asp:XmlDataSource ID="XmlDataSourceWsProducto" runat="server"></asp:XmlDataSource>
         <!-- fin ListView-->
+                 <!-- *** Volver arriba*** -->
+          <div class="row">
+                <div class="col-md-12 banner">
+                    <a href="#">
+                        <img src="img/suhi900.jpg" alt="" class="img-responsive">
+                    </a>
+                </div>
+          </div>
+                <!-- ***Fin Volver arriba*** -->
         </div>
             </div>
         <!-- *** FIN Hoja*** -->
+        
     </div>
 </asp:Content>

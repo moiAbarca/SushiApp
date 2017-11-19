@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Checkout1.aspx.cs" Inherits="SushiApp.PaginaUsuario.Checkout11" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Checkout1.aspx.cs" Inherits="SushiApp.PaginaUsuario.Checkout11" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -11,7 +11,7 @@
                 <div class="col-md-9 clearfix" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="Checkout2.aspx">
+                        <div ><!--method="post" action="Checkout2.aspx"-->
 
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="#"><i class="fa fa-user"></i>
@@ -110,7 +110,7 @@
 
 
 
-                        </form>
+                        </div>
                     </div>
                     <!-- /.box -->
 

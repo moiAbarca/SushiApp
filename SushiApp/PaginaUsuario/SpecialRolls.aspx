@@ -188,7 +188,7 @@
 
                 <div class="col-md-12 banner">
                     <a href="#">
-                        <img src="img/sushi10.jpg" alt="" class="img-responsive">
+                        <img src="img/sushi9001.jpg" alt="" class="img-responsive">
                     </a>
                 </div>
 
