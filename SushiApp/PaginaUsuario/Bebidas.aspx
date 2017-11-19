@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container-fluid">
         <!-- *** LEFT COLUMN ***
 			_________________________________________________________ -->
 
@@ -50,10 +50,10 @@
         <!-- *** RIGHT COLUMN ***
 			_________________________________________________________ -->
 
-        <div class="container-fluid">
+        
             <p class="text-muted lead"></p>
             <div class="row products">
-                <div class="col-md-4 col-sm-6">
+                <div class=".col-md-8">
 
                     <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProductos_ItemCommand1">
 
@@ -78,7 +78,7 @@
 
                 </div>
             </div>
-        </div>
+        
 
 
 

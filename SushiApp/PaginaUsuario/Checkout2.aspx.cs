@@ -19,7 +19,7 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnDireccion_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("Checkout3.aspx");
+            Response.Redirect("Checkout3.aspx");
             
         }
     }

@@ -11,7 +11,7 @@
                 <div class="col-md-9 clearfix" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="Checkout2.aspx">
+                       
 
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="#"><i class="fa fa-user"></i>
@@ -108,9 +108,6 @@
                             </div>
                             <!-- /.container -->
 
-
-
-                        </form>
                     </div>
                     <!-- /.box -->
 

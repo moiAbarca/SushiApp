@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="Checkout4.aspx.cs" Inherits="SushiApp.PaginaUsuario.Checkout41" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -36,63 +37,37 @@
                                 </li>
                             </ul>
 
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">Producto</th>
-                                            <th>Cantidad</th>
-                                            <th>Precio unitario</th>
-                                            <th>Descuento</th>
-                                            <th colspan="2">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="img/detailsquare.jpg" alt="White Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">White Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="2" class="form-control">
-                                            </td>
-                                            <td>$123.00</td>
-                                            <td>$0.00</td>
-                                            <td>$246.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="img/basketsquare.jpg" alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="1" class="form-control">
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="5">Total</th>
-                                            <th colspan="2">$446.00</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                            <div class="box">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" Width="100%">
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="Quitar">
+                                                    <ItemTemplate>
+                                                        <asp:ImageButton ID="ImageButton1" runat="server" Height="19px"
+                                                            ImageUrl="~/PaginaUsuario/img/ImagenesSushi/sushifavicon.png" Width="20px" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="ID_PRODUCTO" HeaderText="Codigo" />
+                                                <asp:BoundField DataField="NOMBRE_PRODUCTO" HeaderText="Nombre" />
+                                                <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
+                                                <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
+                                                <%--<asp:TemplateField HeaderText="Cantidad">
+                        <ItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Height="19px" Width="73px" DataField="CANTIDAD_PRODUCTO" MaxLength="2"></asp:TextBox>
+                        </ItemTemplate>
+                    </asp:TemplateField>--%>
 
+                                                <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
+
+                                            </Columns>
+                                        </asp:GridView>
+                                    </table>
+
+                                </div>
+                                <!-- /.table-responsive -->
                             </div>
-                            <!-- /.table-responsive -->
+                            <!-- /.box -->
 
                             <div class="box-footer">
                                 <div class="pull-left">
@@ -101,9 +76,9 @@
                                 <div class="pull-right">
                                     <button class="btn btn-default"><i class="fa fa-refresh"></i>Update cart</button>
 
-                                    <button type="submit" class="btn btn-template-main">
-                                        Lo Quiero! <i class="fa fa-chevron-right"></i>
-                                    </button>
+                                    <asp:Button ID="btnPagar" runat="server" CssClass="btn btn-template-main" Text="Pagar" OnClick="btnPagar_Click" /><i class="fa fa-chevron-right"></i>
+
+
                                 </div>
                             </div>
                         </div>
@@ -111,60 +86,7 @@
                     </div>
                     <!-- /.box -->
 
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="box text-uppercase">
-                                <h3>You may also like these products</h3>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product2.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
-
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product3.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="img/product1.jpg" alt="" class="img-responsive image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3><a href="shop-detail.html">Fur coat</a></h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                    </div>
+                    
 
                 </div>
                 <!-- /.col-md-9 -->
@@ -207,7 +129,7 @@
                             <h4>Coupon code</h4>
                         </div>
                         <p class="text-muted">Si tiene un cupón de descuento, por favor introduzca el código aquí</p>
-                        <form>
+                        
                             <div class="input-group">
 
                                 <input type="text" class="form-control">
@@ -219,7 +141,7 @@
                                 </span>
                             </div>
                             <!-- /input-group -->
-                        </form>
+                      
                     </div>
 
                 </div>

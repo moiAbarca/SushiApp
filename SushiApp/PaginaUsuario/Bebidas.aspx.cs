@@ -23,8 +23,20 @@ namespace SushiApp.PaginaUsuario
         //int _precioTotal;
 
         DataTable dtb;
-        
+        DataTable carrito = new DataTable();
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                ListadoProductos();
+                CargarDetalle();
+            }
+
+        }
+
+        //Este método inicializa un Datatable para que al momento de ir agregándole las
+        // filas (DataRow), no se caiga la app.
         public void CargarDetalle()
         {
             dtb = new DataTable("Carrito");
@@ -32,48 +44,41 @@ namespace SushiApp.PaginaUsuario
             dtb.Columns.Add("NOMBRE_PRODUCTO", System.Type.GetType("System.String"));
             dtb.Columns.Add("PRECIO_PRODUCTO", System.Type.GetType("System.Int32"));
             dtb.Columns.Add("IMAGEN_PRODUCTO", System.Type.GetType("System.String"));
-            dtb.Columns.Add("SUBTOTAL", System.Type.GetType("System.Int32"));
             dtb.Columns.Add("CANTIDAD_PRODUCTO", System.Type.GetType("System.Int32"));
-
+            dtb.Columns.Add("SUBTOTAL", System.Type.GetType("System.Int32"));
+            
+            //Declaramos una variable de tipo Session en donde agregaremos el DataTable recién creado
             Session["Pedido"] = dtb;
         }
 
+
+        //
         public void AgregarItem(int id, string nombre, int precio, string imagen)
         {
-            int total;
+            int subtotal;
             int cantidad = 1;
-            total = precio * cantidad;
-            DataTable Carrito = (DataTable)Session["Pedido"];
-            //if ((DataTable)Session["Pedido"] == null)
-            //{
-            //    Carrito = new DataTable();
-            //}
-            //else
-            //{
-            //    Carrito = (DataTable)Session["Pedido"];
-            //}
+            subtotal = precio * cantidad;
 
-            
-            DataRow fila = Carrito.NewRow();
+            // Pasamos a una variable de tipo DataTable (Inicializada al comienzo) la Session y
+            // luego le creamos una nueva fila a ese DataTable con el método .NewRow();
+            carrito = (DataTable)Session["Pedido"];
+
+            DataRow fila = carrito.NewRow();
             fila[0] = id;
-            fila[1] = imagen;
-            fila[2] = nombre;
-            fila[3] = precio;
+            fila[1] = nombre;
+            fila[2] = precio;
+            fila[3] = imagen;
             fila[4] = (int)cantidad;
-            fila[5] = total;
-            Carrito.Rows.Add(fila);
-            Session["Pedido"] = Carrito;
+            fila[5] = subtotal;
+
+            // Le pasamos la instancia del DataRow (fila) al DataTable carrito
+            carrito.Rows.Add(fila);
+            // Le pasamos todo el DataTable "carrito" a la Session.
+            Session["Pedido"] = carrito;
         }
 
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                ListadoProductos();
-            }
-            
-        }
+        
 
         public void ListadoProductos()
         {
@@ -129,8 +134,8 @@ namespace SushiApp.PaginaUsuario
                 //_precioTotal;
 
                 AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
-                Session["prueba"] = "Sesión usuario prueba";
 
+                //Session["prueba"] = "Sesión usuario prueba";
                 //Carro prodCarro = new Carro();
                 //prodCarro.ProductoId = _productoId;
                 //prodCarro.NombreProducto = _nombreProducto;
