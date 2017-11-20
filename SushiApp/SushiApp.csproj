@@ -1248,7 +1248,6 @@
     <Content Include="PaginaAdmin\js\plugins\validate\jquery.validate.min.js" />
     <Content Include="PaginaAdmin\js\plugins\video\responsible-video.js" />
     <Content Include="PaginaAdmin\js\plugins\wow\wow.min.js" />
-    <Content Include="PaginaUsuario\contact.html" />
     <Content Include="PaginaUsuario\css\animate.css" />
     <Content Include="PaginaUsuario\css\bootstrap.css" />
     <Content Include="PaginaUsuario\css\bootstrap.min.css" />
