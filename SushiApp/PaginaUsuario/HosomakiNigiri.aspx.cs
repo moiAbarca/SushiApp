@@ -4,23 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SushiApp.Models;
 using System.Data;
 
 namespace SushiApp.PaginaUsuario
 {
-    public partial class Bebidas1 : System.Web.UI.Page
+    public partial class HosomakiNigiri : System.Web.UI.Page
     {
         wsProducto.ServiceProductoClient ProductoClient = new wsProducto.ServiceProductoClient();
         wsProducto.producto auxProducto = new wsProducto.producto();
-
-        //int _productoId;
-        //String _nombreProducto;
-        //String _imagenProducto;
-        //int _precioUnitario;
-        //int _cantidad;
-        //int _descuento;
-        //int _precioTotal;
 
         DataTable dtb;
         DataTable carrito = new DataTable();
@@ -66,7 +57,7 @@ namespace SushiApp.PaginaUsuario
             // luego le creamos una nueva fila a ese DataTable con el método .NewRow();
             carrito = (DataTable)Session["Pedido"];
 
-            
+
 
             DataRow fila = carrito.NewRow();
             fila[0] = id;
@@ -83,7 +74,7 @@ namespace SushiApp.PaginaUsuario
         }
 
 
-        
+
 
         public void ListadoProductos()
         {
@@ -92,7 +83,7 @@ namespace SushiApp.PaginaUsuario
                 var listadto = ProductoClient.obtenerProducto();
                 var auxListadto = (from o in listadto
                                    orderby o.productoId
-                                   where o.categoriaProductoId == 7
+                                   where o.categoriaProductoId == 5
                                    select new
                                    {
                                        IdProducto = o.productoId,
@@ -112,7 +103,7 @@ namespace SushiApp.PaginaUsuario
 
                 throw ex;
             }
-            
+
         }
 
 
@@ -134,7 +125,7 @@ namespace SushiApp.PaginaUsuario
                 _nombreProducto = ((Label)e.Item.FindControl("lblNombreProducto")).Text;
                 _imagenProducto = ((Image)e.Item.FindControl("imgImagenProducto")).ImageUrl;
                 _precioUnitario = Convert.ToInt32(((Label)e.Item.FindControl("lblPrecioProducto")).Text);
-                
+
                 //_descuento = 
                 //_precioTotal;
 
@@ -146,10 +137,6 @@ namespace SushiApp.PaginaUsuario
                 //prodCarro.NombreProducto = _nombreProducto;
                 //prodCarro.ImagenProducto = _imagenProducto;
                 //prodCarro.PrecioUnitario = _precioUnitario;
-
-
-
-
 
             }
         }

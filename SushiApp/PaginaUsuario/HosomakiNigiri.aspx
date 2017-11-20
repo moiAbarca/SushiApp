@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="TempuraPankoRolls.aspx.cs" Inherits="SushiApp.PaginaUsuario.TempuraPankoRolls1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="HosomakiNigiri.aspx.cs" Inherits="SushiApp.PaginaUsuario.HosomakiNigiri" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container-fluid">
         <!-- *** LEFT COLUMN ***
 			_________________________________________________________ -->
 
@@ -25,13 +24,13 @@
                         <li>
                             <a href="NikkeiRolls.aspx">Nikkei Rolls</a>
                             </li>
-                        <li class="active">
+                        <li>
                             <a href="TempuraPankoRolls.aspx">Tempura & Panko Rolls</a>
                             </li>
                         <li>
                             <a href="CaliforniaRolls.aspx">California Rolls</a>
                             </li>
-                        <li>
+                        <li  class="active">
                             <a href="HosomakiNigiri.aspx">Hosomaki & Nigiri</a>
                             </li>
                         <li>
@@ -63,7 +62,8 @@
         <!-- *** RIGHT COLUMN ***
 			_________________________________________________________ -->
 
-        <p class="text-muted lead"></p>
+        
+            <p class="text-muted lead"></p>
             <div class="row products">
                 <div class=".col-md-8">
 
@@ -90,9 +90,5 @@
 
                 </div>
             </div>
-        <!-- /.col-md-9 -->
-
-        <!-- *** RIGHT COLUMN END *** -->
-
     </div>
 </asp:Content>

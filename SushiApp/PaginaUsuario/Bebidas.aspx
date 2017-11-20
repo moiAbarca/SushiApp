@@ -20,11 +20,24 @@
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked category-menu">
                         <li>
-                            <a href="SpecialRolls.aspx">Special Rolls <span class="badge pull-right">42</span></a>
+                            <a href="SpecialRolls.aspx">Special Rolls <span class="badge pull-right">9</span></a>
+                            </li>
+                        <li>
                             <a href="NikkeiRolls.aspx">Nikkei Rolls</a>
+                            </li>
+                        <li>
                             <a href="TempuraPankoRolls.aspx">Tempura & Panko Rolls</a>
+                            </li>
+                        <li>
                             <a href="CaliforniaRolls.aspx">California Rolls</a>
+                            </li>
+                        <li>
+                            <a href="HosomakiNigiri.aspx">Hosomaki & Nigiri</a>
+                            </li>
+                        <li>
                             <a href="Postres.aspx">Postres</a>
+                            </li>
+                        <li class="active">
                             <a href="Bebidas.aspx">Bebidas</a>
                         </li>
 

@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace SushiApp.PaginaUsuario
 {
-    public partial class VentasSushi : System.Web.UI.MasterPage
+    public partial class Despacho : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnIntranet_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/PaginaAdmin/LoginAdmin.aspx");
         }
     }
 }

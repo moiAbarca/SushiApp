@@ -170,9 +170,11 @@
     <Content Include="PaginaUsuario\css\fonts\fontawesome-webfont.woff" />
     <Content Include="PaginaUsuario\css\fonts\FontAwesome.otf" />
     <Content Include="PaginaAdmin\MenuInterior.Master" />
+    <Content Include="PaginaUsuario\Despacho.aspx" />
+    <Content Include="PaginaUsuario\HosomakiNigiri.aspx" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID10_Samurai_Roll.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID11_Ebi_Nikkei.jpg" />
-    <Content Include="PaginaUsuario\img\ImagenesSushi\ID12_Ceviche-Roll.jpg" />
+    <Content Include="PaginaUsuario\img\ImagenesSushi\ID12_Ceviche_Roll.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID13_Sake_Nikkei.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID14_Crunchy_Ebi.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID15_Crunchy_Tori.jpg" />
@@ -1537,6 +1539,20 @@
     </Compile>
     <Compile Include="PaginaUsuario\Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\Despacho.aspx.cs">
+      <DependentUpon>Despacho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\Despacho.aspx.designer.cs">
+      <DependentUpon>Despacho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\HosomakiNigiri.aspx.cs">
+      <DependentUpon>HosomakiNigiri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\HosomakiNigiri.aspx.designer.cs">
+      <DependentUpon>HosomakiNigiri.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

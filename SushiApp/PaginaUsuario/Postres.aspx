@@ -20,11 +20,24 @@
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked category-menu">
                         <li>
-                            <a href="SpecialRolls.aspx">Special Rolls <span class="badge pull-right">42</span></a>
+                            <a href="SpecialRolls.aspx">Special Rolls <span class="badge pull-right">9</span></a>
+                            </li>
+                        <li>
                             <a href="NikkeiRolls.aspx">Nikkei Rolls</a>
+                            </li>
+                        <li>
                             <a href="TempuraPankoRolls.aspx">Tempura & Panko Rolls</a>
+                            </li>
+                        <li>
                             <a href="CaliforniaRolls.aspx">California Rolls</a>
+                            </li>
+                        <li>
+                            <a href="HosomakiNigiri.aspx">Hosomaki & Nigiri</a>
+                            </li>
+                        <li class="active">
                             <a href="Postres.aspx">Postres</a>
+                            </li>
+                        <li>
                             <a href="Bebidas.aspx">Bebidas</a>
                         </li>
 
@@ -49,37 +62,33 @@
         <!-- *** RIGHT COLUMN ***
 			_________________________________________________________ -->
 
-        <div class="container-fluid">
-            <p class="text-muted lead"></p>
+        <p class="text-muted lead"></p>
             <div class="row products">
-                <div class="col-md-4 col-sm-6">
+                <div class=".col-md-8">
 
-                    <asp:DataList ID="dtlProducto" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProducto_ItemCommand">
+                    <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProductos_ItemCommand1">
 
                         <ItemTemplate>
                             <div class="product">
                                 <div class="image">
-
-                                    <asp:Image ID="imgProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
-
+                                    <asp:Image ID="imgImagenProducto" runat="server" CssClass="img-responsive image1" ImageUrl='<%# Eval("IMAGENPRODUCTO") %>' />
                                 </div>
                             </div>
-
                             <div class="text">
-
                                 <h5>
-                                    <asp:Label ID="lblNombreProducto" runat="server" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
-
-                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CssClass="btn-block success" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
+                                    <asp:Label ID="lblNombreProducto" runat="server" CssClass="btn-template-primary" Text='<%# Eval("NOMBREPRODUCTO") %>'></asp:Label></h5>
+                                <asp:Label ID="lblPrecioProducto" runat="server" Text='<%# Eval("PRECIOPRODUCTO") %>'></asp:Label>
                             </div>
 
+                            <div class="buttons">
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carro" CommandName="Agregar" CommandArgument='<%# Eval("IDPRODUCTO")%>' />
+                            </div>
                         </ItemTemplate>
 
                     </asp:DataList>
 
                 </div>
             </div>
-        </div>
     </div>
 
 

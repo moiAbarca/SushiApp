@@ -10,7 +10,7 @@
 namespace SushiApp.PaginaUsuario {
     
     
-    public partial class TempuraPankoRolls1 {
+    public partial class HosomakiNigiri {
         
         /// <summary>
         /// Control dtlProductos.

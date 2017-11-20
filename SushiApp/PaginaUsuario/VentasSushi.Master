@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VentasSushi.master.cs" Inherits="SushiApp.PaginaUsuario.VentasSushi" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -82,6 +82,8 @@ _________________________________________________________ -->
                                 <div class="login">
                                     <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i><span class="hidden-xs text-uppercase">iniciar Sesión</span></a>
                                     <a href="customer-register.html"><i class="fa fa-user"></i><span class="hidden-xs text-uppercase">Ingresar</span></a>
+                                    <asp:Button ID="btnIntranet" cssclass="btn btn-sm btn-link" runat="server" Text="Intranet" OnClick="btnIntranet_Click" />
+                                    
                                 </div>
 
                             </div>
@@ -133,28 +135,20 @@ _________________________________________________________ -->
                                                             <ul>
                                                                 <li><a href="SpecialRolls.aspx">Special Rolls</a>
                                                                 </li>
-                                                                <li><a href="Inicio.aspx">Nikkei rolls</a>
+                                                                <li><a href="NikkeiRolls.aspx">Nikkei rolls</a>
                                                                 </li>
                                                                 <li><a href="TempuraPankoRolls.aspx">Tempura & Panko Rolls</a>
                                                                 </li>
                                                                 <li><a href="CaliforniaRolls.aspx">California Rolls</a>
                                                                 </li>
-                                                                <li><a href="VeggieRolls.aspx">Veggie Rolls</a>
-                                                                </li>
-                                                                <li><a href="Inicio.aspx">Sashimis & Ceviche</a>
-                                                                </li>
-                                                                <li><a href="Inicio.aspx">Chirashis</a>
-                                                                </li>
-                                                                <li><a href="Inicio.aspx">Hosomaki & Nigiris</a>
+                                                                <li><a href="HosomakiNigiri.aspx">Hosomaki & Nigiri</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                         <div class="col-sm-3">
-                                                            <h5>Postres, Tragos y Bebidas</h5>
+                                                            <h5>Postres y Bebidas</h5>
                                                             <ul>
                                                                 <li><a href="Postres.aspx">Postres</a>
-                                                                </li>
-                                                                <li><a href="Tragos.aspx">Tragos</a>
                                                                 </li>
                                                                 <li><a href="Bebidas.aspx">Bebidas</a>
                                                                 </li>
@@ -187,7 +181,7 @@ _________________________________________________________ -->
 
                             <div class="collapse clearfix" id="search">
 
-                                <form class="navbar-form" role="search">
+                             
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search">
                                         <span class="input-group-btn">
@@ -196,7 +190,7 @@ _________________________________________________________ -->
 
                                         </span>
                                     </div>
-                                </form>
+
 
                             </div>
                             <!--/.nav-collapse -->
@@ -294,7 +288,7 @@ Horario de atención: Lunes a sábado en locales de 12:00 a 17:00 y 18:00 a 24:0
 
                         <h4>Únete a nuestro newsletter Mensual</h4>
 
-                        <form>
+                       
                             <div class="input-group">
 
                                 <input type="text" class="form-control">
@@ -307,7 +301,7 @@ Horario de atención: Lunes a sábado en locales de 12:00 a 17:00 y 18:00 a 24:0
 
                             </div>
                             <!-- /input-group -->
-                        </form>
+           
 
                         <hr class="hidden-md hidden-lg hidden-sm">
                     </div>
@@ -350,7 +344,7 @@ _________________________________________________________ -->
             <div id="copyright">
                 <div class="container">
                     <div class="col-md-12">
-                        <p class="pull-left">&copy; 2015. Your company / name goes here</p>
+                        <p class="pull-left">&copy; 2017. monoDev® / FukusukeSushi</p>
                         <p class="pull-right">
                             Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>
                             <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
