@@ -49,6 +49,8 @@ namespace SushiApp.PaginaUsuario
             
             //Declaramos una variable de tipo Session en donde agregaremos el DataTable recién creado
             Session["Pedido"] = dtb;
+
+
         }
 
 
@@ -62,6 +64,8 @@ namespace SushiApp.PaginaUsuario
             // Pasamos a una variable de tipo DataTable (Inicializada al comienzo) la Session y
             // luego le creamos una nueva fila a ese DataTable con el método .NewRow();
             carrito = (DataTable)Session["Pedido"];
+
+            
 
             DataRow fila = carrito.NewRow();
             fila[0] = id;
@@ -135,7 +139,7 @@ namespace SushiApp.PaginaUsuario
 
                 AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
 
-                //Session["prueba"] = "Sesión usuario prueba";
+                Session["prueba"] = "Sesión usuario prueba";
                 //Carro prodCarro = new Carro();
                 //prodCarro.ProductoId = _productoId;
                 //prodCarro.NombreProducto = _nombreProducto;

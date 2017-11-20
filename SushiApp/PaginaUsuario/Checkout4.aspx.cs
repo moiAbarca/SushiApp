@@ -40,9 +40,9 @@ namespace SushiApp.PaginaUsuario
         protected void SendEmail(object sender, EventArgs e)
         {
             System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
-            correo.From = new System.Net.Mail.MailAddress("Tu Correo");
+            correo.From = new System.Net.Mail.MailAddress("best_will16@hotmail.com");
             // ***** Agregar el correo del usuario y descomentar *****
-            //correo.To.Add(this.TextBox2.Text);
+            correo.To.Add("wilinho21@gmail.com");
             correo.Subject = "Pedido de Compra";
 
             string cod, des;
@@ -61,7 +61,7 @@ namespace SushiApp.PaginaUsuario
 
                 foreach (DataRow objDR in items.Rows)
                 {
-                    if (objDR["codproducto"].ToString() == cod)
+                    if (objDR["ID_PRODUCTO"].ToString() == cod)
                     {
                         break;
                     }
@@ -78,7 +78,7 @@ namespace SushiApp.PaginaUsuario
             smtp.Host = "smtp.live.com"; //para hotmail
             smtp.Port = 587;
             //Completar con  las credenciales del correo ingresado arriba
-            smtp.Credentials = new System.Net.NetworkCredential("TuCorreo", "TuContraseña");
+            smtp.Credentials = new System.Net.NetworkCredential("best_will16@hotmail.com", "166938198");
             smtp.EnableSsl = true;
             try
             {
