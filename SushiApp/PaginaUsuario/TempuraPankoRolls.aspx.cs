@@ -10,7 +10,7 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class TempuraPankoRolls1 : System.Web.UI.Page
     {
-        wsProducto.ServiceProductoClient ProductoClient = new wsProducto.ServiceProductoClient();
+        wsProducto.ServiceProductoClient productoClient = new wsProducto.ServiceProductoClient();
         wsProducto.producto auxProducto = new wsProducto.producto();
 
         DataTable dtb;
@@ -20,9 +20,12 @@ namespace SushiApp.PaginaUsuario
         {
             if (!IsPostBack)
             {
-                ListadoProductos();
+                cargarListViewProductos();
                 CargarDetalle();
             }
+
+            //cargarListViewProductos();
+            //mostrarModal();
 
         }
 
@@ -42,11 +45,9 @@ namespace SushiApp.PaginaUsuario
 
                 //Declaramos una variable de tipo Session en donde agregaremos el DataTable recién creado
                 Session["Pedido"] = dtb;
-            }          
+            }
         }
 
-
-        //
         public void AgregarItem(int id, string nombre, int precio, string imagen)
         {
             int subtotal;
@@ -73,72 +74,82 @@ namespace SushiApp.PaginaUsuario
             Session["Pedido"] = carrito;
         }
 
-
-
-
-        public void ListadoProductos()
+        private void cargarListViewProductos()
         {
             try
             {
-                var listadto = ProductoClient.obtenerProducto();
-                var auxListadto = (from o in listadto
-                                   orderby o.productoId
-                                   where o.categoriaProductoId == 3
-                                   select new
-                                   {
-                                       IdProducto = o.productoId,
-                                       NombreProducto = o.nombreProducto,
-                                       PorcionesProducto = o.porcionesProdcuto,
-                                       PrecioProducto = o.precioProducto,
-                                       DescripcionProducto = o.descripcionProducto,
-                                       ImagenProducto = o.imagenProdcuto,
-                                       DisponibilidadProducto = o.disponibilidadProducto
-                                   }).ToList();
+                //wsProducto.producto[] productos = productoClient.obtenerProducto();
+                //ProductsListView.DataSource = productos;
+                //ProductsListView.DataBind();
 
-                dtlProductos.DataSource = auxListadto;
-                dtlProductos.DataBind();
+                var listadto = productoClient.obtenerProducto();
+                var nuevolistadto = (from o in listadto
+                                     orderby o.productoId
+                                     where o.categoriaProductoId == 3 //Puedes comprobar los id cambiando este valor
+                                     select new
+                                     {
+                                         Id = o.productoId,
+                                         Nombre = o.nombreProducto,
+                                         Imagen = o.imagenProdcuto,
+                                         Porciones = o.porcionesProdcuto,
+                                         Precio = o.precioProducto,
+                                         Descripción = o.descripcionProducto,
+                                         Disponibilidad = o.disponibilidadProducto
+                                     }).ToList();
+                ProductsListView.DataSource = nuevolistadto;
+                ProductsListView.DataBind();
             }
             catch (Exception ex)
             {
 
-                throw ex;
             }
+        }
+
+        protected void ProductsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
-
-
-        protected void dtlProductos_ItemCommand1(object source, DataListCommandEventArgs e)
+        protected void ProductsListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            if (e.CommandName == "Agregar")
+            try
+            {
+                if (e.CommandName == "Agregar")
+                {
+
+                    //String id = e.CommandArgument.ToString();
+                    int _productoId;
+                    String _nombreProducto = null, _imagenProducto = null;
+                    int _precioUnitario = 0;
+                    //int _cantidad = 1;
+
+                    //Response.Write(id);
+
+                    _productoId = Convert.ToInt32(e.CommandArgument.ToString());
+                    _nombreProducto = ((Label)e.Item.FindControl("lblNombreProducto")).Text;
+                    _imagenProducto = ((Image)e.Item.FindControl("imgImagenProducto")).ImageUrl;
+                    _precioUnitario = Convert.ToInt32(((Label)e.Item.FindControl("lblPrecioProducto")).Text);
+
+                    //_descuento = 
+                    //_precioTotal;
+
+                    AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
+
+                    Session["prueba"] = "Sesión usuario prueba";
+                    //Carro prodCarro = new Carro();
+                    //prodCarro.ProductoId = _productoId;
+                    //prodCarro.NombreProducto = _nombreProducto;
+                    //prodCarro.ImagenProducto = _imagenProducto;
+                    //prodCarro.PrecioUnitario = _precioUnitario;
+
+
+                }
+            }
+            catch (Exception)
             {
 
-                //String id = e.CommandArgument.ToString();
-                int _productoId;
-                String _nombreProducto = null, _imagenProducto = null;
-                int _precioUnitario = 0;
-                //int _cantidad = 1;
-
-                //Response.Write(id);
-
-                _productoId = Convert.ToInt32(e.CommandArgument.ToString());
-                _nombreProducto = ((Label)e.Item.FindControl("lblNombreProducto")).Text;
-                _imagenProducto = ((Image)e.Item.FindControl("imgImagenProducto")).ImageUrl;
-                _precioUnitario = Convert.ToInt32(((Label)e.Item.FindControl("lblPrecioProducto")).Text);
-
-                //_descuento = 
-                //_precioTotal;
-
-                AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
-
-                Session["prueba"] = "Sesión usuario prueba";
-                //Carro prodCarro = new Carro();
-                //prodCarro.ProductoId = _productoId;
-                //prodCarro.NombreProducto = _nombreProducto;
-                //prodCarro.ImagenProducto = _imagenProducto;
-                //prodCarro.PrecioUnitario = _precioUnitario;
-
             }
+
         }
     }
 }
