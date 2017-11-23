@@ -69,7 +69,7 @@
                 <div class=".col-md-8">
 
                     <asp:DataList ID="dtlProductos" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" OnItemCommand="dtlProductos_ItemCommand1">
-
+                        
                         <ItemTemplate>
                             <div class="product">
                                 <div class="image">

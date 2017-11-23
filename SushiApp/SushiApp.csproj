@@ -735,6 +735,10 @@
     <Content Include="Service References\wsTipoPago\SushiApp.wsTipoPago.tipoPago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsUsuario\ServiceUsuario.wsdl" />
+    <None Include="Service References\wsUsuario\ServiceUsuario.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.agregarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -753,10 +757,6 @@
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsUsuario\ServiceUsuario1.wsdl" />
-    <None Include="Service References\wsUsuario\ServiceUsuario1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

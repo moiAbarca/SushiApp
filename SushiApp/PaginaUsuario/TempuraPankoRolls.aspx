@@ -75,35 +75,35 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="product">
                             <div class="image">
-                                <a href="#" data-toggle="modal" data-target="#modalSR<%#Eval("productoId") %>">
-                                    <asp:Image ID="Image1" runat="server" Cssclass="img-responsive image1" ImageUrl='<%# Bind("imagenProdcuto") %>' />
+                                <a href="#" data-toggle="modal" data-target="#modalSR<%#Eval("Id") %>">
+                                    <asp:Image ID="imgImagenProducto" runat="server" Cssclass="img-responsive image1" ImageUrl='<%# Bind("Imagen") %>' />
                                 </a>
                             </div>                                       
                             <div class="text">
-                                <h4><asp:Label ID="Label1" runat="server" Text='<%# Bind("nombreProducto") %>'></asp:Label></h4>
-                                <p class="price"><asp:Label ID="Label2" runat="server" Text='<%# Bind("precioProducto") %>'></asp:Label></p>
-                                <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("productoId") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                                <h4><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label></h4>
+                                <p class="price"><asp:Label ID="lblPrecioProducto" runat="server" Text='<%# Bind("Precio") %>'></asp:Label></p>
+                                <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("Id") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
                             </div>
                         </div>
                     </div>
 
                         <!-- *** Product MODAL *** -->
-                        <div class="modal fade" id="modalSR<%#Eval("productoId") %>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="modalSR<%#Eval("Id") %>" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title"><asp:Label ID="Label3" runat="server" Text='<%# Bind("nombreProducto") %>'></asp:Label></h4>
-                                        <p><asp:Label ID="Label4" runat="server" Text='<%# Bind("porcionesProdcuto") %> '></asp:Label> porciones</p>
+                                        <h4 class="modal-title"><asp:Label ID="Label3" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label></h4>
+                                        <p><asp:Label ID="Label4" runat="server" Text='<%# Bind("Porciones") %> '></asp:Label> porciones</p>
                                         <div class="form-group">
-                                            <asp:Image ID="Image2" runat="server" class="img-responsive image1" ImageUrl='<%# Bind("imagenProdcuto") %>' />
+                                            <asp:Image ID="Image2" runat="server" class="img-responsive image1" ImageUrl='<%# Bind("Imagen") %>' />
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("descripcionProducto") %>'></asp:Label>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Descripcion") %>'></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("precioProducto") %>' CssClass="text-primary" Font-Size="Larger"></asp:Label>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Precio") %>' CssClass="text-primary" Font-Size="Larger"></asp:Label>
                                         </div>
                                     </div>
                                 </div>

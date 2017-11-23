@@ -15,7 +15,8 @@ namespace SushiApp.PaginaUsuario
 
         DataTable dtb;
         DataTable carrito = new DataTable();
-
+        
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -48,28 +49,60 @@ namespace SushiApp.PaginaUsuario
             }
         }
 
-        public void AgregarItem(int id, string nombre, int precio, string imagen)
+        public void AgregarItem(int id, string nombre, int precio, string imagen, int cantidad)
         {
+            String _id;
             int subtotal;
-            int cantidad = 1;
-            subtotal = precio * cantidad;
+            //int cantidad;
+            //subtotal = precio * cantidad;
 
             // Pasamos a una variable de tipo DataTable (Inicializada al comienzo) la Session y
             // luego le creamos una nueva fila a ese DataTable con el método .NewRow();
             carrito = (DataTable)Session["Pedido"];
 
 
+            //var rows = carrito.Select("PRODUCTO_ID == id");
+            DataRow dRow = carrito.AsEnumerable().Where(p => p.Field<Int32>(0) == id).FirstOrDefault();
+            if (dRow!=null)
+            {
+                
+                carrito.AsEnumerable().ToList<DataRow>().ForEach
+                   (r =>
+                   {
+                       if (String.Compare(r["ID_PRODUCTO"].ToString(), id.ToString()) == 0)
+                           r["CANTIDAD_PRODUCTO"] = cantidad++;
+                   }
+                   );
 
-            DataRow fila = carrito.NewRow();
-            fila[0] = id;
-            fila[1] = nombre;
-            fila[2] = precio;
-            fila[3] = imagen;
-            fila[4] = (int)cantidad;
-            fila[5] = subtotal;
+            }
+            else
+            {
+                DataRow fila = carrito.NewRow();
+                fila[0] = id;
+                fila[1] = nombre;
+                fila[2] = precio;
+                fila[3] = imagen;
+                fila[4] = (int)cantidad;
+                fila[5] = precio * cantidad;
 
-            // Le pasamos la instancia del DataRow (fila) al DataTable carrito
-            carrito.Rows.Add(fila);
+                // Le pasamos la instancia del DataRow (fila) al DataTable carrito
+                carrito.Rows.Add(fila);
+            }
+            
+           
+            
+               
+            
+
+            //foreach (DataRow filas in carrito.Rows)
+            //{
+            //    foreach (DataColumn columnas in carrito.Columns)
+            //    {
+            //        filas["ID_PRODUCTO"] = id;
+            //    }
+            //}
+
+            
             // Le pasamos todo el DataTable "carrito" a la Session.
             Session["Pedido"] = carrito;
         }
@@ -78,7 +111,8 @@ namespace SushiApp.PaginaUsuario
         {
             try
             {
-                //wsProducto.producto[] productos = productoClient.obtenerProducto();
+
+                //wsProducto.producto[] productos = productoClient.obtenerProducto();       
                 //ProductsListView.DataSource = productos;
                 //ProductsListView.DataBind();
 
@@ -93,7 +127,7 @@ namespace SushiApp.PaginaUsuario
                                          Imagen = o.imagenProdcuto,
                                          Porciones = o.porcionesProdcuto,
                                          Precio = o.precioProducto,
-                                         Descripción = o.descripcionProducto,
+                                         Descripcion = o.descripcionProducto,
                                          Disponibilidad = o.disponibilidadProducto
                                      }).ToList();
                 ProductsListView.DataSource = nuevolistadto;
@@ -121,7 +155,7 @@ namespace SushiApp.PaginaUsuario
                     int _productoId;
                     String _nombreProducto = null, _imagenProducto = null;
                     int _precioUnitario = 0;
-                    //int _cantidad = 1;
+                    int _cantidad = 1;
 
                     //Response.Write(id);
 
@@ -133,7 +167,7 @@ namespace SushiApp.PaginaUsuario
                     //_descuento = 
                     //_precioTotal;
 
-                    AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
+                    AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto, _cantidad);
 
                     Session["prueba"] = "Sesión usuario prueba";
                     //Carro prodCarro = new Carro();
@@ -147,7 +181,7 @@ namespace SushiApp.PaginaUsuario
             }
             catch (Exception)
             {
-
+                return;
             }
 
         }

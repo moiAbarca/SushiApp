@@ -82,8 +82,8 @@ _________________________________________________________ -->
                                 <div class="login">
                                     <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i><span class="hidden-xs text-uppercase">iniciar Sesión</span></a>
                                     <a href="customer-register.html"><i class="fa fa-user"></i><span class="hidden-xs text-uppercase">Ingresar</span></a>
-                                    <asp:Button ID="btnIntranet" cssclass="btn btn-sm btn-link" runat="server" Text="Intranet" OnClick="btnIntranet_Click" />
-                                    
+                                    <asp:Button ID="btnIntranet" CssClass="btn btn-sm btn-link" runat="server" Text="Intranet" OnClick="btnIntranet_Click" />
+
                                 </div>
 
                             </div>
@@ -181,15 +181,15 @@ _________________________________________________________ -->
 
                             <div class="collapse clearfix" id="search">
 
-                             
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn">
 
-                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
 
-                                        </span>
-                                    </div>
+                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                                    </span>
+                                </div>
 
 
                             </div>
@@ -207,6 +207,8 @@ _________________________________________________________ -->
 
             </header>
 
+            
+
             <!-- *** LOGIN MODAL ***
 _________________________________________________________ -->
 
@@ -219,19 +221,23 @@ _________________________________________________________ -->
                             <h4 class="modal-title" id="Login">Inicia Sesión</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="customer-orders.html" method="post">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="email_modal" placeholder="email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="password_modal" placeholder="password">
-                                </div>
 
+                            <div class="form-group">
+                                <asp:TextBox ID="txtMailModal" runat="server" placeholder="email" cssClass="form-control" TextMode="Email"></asp:TextBox>
+                                <%--<input type="text" class="form-control" id="email_modal" placeholder="email">--%>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtPasswordModal" runat="server" cssClass="form-control" placeholder="password" TextMode="Password"></asp:TextBox>
+                                <%--<input type="password" class="form-control" id="password_modal" placeholder="password">--%>
+                            </div>
+                            <div class="form-group">
                                 <p class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i>Entrar</button>
+                                    <asp:Button ID="btnLoginModal" CssClass="btn btn-template-main" class="fa fa-sign-in" runat="server" Text="Entrar" OnClick="btnLoginModal_Click" />
+                                    <%--   <button class="btn btn-template-main"><i class="fa fa-sign-in"></i>Entrar</button>--%>
                                 </p>
+                            </div>
+                            
 
-                            </form>
 
                             <p class="text-center text-muted">¿Aun no estás registrado?</p>
                             <p class="text-center text-muted"><a href="customer-register.html"><strong>Registrarse ahora</strong></a>! Es fácil y solo le tomará 1&nbsp;minuto y tendrá acceso a descuentos y mucho más!</p>
@@ -288,20 +294,20 @@ Horario de atención: Lunes a sábado en locales de 12:00 a 17:00 y 18:00 a 24:0
 
                         <h4>Únete a nuestro newsletter Mensual</h4>
 
-                       
-                            <div class="input-group">
 
-                                <input type="text" class="form-control">
+                        <div class="input-group">
 
-                                <span class="input-group-btn">
+                            <input type="text" class="form-control">
 
-                                    <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+                            <span class="input-group-btn">
 
-                                </span>
+                                <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
 
-                            </div>
-                            <!-- /input-group -->
-           
+                            </span>
+
+                        </div>
+                        <!-- /input-group -->
+
 
                         <hr class="hidden-md hidden-lg hidden-sm">
                     </div>
