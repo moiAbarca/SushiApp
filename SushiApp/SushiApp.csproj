@@ -170,6 +170,10 @@
     <Content Include="PaginaUsuario\css\fonts\fontawesome-webfont.woff" />
     <Content Include="PaginaUsuario\css\fonts\FontAwesome.otf" />
     <Content Include="PaginaAdmin\MenuInterior.Master" />
+    <Content Include="PaginaUsuario\CuentaUsuario.aspx" />
+    <Content Include="PaginaUsuario\customer-account.html" />
+    <Content Include="PaginaUsuario\customer-orders.html" />
+    <Content Include="PaginaUsuario\customer-register.html" />
     <Content Include="PaginaUsuario\Despacho.aspx" />
     <Content Include="PaginaUsuario\HosomakiNigiri.aspx" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID10_Samurai_Roll.jpg" />
@@ -230,7 +234,9 @@
     <Content Include="PaginaUsuario\Inicio.aspx" />
     <Content Include="PaginaUsuario\Login.aspx" />
     <Content Include="PaginaUsuario\NikkeiRolls.aspx" />
+    <Content Include="PaginaUsuario\PedidosUsuario.aspx" />
     <Content Include="PaginaUsuario\Postres.aspx" />
+    <Content Include="PaginaUsuario\RegistroUsuario.aspx" />
     <Content Include="PaginaUsuario\ShopBasket.aspx" />
     <Content Include="PaginaUsuario\SpecialRolls.aspx" />
     <Content Include="PaginaUsuario\TempuraPankoRolls.aspx" />
@@ -755,6 +761,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.buscarLoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
@@ -1412,7 +1421,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -1539,6 +1550,13 @@
     <Compile Include="PaginaUsuario\Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaUsuario\CuentaUsuario.aspx.cs">
+      <DependentUpon>CuentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\CuentaUsuario.aspx.designer.cs">
+      <DependentUpon>CuentaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaUsuario\Despacho.aspx.cs">
       <DependentUpon>Despacho.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1574,12 +1592,26 @@
     <Compile Include="PaginaUsuario\NikkeiRolls.aspx.designer.cs">
       <DependentUpon>NikkeiRolls.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaUsuario\PedidosUsuario.aspx.cs">
+      <DependentUpon>PedidosUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\PedidosUsuario.aspx.designer.cs">
+      <DependentUpon>PedidosUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaUsuario\Postres.aspx.cs">
       <DependentUpon>Postres.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PaginaUsuario\Postres.aspx.designer.cs">
       <DependentUpon>Postres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\ShopBasket.aspx.cs">
       <DependentUpon>ShopBasket.aspx</DependentUpon>

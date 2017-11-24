@@ -2,6 +2,8 @@
 <xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="agregarUsuario" type="tns:agregarUsuario" />
   <xs:element name="agregarUsuarioResponse" type="tns:agregarUsuarioResponse" />
+  <xs:element name="buscarLogin" type="tns:buscarLogin" />
+  <xs:element name="buscarLoginResponse" type="tns:buscarLoginResponse" />
   <xs:element name="buscarUsuario" type="tns:buscarUsuario" />
   <xs:element name="buscarUsuarioResponse" type="tns:buscarUsuarioResponse" />
   <xs:element name="eliminarUsuario" type="tns:eliminarUsuario" />
@@ -49,6 +51,16 @@
   </xs:complexType>
   <xs:complexType name="eliminarUsuarioResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarLoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="buscarUsuario">
     <xs:sequence>

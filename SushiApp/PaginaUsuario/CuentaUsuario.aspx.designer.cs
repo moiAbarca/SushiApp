@@ -10,78 +10,78 @@
 namespace SushiApp.PaginaUsuario {
     
     
-    public partial class VentasSushi {
+    public partial class CuentaUsuario {
         
         /// <summary>
-        /// Control head.
+        /// Control lblPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblPassword;
         
         /// <summary>
-        /// Control form1.
+        /// Control txtOldPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtOldPassword;
         
         /// <summary>
-        /// Control divLogin.
+        /// Control lblNewPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogin;
+        protected global::System.Web.UI.WebControls.Label lblNewPassword;
         
         /// <summary>
-        /// Control btnIntranet.
+        /// Control txtNewPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIntranet;
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
         
         /// <summary>
-        /// Control txtMailModal.
+        /// Control lblNewPassword2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMailModal;
+        protected global::System.Web.UI.WebControls.Label lblNewPassword2;
         
         /// <summary>
-        /// Control txtPasswordModal.
+        /// Control txtNewPassword2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPasswordModal;
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword2;
         
         /// <summary>
-        /// Control btnLoginModal.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoginModal;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnGuardar;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control btnLogout.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnLogout;
     }
 }

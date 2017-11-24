@@ -9,11 +9,19 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class Checkout11 : System.Web.UI.Page
     {
+        
         wsCliente.ServiceClienteClient clienteCliente = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] == null)
+            {
+                mostrarDivLogin();
+            }
+            else
+            {
+                ocultarDivLogin();
+            }
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -63,6 +71,18 @@ namespace SushiApp.PaginaUsuario
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Checkout2.aspx");
+        }
+
+        private void ocultarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "none");
+        }
+
+        private void mostrarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "inline");
         }
     }
 }

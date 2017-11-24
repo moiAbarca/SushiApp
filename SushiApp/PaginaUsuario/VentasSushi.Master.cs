@@ -15,12 +15,19 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] == null)
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
 
         protected void btnIntranet_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/PaginaAdmin/LoginAdmin.aspx");
         }
 
         protected void btnLoginModal_Click(object sender, EventArgs e)
@@ -28,30 +35,20 @@ namespace SushiApp.PaginaUsuario
             String mail = txtMailModal.Text;
             String password = txtPasswordModal.Text;
 
-            //wsUsuario.usuario[] usuarios = UsuarioClient.obtenerUsuario();
-
-            
-
-            var listadto = UsuarioClient.obtenerUsuario();
-            var nuevolistadto = (from o in listadto
-                                 where o.usuario1 == mail
-                                 && o.pass == password
-                                 select
-                                     o.usuario1
-                                 ).ToString();
-
-            if (nuevolistadto == mail)
+            wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
+            if (user.usuario1 == mail && user.pass==password)
             {
-                Response.Redirect("~/PaginaAdmin/LoginAdmin.aspx");
+
+                Session["Usuario"] = user;
+                Response.Redirect("~/PaginaUsuario/CuentaUsuario.aspx");
             }
             else
             {
-                Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
+                Response.Redirect("~/PaginaUsuario/RegistroUsuario.aspx");
             }
             
 
         }
 
-       
     }
 }
