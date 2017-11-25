@@ -231,6 +231,8 @@
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID7_Tokio_White.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID8_Furai_White.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID9_Tori_Crispy.jpg" />
+    <Content Include="PaginaUsuario\img\logo.png" />
+    <Content Include="PaginaUsuario\img\sushiPattern.png" />
     <Content Include="PaginaUsuario\Inicio.aspx" />
     <Content Include="PaginaUsuario\Login.aspx" />
     <Content Include="PaginaUsuario\NikkeiRolls.aspx" />
@@ -1362,7 +1364,7 @@
     <Content Include="PaginaUsuario\img\template-mac.png" />
     <Content Include="PaginaUsuario\img\template-tablets-2.png" />
     <Content Include="PaginaUsuario\img\template-tablets.png" />
-    <Content Include="PaginaUsuario\img\texture-bw.png" />
+    <Content Include="PaginaUsuario\img\texture-bwRR.png" />
     <Content Include="PaginaUsuario\img\texture-turquoise.png" />
     <Content Include="PaginaUsuario\img\texture-violet.png" />
     <Content Include="PaginaUsuario\img\women.jpg" />

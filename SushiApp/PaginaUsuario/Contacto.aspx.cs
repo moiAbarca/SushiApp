@@ -13,5 +13,10 @@ namespace SushiApp.PaginaUsuario
         {
 
         }
+
+        protected void btnConsulta_ServerClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

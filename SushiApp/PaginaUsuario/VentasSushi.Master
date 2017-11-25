@@ -103,8 +103,8 @@ _________________________________________________________ -->
                             <div class="navbar-header">
 
                                 <a class="navbar-brand home" href="Inicio.aspx">
-                                    <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                    <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                    <img src="img/logo.png" alt="Fukusuke logo" class="hidden-xs hidden-sm">
+                                    <img src="img/logo.png" alt="Fukusuke logo" class="visible-xs visible-sm"><span class="sr-only">Fukusuke Sushi - ir a Inicio</span>
                                 </a>
                                 <div class="navbar-buttons">
                                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -121,7 +121,7 @@ _________________________________________________________ -->
 
 
                                     <li class="dropdown use-yamm yamm-fw">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carta<b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carta<b class="caret"></b><i class="fa fa-cutlery"></i></a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="yamm-content">
@@ -159,16 +159,16 @@ _________________________________________________________ -->
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="Despacho.aspx">Despacho</a>
+                                        <a href="Despacho.aspx">Despacho <i class="fa fa-map-marker"></i></a>
                                     </li>
                                     <%--<li>
                                         <a href="Inicio.aspx">Reseñas</a>
                                     </li>--%>
                                     <li>
-                                        <a href="Contacto.aspx">Contacto</a>
+                                        <a href="Contacto.aspx">Contacto <i class="fa fa-paper-plane"></i></a>
                                     </li>
                                     <li>
-                                        <a href="ShopBasket.aspx">Mi carrito</a>
+                                        <a href="ShopBasket.aspx">Mi carrito <i class="fa fa-shopping-cart"></i></a>
                                     </li>
 
                                 </ul>

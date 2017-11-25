@@ -38,7 +38,6 @@ namespace SushiApp.PaginaUsuario
             wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
             if (user.usuario1 == mail && user.pass==password)
             {
-
                 Session["Usuario"] = user;
                 Response.Redirect("~/PaginaUsuario/CuentaUsuario.aspx");
             }

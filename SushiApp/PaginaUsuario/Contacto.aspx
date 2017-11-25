@@ -11,14 +11,12 @@
                 <div class="col-md-12">
                     <section>
                         <div class="heading">
-                            <h2>We are here to help you</h2>
+                            <h2>Formulario de Contacto</h2>
                         </div>
 
                         <p class="lead">
-                            Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am
-                                    he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-                        </p>
-                        <p>Please feel free to contact us, our customer service center is working for you 24/7.</p>
+                            Tienes alguna curiosidad? Ocurrió algún problema con nuestros productos?
+                        <p>Siéntete libre de enviar tus consultas, dudas, sugerencias o quejas, te contestaremos a la brevedad posible</p>
                     </section>
                 </div>
             </div>
@@ -33,13 +31,11 @@
                         <div class="icon">
                             <i class="fa fa-map-marker"></i>
                         </div>
-                        <h3>Address</h3>
+                        <h3>Dirección</h3>
                         <p>
-                            13/25 New Avenue
+                            Mar de Chile 516
                                     <br>
-                            New Heaven, 45Y 73J
-                                    <br>
-                            England, <strong>Great Britain</strong>
+                            Maipu, <strong>Santiago</strong>
                         </p>
                     </div>
                     <!-- /.box-simple -->
@@ -53,9 +49,9 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <h3>Call center</h3>
-                        <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
+                        <p class="text-muted">Puedes llamar a este número!</p>
                         <p>
-                            <strong>+33 555 444 333</strong>
+                            <strong>+56 2 2345 1371</strong>
                         </p>
                     </div>
                     <!-- /.box-simple -->
@@ -68,12 +64,11 @@
                         <div class="icon">
                             <i class="fa fa-envelope"></i>
                         </div>
-                        <h3>Electronic support</h3>
-                        <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
+                        <h3>Soporte electrónico</h3>
+                        <p class="text-muted">Escríbenos y déjanos tus comentarios.</p>
                         <ul class="list-style-none">
-                            <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
+                            <li><strong><a href="mailto:">info@fukusukesushi.cl</a></strong>
                             </li>
-                            <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
                         </ul>
                     </div>
                     <!-- /.box-simple -->
@@ -88,59 +83,52 @@
 
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Contact form</h2>
+                        <h2>Formulario de Contacto</h2>
                     </div>
                 </div>
 
                 <div class="col-md-8 col-md-offset-2">
-                    <form>
+               
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="firstname">
+                                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                                    <asp:TextBox ID="txtNombre" runat="server" cssclass="form-control" MaxLength="30"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="lastname">
+                                    <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
+                                    <asp:TextBox ID="txtApellido" runat="server" cssclass="form-control" MaxLength="30"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+                                    <asp:TextBox ID="txtEmail" runat="server" cssclass="form-control" MaxLength="30" TextMode="Email"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" class="form-control" id="subject">
+                                    <asp:Label ID="lblAsunto" runat="server" Text="Asunto"></asp:Label>
+                                    <asp:TextBox ID="txtAsunto" runat="server" cssclass="form-control" MaxLength="50"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" class="form-control"></textarea>
+                                    <asp:Label ID="lblMensaje" runat="server" Text="Mensaje"></asp:Label>
+                                    <asp:TextBox ID="txtMensaje" runat="server" cssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>Send message</button>
-
+                                <button type="submit" id="btnConsulta" class="btn btn-template-main" runat="server" onserverclick="btnConsulta_ServerClick"><i class="fa fa-envelope-o"></i>Enviar Mensaje</button>
                             </div>
                         </div>
                         <!-- /.row -->
-                    </form>
-
-
-
                 </div>
             </div>
             <!-- /.row -->
-
-
         </section>
     </div>
 </asp:Content>

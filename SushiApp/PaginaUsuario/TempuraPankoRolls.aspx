@@ -56,7 +56,7 @@
                   
                   <LayoutTemplate>
                     <table cellpadding="5" runat="server"
-                           id="tblProducts" style="">
+                           id="tblProducts" cssClass="table-responsive" style="">
                       <tr runat="server" id="groupPlaceholder">
                       </tr>
                     </table>
@@ -73,18 +73,20 @@
 
                   <ItemTemplate>
                     <div class="col-md-4 col-sm-6">
-                        <div class="product">
-                            <div class="image">
+                        <%--<div class="product">--%>
+                        <br />
+                            <div class="img-responsive">
                                 <a href="#" data-toggle="modal" data-target="#modalSR<%#Eval("Id") %>">
                                     <asp:Image ID="imgImagenProducto" runat="server" Cssclass="img-responsive image1" ImageUrl='<%# Bind("Imagen") %>' />
                                 </a>
                             </div>                                       
-                            <div class="text">
+                            <div class="text-center">
                                 <h4><asp:Label ID="lblNombreProducto" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label></h4>
                                 <p class="price"><asp:Label ID="lblPrecioProducto" runat="server" Text='<%# Bind("Precio") %>'></asp:Label></p>
-                                <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("Id") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-lg btn-success" />
+                                <%--<button type="submit" class="btn btn-template-main" ID="btnAgregarPedido" runat="server" CommandArgument='<%#Eval("Id") %>' CommandName="Agregar"><i class="fa fa-shopping-cart"></i> Agregar a mi pedido</button>--%>
+                                <asp:Button ID="btnAgregarPedido" CommandArgument='<%#Eval("Id") %>' CommandName="Agregar" runat="server" Text="Agregar a mi pedido" CssClass="btn btn-template-main" />
                             </div>
-                        </div>
+                        <%--</div>--%>
                     </div>
 
                         <!-- *** Product MODAL *** -->

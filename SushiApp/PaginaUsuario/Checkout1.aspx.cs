@@ -21,6 +21,7 @@ namespace SushiApp.PaginaUsuario
             else
             {
                 ocultarDivLogin();
+                Response.Redirect("Checkout2.aspx");
             }
         }
 
