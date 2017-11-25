@@ -13,6 +13,15 @@ namespace SushiApp.PaginaUsuario {
     public partial class TempuraPankoRolls1 {
         
         /// <summary>
+        /// Control lblCantProd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCantProd;
+        
+        /// <summary>
         /// Control ProductsListView.
         /// </summary>
         /// <remarks>

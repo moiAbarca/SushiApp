@@ -24,10 +24,8 @@ namespace SushiApp.PaginaUsuario
                 cargarListViewProductos();
                 CargarDetalle();
             }
-
             //cargarListViewProductos();
             //mostrarModal();
-
         }
 
         //Este método inicializa un Datatable para que al momento de ir agregándole las
@@ -49,7 +47,7 @@ namespace SushiApp.PaginaUsuario
             }
         }
 
-        public void AgregarItem(int id, string nombre, int precio, string imagen, int cantidad)
+        public void AgregarItem(int id, string nombre, int precio, string imagen)
         {
             String _id;
             int subtotal;
@@ -60,49 +58,46 @@ namespace SushiApp.PaginaUsuario
             // luego le creamos una nueva fila a ese DataTable con el método .NewRow();
             carrito = (DataTable)Session["Pedido"];
 
-
-            //var rows = carrito.Select("PRODUCTO_ID == id");
             DataRow dRow = carrito.AsEnumerable().Where(p => p.Field<Int32>(0) == id).FirstOrDefault();
-            if (dRow!=null)
+            
+            if(dRow!= null)
             {
-                
-                carrito.AsEnumerable().ToList<DataRow>().ForEach
-                   (r =>
-                   {
-                       if (String.Compare(r["ID_PRODUCTO"].ToString(), id.ToString()) == 0)
-                           r["CANTIDAD_PRODUCTO"] = cantidad++;
-                   }
-                   );
+                if (dRow.Field<Int32>(0) == id)
+                {
+                    int cant = dRow.Field<Int32>(4) + 1;
+                    DataRow auxDRow = dRow;
+                    dRow.Delete();
+                    auxDRow[0] = id;
+                    auxDRow[1] = nombre;
+                    auxDRow[2] = precio;
+                    auxDRow[3] = imagen;
+                    auxDRow[4] = cant;
+                    auxDRow[5] = precio * cant;
+                    
+                    carrito.Rows.Add(auxDRow);
+                    //carrito.AsEnumerable().ToList<DataRow>().ForEach
+                    //   (r =>
+                    //   {
+                    //       if (String.Compare(r["ID_PRODUCTO"].ToString(), id.ToString()) == 0)
+                    //           r["CANTIDAD_PRODUCTO"] = cantidad++;
 
+                    //   });
+                }
+                
             }
             else
             {
+                int cant = 1;
                 DataRow fila = carrito.NewRow();
                 fila[0] = id;
                 fila[1] = nombre;
                 fila[2] = precio;
                 fila[3] = imagen;
-                fila[4] = (int)cantidad;
-                fila[5] = precio * cantidad;
-
+                fila[4] = cant;
+                fila[5] = precio * cant;
                 // Le pasamos la instancia del DataRow (fila) al DataTable carrito
-                carrito.Rows.Add(fila);
+                carrito.Rows.Add(fila);    
             }
-            
-           
-            
-               
-            
-
-            //foreach (DataRow filas in carrito.Rows)
-            //{
-            //    foreach (DataColumn columnas in carrito.Columns)
-            //    {
-            //        filas["ID_PRODUCTO"] = id;
-            //    }
-            //}
-
-            
             // Le pasamos todo el DataTable "carrito" a la Session.
             Session["Pedido"] = carrito;
         }
@@ -111,7 +106,6 @@ namespace SushiApp.PaginaUsuario
         {
             try
             {
-
                 //wsProducto.producto[] productos = productoClient.obtenerProducto();       
                 //ProductsListView.DataSource = productos;
                 //ProductsListView.DataBind();
@@ -132,10 +126,11 @@ namespace SushiApp.PaginaUsuario
                                      }).ToList();
                 ProductsListView.DataSource = nuevolistadto;
                 ProductsListView.DataBind();
+                lblCantProd.Text= nuevolistadto.Count().ToString();
             }
             catch (Exception ex)
             {
-
+                throw new Exception("Error: (" + ex.Message + ")");
             }
         }
 
@@ -150,42 +145,31 @@ namespace SushiApp.PaginaUsuario
             {
                 if (e.CommandName == "Agregar")
                 {
+                        //String id = e.CommandArgument.ToString();
+                        int _productoId;
+                        String _nombreProducto = null, _imagenProducto = null;
+                        int _precioUnitario = 0;
+                        //int _cantidad = 1;
+                        //Response.Write(id);
+                        _productoId = Convert.ToInt32(e.CommandArgument.ToString());
+                        _nombreProducto = ((Label)e.Item.FindControl("lblNombreProducto")).Text;
+                        _imagenProducto = ((Image)e.Item.FindControl("imgImagenProducto")).ImageUrl;
+                        _precioUnitario = Convert.ToInt32(((Label)e.Item.FindControl("lblPrecioProducto")).Text);
 
-                    //String id = e.CommandArgument.ToString();
-                    int _productoId;
-                    String _nombreProducto = null, _imagenProducto = null;
-                    int _precioUnitario = 0;
-                    int _cantidad = 1;
-
-                    //Response.Write(id);
-
-                    _productoId = Convert.ToInt32(e.CommandArgument.ToString());
-                    _nombreProducto = ((Label)e.Item.FindControl("lblNombreProducto")).Text;
-                    _imagenProducto = ((Image)e.Item.FindControl("imgImagenProducto")).ImageUrl;
-                    _precioUnitario = Convert.ToInt32(((Label)e.Item.FindControl("lblPrecioProducto")).Text);
-
-                    //_descuento = 
-                    //_precioTotal;
-
-                    AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto, _cantidad);
-
-                    Session["prueba"] = "Sesión usuario prueba";
+                        AgregarItem(_productoId, _nombreProducto, _precioUnitario, _imagenProducto);
+                                       
                     //Carro prodCarro = new Carro();
                     //prodCarro.ProductoId = _productoId;
                     //prodCarro.NombreProducto = _nombreProducto;
                     //prodCarro.ImagenProducto = _imagenProducto;
                     //prodCarro.PrecioUnitario = _precioUnitario;
-
-
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return;
+                throw new Exception("Error: (" + ex.Message + ")");
             }
 
         }
-
-       
     }
 }

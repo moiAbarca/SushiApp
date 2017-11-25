@@ -13,12 +13,30 @@ namespace SushiApp.PaginaUsuario {
     public partial class CaliforniaRolls1 {
         
         /// <summary>
-        /// Control dtlProductos.
+        /// Control lblCantProd.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtlProductos;
+        protected global::System.Web.UI.WebControls.Label lblCantProd;
+        
+        /// <summary>
+        /// Control ProductsListView.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ProductsListView;
+        
+        /// <summary>
+        /// Control XmlDataSourceWsProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSourceWsProducto;
     }
 }
