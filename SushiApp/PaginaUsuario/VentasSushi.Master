@@ -67,10 +67,14 @@ _________________________________________________________ -->
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-5 contact">
-                                <p class="hidden-sm hidden-xs">Contactenos: MonoDev contacto@monodev.cl.</p>
+                                <div id="divUsuario" runat="server" style="display: none">
+                                    <a href="CuentaUsuario.aspx" data-animate-hover="pulse"><i class="fa fa-user">  Bienvenido/a  </i>
+                                    <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label></a>
+                                </div>
+                                <%--<p class="hidden-sm hidden-xs">Contactenos: MonoDev contacto@monodev.cl.</p>
                                 <p class="hidden-md hidden-lg">
                                     <a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a><a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </p>
+                                </p>--%>
                             </div>
                             <div class="col-xs-7">
                                 <div class="social">
@@ -79,12 +83,12 @@ _________________________________________________________ -->
                                     <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
                                     <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                                 </div>
-
                                 <div class="login" runat="server" id="divLogin">
                                     <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i><span class="hidden-xs text-uppercase">iniciar Sesión</span></a>
                                     <a href="customer-register.html"><i class="fa fa-user"></i><span class="hidden-xs text-uppercase">Registrarse</span></a>
                                     <asp:Button ID="btnIntranet" CssClass="btn btn-sm btn-link" runat="server" Text="Intranet" OnClick="btnIntranet_Click" />
                                 </div>
+
                             </div>
                         </div>
                     </div>

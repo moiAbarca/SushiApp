@@ -39,7 +39,8 @@ namespace SushiApp.PaginaUsuario
             if (user.usuario1 == mail && user.pass==password)
             {
                 Session["Usuario"] = user;
-                Response.Redirect("~/PaginaUsuario/CuentaUsuario.aspx");
+                Session["UserName"] = mail;
+                Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
             }
             else
             {
