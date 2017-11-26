@@ -49,12 +49,12 @@
 
                                                 <div class="form-group">
                                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
-                                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                                                 </div>
 
                                                 <div class="form-group">
@@ -65,7 +65,7 @@
 
                                                 <div class="form-group">
                                                     <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-                                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" MaxLength="20"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" MaxLength="30"></asp:TextBox>
                                                 </div>
 
                                                 <div class="text-center">
@@ -79,7 +79,7 @@
                                         <div class="box">
                                             <h2 class="text-uppercase">Login</h2>
 
-                                            <p class="lead">Ya estás registrado?</p>
+                                            <p class="lead">Ya tienes una cuenta?</p>
                                             <p class="text-muted">
                                                 Ingresa tus datos de usuario para acceder a tu cuenta.
                                             </p>
@@ -89,11 +89,11 @@
                                             <div>
                                                 <div class="form-group">
                                                     <asp:Label ID="lblEmailLogin" runat="server" Text="Email"></asp:Label>
-                                                    <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <asp:Label ID="lblPasswordLogin" runat="server" Text="Password"></asp:Label>
-                                                    <asp:TextBox ID="txtPasswordLogin" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPasswordLogin" runat="server" CssClass="form-control" MaxLength="30" TextMode="Password"></asp:TextBox>
                                                 </div>
                                                 <div class="text-center">
                                                     <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-template-main" Text="Ingresar" OnClick="btnIngresar_Click" />

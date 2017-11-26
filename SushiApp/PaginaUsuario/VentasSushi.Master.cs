@@ -36,18 +36,27 @@ namespace SushiApp.PaginaUsuario
             String password = txtPasswordModal.Text;
 
             wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
-            if (user.usuario1 == mail && user.pass==password)
+            if (user.usuarioId==0)
             {
-                Session["Usuario"] = user;
-                Session["UserName"] = mail;
-                Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
+                Response.Write("<script language='JavaScript'>window.alert('Usuario no existe')</script>");
+                return;
             }
-            else
+            if (user.usuario1 == mail)
             {
-                Response.Redirect("~/PaginaUsuario/RegistroUsuario.aspx");
+                if (user.pass == password)
+                {
+                    Session["Usuario"] = user;
+                    Session["UserName"] = mail;
+                    Session["UserId"] = user.usuarioId;
+                    Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    //Response.Write("<script language='JavaScript'>window.alert('Contraseña incorrecta')</script>");
+                    return;
+                }
             }
-            
-
         }
 
     }

@@ -1,72 +1,82 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="RegistroUsuario.aspx.cs" Inherits="SushiApp.PaginaUsuario.RegistroUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
-            <div class="container">
+        <div class="container">
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="box">
-                            <h2 class="text-uppercase">New account</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <h2 class="text-uppercase">Nueva Cuenta</h2>
 
-                            <p class="lead">Not our registered customer yet?</p>
-                            <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                        <p class="lead">Aun no estás registrado?</p>
+                        <p>Con tu registro podrás acceder a promociones especiales y excelentes descuentos! Tan solo te tomará un minuto!</p>
+                        <p class="text-muted">Si tienes alguna duda, por favor <a href="Contacto.aspx">contáctanos</a>, te contestaremos a la brevedad.</p>
 
-                            <hr>
+                        <hr>
 
-                            
-                                <div class="form-group">
-                                    <label for="name-login">Name</label>
-                                    <input type="text" class="form-control" id="name-login">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email-login">Email</label>
-                                    <input type="text" class="form-control" id="email-login">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password-login">Password</label>
-                                    <input type="password" class="form-control" id="password-login">
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
-                                </div>
-                            
+
+                        <div class="form-group">
+                            <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                            <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                         </div>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="box">
-                            <h2 class="text-uppercase">Login</h2>
-
-                            <p class="lead">Already our customer?</p>
-                            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-
-                            <hr>
-
-                            
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password">
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
-                                </div>
-                            
+                        <div class="form-group">
+                            <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
+                            <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                         </div>
-                    </div>
 
+                        <div class="form-group">
+                            <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" MaxLength="50" TextMode="Email"></asp:TextBox>
+                        </div>
+
+
+                        <div class="form-group">
+                            <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" MaxLength="30"></asp:TextBox>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-template-main" id="btnRegistrarse" runat="server" onserverclick="btnRegistrarse_ServerClick"><i class="fa fa-user-md"></i>Registrarse</button>
+                        </div>
+
+                    </div>
                 </div>
-                <!-- /.row -->
+
+                <div class="col-md-6">
+                    <div class="box">
+                        <h2 class="text-uppercase">Login</h2>
+
+                        <p class="lead">Ya tienes una cuenta?</p>
+                        <p class="text-muted">
+                            Ingresa tus datos de usuario para acceder a tu cuenta.
+                        </p>
+
+                        <hr>
+
+
+                        <div class="form-group">
+                            <asp:Label ID="lblEmailLogin" runat="server" Text="Email"></asp:Label>
+                            <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblPasswordLogin" runat="server" Text="Password"></asp:Label>
+                            <asp:TextBox ID="txtPasswordLogin" runat="server" CssClass="form-control" MaxLength="30" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="btnIngresar" runat="server" onserverclick="btnIngresar_ServerClick" class="btn btn-template-main"><i class="fa fa-sign-in"></i>Ingresar</button>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
-            <!-- /.container -->
+            <!-- /.row -->
+
         </div>
-        <!-- /#content -->
+        <!-- /.container -->
+    </div>
+    <!-- /#content -->
 </asp:Content>

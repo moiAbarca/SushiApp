@@ -13,5 +13,15 @@ namespace SushiApp.PaginaUsuario
         {
 
         }
+
+        protected void btnRegistrarse_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnIngresar_ServerClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

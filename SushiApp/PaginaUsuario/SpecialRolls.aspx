@@ -139,7 +139,7 @@
 
                 </asp:ListView>
 
-
+                <hr />
 
                 <asp:XmlDataSource ID="XmlDataSourceWsProducto" runat="server"></asp:XmlDataSource>
                 <!-- fin ListView-->
