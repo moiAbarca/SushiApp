@@ -15,6 +15,22 @@ namespace SushiApp.wsProvincia {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsProvincia.ServiceProvincia")]
     public interface ServiceProvincia {
         
+        // CODEGEN: El parámetro 'provincia' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/modificarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/modificarProvinciaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsProvincia.modificarProvinciaResponse modificarProvincia(SushiApp.wsProvincia.modificarProvinciaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/modificarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/modificarProvinciaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> modificarProvinciaAsync(SushiApp.wsProvincia.modificarProvinciaRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/eliminarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/eliminarProvinciaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsProvincia.eliminarProvinciaResponse eliminarProvincia(SushiApp.wsProvincia.eliminarProvinciaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/eliminarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/eliminarProvinciaResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> eliminarProvinciaAsync(SushiApp.wsProvincia.eliminarProvinciaRequest request);
+        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/buscarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/buscarProvinciaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -40,26 +56,10 @@ namespace SushiApp.wsProvincia {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/obtenerProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/obtenerProvinciaResponse")]
         System.Threading.Tasks.Task<SushiApp.wsProvincia.obtenerProvinciaResponse> obtenerProvinciaAsync(SushiApp.wsProvincia.obtenerProvinciaRequest request);
-        
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/eliminarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/eliminarProvinciaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsProvincia.eliminarProvinciaResponse eliminarProvincia(SushiApp.wsProvincia.eliminarProvinciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/eliminarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/eliminarProvinciaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> eliminarProvinciaAsync(SushiApp.wsProvincia.eliminarProvinciaRequest request);
-        
-        // CODEGEN: El parámetro 'provincia' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/modificarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/modificarProvinciaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsProvincia.modificarProvinciaResponse modificarProvincia(SushiApp.wsProvincia.modificarProvinciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceProvincia/modificarProvinciaRequest", ReplyAction="http://WebService/ServiceProvincia/modificarProvinciaResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> modificarProvinciaAsync(SushiApp.wsProvincia.modificarProvinciaRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -115,6 +115,62 @@ namespace SushiApp.wsProvincia {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProvincia", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarProvinciaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsProvincia.provincia provincia;
+        
+        public modificarProvinciaRequest() {
+        }
+        
+        public modificarProvinciaRequest(SushiApp.wsProvincia.provincia provincia) {
+            this.provincia = provincia;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProvinciaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarProvinciaResponse {
+        
+        public modificarProvinciaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProvincia", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarProvinciaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarProvinciaRequest() {
+        }
+        
+        public eliminarProvinciaRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProvinciaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarProvinciaResponse {
+        
+        public eliminarProvinciaResponse() {
         }
     }
     
@@ -210,62 +266,6 @@ namespace SushiApp.wsProvincia {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProvincia", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarProvinciaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarProvinciaRequest() {
-        }
-        
-        public eliminarProvinciaRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProvinciaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarProvinciaResponse {
-        
-        public eliminarProvinciaResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProvincia", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarProvinciaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsProvincia.provincia provincia;
-        
-        public modificarProvinciaRequest() {
-        }
-        
-        public modificarProvinciaRequest(SushiApp.wsProvincia.provincia provincia) {
-            this.provincia = provincia;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProvinciaResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarProvinciaResponse {
-        
-        public modificarProvinciaResponse() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceProvinciaChannel : SushiApp.wsProvincia.ServiceProvincia, System.ServiceModel.IClientChannel {
     }
@@ -291,6 +291,50 @@ namespace SushiApp.wsProvincia {
         
         public ServiceProvinciaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsProvincia.modificarProvinciaResponse SushiApp.wsProvincia.ServiceProvincia.modificarProvincia(SushiApp.wsProvincia.modificarProvinciaRequest request) {
+            return base.Channel.modificarProvincia(request);
+        }
+        
+        public void modificarProvincia(SushiApp.wsProvincia.provincia provincia) {
+            SushiApp.wsProvincia.modificarProvinciaRequest inValue = new SushiApp.wsProvincia.modificarProvinciaRequest();
+            inValue.provincia = provincia;
+            SushiApp.wsProvincia.modificarProvinciaResponse retVal = ((SushiApp.wsProvincia.ServiceProvincia)(this)).modificarProvincia(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> SushiApp.wsProvincia.ServiceProvincia.modificarProvinciaAsync(SushiApp.wsProvincia.modificarProvinciaRequest request) {
+            return base.Channel.modificarProvinciaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> modificarProvinciaAsync(SushiApp.wsProvincia.provincia provincia) {
+            SushiApp.wsProvincia.modificarProvinciaRequest inValue = new SushiApp.wsProvincia.modificarProvinciaRequest();
+            inValue.provincia = provincia;
+            return ((SushiApp.wsProvincia.ServiceProvincia)(this)).modificarProvinciaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsProvincia.eliminarProvinciaResponse SushiApp.wsProvincia.ServiceProvincia.eliminarProvincia(SushiApp.wsProvincia.eliminarProvinciaRequest request) {
+            return base.Channel.eliminarProvincia(request);
+        }
+        
+        public void eliminarProvincia(int id) {
+            SushiApp.wsProvincia.eliminarProvinciaRequest inValue = new SushiApp.wsProvincia.eliminarProvinciaRequest();
+            inValue.id = id;
+            SushiApp.wsProvincia.eliminarProvinciaResponse retVal = ((SushiApp.wsProvincia.ServiceProvincia)(this)).eliminarProvincia(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> SushiApp.wsProvincia.ServiceProvincia.eliminarProvinciaAsync(SushiApp.wsProvincia.eliminarProvinciaRequest request) {
+            return base.Channel.eliminarProvinciaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> eliminarProvinciaAsync(int id) {
+            SushiApp.wsProvincia.eliminarProvinciaRequest inValue = new SushiApp.wsProvincia.eliminarProvinciaRequest();
+            inValue.id = id;
+            return ((SushiApp.wsProvincia.ServiceProvincia)(this)).eliminarProvinciaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -357,50 +401,6 @@ namespace SushiApp.wsProvincia {
         public System.Threading.Tasks.Task<SushiApp.wsProvincia.obtenerProvinciaResponse> obtenerProvinciaAsync() {
             SushiApp.wsProvincia.obtenerProvinciaRequest inValue = new SushiApp.wsProvincia.obtenerProvinciaRequest();
             return ((SushiApp.wsProvincia.ServiceProvincia)(this)).obtenerProvinciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsProvincia.eliminarProvinciaResponse SushiApp.wsProvincia.ServiceProvincia.eliminarProvincia(SushiApp.wsProvincia.eliminarProvinciaRequest request) {
-            return base.Channel.eliminarProvincia(request);
-        }
-        
-        public void eliminarProvincia(int id) {
-            SushiApp.wsProvincia.eliminarProvinciaRequest inValue = new SushiApp.wsProvincia.eliminarProvinciaRequest();
-            inValue.id = id;
-            SushiApp.wsProvincia.eliminarProvinciaResponse retVal = ((SushiApp.wsProvincia.ServiceProvincia)(this)).eliminarProvincia(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> SushiApp.wsProvincia.ServiceProvincia.eliminarProvinciaAsync(SushiApp.wsProvincia.eliminarProvinciaRequest request) {
-            return base.Channel.eliminarProvinciaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsProvincia.eliminarProvinciaResponse> eliminarProvinciaAsync(int id) {
-            SushiApp.wsProvincia.eliminarProvinciaRequest inValue = new SushiApp.wsProvincia.eliminarProvinciaRequest();
-            inValue.id = id;
-            return ((SushiApp.wsProvincia.ServiceProvincia)(this)).eliminarProvinciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsProvincia.modificarProvinciaResponse SushiApp.wsProvincia.ServiceProvincia.modificarProvincia(SushiApp.wsProvincia.modificarProvinciaRequest request) {
-            return base.Channel.modificarProvincia(request);
-        }
-        
-        public void modificarProvincia(SushiApp.wsProvincia.provincia provincia) {
-            SushiApp.wsProvincia.modificarProvinciaRequest inValue = new SushiApp.wsProvincia.modificarProvinciaRequest();
-            inValue.provincia = provincia;
-            SushiApp.wsProvincia.modificarProvinciaResponse retVal = ((SushiApp.wsProvincia.ServiceProvincia)(this)).modificarProvincia(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> SushiApp.wsProvincia.ServiceProvincia.modificarProvinciaAsync(SushiApp.wsProvincia.modificarProvinciaRequest request) {
-            return base.Channel.modificarProvinciaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsProvincia.modificarProvinciaResponse> modificarProvinciaAsync(SushiApp.wsProvincia.provincia provincia) {
-            SushiApp.wsProvincia.modificarProvinciaRequest inValue = new SushiApp.wsProvincia.modificarProvinciaRequest();
-            inValue.provincia = provincia;
-            return ((SushiApp.wsProvincia.ServiceProvincia)(this)).modificarProvinciaAsync(inValue);
         }
     }
 }

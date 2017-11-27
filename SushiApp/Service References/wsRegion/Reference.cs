@@ -15,13 +15,14 @@ namespace SushiApp.wsRegion {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsRegion.ServiceRegion")]
     public interface ServiceRegion {
         
-        // CODEGEN: El parámetro 'region' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/modificarRegionRequest", ReplyAction="http://WebService/ServiceRegion/modificarRegionResponse")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/obtenerRegionRequest", ReplyAction="http://WebService/ServiceRegion/obtenerRegionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsRegion.modificarRegionResponse modificarRegion(SushiApp.wsRegion.modificarRegionRequest request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsRegion.obtenerRegionResponse obtenerRegion(SushiApp.wsRegion.obtenerRegionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/modificarRegionRequest", ReplyAction="http://WebService/ServiceRegion/modificarRegionResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> modificarRegionAsync(SushiApp.wsRegion.modificarRegionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/obtenerRegionRequest", ReplyAction="http://WebService/ServiceRegion/obtenerRegionResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> obtenerRegionAsync(SushiApp.wsRegion.obtenerRegionRequest request);
         
         // CODEGEN: El parámetro 'region' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/agregarRegionRequest", ReplyAction="http://WebService/ServiceRegion/agregarRegionResponse")]
@@ -31,13 +32,13 @@ namespace SushiApp.wsRegion {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/agregarRegionRequest", ReplyAction="http://WebService/ServiceRegion/agregarRegionResponse")]
         System.Threading.Tasks.Task<SushiApp.wsRegion.agregarRegionResponse> agregarRegionAsync(SushiApp.wsRegion.agregarRegionRequest request);
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/eliminarRegionRequest", ReplyAction="http://WebService/ServiceRegion/eliminarRegionResponse")]
+        // CODEGEN: El parámetro 'region' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/modificarRegionRequest", ReplyAction="http://WebService/ServiceRegion/modificarRegionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsRegion.eliminarRegionResponse eliminarRegion(SushiApp.wsRegion.eliminarRegionRequest request);
+        SushiApp.wsRegion.modificarRegionResponse modificarRegion(SushiApp.wsRegion.modificarRegionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/eliminarRegionRequest", ReplyAction="http://WebService/ServiceRegion/eliminarRegionResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> eliminarRegionAsync(SushiApp.wsRegion.eliminarRegionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/modificarRegionRequest", ReplyAction="http://WebService/ServiceRegion/modificarRegionResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> modificarRegionAsync(SushiApp.wsRegion.modificarRegionRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/buscarRegionRequest", ReplyAction="http://WebService/ServiceRegion/buscarRegionResponse")]
@@ -48,18 +49,17 @@ namespace SushiApp.wsRegion {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/buscarRegionRequest", ReplyAction="http://WebService/ServiceRegion/buscarRegionResponse")]
         System.Threading.Tasks.Task<SushiApp.wsRegion.buscarRegionResponse> buscarRegionAsync(SushiApp.wsRegion.buscarRegionRequest request);
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/obtenerRegionRequest", ReplyAction="http://WebService/ServiceRegion/obtenerRegionResponse")]
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/eliminarRegionRequest", ReplyAction="http://WebService/ServiceRegion/eliminarRegionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsRegion.obtenerRegionResponse obtenerRegion(SushiApp.wsRegion.obtenerRegionRequest request);
+        SushiApp.wsRegion.eliminarRegionResponse eliminarRegion(SushiApp.wsRegion.eliminarRegionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/obtenerRegionRequest", ReplyAction="http://WebService/ServiceRegion/obtenerRegionResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> obtenerRegionAsync(SushiApp.wsRegion.obtenerRegionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegion/eliminarRegionRequest", ReplyAction="http://WebService/ServiceRegion/eliminarRegionResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> eliminarRegionAsync(SushiApp.wsRegion.eliminarRegionRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -107,28 +107,28 @@ namespace SushiApp.wsRegion {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarRegionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerRegionRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsRegion.region region;
-        
-        public modificarRegionRequest() {
-        }
-        
-        public modificarRegionRequest(SushiApp.wsRegion.region region) {
-            this.region = region;
+        public obtenerRegionRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarRegionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerRegionResponse {
         
-        public modificarRegionResponse() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsRegion.region[] @return;
+        
+        public obtenerRegionResponse() {
+        }
+        
+        public obtenerRegionResponse(SushiApp.wsRegion.region[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -163,28 +163,28 @@ namespace SushiApp.wsRegion {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarRegionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarRegionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
+        public SushiApp.wsRegion.region region;
         
-        public eliminarRegionRequest() {
+        public modificarRegionRequest() {
         }
         
-        public eliminarRegionRequest(int id) {
-            this.id = id;
+        public modificarRegionRequest(SushiApp.wsRegion.region region) {
+            this.region = region;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarRegionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarRegionResponse {
         
-        public eliminarRegionResponse() {
+        public modificarRegionResponse() {
         }
     }
     
@@ -227,28 +227,28 @@ namespace SushiApp.wsRegion {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerRegionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRegion", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarRegionRequest {
         
-        public obtenerRegionRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarRegionRequest() {
+        }
+        
+        public eliminarRegionRequest(int id) {
+            this.id = id;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerRegionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRegionResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarRegionResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsRegion.region[] @return;
-        
-        public obtenerRegionResponse() {
-        }
-        
-        public obtenerRegionResponse(SushiApp.wsRegion.region[] @return) {
-            this.@return = @return;
+        public eliminarRegionResponse() {
         }
     }
     
@@ -280,25 +280,24 @@ namespace SushiApp.wsRegion {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsRegion.modificarRegionResponse SushiApp.wsRegion.ServiceRegion.modificarRegion(SushiApp.wsRegion.modificarRegionRequest request) {
-            return base.Channel.modificarRegion(request);
+        SushiApp.wsRegion.obtenerRegionResponse SushiApp.wsRegion.ServiceRegion.obtenerRegion(SushiApp.wsRegion.obtenerRegionRequest request) {
+            return base.Channel.obtenerRegion(request);
         }
         
-        public void modificarRegion(SushiApp.wsRegion.region region) {
-            SushiApp.wsRegion.modificarRegionRequest inValue = new SushiApp.wsRegion.modificarRegionRequest();
-            inValue.region = region;
-            SushiApp.wsRegion.modificarRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).modificarRegion(inValue);
+        public SushiApp.wsRegion.region[] obtenerRegion() {
+            SushiApp.wsRegion.obtenerRegionRequest inValue = new SushiApp.wsRegion.obtenerRegionRequest();
+            SushiApp.wsRegion.obtenerRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).obtenerRegion(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> SushiApp.wsRegion.ServiceRegion.modificarRegionAsync(SushiApp.wsRegion.modificarRegionRequest request) {
-            return base.Channel.modificarRegionAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> SushiApp.wsRegion.ServiceRegion.obtenerRegionAsync(SushiApp.wsRegion.obtenerRegionRequest request) {
+            return base.Channel.obtenerRegionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> modificarRegionAsync(SushiApp.wsRegion.region region) {
-            SushiApp.wsRegion.modificarRegionRequest inValue = new SushiApp.wsRegion.modificarRegionRequest();
-            inValue.region = region;
-            return ((SushiApp.wsRegion.ServiceRegion)(this)).modificarRegionAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> obtenerRegionAsync() {
+            SushiApp.wsRegion.obtenerRegionRequest inValue = new SushiApp.wsRegion.obtenerRegionRequest();
+            return ((SushiApp.wsRegion.ServiceRegion)(this)).obtenerRegionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -324,25 +323,25 @@ namespace SushiApp.wsRegion {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsRegion.eliminarRegionResponse SushiApp.wsRegion.ServiceRegion.eliminarRegion(SushiApp.wsRegion.eliminarRegionRequest request) {
-            return base.Channel.eliminarRegion(request);
+        SushiApp.wsRegion.modificarRegionResponse SushiApp.wsRegion.ServiceRegion.modificarRegion(SushiApp.wsRegion.modificarRegionRequest request) {
+            return base.Channel.modificarRegion(request);
         }
         
-        public void eliminarRegion(int id) {
-            SushiApp.wsRegion.eliminarRegionRequest inValue = new SushiApp.wsRegion.eliminarRegionRequest();
-            inValue.id = id;
-            SushiApp.wsRegion.eliminarRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).eliminarRegion(inValue);
+        public void modificarRegion(SushiApp.wsRegion.region region) {
+            SushiApp.wsRegion.modificarRegionRequest inValue = new SushiApp.wsRegion.modificarRegionRequest();
+            inValue.region = region;
+            SushiApp.wsRegion.modificarRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).modificarRegion(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> SushiApp.wsRegion.ServiceRegion.eliminarRegionAsync(SushiApp.wsRegion.eliminarRegionRequest request) {
-            return base.Channel.eliminarRegionAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> SushiApp.wsRegion.ServiceRegion.modificarRegionAsync(SushiApp.wsRegion.modificarRegionRequest request) {
+            return base.Channel.modificarRegionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> eliminarRegionAsync(int id) {
-            SushiApp.wsRegion.eliminarRegionRequest inValue = new SushiApp.wsRegion.eliminarRegionRequest();
-            inValue.id = id;
-            return ((SushiApp.wsRegion.ServiceRegion)(this)).eliminarRegionAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsRegion.modificarRegionResponse> modificarRegionAsync(SushiApp.wsRegion.region region) {
+            SushiApp.wsRegion.modificarRegionRequest inValue = new SushiApp.wsRegion.modificarRegionRequest();
+            inValue.region = region;
+            return ((SushiApp.wsRegion.ServiceRegion)(this)).modificarRegionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -369,24 +368,25 @@ namespace SushiApp.wsRegion {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsRegion.obtenerRegionResponse SushiApp.wsRegion.ServiceRegion.obtenerRegion(SushiApp.wsRegion.obtenerRegionRequest request) {
-            return base.Channel.obtenerRegion(request);
+        SushiApp.wsRegion.eliminarRegionResponse SushiApp.wsRegion.ServiceRegion.eliminarRegion(SushiApp.wsRegion.eliminarRegionRequest request) {
+            return base.Channel.eliminarRegion(request);
         }
         
-        public SushiApp.wsRegion.region[] obtenerRegion() {
-            SushiApp.wsRegion.obtenerRegionRequest inValue = new SushiApp.wsRegion.obtenerRegionRequest();
-            SushiApp.wsRegion.obtenerRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).obtenerRegion(inValue);
-            return retVal.@return;
+        public void eliminarRegion(int id) {
+            SushiApp.wsRegion.eliminarRegionRequest inValue = new SushiApp.wsRegion.eliminarRegionRequest();
+            inValue.id = id;
+            SushiApp.wsRegion.eliminarRegionResponse retVal = ((SushiApp.wsRegion.ServiceRegion)(this)).eliminarRegion(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> SushiApp.wsRegion.ServiceRegion.obtenerRegionAsync(SushiApp.wsRegion.obtenerRegionRequest request) {
-            return base.Channel.obtenerRegionAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> SushiApp.wsRegion.ServiceRegion.eliminarRegionAsync(SushiApp.wsRegion.eliminarRegionRequest request) {
+            return base.Channel.eliminarRegionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsRegion.obtenerRegionResponse> obtenerRegionAsync() {
-            SushiApp.wsRegion.obtenerRegionRequest inValue = new SushiApp.wsRegion.obtenerRegionRequest();
-            return ((SushiApp.wsRegion.ServiceRegion)(this)).obtenerRegionAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsRegion.eliminarRegionResponse> eliminarRegionAsync(int id) {
+            SushiApp.wsRegion.eliminarRegionRequest inValue = new SushiApp.wsRegion.eliminarRegionRequest();
+            inValue.id = id;
+            return ((SushiApp.wsRegion.ServiceRegion)(this)).eliminarRegionAsync(inValue);
         }
     }
 }

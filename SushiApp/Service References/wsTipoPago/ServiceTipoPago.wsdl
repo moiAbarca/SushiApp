@@ -11,17 +11,17 @@
   <message name="obtenerTipoPagoResponse">
     <part name="parameters" element="tns:obtenerTipoPagoResponse" />
   </message>
-  <message name="agregarTipoPago">
-    <part name="parameters" element="tns:agregarTipoPago" />
-  </message>
-  <message name="agregarTipoPagoResponse">
-    <part name="parameters" element="tns:agregarTipoPagoResponse" />
-  </message>
   <message name="eliminarTipoPago">
     <part name="parameters" element="tns:eliminarTipoPago" />
   </message>
   <message name="eliminarTipoPagoResponse">
     <part name="parameters" element="tns:eliminarTipoPagoResponse" />
+  </message>
+  <message name="agregarTipoPago">
+    <part name="parameters" element="tns:agregarTipoPago" />
+  </message>
+  <message name="agregarTipoPagoResponse">
+    <part name="parameters" element="tns:agregarTipoPagoResponse" />
   </message>
   <message name="buscarTipoPago">
     <part name="parameters" element="tns:buscarTipoPago" />
@@ -40,13 +40,13 @@
       <input wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest" message="tns:obtenerTipoPago" />
       <output wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse" message="tns:obtenerTipoPagoResponse" />
     </operation>
-    <operation name="agregarTipoPago">
-      <input wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoRequest" message="tns:agregarTipoPago" />
-      <output wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoResponse" message="tns:agregarTipoPagoResponse" />
-    </operation>
     <operation name="eliminarTipoPago">
       <input wsam:Action="http://WebService/ServiceTipoPago/eliminarTipoPagoRequest" message="tns:eliminarTipoPago" />
       <output wsam:Action="http://WebService/ServiceTipoPago/eliminarTipoPagoResponse" message="tns:eliminarTipoPagoResponse" />
+    </operation>
+    <operation name="agregarTipoPago">
+      <input wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoRequest" message="tns:agregarTipoPago" />
+      <output wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoResponse" message="tns:agregarTipoPagoResponse" />
     </operation>
     <operation name="buscarTipoPago">
       <input wsam:Action="http://WebService/ServiceTipoPago/buscarTipoPagoRequest" message="tns:buscarTipoPago" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="agregarTipoPago">
+    <operation name="eliminarTipoPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarTipoPago">
+    <operation name="agregarTipoPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

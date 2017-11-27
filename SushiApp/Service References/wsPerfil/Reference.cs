@@ -15,13 +15,13 @@ namespace SushiApp.wsPerfil {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsPerfil.ServicePerfil")]
     public interface ServicePerfil {
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
+        // CODEGEN: El parámetro 'perfil' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/modificarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/modificarPerfilResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPerfil.eliminarPerfilResponse eliminarPerfil(SushiApp.wsPerfil.eliminarPerfilRequest request);
+        SushiApp.wsPerfil.modificarPerfilResponse modificarPerfil(SushiApp.wsPerfil.modificarPerfilRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> eliminarPerfilAsync(SushiApp.wsPerfil.eliminarPerfilRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/modificarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/modificarPerfilResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> modificarPerfilAsync(SushiApp.wsPerfil.modificarPerfilRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/obtenerPerfilRequest", ReplyAction="http://WebService/ServicePerfil/obtenerPerfilResponse")]
@@ -31,14 +31,6 @@ namespace SushiApp.wsPerfil {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/obtenerPerfilRequest", ReplyAction="http://WebService/ServicePerfil/obtenerPerfilResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPerfil.obtenerPerfilResponse> obtenerPerfilAsync(SushiApp.wsPerfil.obtenerPerfilRequest request);
-        
-        // CODEGEN: El parámetro 'perfil' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/modificarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/modificarPerfilResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPerfil.modificarPerfilResponse modificarPerfil(SushiApp.wsPerfil.modificarPerfilRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/modificarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/modificarPerfilResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> modificarPerfilAsync(SushiApp.wsPerfil.modificarPerfilRequest request);
         
         // CODEGEN: El parámetro 'perfil' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/agregarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/agregarPerfilResponse")]
@@ -56,45 +48,23 @@ namespace SushiApp.wsPerfil {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/buscarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/buscarPerfilResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPerfil.buscarPerfilResponse> buscarPerfilAsync(SushiApp.wsPerfil.buscarPerfilRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPerfilRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsPerfil.eliminarPerfilResponse eliminarPerfil(SushiApp.wsPerfil.eliminarPerfilRequest request);
         
-        public eliminarPerfilRequest() {
-        }
-        
-        public eliminarPerfilRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarPerfilResponse {
-        
-        public eliminarPerfilResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePerfil/eliminarPerfilRequest", ReplyAction="http://WebService/ServicePerfil/eliminarPerfilResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> eliminarPerfilAsync(SushiApp.wsPerfil.eliminarPerfilRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2053.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://WebService/")]
     public partial class perfil : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int accesoIdField;
         
         private string nombrePerfilField;
         
@@ -102,18 +72,6 @@ namespace SushiApp.wsPerfil {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int accesoId {
-            get {
-                return this.accesoIdField;
-            }
-            set {
-                this.accesoIdField = value;
-                this.RaisePropertyChanged("accesoId");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public string nombrePerfil {
             get {
                 return this.nombrePerfilField;
@@ -125,7 +83,7 @@ namespace SushiApp.wsPerfil {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public int perfilId {
             get {
                 return this.perfilIdField;
@@ -143,34 +101,6 @@ namespace SushiApp.wsPerfil {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPerfilRequest {
-        
-        public obtenerPerfilRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerPerfilResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPerfil.perfil[] @return;
-        
-        public obtenerPerfilResponse() {
-        }
-        
-        public obtenerPerfilResponse(SushiApp.wsPerfil.perfil[] @return) {
-            this.@return = @return;
         }
     }
     
@@ -199,6 +129,34 @@ namespace SushiApp.wsPerfil {
     public partial class modificarPerfilResponse {
         
         public modificarPerfilResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPerfilRequest {
+        
+        public obtenerPerfilRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerPerfilResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPerfil.perfil[] @return;
+        
+        public obtenerPerfilResponse() {
+        }
+        
+        public obtenerPerfilResponse(SushiApp.wsPerfil.perfil[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -266,6 +224,34 @@ namespace SushiApp.wsPerfil {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPerfil", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPerfilRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarPerfilRequest() {
+        }
+        
+        public eliminarPerfilRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPerfilResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarPerfilResponse {
+        
+        public eliminarPerfilResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicePerfilChannel : SushiApp.wsPerfil.ServicePerfil, System.ServiceModel.IClientChannel {
     }
@@ -294,25 +280,25 @@ namespace SushiApp.wsPerfil {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPerfil.eliminarPerfilResponse SushiApp.wsPerfil.ServicePerfil.eliminarPerfil(SushiApp.wsPerfil.eliminarPerfilRequest request) {
-            return base.Channel.eliminarPerfil(request);
+        SushiApp.wsPerfil.modificarPerfilResponse SushiApp.wsPerfil.ServicePerfil.modificarPerfil(SushiApp.wsPerfil.modificarPerfilRequest request) {
+            return base.Channel.modificarPerfil(request);
         }
         
-        public void eliminarPerfil(int id) {
-            SushiApp.wsPerfil.eliminarPerfilRequest inValue = new SushiApp.wsPerfil.eliminarPerfilRequest();
-            inValue.id = id;
-            SushiApp.wsPerfil.eliminarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).eliminarPerfil(inValue);
+        public void modificarPerfil(SushiApp.wsPerfil.perfil perfil) {
+            SushiApp.wsPerfil.modificarPerfilRequest inValue = new SushiApp.wsPerfil.modificarPerfilRequest();
+            inValue.perfil = perfil;
+            SushiApp.wsPerfil.modificarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).modificarPerfil(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.eliminarPerfilAsync(SushiApp.wsPerfil.eliminarPerfilRequest request) {
-            return base.Channel.eliminarPerfilAsync(request);
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.modificarPerfilAsync(SushiApp.wsPerfil.modificarPerfilRequest request) {
+            return base.Channel.modificarPerfilAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> eliminarPerfilAsync(int id) {
-            SushiApp.wsPerfil.eliminarPerfilRequest inValue = new SushiApp.wsPerfil.eliminarPerfilRequest();
-            inValue.id = id;
-            return ((SushiApp.wsPerfil.ServicePerfil)(this)).eliminarPerfilAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> modificarPerfilAsync(SushiApp.wsPerfil.perfil perfil) {
+            SushiApp.wsPerfil.modificarPerfilRequest inValue = new SushiApp.wsPerfil.modificarPerfilRequest();
+            inValue.perfil = perfil;
+            return ((SushiApp.wsPerfil.ServicePerfil)(this)).modificarPerfilAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -334,28 +320,6 @@ namespace SushiApp.wsPerfil {
         public System.Threading.Tasks.Task<SushiApp.wsPerfil.obtenerPerfilResponse> obtenerPerfilAsync() {
             SushiApp.wsPerfil.obtenerPerfilRequest inValue = new SushiApp.wsPerfil.obtenerPerfilRequest();
             return ((SushiApp.wsPerfil.ServicePerfil)(this)).obtenerPerfilAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPerfil.modificarPerfilResponse SushiApp.wsPerfil.ServicePerfil.modificarPerfil(SushiApp.wsPerfil.modificarPerfilRequest request) {
-            return base.Channel.modificarPerfil(request);
-        }
-        
-        public void modificarPerfil(SushiApp.wsPerfil.perfil perfil) {
-            SushiApp.wsPerfil.modificarPerfilRequest inValue = new SushiApp.wsPerfil.modificarPerfilRequest();
-            inValue.perfil = perfil;
-            SushiApp.wsPerfil.modificarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).modificarPerfil(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.modificarPerfilAsync(SushiApp.wsPerfil.modificarPerfilRequest request) {
-            return base.Channel.modificarPerfilAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPerfil.modificarPerfilResponse> modificarPerfilAsync(SushiApp.wsPerfil.perfil perfil) {
-            SushiApp.wsPerfil.modificarPerfilRequest inValue = new SushiApp.wsPerfil.modificarPerfilRequest();
-            inValue.perfil = perfil;
-            return ((SushiApp.wsPerfil.ServicePerfil)(this)).modificarPerfilAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -401,6 +365,28 @@ namespace SushiApp.wsPerfil {
             SushiApp.wsPerfil.buscarPerfilRequest inValue = new SushiApp.wsPerfil.buscarPerfilRequest();
             inValue.id = id;
             return ((SushiApp.wsPerfil.ServicePerfil)(this)).buscarPerfilAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPerfil.eliminarPerfilResponse SushiApp.wsPerfil.ServicePerfil.eliminarPerfil(SushiApp.wsPerfil.eliminarPerfilRequest request) {
+            return base.Channel.eliminarPerfil(request);
+        }
+        
+        public void eliminarPerfil(int id) {
+            SushiApp.wsPerfil.eliminarPerfilRequest inValue = new SushiApp.wsPerfil.eliminarPerfilRequest();
+            inValue.id = id;
+            SushiApp.wsPerfil.eliminarPerfilResponse retVal = ((SushiApp.wsPerfil.ServicePerfil)(this)).eliminarPerfil(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> SushiApp.wsPerfil.ServicePerfil.eliminarPerfilAsync(SushiApp.wsPerfil.eliminarPerfilRequest request) {
+            return base.Channel.eliminarPerfilAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPerfil.eliminarPerfilResponse> eliminarPerfilAsync(int id) {
+            SushiApp.wsPerfil.eliminarPerfilRequest inValue = new SushiApp.wsPerfil.eliminarPerfilRequest();
+            inValue.id = id;
+            return ((SushiApp.wsPerfil.ServicePerfil)(this)).eliminarPerfilAsync(inValue);
         }
     }
 }

@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend9/ServiceRegion?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="modificarRegion">
-    <part name="parameters" element="tns:modificarRegion" />
+  <message name="obtenerRegion">
+    <part name="parameters" element="tns:obtenerRegion" />
   </message>
-  <message name="modificarRegionResponse">
-    <part name="parameters" element="tns:modificarRegionResponse" />
+  <message name="obtenerRegionResponse">
+    <part name="parameters" element="tns:obtenerRegionResponse" />
   </message>
   <message name="agregarRegion">
     <part name="parameters" element="tns:agregarRegion" />
@@ -17,11 +17,11 @@
   <message name="agregarRegionResponse">
     <part name="parameters" element="tns:agregarRegionResponse" />
   </message>
-  <message name="eliminarRegion">
-    <part name="parameters" element="tns:eliminarRegion" />
+  <message name="modificarRegion">
+    <part name="parameters" element="tns:modificarRegion" />
   </message>
-  <message name="eliminarRegionResponse">
-    <part name="parameters" element="tns:eliminarRegionResponse" />
+  <message name="modificarRegionResponse">
+    <part name="parameters" element="tns:modificarRegionResponse" />
   </message>
   <message name="buscarRegion">
     <part name="parameters" element="tns:buscarRegion" />
@@ -29,37 +29,37 @@
   <message name="buscarRegionResponse">
     <part name="parameters" element="tns:buscarRegionResponse" />
   </message>
-  <message name="obtenerRegion">
-    <part name="parameters" element="tns:obtenerRegion" />
+  <message name="eliminarRegion">
+    <part name="parameters" element="tns:eliminarRegion" />
   </message>
-  <message name="obtenerRegionResponse">
-    <part name="parameters" element="tns:obtenerRegionResponse" />
+  <message name="eliminarRegionResponse">
+    <part name="parameters" element="tns:eliminarRegionResponse" />
   </message>
   <portType name="ServiceRegion">
-    <operation name="modificarRegion">
-      <input wsam:Action="http://WebService/ServiceRegion/modificarRegionRequest" message="tns:modificarRegion" />
-      <output wsam:Action="http://WebService/ServiceRegion/modificarRegionResponse" message="tns:modificarRegionResponse" />
+    <operation name="obtenerRegion">
+      <input wsam:Action="http://WebService/ServiceRegion/obtenerRegionRequest" message="tns:obtenerRegion" />
+      <output wsam:Action="http://WebService/ServiceRegion/obtenerRegionResponse" message="tns:obtenerRegionResponse" />
     </operation>
     <operation name="agregarRegion">
       <input wsam:Action="http://WebService/ServiceRegion/agregarRegionRequest" message="tns:agregarRegion" />
       <output wsam:Action="http://WebService/ServiceRegion/agregarRegionResponse" message="tns:agregarRegionResponse" />
     </operation>
-    <operation name="eliminarRegion">
-      <input wsam:Action="http://WebService/ServiceRegion/eliminarRegionRequest" message="tns:eliminarRegion" />
-      <output wsam:Action="http://WebService/ServiceRegion/eliminarRegionResponse" message="tns:eliminarRegionResponse" />
+    <operation name="modificarRegion">
+      <input wsam:Action="http://WebService/ServiceRegion/modificarRegionRequest" message="tns:modificarRegion" />
+      <output wsam:Action="http://WebService/ServiceRegion/modificarRegionResponse" message="tns:modificarRegionResponse" />
     </operation>
     <operation name="buscarRegion">
       <input wsam:Action="http://WebService/ServiceRegion/buscarRegionRequest" message="tns:buscarRegion" />
       <output wsam:Action="http://WebService/ServiceRegion/buscarRegionResponse" message="tns:buscarRegionResponse" />
     </operation>
-    <operation name="obtenerRegion">
-      <input wsam:Action="http://WebService/ServiceRegion/obtenerRegionRequest" message="tns:obtenerRegion" />
-      <output wsam:Action="http://WebService/ServiceRegion/obtenerRegionResponse" message="tns:obtenerRegionResponse" />
+    <operation name="eliminarRegion">
+      <input wsam:Action="http://WebService/ServiceRegion/eliminarRegionRequest" message="tns:eliminarRegion" />
+      <output wsam:Action="http://WebService/ServiceRegion/eliminarRegionResponse" message="tns:eliminarRegionResponse" />
     </operation>
   </portType>
   <binding name="ServiceRegionPortBinding" type="tns:ServiceRegion">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="modificarRegion">
+    <operation name="obtenerRegion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarRegion">
+    <operation name="modificarRegion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerRegion">
+    <operation name="eliminarRegion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

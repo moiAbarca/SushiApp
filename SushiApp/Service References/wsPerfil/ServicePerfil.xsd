@@ -25,7 +25,6 @@
   </xs:complexType>
   <xs:complexType name="perfil">
     <xs:sequence>
-      <xs:element name="accesoId" type="xs:int" />
       <xs:element minOccurs="0" name="nombrePerfil" type="xs:string" />
       <xs:element name="perfilId" type="xs:int" />
     </xs:sequence>

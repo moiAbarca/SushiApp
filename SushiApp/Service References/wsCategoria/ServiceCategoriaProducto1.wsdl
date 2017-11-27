@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend10/ServiceCategoriaProducto?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
+  <message name="modificarCategoriaProducto">
+    <part name="parameters" element="tns:modificarCategoriaProducto" />
+  </message>
+  <message name="modificarCategoriaProductoResponse">
+    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
+  </message>
   <message name="obtenerCategoriaProducto">
     <part name="parameters" element="tns:obtenerCategoriaProducto" />
   </message>
@@ -23,12 +29,6 @@
   <message name="eliminarCategoriaProductoResponse">
     <part name="parameters" element="tns:eliminarCategoriaProductoResponse" />
   </message>
-  <message name="modificarCategoriaProducto">
-    <part name="parameters" element="tns:modificarCategoriaProducto" />
-  </message>
-  <message name="modificarCategoriaProductoResponse">
-    <part name="parameters" element="tns:modificarCategoriaProductoResponse" />
-  </message>
   <message name="buscarCategoriaProducto">
     <part name="parameters" element="tns:buscarCategoriaProducto" />
   </message>
@@ -36,6 +36,10 @@
     <part name="parameters" element="tns:buscarCategoriaProductoResponse" />
   </message>
   <portType name="ServiceCategoriaProducto">
+    <operation name="modificarCategoriaProducto">
+      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
+      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
+    </operation>
     <operation name="obtenerCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoRequest" message="tns:obtenerCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoResponse" message="tns:obtenerCategoriaProductoResponse" />
@@ -48,10 +52,6 @@
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoRequest" message="tns:eliminarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoResponse" message="tns:eliminarCategoriaProductoResponse" />
     </operation>
-    <operation name="modificarCategoriaProducto">
-      <input wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest" message="tns:modificarCategoriaProducto" />
-      <output wsam:Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse" message="tns:modificarCategoriaProductoResponse" />
-    </operation>
     <operation name="buscarCategoriaProducto">
       <input wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoRequest" message="tns:buscarCategoriaProducto" />
       <output wsam:Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoResponse" message="tns:buscarCategoriaProductoResponse" />
@@ -59,6 +59,15 @@
   </portType>
   <binding name="ServiceCategoriaProductoPortBinding" type="tns:ServiceCategoriaProducto">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarCategoriaProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="obtenerCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
@@ -78,15 +87,6 @@
       </output>
     </operation>
     <operation name="eliminarCategoriaProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarCategoriaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

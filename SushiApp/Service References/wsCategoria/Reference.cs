@@ -15,6 +15,14 @@ namespace SushiApp.wsCategoria {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsCategoria.ServiceCategoriaProducto")]
     public interface ServiceCategoriaProducto {
         
+        // CODEGEN: El parámetro 'categoriaProducto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsCategoria.modificarCategoriaProductoResponse modificarCategoriaProducto(SushiApp.wsCategoria.modificarCategoriaProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> modificarCategoriaProductoAsync(SushiApp.wsCategoria.modificarCategoriaProductoRequest request);
+        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/obtenerCategoriaProductoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -39,14 +47,6 @@ namespace SushiApp.wsCategoria {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/eliminarCategoriaProductoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsCategoria.eliminarCategoriaProductoResponse> eliminarCategoriaProductoAsync(SushiApp.wsCategoria.eliminarCategoriaProductoRequest request);
-        
-        // CODEGEN: El parámetro 'categoriaProducto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsCategoria.modificarCategoriaProductoResponse modificarCategoriaProducto(SushiApp.wsCategoria.modificarCategoriaProductoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/modificarCategoriaProductoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> modificarCategoriaProductoAsync(SushiApp.wsCategoria.modificarCategoriaProductoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoRequest", ReplyAction="http://WebService/ServiceCategoriaProducto/buscarCategoriaProductoResponse")]
@@ -101,6 +101,34 @@ namespace SushiApp.wsCategoria {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarCategoriaProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsCategoria.categoriaProducto categoriaProducto;
+        
+        public modificarCategoriaProductoRequest() {
+        }
+        
+        public modificarCategoriaProductoRequest(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
+            this.categoriaProducto = categoriaProducto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarCategoriaProductoResponse {
+        
+        public modificarCategoriaProductoResponse() {
         }
     }
     
@@ -191,34 +219,6 @@ namespace SushiApp.wsCategoria {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarCategoriaProductoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsCategoria.categoriaProducto categoriaProducto;
-        
-        public modificarCategoriaProductoRequest() {
-        }
-        
-        public modificarCategoriaProductoRequest(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
-            this.categoriaProducto = categoriaProducto;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaProductoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarCategoriaProductoResponse {
-        
-        public modificarCategoriaProductoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="buscarCategoriaProducto", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class buscarCategoriaProductoRequest {
         
@@ -277,6 +277,28 @@ namespace SushiApp.wsCategoria {
         
         public ServiceCategoriaProductoClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsCategoria.modificarCategoriaProductoResponse SushiApp.wsCategoria.ServiceCategoriaProducto.modificarCategoriaProducto(SushiApp.wsCategoria.modificarCategoriaProductoRequest request) {
+            return base.Channel.modificarCategoriaProducto(request);
+        }
+        
+        public void modificarCategoriaProducto(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
+            SushiApp.wsCategoria.modificarCategoriaProductoRequest inValue = new SushiApp.wsCategoria.modificarCategoriaProductoRequest();
+            inValue.categoriaProducto = categoriaProducto;
+            SushiApp.wsCategoria.modificarCategoriaProductoResponse retVal = ((SushiApp.wsCategoria.ServiceCategoriaProducto)(this)).modificarCategoriaProducto(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> SushiApp.wsCategoria.ServiceCategoriaProducto.modificarCategoriaProductoAsync(SushiApp.wsCategoria.modificarCategoriaProductoRequest request) {
+            return base.Channel.modificarCategoriaProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> modificarCategoriaProductoAsync(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
+            SushiApp.wsCategoria.modificarCategoriaProductoRequest inValue = new SushiApp.wsCategoria.modificarCategoriaProductoRequest();
+            inValue.categoriaProducto = categoriaProducto;
+            return ((SushiApp.wsCategoria.ServiceCategoriaProducto)(this)).modificarCategoriaProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -342,28 +364,6 @@ namespace SushiApp.wsCategoria {
             SushiApp.wsCategoria.eliminarCategoriaProductoRequest inValue = new SushiApp.wsCategoria.eliminarCategoriaProductoRequest();
             inValue.id = id;
             return ((SushiApp.wsCategoria.ServiceCategoriaProducto)(this)).eliminarCategoriaProductoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsCategoria.modificarCategoriaProductoResponse SushiApp.wsCategoria.ServiceCategoriaProducto.modificarCategoriaProducto(SushiApp.wsCategoria.modificarCategoriaProductoRequest request) {
-            return base.Channel.modificarCategoriaProducto(request);
-        }
-        
-        public void modificarCategoriaProducto(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
-            SushiApp.wsCategoria.modificarCategoriaProductoRequest inValue = new SushiApp.wsCategoria.modificarCategoriaProductoRequest();
-            inValue.categoriaProducto = categoriaProducto;
-            SushiApp.wsCategoria.modificarCategoriaProductoResponse retVal = ((SushiApp.wsCategoria.ServiceCategoriaProducto)(this)).modificarCategoriaProducto(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> SushiApp.wsCategoria.ServiceCategoriaProducto.modificarCategoriaProductoAsync(SushiApp.wsCategoria.modificarCategoriaProductoRequest request) {
-            return base.Channel.modificarCategoriaProductoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsCategoria.modificarCategoriaProductoResponse> modificarCategoriaProductoAsync(SushiApp.wsCategoria.categoriaProducto categoriaProducto) {
-            SushiApp.wsCategoria.modificarCategoriaProductoRequest inValue = new SushiApp.wsCategoria.modificarCategoriaProductoRequest();
-            inValue.categoriaProducto = categoriaProducto;
-            return ((SushiApp.wsCategoria.ServiceCategoriaProducto)(this)).modificarCategoriaProductoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
