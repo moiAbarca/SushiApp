@@ -34,11 +34,15 @@ namespace SushiApp.PaginaUsuario
         {
             String mail = txtMailModal.Text;
             String password = txtPasswordModal.Text;
-
+            if (txtMailModal.Text.Trim().Length == 0 || txtPasswordModal.Text.Trim().Length == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                return;
+            }
             wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
             if (user.usuarioId==0)
             {
-                Response.Write("<script language='JavaScript'>window.alert('Usuario no existe')</script>");
+                ScriptManager.RegisterStartupScript(this.Page , Page.GetType(), "mensajeUser", "usuarioNoExiste()", true); 
                 return;
             }
             if (user.usuario1 == mail)
@@ -52,8 +56,7 @@ namespace SushiApp.PaginaUsuario
                 }
                 else
                 {
-                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
-                    //Response.Write("<script language='JavaScript'>window.alert('Contraseña incorrecta')</script>");
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
                     return;
                 }
             }

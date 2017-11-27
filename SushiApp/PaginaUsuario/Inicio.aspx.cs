@@ -11,7 +11,34 @@ namespace SushiApp.PaginaUsuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                mostrarDivLogin();
+            }
+            else
+            {
+                ocultarDivLogin();
+                Label us = (Label)Master.FindControl("lblUsuario");
+                us.Text = (String)Session["UserName"];
+            }
+        }
 
+        private void ocultarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "none");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "inline");
+        }
+
+        private void mostrarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "inline");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "none");
         }
     }
 }

@@ -12,6 +12,10 @@ namespace SushiApp.PaginaUsuario
         
         wsCliente.ServiceClienteClient clienteCliente = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
+
+        wsUsuario.ServiceUsuarioClient UsuarioClient = new wsUsuario.ServiceUsuarioClient();
+        wsUsuario.usuario auxUsuario = new wsUsuario.usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -31,7 +35,7 @@ namespace SushiApp.PaginaUsuario
             {
                 if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
                 {
-                    Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
                     return;
                 }
                 else
@@ -55,8 +59,8 @@ namespace SushiApp.PaginaUsuario
             }
             catch (Exception)
             {
-
-                Response.Write("<script>alert('No se pudo registrar');</script>");
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
             }
             
         }
@@ -71,19 +75,54 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Checkout2.aspx");
+            String mail = txtEmailLogin.Text;
+            String password = txtPasswordLogin.Text;
+            if (txtEmailLogin.Text.Trim().Length == 0 || txtPasswordLogin.Text.Trim().Length == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                return;
+            }
+            wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
+            if (user.usuarioId == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "usuarioNoExiste()", true);
+                return;
+            }
+            if (user.usuario1 == mail)
+            {
+                if (user.pass == password)
+                {
+                    Session["Usuario"] = user;
+                    Session["UserName"] = mail;
+                    Session["UserId"] = user.usuarioId;
+                    Session["UserPass"] = user.pass;
+                    Response.Redirect("Checkout2.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
+                    return;
+                }
+            }
+            
         }
 
         private void ocultarDivLogin()
         {
             System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
             dvLogin.Style.Add("display", "none");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "inline");
         }
 
         private void mostrarDivLogin()
         {
             System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
             dvLogin.Style.Add("display", "inline");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "none");
         }
     }
 }

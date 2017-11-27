@@ -234,6 +234,7 @@
     <Content Include="PaginaUsuario\img\logo.png" />
     <Content Include="PaginaUsuario\img\sushiPattern.png" />
     <Content Include="PaginaUsuario\Inicio.aspx" />
+    <Content Include="PaginaUsuario\js\JavaScript.js" />
     <Content Include="PaginaUsuario\Login.aspx" />
     <Content Include="PaginaUsuario\NikkeiRolls.aspx" />
     <Content Include="PaginaUsuario\PedidosUsuario.aspx" />

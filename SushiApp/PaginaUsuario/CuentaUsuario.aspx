@@ -55,9 +55,8 @@
 
                     <div class="box clearfix">
                         <div class="heading">
-                            <h3 class="text-uppercase">Detalles Personales</h3>
+                            <h3 class="text-uppercase">Datos Personales</h3>
                         </div>
-
 
                         <div class="row">
                             <div class="col-sm-6">

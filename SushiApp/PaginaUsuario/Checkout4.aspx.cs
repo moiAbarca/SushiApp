@@ -16,6 +16,18 @@ namespace SushiApp.PaginaUsuario
             {
                 cargarCarrito();
             }
+
+            if (Session["Usuario"] == null)
+            {
+                mostrarDivLogin();
+                Response.Redirect("Inicio.aspx");
+            }
+            else
+            {
+                ocultarDivLogin();
+                Label us = (Label)Master.FindControl("lblUsuario");
+                us.Text = (String)Session["UserName"];
+            }
         }
 
         public void cargarCarrito()
@@ -89,6 +101,24 @@ namespace SushiApp.PaginaUsuario
             {
                 throw new Exception("Error: (" + ex.Message + ")");
             }
+        }
+
+        private void ocultarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "none");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "inline");
+        }
+
+        private void mostrarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "inline");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "none");
         }
     }
 }

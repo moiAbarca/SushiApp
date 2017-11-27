@@ -10,23 +10,23 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class ShopBasket1 : System.Web.UI.Page
     {
-        //public CarroCollection CarroCompra
-        //{
-        //    get
-        //    {
-        //        return (CarroCollection)Session["_carroCompra"];
-        //    }
-        //    set
-        //    {
-        //        Session["_carroCompra"] = value;
-        //    }
-
-        //}
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 cargarCarrito();
+            }
+
+            if (Session["Usuario"] == null)
+            {
+                mostrarDivLogin();
+            }
+            else
+            {
+                ocultarDivLogin();
+                Label us = (Label)Master.FindControl("lblUsuario");
+                us.Text = (String)Session["UserName"];
             }
         }
 
@@ -42,6 +42,24 @@ namespace SushiApp.PaginaUsuario
         protected void btnIr1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Checkout1.aspx");
+        }
+
+        private void ocultarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "none");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "inline");
+        }
+
+        private void mostrarDivLogin()
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
+            dvLogin.Style.Add("display", "inline");
+
+            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
+            dvUser.Style.Add("display", "none");
         }
     }
 }
