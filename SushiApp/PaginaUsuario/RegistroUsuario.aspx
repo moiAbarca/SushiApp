@@ -59,7 +59,7 @@
 
                         <div class="form-group">
                             <asp:Label ID="lblEmailLogin" runat="server" Text="Email"></asp:Label>
-                            <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                            <asp:TextBox ID="txtEmailLogin" runat="server" CssClass="form-control" MaxLength="30" TextMode="Email"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lblPasswordLogin" runat="server" Text="Password"></asp:Label>

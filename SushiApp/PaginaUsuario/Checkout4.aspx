@@ -40,28 +40,23 @@
                             <div class="box">
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" Width="100%">
-                                            <Columns>
-                                                <asp:TemplateField HeaderText="Quitar">
-                                                    <ItemTemplate>
-                                                        <asp:ImageButton ID="ImageButton1" runat="server" Height="19px"
-                                                            ImageUrl="~/PaginaUsuario/img/ImagenesSushi/sushifavicon.png" Width="20px" />
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <asp:BoundField DataField="ID_PRODUCTO" HeaderText="Codigo" />
-                                                <asp:BoundField DataField="NOMBRE_PRODUCTO" HeaderText="Nombre" />
-                                                <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
-                                                <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
-                                                <%--<asp:TemplateField HeaderText="Cantidad">
-                        <ItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Height="19px" Width="73px" DataField="CANTIDAD_PRODUCTO" MaxLength="2"></asp:TextBox>
-                        </ItemTemplate>
-                    </asp:TemplateField>--%>
+                                        <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" GridLines="Horizontal" Width="90%" CssClass="table-responsive table">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Imagen">
+                                            <ItemStyle Width="105px" />
+                                            <ItemTemplate>
+                                                <asp:Image ID="ImageButton1" runat="server" Height="100px"
+                                                    ImageUrl='<%# Eval("IMAGEN_PRODUCTO") %>' Width="100px" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="NOMBRE_PRODUCTO" HeaderText="Producto" />
+                                        <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
+                                        <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
 
-                                                <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
+                                    </Columns>
 
-                                            </Columns>
-                                        </asp:GridView>
+                                </asp:GridView>
                                     </table>
 
                                 </div>
@@ -86,7 +81,7 @@
                     </div>
                     <!-- /.box -->
 
-                    
+
 
                 </div>
                 <!-- /.col-md-9 -->
@@ -94,28 +89,28 @@
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Order summary</h3>
+                            <h3>Resumen de Pedido</h3>
                         </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                        <p class="text-muted"></p>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <td>Subtotal Pedido</td>
+                                        <th><asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <td>Propina Sugerida (10%)</td>
+                                        <th><asp:Label ID="lblPropina" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <td>Total sin propina</td>
+                                        <th><asp:Label ID="lblTotalSinTip" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th><asp:Label ID="lblTotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -126,22 +121,22 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h4>Coupon code</h4>
+                            <h4>Cupón de Descuento</h4>
                         </div>
                         <p class="text-muted">Si tiene un cupón de descuento, por favor introduzca el código aquí</p>
-                        
-                            <div class="input-group">
 
-                                <input type="text" class="form-control">
+                        <div class="input-group">
 
-                                <span class="input-group-btn">
+                            <input type="text" class="form-control">
 
-                                    <button class="btn btn-template-main" type="button"><i class="fa fa-gift"></i></button>
+                            <span class="input-group-btn">
 
-                                </span>
-                            </div>
-                            <!-- /input-group -->
-                      
+                                <button class="btn btn-template-main" type="button"><i class="fa fa-gift"></i></button>
+
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+
                     </div>
 
                 </div>

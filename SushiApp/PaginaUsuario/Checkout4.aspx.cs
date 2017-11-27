@@ -36,7 +36,22 @@ namespace SushiApp.PaginaUsuario
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
+            lblSubtotal.Text = Convert.ToString(TotalCarrito((DataTable)Session["Pedido"]));
+            lblTotalSinTip.Text = lblSubtotal.Text;
+            double aux = int.Parse(lblSubtotal.Text) * 0.1;
+            lblPropina.Text = aux.ToString();
+            lblTotal.Text = (aux + int.Parse(lblSubtotal.Text)).ToString();
             //Button1_Click(Button1, null);
+        }
+
+        public int TotalCarrito(DataTable dt)
+        {
+            int tot = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                tot += Convert.ToInt32(item[5]);
+            }
+            return tot;
         }
 
         protected void btnPagar_Click(object sender, EventArgs e)
@@ -45,7 +60,8 @@ namespace SushiApp.PaginaUsuario
 
             // Una vez persistido, llamamos al método enviar mail
             SendEmail(sender, e);
-            this.Response.Write("<script language='JavaScript'>window.alert('PROCESO TERMINADO CORRECTAMENTE')</script>");
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
+
             Response.Redirect("Inicio.aspx");
         }
 
@@ -54,21 +70,22 @@ namespace SushiApp.PaginaUsuario
             System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
             correo.From = new System.Net.Mail.MailAddress("best_will16@hotmail.com");
             // ***** Agregar el correo del usuario y descomentar *****
-            correo.To.Add("wilinho21@gmail.com");
+            String auxCorreo = (String)Session["UserName"];
+            correo.To.Add(auxCorreo);
             correo.Subject = "Pedido de Compra";
 
             string cod, des;
-            int cant;
+            int cant, prec;
             var items = (DataTable)Session["Pedido"];
-            decimal total, prec, subtotal, igv;
+            decimal total, subtotal, igv;
             des = "";
             for (int i = 0; i < GVCanasta.Rows.Count; i++)
             {
                 cod = (GVCanasta.Rows[i].Cells[1].Text);
                 //\
-                cant = Convert.ToInt16(GVCanasta.Rows[i].Cells[4].Text);
-                prec = Decimal.Parse(GVCanasta.Rows[i].Cells[3].Text);
-                des += "\r\n" + (GVCanasta.Rows[i].Cells[2].Text) + " " + "(" + cant + ")" + " " + Convert.ToString(prec) + "\r\n";
+                cant = Convert.ToInt16(GVCanasta.Rows[i].Cells[3].Text);
+                prec = Convert.ToInt32(GVCanasta.Rows[i].Cells[2].Text);
+                des += "\r\n" + (GVCanasta.Rows[i].Cells[1].Text) + " " + "(" + cant + ")" + " " + Convert.ToString(prec) + "\r\n";
                 //Actualiza la canasta
 
                 foreach (DataRow objDR in items.Rows)
@@ -81,7 +98,7 @@ namespace SushiApp.PaginaUsuario
 
             }
 
-            correo.Body = "Hola " + " Usted ha realizado un pedido por la cantidad de : S/. " + "\r\n" + des;
+            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado un pedido por la cantidad de : $ " + lblSubtotal.Text + "\r\n" + des;
 
             correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;

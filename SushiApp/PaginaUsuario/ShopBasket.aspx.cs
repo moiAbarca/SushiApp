@@ -1,6 +1,7 @@
 ﻿using SushiApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -36,7 +37,22 @@ namespace SushiApp.PaginaUsuario
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
+            lblSubtotal.Text = Convert.ToString(TotalCarrito((DataTable)Session["Pedido"]));
+            lblTotalSinTip.Text = lblSubtotal.Text;
+            double aux = int.Parse(lblSubtotal.Text)*0.1;
+            lblPropina.Text = aux.ToString();
+            lblTotal.Text = (aux + int.Parse(lblSubtotal.Text)).ToString();
             //Button1_Click(Button1, null);
+        }
+
+        public int TotalCarrito(DataTable dt)
+        {
+            int tot = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                tot += Convert.ToInt32(item[5]);
+            }
+            return tot;
         }
 
         protected void btnIr1_Click(object sender, EventArgs e)

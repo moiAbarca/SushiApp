@@ -25,7 +25,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <asp:Label ID="lblPassword" runat="server" Text="Paswword actual"></asp:Label>
+                                    <asp:Label ID="lblPassword" runat="server" Text="Password actual"></asp:Label>
                                     <asp:TextBox ID="txtOldPassword" runat="server" CssClass="form-control" TextMode="Password" MaxLength="20"></asp:TextBox>
                                 </div>
                             </div>
@@ -61,14 +61,14 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="firstname">
+                                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="lastname">
+                                    <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
+                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -77,14 +77,16 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="company">Company</label>
-                                    <input type="text" class="form-control" id="company">
+                                    <asp:Label ID="lblRut" runat="server" Text="Apellido"></asp:Label>
+                                    <asp:TextBox ID="txtRut" runat="server" CssClass="form-control" MaxLength="11"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="street">Street</label>
-                                    <input type="text" class="form-control" id="street">
+                                    <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento"></asp:Label>
+                                    <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" MaxLength="10" TextMode="Date"></asp:TextBox>
+                                    
+                        
                                 </div>
                             </div>
                         </div>

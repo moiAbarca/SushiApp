@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace SushiApp.PaginaUsuario
 {
@@ -121,6 +123,32 @@ namespace SushiApp.PaginaUsuario
 
             System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
             dvUser.Style.Add("display", "none");
+        }
+
+        protected void ValidateDate(object sender, ServerValidateEventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(txtFechaNacimiento.Text);
+
+            if (DateTime.Today < date)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "fechaMenorFecha()", true);
+                return;
+            }
+            if (Regex.IsMatch(txtFechaNacimiento.Text, "(((0|1)[0-9]|2[0-9]|3[0-1])\\/(0[1-9]|1[0-2])\\/((19|20)\\d\\d))$"))
+            {
+                DateTime dt;
+                e.IsValid = DateTime.TryParseExact(e.Value, "dd/MM/yyyy", new CultureInfo("en-GB"), DateTimeStyles.None, out dt);
+                if (e.IsValid)
+                {
+                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Valid Date.');", true);
+                }
+            }
+            else
+            {
+                e.IsValid = false;
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorFecha()", true);
+                return;
+            }
         }
     }
 }
