@@ -47,12 +47,20 @@ namespace SushiApp.PaginaUsuario
 
         public int TotalCarrito(DataTable dt)
         {
-            int tot = 0;
-            foreach (DataRow item in dt.Rows)
+            if ((Session["Usuario"] == null))
             {
-                tot += Convert.ToInt32(item[5]);
+                return 0;
             }
-            return tot;
+            else
+            {
+                int tot = 0;
+                foreach (DataRow item in dt.Rows)
+                {
+                    tot += Convert.ToInt32(item[5]);
+                }
+                return tot;
+            }
+            
         }
 
         protected void btnIr1_Click(object sender, EventArgs e)
