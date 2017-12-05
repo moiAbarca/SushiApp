@@ -175,6 +175,7 @@
     <Content Include="PaginaUsuario\customer-orders.html" />
     <Content Include="PaginaUsuario\customer-register.html" />
     <Content Include="PaginaUsuario\Despacho.aspx" />
+    <Content Include="PaginaUsuario\ErrorPago.aspx" />
     <Content Include="PaginaUsuario\HosomakiNigiri.aspx" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID10_Samurai_Roll.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID11_Ebi_Nikkei.jpg" />
@@ -235,8 +236,8 @@
     <Content Include="PaginaUsuario\img\sushiPattern.png" />
     <Content Include="PaginaUsuario\Inicio.aspx" />
     <Content Include="PaginaUsuario\js\JavaScript.js" />
-    <Content Include="PaginaUsuario\Login.aspx" />
     <Content Include="PaginaUsuario\NikkeiRolls.aspx" />
+    <Content Include="PaginaUsuario\PagoOk.aspx" />
     <Content Include="PaginaUsuario\PedidosUsuario.aspx" />
     <Content Include="PaginaUsuario\Postres.aspx" />
     <Content Include="PaginaUsuario\RegistroUsuario.aspx" />
@@ -1567,6 +1568,13 @@
     <Compile Include="PaginaUsuario\Despacho.aspx.designer.cs">
       <DependentUpon>Despacho.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaUsuario\ErrorPago.aspx.cs">
+      <DependentUpon>ErrorPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\ErrorPago.aspx.designer.cs">
+      <DependentUpon>ErrorPago.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaUsuario\HosomakiNigiri.aspx.cs">
       <DependentUpon>HosomakiNigiri.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1581,19 +1589,19 @@
     <Compile Include="PaginaUsuario\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PaginaUsuario\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaginaUsuario\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PaginaUsuario\NikkeiRolls.aspx.cs">
       <DependentUpon>NikkeiRolls.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PaginaUsuario\NikkeiRolls.aspx.designer.cs">
       <DependentUpon>NikkeiRolls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\PagoOk.aspx.cs">
+      <DependentUpon>PagoOk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\PagoOk.aspx.designer.cs">
+      <DependentUpon>PagoOk.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\PedidosUsuario.aspx.cs">
       <DependentUpon>PedidosUsuario.aspx</DependentUpon>

@@ -11,7 +11,8 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class ShopBasket1 : System.Web.UI.Page
     {
- 
+
+        DataTable carrito = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,6 +44,20 @@ namespace SushiApp.PaginaUsuario
             lblPropina.Text = aux.ToString();
             lblTotal.Text = (aux + int.Parse(lblSubtotal.Text)).ToString();
             //Button1_Click(Button1, null);
+
+            carrito = (DataTable)Session["Pedido"];
+            try
+            {
+                int car = carrito.AsEnumerable().Count();
+                lblProductosActuales.Text = car.ToString();
+            }
+            catch (ArgumentNullException ex)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
+                return;
+            }
+            
+
         }
 
         public int TotalCarrito(DataTable dt)

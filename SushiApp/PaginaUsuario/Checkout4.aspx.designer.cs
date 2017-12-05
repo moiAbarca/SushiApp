@@ -13,6 +13,15 @@ namespace SushiApp.PaginaUsuario {
     public partial class Checkout41 {
         
         /// <summary>
+        /// Control lblProductosActuales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProductosActuales;
+        
+        /// <summary>
         /// Control GVCanasta.
         /// </summary>
         /// <remarks>
@@ -28,7 +37,7 @@ namespace SushiApp.PaginaUsuario {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPagar;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnPagar;
         
         /// <summary>
         /// Control lblSubtotal.

@@ -10,6 +10,8 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class Checkout41 : System.Web.UI.Page
     {
+        DataTable carrito = new DataTable();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -17,22 +19,33 @@ namespace SushiApp.PaginaUsuario
                 cargarCarrito();
             }
 
-            if (Session["Usuario"] == null)
-            {
-                mostrarDivLogin();
-                Response.Redirect("Inicio.aspx");
-            }
-            else
-            {
-                ocultarDivLogin();
-                Label us = (Label)Master.FindControl("lblUsuario");
-                us.Text = (String)Session["UserName"];
-            }
+            //if (Session["Usuario"] == null)
+            //{
+            //    mostrarDivLogin();
+            //    Response.Redirect("Inicio.aspx");
+            //}
+            //else
+            //{
+            //    ocultarDivLogin();
+            //    Label us = (Label)Master.FindControl("lblUsuario");
+            //    us.Text = (String)Session["UserName"];
+            //}
         }
 
         public void cargarCarrito()
         {
-            //GridView GV = new GridView();
+            carrito = (DataTable)Session["Pedido"];
+            try
+            {
+                int car = carrito.AsEnumerable().Count();
+                lblProductosActuales.Text = car.ToString();
+            }
+            catch (ArgumentNullException ex)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
+                return;
+            }
+            
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
@@ -46,16 +59,33 @@ namespace SushiApp.PaginaUsuario
 
         public int TotalCarrito(DataTable dt)
         {
-            int tot = 0;
-            foreach (DataRow item in dt.Rows)
+            try
             {
-                tot += Convert.ToInt32(item[5]);
+                int tot = 0;
+                foreach (DataRow item in dt.Rows)
+                {
+                    tot += Convert.ToInt32(item[5]);
+                }
+                return tot;
             }
-            return tot;
+            catch (NullReferenceException ex)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
+                return 0;
+            }
+            
         }
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
+            carrito = (DataTable)Session["Pedido"];
+            int car = carrito.AsEnumerable().Count();
+            if (car == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "shopBasketEmpty()", true);
+
+                Response.Redirect("Inicio.aspx");
+            }
             // En este evento se debe hacer persistir la compra y enviar el correo si la compra está ok
 
             // Una vez persistido, llamamos al método enviar mail
@@ -98,7 +128,7 @@ namespace SushiApp.PaginaUsuario
 
             }
 
-            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado un pedido por la cantidad de : $ " + lblSubtotal.Text + "\r\n" + des;
+            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado una compra por la cantidad de : $ " + lblSubtotal.Text + "\r\n " + des +  "\n" +  "Muchas gracias por su compra";
 
             correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;
@@ -136,6 +166,12 @@ namespace SushiApp.PaginaUsuario
 
             System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
             dvUser.Style.Add("display", "none");
+        }
+
+        protected void btnPagar_ServerClick(object sender, EventArgs e)
+        {
+            String auxCorreo = (String)Session["UserName"];
+            Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + lblSubtotal.Text);
         }
     }
 }

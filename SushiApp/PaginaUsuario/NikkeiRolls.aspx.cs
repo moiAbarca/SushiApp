@@ -138,9 +138,10 @@ namespace SushiApp.PaginaUsuario
                 ProductsListView.DataBind();
                 lblCantProd.Text = nuevolistadto.Count().ToString();
             }
-            catch (Exception ex)
+            catch (SystemException ex)
             {
-                throw new Exception("Error: (" + ex.Message + ")");
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
             }
         }
 
@@ -177,7 +178,8 @@ namespace SushiApp.PaginaUsuario
             }
             catch (Exception ex)
             {
-                throw new Exception("Error: (" + ex.Message + ")");
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
             }
 
         }

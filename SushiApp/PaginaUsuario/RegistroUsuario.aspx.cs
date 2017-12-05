@@ -80,7 +80,7 @@ namespace SushiApp.PaginaUsuario
                             }
                             catch (Exception ex)
                             {
-                                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
+                                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
                                 return;
                             }
                             
@@ -93,7 +93,7 @@ namespace SushiApp.PaginaUsuario
                     }
                     catch (Exception ex)
                     {
-                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
                         return;
                     }
 
@@ -116,28 +116,46 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
                 return;
             }
-            wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
-            if (user.usuarioId == 0)
+            try
             {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "usuarioNoExiste()", true);
-                return;
-            }
-            if (user.usuario1 == mail)
-            {
-                if (user.pass == password)
+                wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
+                try
                 {
-                    Session["Usuario"] = user;
-                    Session["UserName"] = mail;
-                    Session["UserId"] = user.usuarioId;
-                    Session["UserPass"] = user.pass;
-                    Response.Redirect("CuentaUsuario.aspx");
+                    if (user.usuarioId == 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "usuarioNoExiste()", true);
+                        return;
+                    }
+                    if (user.usuario1 == mail)
+                    {
+                        if (user.pass == password)
+                        {
+                            Session["Usuario"] = user;
+                            Session["UserName"] = mail;
+                            Session["UserId"] = user.usuarioId;
+                            Session["UserPass"] = user.pass;
+                            Response.Redirect("CuentaUsuario.aspx");
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
+                            return;
+                        }
+                    }
                 }
-                else
+                catch (NullReferenceException ex)
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
                     return;
                 }
+                
             }
+            catch (System.ServiceModel.EndpointNotFoundException ex)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
+            }
+            
         }
 
         private void limpiar()

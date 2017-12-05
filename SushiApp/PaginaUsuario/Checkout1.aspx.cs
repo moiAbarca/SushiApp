@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +10,7 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class Checkout11 : System.Web.UI.Page
     {
-        
+
         wsCliente.ServiceClienteClient clienteCliente = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
 
@@ -18,6 +19,7 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["Usuario"] == null)
             {
                 mostrarDivLogin();
@@ -47,14 +49,59 @@ namespace SushiApp.PaginaUsuario
                     auxCliente.comunaId = 1;
                     auxCliente.telefono = 1;
                     auxCliente.email = txtEmail.Text;
-                    auxCliente.usuarioId = 1;
+                    //auxCliente.usuarioId = 1;
                     auxCliente.nombre = txtNombre.Text;
                     auxCliente.fechaNacimiento = "19900101";
                     auxCliente.sexo = "";
 
-                    clienteCliente.agregarCliente(auxCliente);
-                    limpiar();
-                    Response.Redirect("Checkout2.aspx");
+                    try
+                    {
+                        int pos = UsuarioClient.obtenerUsuario().Count();
+                        wsUsuario.usuario user = UsuarioClient.buscarLogin(txtEmail.Text);
+                        if (user.usuarioId == 0)
+                        {
+                            user.usuarioId = pos + 1;
+                            user.usuario1 = txtEmail.Text;
+                            user.pass = txtPassword.Text;
+
+                            UsuarioClient.agregarUsuario(user);
+                            limpiar();
+                            //ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "UserCreateSuccess()", true);
+                            //try
+                            //{
+                            int posCli = clienteCliente.obtenerCliente().Count();
+                            auxCliente.usuarioId = user.usuarioId;
+                            auxCliente.clienteId = posCli + 1;
+                            clienteCliente.agregarCliente(auxCliente);
+
+                            limpiar();
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "customerCreateSuccess()", true);
+                            Session["Usuario"] = user;
+                            Session["UserName"] = user.usuario1;
+                            Session["UserId"] = user.usuarioId;
+                            Session["UserPass"] = user.pass;
+                            Response.Redirect("Checkout2.aspx");
+                            //}
+                            //catch (Exception ex)
+                            //{
+                            //    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
+                            //    return;
+                            //}
+
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "usuarioExiste()", true);
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
+                        return;
+                    }
+
+
                 }
             }
             catch (Exception)
@@ -62,7 +109,7 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
                 return;
             }
-            
+
         }
 
         private void limpiar()
@@ -104,7 +151,7 @@ namespace SushiApp.PaginaUsuario
                     return;
                 }
             }
-            
+
         }
 
         private void ocultarDivLogin()

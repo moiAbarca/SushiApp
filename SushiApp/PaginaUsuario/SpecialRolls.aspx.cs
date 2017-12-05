@@ -137,9 +137,11 @@ namespace SushiApp.PaginaUsuario
                 ProductsListView.DataBind();
                 lblCantProd.Text = nuevolistadto.Count().ToString();
             }
-            catch (Exception ex)
+            // Implementar System Exception en todas las llamadas de los web service
+            catch (SystemException)
             {
-                throw new Exception("Error: (" + ex.Message + ")");
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
             }
         }
 

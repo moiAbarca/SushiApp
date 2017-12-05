@@ -8,7 +8,11 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-muted lead">You currently have 3 item(s) in your cart.</p>
+                    <p class="text-muted lead">
+                        Tienes actualmente
+                        <asp:Label ID="lblProductosActuales" runat="server" Text=""></asp:Label>
+                        producto(s) en tu carrito.
+                    </p>
                 </div>
 
 
@@ -41,22 +45,22 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" GridLines="Horizontal" Width="90%" CssClass="table-responsive table">
-                                    <Columns>
-                                        <asp:TemplateField HeaderText="Imagen">
-                                            <ItemStyle Width="105px" />
-                                            <ItemTemplate>
-                                                <asp:Image ID="ImageButton1" runat="server" Height="100px"
-                                                    ImageUrl='<%# Eval("IMAGEN_PRODUCTO") %>' Width="100px" />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="NOMBRE_PRODUCTO" HeaderText="Producto" />
-                                        <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
-                                        <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
-                                        <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="Imagen">
+                                                    <ItemStyle Width="105px" />
+                                                    <ItemTemplate>
+                                                        <asp:Image ID="ImageButton1" runat="server" Height="100px"
+                                                            ImageUrl='<%# Eval("IMAGEN_PRODUCTO") %>' Width="100px" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="NOMBRE_PRODUCTO" HeaderText="Producto" />
+                                                <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
+                                                <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
+                                                <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
 
-                                    </Columns>
+                                            </Columns>
 
-                                </asp:GridView>
+                                        </asp:GridView>
                                     </table>
 
                                 </div>
@@ -71,7 +75,30 @@
                                 <div class="pull-right">
                                     <button class="btn btn-default"><i class="fa fa-refresh"></i>Update cart</button>
 
-                                    <asp:Button ID="btnPagar" runat="server" CssClass="btn btn-template-main" Text="Pagar" OnClick="btnPagar_Click" /><i class="fa fa-chevron-right"></i>
+                                    <%--<asp:ImageButton runat="server" 
+                                        PostBackUrl="http://www.checkbox.cl/PaymentGateway/pay.php" ImageUrl="~/PaginaUsuario/img/logo.png"/>--%>
+
+                                    <%--<form action="http://www.checkbox.cl/PaymentGateway/pay.php" method="post">--%>
+                                        <%--<input type="hidden" name="comercio_id" value="160">
+                                        <input type="hidden" name="comercio_logo" value="">
+
+                                        <input type="hidden" name="item_nombre" value="Pedido de Compra">
+                                        <input type="hidden" name="item_id" value="10101">
+                                        <input type="hidden" name="item_precio" value="1">
+
+                                        <input type="hidden" name="url_return" value="http://localhost:2205/PaginaUsuario/PagoOk.aspx">
+                                        <input type="hidden" name="url_cancel" value="http://localhost:2205/PaginaUsuario/ErrorPago.aspx">
+                                        <input type="hidden" name="url_h2h" value="">
+
+                                        <input type="hidden" name="cliente_nombres" value="FukusukeSushi">
+                                        <input type="hidden" name="cliente_rut" value="16693819-8">
+                                        <input type="hidden" name="cliente_email" value="contactofukusukesushi@gmail.com">
+
+                                        <input type="submit" value="Pagar Online" onclick="pago()" />--%>
+                                        <button runat="server" id="btnPagar" onserverclick="btnPagar_ServerClick" type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Pagar</button>
+                                    <%--</form>--%>
+
+                                    <%--<asp:Button ID="btnPagar" runat="server" CssClass="btn btn-template-main" Text="Pagar" OnClick="btnPagar_Click" /><i class="fa fa-chevron-right"></i>--%>
 
 
                                 </div>
@@ -98,19 +125,23 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal Pedido</td>
-                                        <th><asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
+                                        <th>
+                                            <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
                                         <td>Propina Sugerida (10%)</td>
-                                        <th><asp:Label ID="lblPropina" runat="server" Text="" CssClass="form-control"></asp:Label></th>
+                                        <th>
+                                            <asp:Label ID="lblPropina" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
                                         <td>Total sin propina</td>
-                                        <th><asp:Label ID="lblTotalSinTip" runat="server" Text="" CssClass="form-control"></asp:Label></th>
+                                        <th>
+                                            <asp:Label ID="lblTotalSinTip" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th><asp:Label ID="lblTotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
+                                        <th>
+                                            <asp:Label ID="lblTotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                 </tbody>
                             </table>

@@ -1,5 +1,4 @@
 ﻿
-
 function modalLoginEmpty() {
     swal('Oops!',
         'Debes ingresar datos',
@@ -20,7 +19,7 @@ function errorContraseña() {
 
 function errorIngreso() {
     swal('Mensaje de Sistema',
-        'Se ha producido un error al ingresar',
+        'Se ha producido un error al cargar',
         'error');
 }
 
@@ -166,4 +165,16 @@ function ventaOk() {
     swal('Felicitaciones!',
         'Su compra se ha realizado con éxito',
         'success');
+}
+
+function shopBasketEmpty() {
+    swal('Atención!',
+        'Su carrito se encuentra vacio',
+        'info');
+}
+
+function error() {
+    swal('Atención!',
+        'Fecha no puede ser mayor a la fecha actual',
+        'warning');
 }

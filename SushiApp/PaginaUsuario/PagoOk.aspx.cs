@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SushiApp.PaginaUsuario
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class PagoOk : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

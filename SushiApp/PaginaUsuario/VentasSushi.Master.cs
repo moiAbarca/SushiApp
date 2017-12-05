@@ -39,27 +39,45 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
                 return;
             }
-            wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
-            if (user.usuarioId==0)
+            try
             {
-                ScriptManager.RegisterStartupScript(this.Page , Page.GetType(), "mensajeUser", "usuarioNoExiste()", true); 
-                return;
-            }
-            if (user.usuario1 == mail)
-            {
-                if (user.pass == password)
+                wsUsuario.usuario user = UsuarioClient.buscarLogin(mail);
+                try
                 {
-                    Session["Usuario"] = user;
-                    Session["UserName"] = mail;
-                    Session["UserId"] = user.usuarioId;
-                    Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
+                    if (user.usuarioId == 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "usuarioNoExiste()", true);
+                        return;
+                    }
+                    if (user.usuario1 == mail)
+                    {
+                        if (user.pass == password)
+                        {
+                            Session["Usuario"] = user;
+                            Session["UserName"] = mail;
+                            Session["UserId"] = user.usuarioId;
+                            Response.Redirect("~/PaginaUsuario/Bebidas.aspx");
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
+                            return;
+                        }
+                    }
                 }
-                else
+                catch (NullReferenceException)
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorContraseña()", true);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
                     return;
                 }
+                
             }
+            catch (System.ServiceModel.EndpointNotFoundException)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorIngreso()", true);
+                return;
+            }
+            
         }
 
     }
