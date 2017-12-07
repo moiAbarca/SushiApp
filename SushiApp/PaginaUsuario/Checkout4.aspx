@@ -41,10 +41,10 @@
                                 </li>
                             </ul>
 
-                            <div class="box">
+                            <%--<div class="box">--%>
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" GridLines="Horizontal" Width="90%" CssClass="table-responsive table">
+                                        <asp:GridView ID="GVCanasta" runat="server" AutoGenerateColumns="False" OnRowDeleting="GVCanasta_RowDeleting" GridLines="Horizontal" Width="80%" CssClass="table-responsive table">
                                             <Columns>
                                                 <asp:TemplateField HeaderText="Imagen">
                                                     <ItemStyle Width="105px" />
@@ -57,7 +57,7 @@
                                                 <asp:BoundField DataField="PRECIO_PRODUCTO" HeaderText="Precio" />
                                                 <asp:BoundField DataField="CANTIDAD_PRODUCTO" HeaderText="Cantidad" />
                                                 <asp:BoundField DataField="SUBTOTAL" HeaderText="Subtotal" />
-
+                                                <asp:CommandField ShowDeleteButton="True"/>
                                             </Columns>
 
                                         </asp:GridView>
@@ -65,7 +65,7 @@
 
                                 </div>
                                 <!-- /.table-responsive -->
-                            </div>
+                          <%--  </div>--%>
                             <!-- /.box -->
 
                             <div class="box-footer">
@@ -73,7 +73,7 @@
                                     <a href="Inicio.aspx" class="btn btn-default"><i class="fa fa-chevron-left"></i>Seguir comprando</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i>Update cart</button>
+                                   
 
                                     <%--<asp:ImageButton runat="server" 
                                         PostBackUrl="http://www.checkbox.cl/PaymentGateway/pay.php" ImageUrl="~/PaginaUsuario/img/logo.png"/>--%>
@@ -92,9 +92,9 @@
 
                                         <input type="hidden" name="cliente_nombres" value="FukusukeSushi">
                                         <input type="hidden" name="cliente_rut" value="16693819-8">
-                                        <input type="hidden" name="cliente_email" value="contactofukusukesushi@gmail.com">
+                                        <input type="hidden" name="cliente_email" value="contactofukusukesushi@gmail.com"> --%>
 
-                                        <input type="submit" value="Pagar Online" onclick="pago()" />--%>
+                                        <%--<input type="submit" value="Pagar Online" onclick="pago()" />--%>
                                         <button runat="server" id="btnPagar" onserverclick="btnPagar_ServerClick" type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Pagar</button>
                                     <%--</form>--%>
 
@@ -116,7 +116,7 @@
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Resumen de Pedido</h3>
+                            <h3>Resumen Pedido</h3>
                         </div>
                         <p class="text-muted"></p>
 

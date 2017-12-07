@@ -38,11 +38,12 @@ namespace SushiApp.PaginaUsuario
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
-            lblSubtotal.Text = Convert.ToString(TotalCarrito((DataTable)Session["Pedido"]));
-            lblTotalSinTip.Text = lblSubtotal.Text;
-            double aux = int.Parse(lblSubtotal.Text)*0.1;
-            lblPropina.Text = aux.ToString();
-            lblTotal.Text = (aux + int.Parse(lblSubtotal.Text)).ToString();
+            Double auxSubtotal = Convert.ToDouble(TotalCarrito((DataTable)Session["Pedido"]));
+            lblSubtotal.Text = String.Format("{0:C}", auxSubtotal);
+            lblTotalSinTip.Text = String.Format("{0:C}",auxSubtotal);
+            double aux = auxSubtotal*0.1;
+            lblPropina.Text = String.Format("{0:C}", aux);
+            lblTotal.Text = String.Format("{0:C}", auxSubtotal + aux);
             //Button1_Click(Button1, null);
 
             carrito = (DataTable)Session["Pedido"];
@@ -62,25 +63,28 @@ namespace SushiApp.PaginaUsuario
 
         public int TotalCarrito(DataTable dt)
         {
-            if ((Session["Usuario"] == null))
-            {
-                return 0;
-            }
-            else
-            {
                 int tot = 0;
                 foreach (DataRow item in dt.Rows)
                 {
                     tot += Convert.ToInt32(item[5]);
                 }
                 return tot;
-            }
             
         }
 
         protected void btnIr1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Checkout1.aspx");
+            carrito = (DataTable)Session["Pedido"];
+            if (carrito.AsEnumerable().Count()==0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "shopBasketEmpty()", true);
+                return;
+            }
+            else
+            {
+                Response.Redirect("Checkout1.aspx");
+            }
+            
         }
 
         private void ocultarDivLogin()
@@ -100,5 +104,32 @@ namespace SushiApp.PaginaUsuario
             System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
             dvUser.Style.Add("display", "none");
         }
+
+        protected void GVCanasta_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DataTable dt1 = Session["Pedido"] as DataTable;
+
+            int index = e.RowIndex;
+            try
+            {
+                dt1.Rows[index].Delete();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
+                return;
+            }
+            
+            Session["Pedido"] = dt1;
+            GVCanasta.DataSource = dt1;
+            GVCanasta.DataBind();
+            cargarCarrito();
+
+            
+
+
+        }
+
+
     }
 }

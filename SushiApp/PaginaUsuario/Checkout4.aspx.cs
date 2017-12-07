@@ -49,11 +49,12 @@ namespace SushiApp.PaginaUsuario
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
-            lblSubtotal.Text = Convert.ToString(TotalCarrito((DataTable)Session["Pedido"]));
-            lblTotalSinTip.Text = lblSubtotal.Text;
-            double aux = int.Parse(lblSubtotal.Text) * 0.1;
-            lblPropina.Text = aux.ToString();
-            lblTotal.Text = (aux + int.Parse(lblSubtotal.Text)).ToString();
+            Double auxSubtotal = Convert.ToDouble(TotalCarrito((DataTable)Session["Pedido"]));
+            lblSubtotal.Text = String.Format("{0:C}", auxSubtotal);
+            lblTotalSinTip.Text = String.Format("{0:C}", auxSubtotal);
+            double aux = auxSubtotal * 0.1;
+            lblPropina.Text = String.Format("{0:C}", aux);
+            lblTotal.Text = String.Format("{0:C}", auxSubtotal + aux);
             //Button1_Click(Button1, null);
         }
 
@@ -76,6 +77,8 @@ namespace SushiApp.PaginaUsuario
             
         }
 
+
+
         protected void btnPagar_Click(object sender, EventArgs e)
         {
             carrito = (DataTable)Session["Pedido"];
@@ -84,7 +87,7 @@ namespace SushiApp.PaginaUsuario
             {
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "shopBasketEmpty()", true);
 
-                Response.Redirect("Inicio.aspx");
+                return;
             }
             // En este evento se debe hacer persistir la compra y enviar el correo si la compra está ok
 
@@ -170,8 +173,38 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnPagar_ServerClick(object sender, EventArgs e)
         {
-            String auxCorreo = (String)Session["UserName"];
-            Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + lblSubtotal.Text);
+            carrito = (DataTable)Session["Pedido"];
+            if (carrito.AsEnumerable().Count() == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "shopBasketEmpty()", true);
+                return;
+            }
+            else
+            {
+                String auxCorreo = (String)Session["UserName"];
+                Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + lblSubtotal.Text);
+            }
+        }
+
+        protected void GVCanasta_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DataTable dt1 = Session["Pedido"] as DataTable;
+
+            int index = e.RowIndex;
+            try
+            {
+                dt1.Rows[index].Delete();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
+                return;
+            }
+
+            Session["Pedido"] = dt1;
+            GVCanasta.DataSource = dt1;
+            GVCanasta.DataBind();
+            cargarCarrito();
         }
     }
 }
