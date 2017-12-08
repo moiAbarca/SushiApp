@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarOferta" type="tns:agregarOferta" />
+  <xs:element name="agregarOfertaResponse" type="tns:agregarOfertaResponse" />
+  <xs:element name="buscarOferta" type="tns:buscarOferta" />
+  <xs:element name="buscarOfertaResponse" type="tns:buscarOfertaResponse" />
+  <xs:element name="eliminarOferta" type="tns:eliminarOferta" />
+  <xs:element name="eliminarOfertaResponse" type="tns:eliminarOfertaResponse" />
+  <xs:element name="modificarOferta" type="tns:modificarOferta" />
+  <xs:element name="modificarOfertaResponse" type="tns:modificarOfertaResponse" />
+  <xs:element name="obtenerOferta" type="tns:obtenerOferta" />
+  <xs:element name="obtenerOfertaResponse" type="tns:obtenerOfertaResponse" />
+  <xs:complexType name="buscarOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarOfertaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:oferta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="oferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaTermino" type="xs:string" />
+      <xs:element name="ofertaId" type="xs:int" />
+      <xs:element name="porcentajeOferta" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarOfertaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="agregarOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oferta" type="tns:oferta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarOfertaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="modificarOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oferta" type="tns:oferta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarOfertaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerOferta">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerOfertaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:oferta" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://WebService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicePedidoCabecera" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/SushiBackend11/ServicePedidoCabecera?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="modificarPedidoCabecera">
+    <part name="parameters" element="tns:modificarPedidoCabecera" />
+  </message>
+  <message name="modificarPedidoCabeceraResponse">
+    <part name="parameters" element="tns:modificarPedidoCabeceraResponse" />
+  </message>
+  <message name="obtenerPedidoCabecera">
+    <part name="parameters" element="tns:obtenerPedidoCabecera" />
+  </message>
+  <message name="obtenerPedidoCabeceraResponse">
+    <part name="parameters" element="tns:obtenerPedidoCabeceraResponse" />
+  </message>
+  <message name="eliminarPedidoCabecera">
+    <part name="parameters" element="tns:eliminarPedidoCabecera" />
+  </message>
+  <message name="eliminarPedidoCabeceraResponse">
+    <part name="parameters" element="tns:eliminarPedidoCabeceraResponse" />
+  </message>
+  <message name="agregarPedidoCabecera">
+    <part name="parameters" element="tns:agregarPedidoCabecera" />
+  </message>
+  <message name="agregarPedidoCabeceraResponse">
+    <part name="parameters" element="tns:agregarPedidoCabeceraResponse" />
+  </message>
+  <message name="buscarPedidoCabecera">
+    <part name="parameters" element="tns:buscarPedidoCabecera" />
+  </message>
+  <message name="buscarPedidoCabeceraResponse">
+    <part name="parameters" element="tns:buscarPedidoCabeceraResponse" />
+  </message>
+  <portType name="ServicePedidoCabecera">
+    <operation name="modificarPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/modificarPedidoCabeceraRequest" message="tns:modificarPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/modificarPedidoCabeceraResponse" message="tns:modificarPedidoCabeceraResponse" />
+    </operation>
+    <operation name="obtenerPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraRequest" message="tns:obtenerPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraResponse" message="tns:obtenerPedidoCabeceraResponse" />
+    </operation>
+    <operation name="eliminarPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraRequest" message="tns:eliminarPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraResponse" message="tns:eliminarPedidoCabeceraResponse" />
+    </operation>
+    <operation name="agregarPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraRequest" message="tns:agregarPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraResponse" message="tns:agregarPedidoCabeceraResponse" />
+    </operation>
+    <operation name="buscarPedidoCabecera">
+      <input wsam:Action="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraRequest" message="tns:buscarPedidoCabecera" />
+      <output wsam:Action="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraResponse" message="tns:buscarPedidoCabeceraResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicePedidoCabeceraPortBinding" type="tns:ServicePedidoCabecera">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarPedidoCabecera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPedidoCabecera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPedidoCabecera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarPedidoCabecera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPedidoCabecera">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicePedidoCabecera">
+    <port name="ServicePedidoCabeceraPort" binding="tns:ServicePedidoCabeceraPortBinding">
+      <soap:address location="http://localhost:8084/SushiBackend11/ServicePedidoCabecera" />
+    </port>
+  </service>
+</definitions>

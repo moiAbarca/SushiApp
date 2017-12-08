@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarOfertaProducto" type="tns:agregarOfertaProducto" />
+  <xs:element name="agregarOfertaProductoResponse" type="tns:agregarOfertaProductoResponse" />
+  <xs:element name="buscarOfertaProducto" type="tns:buscarOfertaProducto" />
+  <xs:element name="buscarOfertaProductoResponse" type="tns:buscarOfertaProductoResponse" />
+  <xs:element name="eliminarOfertaProducto" type="tns:eliminarOfertaProducto" />
+  <xs:element name="eliminarOfertaProductoResponse" type="tns:eliminarOfertaProductoResponse" />
+  <xs:element name="modificarOfertaProducto" type="tns:modificarOfertaProducto" />
+  <xs:element name="modificarOfertaProductoResponse" type="tns:modificarOfertaProductoResponse" />
+  <xs:element name="obtenerOfertaProducto" type="tns:obtenerOfertaProducto" />
+  <xs:element name="obtenerOfertaProductoResponse" type="tns:obtenerOfertaProductoResponse" />
+  <xs:complexType name="obtenerOfertaProducto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerOfertaProductoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ofertaProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ofertaProducto">
+    <xs:sequence>
+      <xs:element name="ofertaId" type="xs:int" />
+      <xs:element name="ofertas_producto_Id" type="xs:int" />
+      <xs:element name="productoId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarOfertaProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarOfertaProductoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ofertaProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarOfertaProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ofertaProducto" type="tns:ofertaProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarOfertaProductoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarOfertaProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarOfertaProductoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="modificarOfertaProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ofertaProducto" type="tns:ofertaProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarOfertaProductoResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

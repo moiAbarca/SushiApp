@@ -1,0 +1,392 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VentasSushi.master.cs" Inherits="SushiApp.PaginaUsuario.VentasSushi" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fukusuke Sushi Delivery</title>
+
+    <meta name="keywords" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Css animations  -->
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+    <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- Custom stylesheet - for your changes -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Responsivity for older IE -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <!-- Favicon and apple touch icons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+
+
+    <form id="form1" runat="server">
+
+
+        <div id="all">
+
+            <header>
+
+                <!-- *** TOP ***
+_________________________________________________________ -->
+                <div id="top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-5 contact">
+                                <p class="hidden-sm hidden-xs">Contactenos: MonoDev contacto@monodev.cl.</p>
+                                <p class="hidden-md hidden-lg">
+                                    <a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a><a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </p>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="social">
+                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </div>
+
+                                <div class="login">
+                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i><span class="hidden-xs text-uppercase">iniciar Sesión</span></a>
+                                    <a href="customer-register.html"><i class="fa fa-user"></i><span class="hidden-xs text-uppercase">Ingresar</span></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- *** TOP END *** -->
+
+                <!-- *** NAVBAR ***
+    _________________________________________________________ -->
+
+                <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+                    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+                        <div class="container">
+                            <div class="navbar-header">
+
+                                <a class="navbar-brand home" href="Inicio.aspx">
+                                    <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                    <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                </a>
+                                <div class="navbar-buttons">
+                                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <i class="fa fa-align-justify"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--/.navbar-header -->
+
+                            <div class="navbar-collapse collapse" id="navigation">
+
+                                <ul class="nav navbar-nav navbar-right">
+
+
+                                    <li class="dropdown use-yamm yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carta<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <img src="img/sushi-166574.jpg" class="img-responsive hidden-xs" alt="">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <h5>Carta</h5>
+                                                            <ul>
+                                                                <li><a href="SpecialRolls.aspx">Special Rolls</a>
+                                                                </li>
+                                                                <li><a href="Inicio.aspx">Nikkei rolls</a>
+                                                                </li>
+                                                                <li><a href="TempuraPankoRolls.aspx">Tempura & Panko Rolls</a>
+                                                                </li>
+                                                                <li><a href="CaliforniaRolls.aspx">California Rolls</a>
+                                                                </li>
+                                                                <li><a href="VeggieRolls.aspx">Veggie Rolls</a>
+                                                                </li>
+                                                                <li><a href="Inicio.aspx">Sashimis & Ceviche</a>
+                                                                </li>
+                                                                <li><a href="Inicio.aspx">Chirashis</a>
+                                                                </li>
+                                                                <li><a href="Inicio.aspx">Hosomaki & Nigiris</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <h5>Postres, Tragos y Bebidas</h5>
+                                                            <ul>
+                                                                <li><a href="Postres.aspx">Postres</a>
+                                                                </li>
+                                                                <li><a href="Tragos.aspx">Tragos</a>
+                                                                </li>
+                                                                <li><a href="Bebidas.aspx">Bebidas</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="Despacho.aspx">Despacho</a>
+                                    </li>
+                                    <%--<li>
+                                        <a href="Inicio.aspx">Reseñas</a>
+                                    </li>--%>
+                                    <li>
+                                        <a href="Contacto.aspx">Contacto</a>
+                                    </li>
+                                    <li>
+                                        <a href="ShopBasket.aspx">Mi carrito</a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <!--/.nav-collapse -->
+
+
+
+                            <div class="collapse clearfix" id="search">
+
+                                <form class="navbar-form" role="search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <span class="input-group-btn">
+
+                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                                        </span>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!--/.nav-collapse -->
+
+                        </div>
+
+
+                    </div>
+                    <!-- /#navbar -->
+
+                </div>
+
+                <!-- *** NAVBAR END *** -->
+
+            </header>
+
+            <!-- *** LOGIN MODAL ***
+_________________________________________________________ -->
+
+            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="Login">Inicia Sesión</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="customer-orders.html" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email_modal" placeholder="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="password_modal" placeholder="password">
+                                </div>
+
+                                <p class="text-center">
+                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i>Entrar</button>
+                                </p>
+
+                            </form>
+
+                            <p class="text-center text-muted">¿Aun no estás registrado?</p>
+                            <p class="text-center text-muted"><a href="customer-register.html"><strong>Registrarse ahora</strong></a>! Es fácil y solo le tomará 1&nbsp;minuto y tendrá acceso a descuentos y mucho más!</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- *** LOGIN MODAL END *** -->
+
+            <div id="heading-breadcrumbs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1>Fukusuke Sushi Delivery</h1>
+                        </div>
+                        <div class="col-md-5">
+                            <ul class="breadcrumb">
+                                <li><a href="Inicio.aspx">Home</a>
+                                </li>
+                                <li>Fukusuke Sushi</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%-- Contenido Intercambiable --%>
+            <div id="content">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+            <!-- /#content -->
+
+
+            <!-- *** FOOTER ***
+_________________________________________________________ -->
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-3 col-sm-6">
+                        <h4>Quienes somos</h4>
+
+                        <p>
+                            En Fukusuke Sushi tenemos el mejor sushi de Maipú. Despacho a domicilio y retiro en Local
+Horario de atención: Lunes a sábado en locales de 12:00 a 17:00 y 18:00 a 24:00 hrs y online de 12:00 a 17:00 y 18:00 a 23:00 hrs.
+                        </p>
+
+                        <hr>
+
+                        <h4>Únete a nuestro newsletter Mensual</h4>
+
+                        <form>
+                            <div class="input-group">
+
+                                <input type="text" class="form-control">
+
+                                <span class="input-group-btn">
+
+                                    <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+
+                                </span>
+
+                            </div>
+                            <!-- /input-group -->
+                        </form>
+
+                        <hr class="hidden-md hidden-lg hidden-sm">
+                    </div>
+                    <!-- /.col-md-3 -->
+
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Contacto</h4>
+
+                        <p>
+                            <strong>Fukusuke Sushi</strong>
+                            <br>
+                            Mar de Chile 516
+                        <br>
+                            Maipú
+                        <br>
+                            <strong>Santiago</strong>
+                        </p>
+
+                        <a href="Contacto.aspx" class="btn btn-small btn-template-main">Ir a la página de contacto</a>
+
+                        <hr class="hidden-md hidden-lg hidden-sm">
+                    </div>
+                    <!-- /.col-md-3 -->
+
+
+
+
+                </div>
+                <!-- /.container -->
+            </footer>
+            <!-- /#footer -->
+
+            <!-- *** FOOTER END *** -->
+
+            <!-- *** COPYRIGHT ***
+_________________________________________________________ -->
+
+            <div id="copyright">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p class="pull-left">&copy; 2015. Your company / name goes here</p>
+                        <p class="pull-right">
+                            Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>
+                            <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /#copyright -->
+
+            <!-- *** COPYRIGHT END *** -->
+
+
+
+        </div>
+        <!-- /#all -->
+
+
+        <!-- #### JAVASCRIPT FILES ### -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        </script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.parallax-1.1.3.js"></script>
+        <script src="js/front.js"></script>
+
+
+    </form>
+
+
+</body>
+
+</html>
