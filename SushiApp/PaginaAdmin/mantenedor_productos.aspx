@@ -30,6 +30,7 @@
                
             <div class="ibox-content m-b-sm border-bottom">                
                 <div class="row">
+                    <h2>Productos</h2>
                     <ul class="list-group clear-list">  
                       <li class="list-group-item">   
                           <span>

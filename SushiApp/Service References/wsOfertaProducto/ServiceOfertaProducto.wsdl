@@ -11,18 +11,6 @@
   <message name="agregarOfertaProductoResponse">
     <part name="parameters" element="tns:agregarOfertaProductoResponse" />
   </message>
-  <message name="eliminarOfertaProducto">
-    <part name="parameters" element="tns:eliminarOfertaProducto" />
-  </message>
-  <message name="eliminarOfertaProductoResponse">
-    <part name="parameters" element="tns:eliminarOfertaProductoResponse" />
-  </message>
-  <message name="buscarOfertaProducto">
-    <part name="parameters" element="tns:buscarOfertaProducto" />
-  </message>
-  <message name="buscarOfertaProductoResponse">
-    <part name="parameters" element="tns:buscarOfertaProductoResponse" />
-  </message>
   <message name="modificarOfertaProducto">
     <part name="parameters" element="tns:modificarOfertaProducto" />
   </message>
@@ -35,18 +23,22 @@
   <message name="obtenerOfertaProductoResponse">
     <part name="parameters" element="tns:obtenerOfertaProductoResponse" />
   </message>
+  <message name="eliminarOfertaProducto">
+    <part name="parameters" element="tns:eliminarOfertaProducto" />
+  </message>
+  <message name="eliminarOfertaProductoResponse">
+    <part name="parameters" element="tns:eliminarOfertaProductoResponse" />
+  </message>
+  <message name="buscarOfertaProducto">
+    <part name="parameters" element="tns:buscarOfertaProducto" />
+  </message>
+  <message name="buscarOfertaProductoResponse">
+    <part name="parameters" element="tns:buscarOfertaProductoResponse" />
+  </message>
   <portType name="ServiceOfertaProducto">
     <operation name="agregarOfertaProducto">
       <input wsam:Action="http://WebService/ServiceOfertaProducto/agregarOfertaProductoRequest" message="tns:agregarOfertaProducto" />
       <output wsam:Action="http://WebService/ServiceOfertaProducto/agregarOfertaProductoResponse" message="tns:agregarOfertaProductoResponse" />
-    </operation>
-    <operation name="eliminarOfertaProducto">
-      <input wsam:Action="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoRequest" message="tns:eliminarOfertaProducto" />
-      <output wsam:Action="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoResponse" message="tns:eliminarOfertaProductoResponse" />
-    </operation>
-    <operation name="buscarOfertaProducto">
-      <input wsam:Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest" message="tns:buscarOfertaProducto" />
-      <output wsam:Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse" message="tns:buscarOfertaProductoResponse" />
     </operation>
     <operation name="modificarOfertaProducto">
       <input wsam:Action="http://WebService/ServiceOfertaProducto/modificarOfertaProductoRequest" message="tns:modificarOfertaProducto" />
@@ -55,6 +47,14 @@
     <operation name="obtenerOfertaProducto">
       <input wsam:Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoRequest" message="tns:obtenerOfertaProducto" />
       <output wsam:Action="http://WebService/ServiceOfertaProducto/obtenerOfertaProductoResponse" message="tns:obtenerOfertaProductoResponse" />
+    </operation>
+    <operation name="eliminarOfertaProducto">
+      <input wsam:Action="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoRequest" message="tns:eliminarOfertaProducto" />
+      <output wsam:Action="http://WebService/ServiceOfertaProducto/eliminarOfertaProductoResponse" message="tns:eliminarOfertaProductoResponse" />
+    </operation>
+    <operation name="buscarOfertaProducto">
+      <input wsam:Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoRequest" message="tns:buscarOfertaProducto" />
+      <output wsam:Action="http://WebService/ServiceOfertaProducto/buscarOfertaProductoResponse" message="tns:buscarOfertaProductoResponse" />
     </operation>
   </portType>
   <binding name="ServiceOfertaProductoPortBinding" type="tns:ServiceOfertaProducto">
@@ -68,24 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarOfertaProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarOfertaProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarOfertaProducto">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +78,24 @@
       </output>
     </operation>
     <operation name="obtenerOfertaProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarOfertaProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarOfertaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

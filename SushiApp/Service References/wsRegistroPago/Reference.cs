@@ -15,15 +15,6 @@ namespace SushiApp.wsRegistroPago {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsRegistroPago.ServiceRegistroPago")]
     public interface ServiceRegistroPago {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/buscarResgistroPagoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsRegistroPago.buscarResgistroPagoResponse buscarResgistroPago(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/buscarResgistroPagoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> buscarResgistroPagoAsync(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request);
-        
         // CODEGEN: El parámetro 'resgistroPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/agregarResgistroPagoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -31,14 +22,6 @@ namespace SushiApp.wsRegistroPago {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/agregarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/agregarResgistroPagoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsRegistroPago.agregarResgistroPagoResponse> agregarResgistroPagoAsync(SushiApp.wsRegistroPago.agregarResgistroPagoRequest request);
-        
-        // CODEGEN: El parámetro 'resgistroPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsRegistroPago.modificarResgistroPagoResponse modificarResgistroPago(SushiApp.wsRegistroPago.modificarResgistroPagoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.modificarResgistroPagoResponse> modificarResgistroPagoAsync(SushiApp.wsRegistroPago.modificarResgistroPagoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/obtenerResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/obtenerResgistroPagoResponse")]
@@ -49,6 +32,14 @@ namespace SushiApp.wsRegistroPago {
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/obtenerResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/obtenerResgistroPagoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsRegistroPago.obtenerResgistroPagoResponse> obtenerResgistroPagoAsync(SushiApp.wsRegistroPago.obtenerResgistroPagoRequest request);
         
+        // CODEGEN: El parámetro 'resgistroPago' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsRegistroPago.modificarResgistroPagoResponse modificarResgistroPago(SushiApp.wsRegistroPago.modificarResgistroPagoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/modificarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/modificarResgistroPagoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.modificarResgistroPagoResponse> modificarResgistroPagoAsync(SushiApp.wsRegistroPago.modificarResgistroPagoRequest request);
+        
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/eliminarResgistroPagoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -56,10 +47,19 @@ namespace SushiApp.wsRegistroPago {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/eliminarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/eliminarResgistroPagoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsRegistroPago.eliminarResgistroPagoResponse> eliminarResgistroPagoAsync(SushiApp.wsRegistroPago.eliminarResgistroPagoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/buscarResgistroPagoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsRegistroPago.buscarResgistroPagoResponse buscarResgistroPago(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceRegistroPago/buscarResgistroPagoRequest", ReplyAction="http://WebService/ServiceRegistroPago/buscarResgistroPagoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> buscarResgistroPagoAsync(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request);
     }
     
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -80,7 +80,7 @@ namespace SushiApp.wsRegistroPago {
         
         private int tipoPagoIdField;
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public int codigoAutorizacion {
             get {
@@ -92,7 +92,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public string estadoPago {
             get {
@@ -104,7 +104,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public int montoTotal {
             get {
@@ -116,7 +116,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public int numeroCuotas {
             get {
@@ -128,7 +128,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public int pedidoCabeceraId {
             get {
@@ -140,7 +140,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public int registroPagoId {
             get {
@@ -152,7 +152,7 @@ namespace SushiApp.wsRegistroPago {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public int tipoPagoId {
             get {
@@ -171,6 +171,118 @@ namespace SushiApp.wsRegistroPago {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarResgistroPagoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsRegistroPago.resgistroPago resgistroPago;
+        
+        public agregarResgistroPagoRequest() {
+        }
+        
+        public agregarResgistroPagoRequest(SushiApp.wsRegistroPago.resgistroPago resgistroPago) {
+            this.resgistroPago = resgistroPago;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarResgistroPagoResponse {
+        
+        public agregarResgistroPagoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerResgistroPagoRequest {
+        
+        public obtenerResgistroPagoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerResgistroPagoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsRegistroPago.resgistroPago[] @return;
+        
+        public obtenerResgistroPagoResponse() {
+        }
+        
+        public obtenerResgistroPagoResponse(SushiApp.wsRegistroPago.resgistroPago[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarResgistroPagoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsRegistroPago.resgistroPago resgistroPago;
+        
+        public modificarResgistroPagoRequest() {
+        }
+        
+        public modificarResgistroPagoRequest(SushiApp.wsRegistroPago.resgistroPago resgistroPago) {
+            this.resgistroPago = resgistroPago;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarResgistroPagoResponse {
+        
+        public modificarResgistroPagoResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarResgistroPagoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarResgistroPagoRequest() {
+        }
+        
+        public eliminarResgistroPagoRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarResgistroPagoResponse {
+        
+        public eliminarResgistroPagoResponse() {
         }
     }
     
@@ -210,118 +322,6 @@ namespace SushiApp.wsRegistroPago {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarResgistroPagoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsRegistroPago.resgistroPago resgistroPago;
-        
-        public agregarResgistroPagoRequest() {
-        }
-        
-        public agregarResgistroPagoRequest(SushiApp.wsRegistroPago.resgistroPago resgistroPago) {
-            this.resgistroPago = resgistroPago;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarResgistroPagoResponse {
-        
-        public agregarResgistroPagoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarResgistroPagoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsRegistroPago.resgistroPago resgistroPago;
-        
-        public modificarResgistroPagoRequest() {
-        }
-        
-        public modificarResgistroPagoRequest(SushiApp.wsRegistroPago.resgistroPago resgistroPago) {
-            this.resgistroPago = resgistroPago;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarResgistroPagoResponse {
-        
-        public modificarResgistroPagoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerResgistroPagoRequest {
-        
-        public obtenerResgistroPagoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerResgistroPagoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsRegistroPago.resgistroPago[] @return;
-        
-        public obtenerResgistroPagoResponse() {
-        }
-        
-        public obtenerResgistroPagoResponse(SushiApp.wsRegistroPago.resgistroPago[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarResgistroPago", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarResgistroPagoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarResgistroPagoRequest() {
-        }
-        
-        public eliminarResgistroPagoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarResgistroPagoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarResgistroPagoResponse {
-        
-        public eliminarResgistroPagoResponse() {
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceRegistroPagoChannel : SushiApp.wsRegistroPago.ServiceRegistroPago, System.ServiceModel.IClientChannel {
     }
@@ -350,29 +350,6 @@ namespace SushiApp.wsRegistroPago {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsRegistroPago.buscarResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.buscarResgistroPago(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request) {
-            return base.Channel.buscarResgistroPago(request);
-        }
-        
-        public SushiApp.wsRegistroPago.resgistroPago buscarResgistroPago(int id) {
-            SushiApp.wsRegistroPago.buscarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.buscarResgistroPagoRequest();
-            inValue.id = id;
-            SushiApp.wsRegistroPago.buscarResgistroPagoResponse retVal = ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).buscarResgistroPago(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> SushiApp.wsRegistroPago.ServiceRegistroPago.buscarResgistroPagoAsync(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request) {
-            return base.Channel.buscarResgistroPagoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> buscarResgistroPagoAsync(int id) {
-            SushiApp.wsRegistroPago.buscarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.buscarResgistroPagoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).buscarResgistroPagoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsRegistroPago.agregarResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.agregarResgistroPago(SushiApp.wsRegistroPago.agregarResgistroPagoRequest request) {
             return base.Channel.agregarResgistroPago(request);
         }
@@ -392,6 +369,27 @@ namespace SushiApp.wsRegistroPago {
             SushiApp.wsRegistroPago.agregarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.agregarResgistroPagoRequest();
             inValue.resgistroPago = resgistroPago;
             return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).agregarResgistroPagoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsRegistroPago.obtenerResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.obtenerResgistroPago(SushiApp.wsRegistroPago.obtenerResgistroPagoRequest request) {
+            return base.Channel.obtenerResgistroPago(request);
+        }
+        
+        public SushiApp.wsRegistroPago.resgistroPago[] obtenerResgistroPago() {
+            SushiApp.wsRegistroPago.obtenerResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.obtenerResgistroPagoRequest();
+            SushiApp.wsRegistroPago.obtenerResgistroPagoResponse retVal = ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).obtenerResgistroPago(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.obtenerResgistroPagoResponse> SushiApp.wsRegistroPago.ServiceRegistroPago.obtenerResgistroPagoAsync(SushiApp.wsRegistroPago.obtenerResgistroPagoRequest request) {
+            return base.Channel.obtenerResgistroPagoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsRegistroPago.obtenerResgistroPagoResponse> obtenerResgistroPagoAsync() {
+            SushiApp.wsRegistroPago.obtenerResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.obtenerResgistroPagoRequest();
+            return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).obtenerResgistroPagoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -417,27 +415,6 @@ namespace SushiApp.wsRegistroPago {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsRegistroPago.obtenerResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.obtenerResgistroPago(SushiApp.wsRegistroPago.obtenerResgistroPagoRequest request) {
-            return base.Channel.obtenerResgistroPago(request);
-        }
-        
-        public SushiApp.wsRegistroPago.resgistroPago[] obtenerResgistroPago() {
-            SushiApp.wsRegistroPago.obtenerResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.obtenerResgistroPagoRequest();
-            SushiApp.wsRegistroPago.obtenerResgistroPagoResponse retVal = ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).obtenerResgistroPago(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.obtenerResgistroPagoResponse> SushiApp.wsRegistroPago.ServiceRegistroPago.obtenerResgistroPagoAsync(SushiApp.wsRegistroPago.obtenerResgistroPagoRequest request) {
-            return base.Channel.obtenerResgistroPagoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsRegistroPago.obtenerResgistroPagoResponse> obtenerResgistroPagoAsync() {
-            SushiApp.wsRegistroPago.obtenerResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.obtenerResgistroPagoRequest();
-            return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).obtenerResgistroPagoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsRegistroPago.eliminarResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.eliminarResgistroPago(SushiApp.wsRegistroPago.eliminarResgistroPagoRequest request) {
             return base.Channel.eliminarResgistroPago(request);
         }
@@ -457,6 +434,29 @@ namespace SushiApp.wsRegistroPago {
             SushiApp.wsRegistroPago.eliminarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.eliminarResgistroPagoRequest();
             inValue.id = id;
             return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).eliminarResgistroPagoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsRegistroPago.buscarResgistroPagoResponse SushiApp.wsRegistroPago.ServiceRegistroPago.buscarResgistroPago(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request) {
+            return base.Channel.buscarResgistroPago(request);
+        }
+        
+        public SushiApp.wsRegistroPago.resgistroPago buscarResgistroPago(int id) {
+            SushiApp.wsRegistroPago.buscarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.buscarResgistroPagoRequest();
+            inValue.id = id;
+            SushiApp.wsRegistroPago.buscarResgistroPagoResponse retVal = ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).buscarResgistroPago(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> SushiApp.wsRegistroPago.ServiceRegistroPago.buscarResgistroPagoAsync(SushiApp.wsRegistroPago.buscarResgistroPagoRequest request) {
+            return base.Channel.buscarResgistroPagoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsRegistroPago.buscarResgistroPagoResponse> buscarResgistroPagoAsync(int id) {
+            SushiApp.wsRegistroPago.buscarResgistroPagoRequest inValue = new SushiApp.wsRegistroPago.buscarResgistroPagoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsRegistroPago.ServiceRegistroPago)(this)).buscarResgistroPagoAsync(inValue);
         }
     }
 }

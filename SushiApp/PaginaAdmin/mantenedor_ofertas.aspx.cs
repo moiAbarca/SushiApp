@@ -13,10 +13,35 @@ namespace SushiApp.PaginaAdmin
         wsOferta.oferta auxOferta = new wsOferta.oferta();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            cargarGVOfertas();
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        public void cargarGVOfertas()
+        {
+            try
+            {
+                var listadto = ofertaClient.obtenerOferta();
+                var nuevolistadto = (from o in listadto
+                                     orderby o.ofertaId
+                                     select new
+                                     {
+                                         Id = o.ofertaId,
+                                         Porcentaje = o.porcentajeOferta,
+                                         Inicio = o.fechaInicio,
+                                         Término = o.fechaTermino
+                                     }).ToList();
+
+                gvOfertas.DataSource = nuevolistadto;
+                gvOfertas.DataBind();
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('No se pudo cargar GridView Ofertas');</script>");
+            }
+        }
+
+            protected void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -33,7 +58,7 @@ namespace SushiApp.PaginaAdmin
                         auxOferta.ofertaId = Convert.ToInt32(this.txtId.Text);
                         auxOferta.porcentajeOferta = Convert.ToInt32(this.txtOferta.Text);
                         auxOferta.fechaInicio = calFechaInicio.SelectedDate.ToString("yyyyMMdd");
-                        auxOferta.fechaInicio = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
+                        auxOferta.fechaTermino = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
 
                         ofertaClient.agregarOferta(auxOferta);
                         Response.Write("<script>alert('Agregado correctamente');</script>");
@@ -58,6 +83,8 @@ namespace SushiApp.PaginaAdmin
         {
             txtId.Text = string.Empty;
             txtOferta.Text = string.Empty;
+            calFechaInicio.SelectedDates.Clear();
+            calFechaTermino.SelectedDates.Clear();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
@@ -77,7 +104,7 @@ namespace SushiApp.PaginaAdmin
                         auxOferta.ofertaId = Convert.ToInt32(this.txtId.Text);
                         auxOferta.porcentajeOferta = Convert.ToInt32(this.txtOferta.Text);
                         auxOferta.fechaInicio = calFechaInicio.SelectedDate.ToString("yyyyMMdd");
-                        auxOferta.fechaInicio = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
+                        auxOferta.fechaTermino = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
 
                         ofertaClient.modificarOferta(auxOferta);                        
                         Response.Write("<script>alert('Modificado correctamente');</script>");

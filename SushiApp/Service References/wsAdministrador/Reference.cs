@@ -15,14 +15,6 @@ namespace SushiApp.wsAdministrador {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsAdministrador.ServiceAdministrador")]
     public interface ServiceAdministrador {
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/eliminarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/eliminarAdministradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsAdministrador.eliminarAdministradorResponse eliminarAdministrador(SushiApp.wsAdministrador.eliminarAdministradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/eliminarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/eliminarAdministradorResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> eliminarAdministradorAsync(SushiApp.wsAdministrador.eliminarAdministradorRequest request);
-        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/buscarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/buscarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -33,12 +25,12 @@ namespace SushiApp.wsAdministrador {
         System.Threading.Tasks.Task<SushiApp.wsAdministrador.buscarAdministradorResponse> buscarAdministradorAsync(SushiApp.wsAdministrador.buscarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'administrador' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/agregarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/agregarAdministradorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/modificarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/modificarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsAdministrador.agregarAdministradorResponse agregarAdministrador(SushiApp.wsAdministrador.agregarAdministradorRequest request);
+        SushiApp.wsAdministrador.modificarAdministradorResponse modificarAdministrador(SushiApp.wsAdministrador.modificarAdministradorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/agregarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/agregarAdministradorResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.agregarAdministradorResponse> agregarAdministradorAsync(SushiApp.wsAdministrador.agregarAdministradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/modificarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/modificarAdministradorResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> modificarAdministradorAsync(SushiApp.wsAdministrador.modificarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/obtenerAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/obtenerAdministradorResponse")]
@@ -50,44 +42,24 @@ namespace SushiApp.wsAdministrador {
         System.Threading.Tasks.Task<SushiApp.wsAdministrador.obtenerAdministradorResponse> obtenerAdministradorAsync(SushiApp.wsAdministrador.obtenerAdministradorRequest request);
         
         // CODEGEN: El parámetro 'administrador' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/modificarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/modificarAdministradorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/agregarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/agregarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsAdministrador.modificarAdministradorResponse modificarAdministrador(SushiApp.wsAdministrador.modificarAdministradorRequest request);
+        SushiApp.wsAdministrador.agregarAdministradorResponse agregarAdministrador(SushiApp.wsAdministrador.agregarAdministradorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/modificarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/modificarAdministradorResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> modificarAdministradorAsync(SushiApp.wsAdministrador.modificarAdministradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/agregarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/agregarAdministradorResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.agregarAdministradorResponse> agregarAdministradorAsync(SushiApp.wsAdministrador.agregarAdministradorRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/eliminarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/eliminarAdministradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsAdministrador.eliminarAdministradorResponse eliminarAdministrador(SushiApp.wsAdministrador.eliminarAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceAdministrador/eliminarAdministradorRequest", ReplyAction="http://WebService/ServiceAdministrador/eliminarAdministradorResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> eliminarAdministradorAsync(SushiApp.wsAdministrador.eliminarAdministradorRequest request);
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarAdministradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarAdministradorRequest() {
-        }
-        
-        public eliminarAdministradorRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class eliminarAdministradorResponse {
-        
-        public eliminarAdministradorResponse() {
-        }
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -106,7 +78,7 @@ namespace SushiApp.wsAdministrador {
         
         private int usuarioIdField;
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public int administradorId {
             get {
@@ -118,7 +90,7 @@ namespace SushiApp.wsAdministrador {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public string apellidoAdmin {
             get {
@@ -130,7 +102,7 @@ namespace SushiApp.wsAdministrador {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string corrreoAdmin {
             get {
@@ -142,7 +114,7 @@ namespace SushiApp.wsAdministrador {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string nombreAdmin {
             get {
@@ -154,7 +126,7 @@ namespace SushiApp.wsAdministrador {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string telefonoAdmin {
             get {
@@ -166,7 +138,7 @@ namespace SushiApp.wsAdministrador {
             }
         }
         
-        /// <comentarios/>
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public int usuarioId {
             get {
@@ -227,17 +199,17 @@ namespace SushiApp.wsAdministrador {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarAdministradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarAdministradorRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public SushiApp.wsAdministrador.administrador administrador;
         
-        public agregarAdministradorRequest() {
+        public modificarAdministradorRequest() {
         }
         
-        public agregarAdministradorRequest(SushiApp.wsAdministrador.administrador administrador) {
+        public modificarAdministradorRequest(SushiApp.wsAdministrador.administrador administrador) {
             this.administrador = administrador;
         }
     }
@@ -245,10 +217,10 @@ namespace SushiApp.wsAdministrador {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarAdministradorResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class modificarAdministradorResponse {
         
-        public agregarAdministradorResponse() {
+        public modificarAdministradorResponse() {
         }
     }
     
@@ -283,17 +255,17 @@ namespace SushiApp.wsAdministrador {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarAdministradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarAdministradorRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public SushiApp.wsAdministrador.administrador administrador;
         
-        public modificarAdministradorRequest() {
+        public agregarAdministradorRequest() {
         }
         
-        public modificarAdministradorRequest(SushiApp.wsAdministrador.administrador administrador) {
+        public agregarAdministradorRequest(SushiApp.wsAdministrador.administrador administrador) {
             this.administrador = administrador;
         }
     }
@@ -301,10 +273,38 @@ namespace SushiApp.wsAdministrador {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class modificarAdministradorResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarAdministradorResponse {
         
-        public modificarAdministradorResponse() {
+        public agregarAdministradorResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministrador", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarAdministradorRequest() {
+        }
+        
+        public eliminarAdministradorRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministradorResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class eliminarAdministradorResponse {
+        
+        public eliminarAdministradorResponse() {
         }
     }
     
@@ -336,28 +336,6 @@ namespace SushiApp.wsAdministrador {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsAdministrador.eliminarAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.eliminarAdministrador(SushiApp.wsAdministrador.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministrador(request);
-        }
-        
-        public void eliminarAdministrador(int id) {
-            SushiApp.wsAdministrador.eliminarAdministradorRequest inValue = new SushiApp.wsAdministrador.eliminarAdministradorRequest();
-            inValue.id = id;
-            SushiApp.wsAdministrador.eliminarAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).eliminarAdministrador(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.eliminarAdministradorAsync(SushiApp.wsAdministrador.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> eliminarAdministradorAsync(int id) {
-            SushiApp.wsAdministrador.eliminarAdministradorRequest inValue = new SushiApp.wsAdministrador.eliminarAdministradorRequest();
-            inValue.id = id;
-            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).eliminarAdministradorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsAdministrador.buscarAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.buscarAdministrador(SushiApp.wsAdministrador.buscarAdministradorRequest request) {
             return base.Channel.buscarAdministrador(request);
         }
@@ -378,6 +356,49 @@ namespace SushiApp.wsAdministrador {
             SushiApp.wsAdministrador.buscarAdministradorRequest inValue = new SushiApp.wsAdministrador.buscarAdministradorRequest();
             inValue.id = id;
             return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).buscarAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsAdministrador.modificarAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.modificarAdministrador(SushiApp.wsAdministrador.modificarAdministradorRequest request) {
+            return base.Channel.modificarAdministrador(request);
+        }
+        
+        public void modificarAdministrador(SushiApp.wsAdministrador.administrador administrador) {
+            SushiApp.wsAdministrador.modificarAdministradorRequest inValue = new SushiApp.wsAdministrador.modificarAdministradorRequest();
+            inValue.administrador = administrador;
+            SushiApp.wsAdministrador.modificarAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).modificarAdministrador(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.modificarAdministradorAsync(SushiApp.wsAdministrador.modificarAdministradorRequest request) {
+            return base.Channel.modificarAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> modificarAdministradorAsync(SushiApp.wsAdministrador.administrador administrador) {
+            SushiApp.wsAdministrador.modificarAdministradorRequest inValue = new SushiApp.wsAdministrador.modificarAdministradorRequest();
+            inValue.administrador = administrador;
+            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).modificarAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsAdministrador.obtenerAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.obtenerAdministrador(SushiApp.wsAdministrador.obtenerAdministradorRequest request) {
+            return base.Channel.obtenerAdministrador(request);
+        }
+        
+        public SushiApp.wsAdministrador.administrador[] obtenerAdministrador() {
+            SushiApp.wsAdministrador.obtenerAdministradorRequest inValue = new SushiApp.wsAdministrador.obtenerAdministradorRequest();
+            SushiApp.wsAdministrador.obtenerAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).obtenerAdministrador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.obtenerAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.obtenerAdministradorAsync(SushiApp.wsAdministrador.obtenerAdministradorRequest request) {
+            return base.Channel.obtenerAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.obtenerAdministradorResponse> obtenerAdministradorAsync() {
+            SushiApp.wsAdministrador.obtenerAdministradorRequest inValue = new SushiApp.wsAdministrador.obtenerAdministradorRequest();
+            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).obtenerAdministradorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -403,46 +424,25 @@ namespace SushiApp.wsAdministrador {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsAdministrador.obtenerAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.obtenerAdministrador(SushiApp.wsAdministrador.obtenerAdministradorRequest request) {
-            return base.Channel.obtenerAdministrador(request);
+        SushiApp.wsAdministrador.eliminarAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.eliminarAdministrador(SushiApp.wsAdministrador.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministrador(request);
         }
         
-        public SushiApp.wsAdministrador.administrador[] obtenerAdministrador() {
-            SushiApp.wsAdministrador.obtenerAdministradorRequest inValue = new SushiApp.wsAdministrador.obtenerAdministradorRequest();
-            SushiApp.wsAdministrador.obtenerAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).obtenerAdministrador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.obtenerAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.obtenerAdministradorAsync(SushiApp.wsAdministrador.obtenerAdministradorRequest request) {
-            return base.Channel.obtenerAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.obtenerAdministradorResponse> obtenerAdministradorAsync() {
-            SushiApp.wsAdministrador.obtenerAdministradorRequest inValue = new SushiApp.wsAdministrador.obtenerAdministradorRequest();
-            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).obtenerAdministradorAsync(inValue);
+        public void eliminarAdministrador(int id) {
+            SushiApp.wsAdministrador.eliminarAdministradorRequest inValue = new SushiApp.wsAdministrador.eliminarAdministradorRequest();
+            inValue.id = id;
+            SushiApp.wsAdministrador.eliminarAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).eliminarAdministrador(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsAdministrador.modificarAdministradorResponse SushiApp.wsAdministrador.ServiceAdministrador.modificarAdministrador(SushiApp.wsAdministrador.modificarAdministradorRequest request) {
-            return base.Channel.modificarAdministrador(request);
+        System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.eliminarAdministradorAsync(SushiApp.wsAdministrador.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministradorAsync(request);
         }
         
-        public void modificarAdministrador(SushiApp.wsAdministrador.administrador administrador) {
-            SushiApp.wsAdministrador.modificarAdministradorRequest inValue = new SushiApp.wsAdministrador.modificarAdministradorRequest();
-            inValue.administrador = administrador;
-            SushiApp.wsAdministrador.modificarAdministradorResponse retVal = ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).modificarAdministrador(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> SushiApp.wsAdministrador.ServiceAdministrador.modificarAdministradorAsync(SushiApp.wsAdministrador.modificarAdministradorRequest request) {
-            return base.Channel.modificarAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.modificarAdministradorResponse> modificarAdministradorAsync(SushiApp.wsAdministrador.administrador administrador) {
-            SushiApp.wsAdministrador.modificarAdministradorRequest inValue = new SushiApp.wsAdministrador.modificarAdministradorRequest();
-            inValue.administrador = administrador;
-            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).modificarAdministradorAsync(inValue);
+        public System.Threading.Tasks.Task<SushiApp.wsAdministrador.eliminarAdministradorResponse> eliminarAdministradorAsync(int id) {
+            SushiApp.wsAdministrador.eliminarAdministradorRequest inValue = new SushiApp.wsAdministrador.eliminarAdministradorRequest();
+            inValue.id = id;
+            return ((SushiApp.wsAdministrador.ServiceAdministrador)(this)).eliminarAdministradorAsync(inValue);
         }
     }
 }

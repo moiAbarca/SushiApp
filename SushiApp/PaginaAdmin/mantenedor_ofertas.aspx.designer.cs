@@ -22,13 +22,13 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.TextBox txtId;
         
         /// <summary>
-        /// Control txtOferta.
+        /// Control btnBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtOferta;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
         /// Control btnAgregar.
@@ -58,13 +58,13 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtOferta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtOferta;
         
         /// <summary>
         /// Control calFechaInicio.
@@ -85,12 +85,12 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Calendar calFechaTermino;
         
         /// <summary>
-        /// Control gvAdministrador.
+        /// Control gvOfertas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAdministrador;
+        protected global::System.Web.UI.WebControls.GridView gvOfertas;
     }
 }
