@@ -60,7 +60,7 @@
 
 <body>
 
-    
+
 
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -87,10 +87,10 @@ _________________________________________________________ -->
                             </div>
                             <div class="col-xs-7">
                                 <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="https://www.facebook.com/Fukusuke-sushi-delivery-Maipu-748612691891744/" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://plus.google.com/106932656012875366843" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
                                     <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                    <a href="Contacto.aspx" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                                 </div>
                                 <div class="login" runat="server" id="divLogin">
                                     <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i><span class="hidden-xs text-uppercase">iniciar Sesión</span></a>
@@ -280,11 +280,10 @@ _________________________________________________________ -->
 
             <%-- Contenido Intercambiable --%>
             <div id="content">
-               
+
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                   
                 </asp:ContentPlaceHolder>
-                
+
             </div>
             <!-- /#content -->
 
@@ -294,61 +293,62 @@ _________________________________________________________ -->
 
             <footer id="footer">
                 <div class="container">
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Quienes somos</h4>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <h4>Quienes somos</h4>
 
-                        <p>
-                            En Fukusuke Sushi tenemos el mejor sushi de Maipú. Despacho a domicilio y retiro en Local
+                            <p>
+                                En Fukusuke Sushi tenemos el mejor sushi de Maipú. Despacho a domicilio y retiro en Local
 Horario de atención: Lunes a sábado en locales de 12:00 a 17:00 y 18:00 a 24:00 hrs y online de 12:00 a 17:00 y 18:00 a 23:00 hrs.
-                        </p>
+                            </p>
 
-                        <hr>
+                            <hr>
 
-                        <h4>Únete a nuestro newsletter Mensual</h4>
+                            <h4>Únete a nuestro newsletter Mensual</h4>
 
 
-                        <div class="input-group">
+                            <div class="input-group">
 
-                            <input type="text" class="form-control">
+                                <input type="text" class="form-control">
 
-                            <span class="input-group-btn">
+                                <span class="input-group-btn">
 
-                                <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+                                    <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
 
-                            </span>
+                                </span>
 
+                            </div>
+                            <!-- /input-group -->
+
+
+                            <hr class="hidden-md hidden-lg hidden-sm">
                         </div>
-                        <!-- /input-group -->
+                        <!-- /.col-md-3 -->
 
 
-                        <hr class="hidden-md hidden-lg hidden-sm">
-                    </div>
-                    <!-- /.col-md-3 -->
+                        <div class="col-md-3 col-sm-6">
 
+                            <h4>Contacto</h4>
 
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Contacto</h4>
-
-                        <p>
-                            <strong>Fukusuke Sushi</strong>
-                            <br>
-                            Mar de Chile 516
+                            <p>
+                                <strong>Fukusuke Sushi</strong>
+                                <br>
+                                Mar de Chile 516
                         <br>
-                            Maipú
+                                Maipú
                         <br>
-                            <strong>Santiago</strong>
-                        </p>
+                                <strong>Santiago</strong>
+                            </p>
 
-                        <a href="Contacto.aspx" class="btn btn-small btn-template-main">Ir a la página de contacto</a>
+                            <a href="Contacto.aspx" class="btn btn-small btn-template-main">Ir a la página de contacto</a>
 
-                        <hr class="hidden-md hidden-lg hidden-sm">
+                            <hr class="hidden-md hidden-lg hidden-sm">
+                        </div>
+                        <!-- /.col-md-3 -->
+
+
+
                     </div>
-                    <!-- /.col-md-3 -->
-
-
-
-
                 </div>
                 <!-- /.container -->
             </footer>

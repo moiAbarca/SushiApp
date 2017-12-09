@@ -49,12 +49,12 @@
 
             <!-- *** MENUS AND FILTERS END *** -->
 
-            <div class="banner">
+          <%--  <div class="banner">
                 <a href="shop-category.html">
                     <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
                 </a>
             </div>
-            <!-- /.banner -->
+            <!-- /.banner -->--%>
 
         </div>
         <!-- /.col-md-3 -->

@@ -175,6 +175,7 @@
     <Content Include="PaginaUsuario\Despacho.aspx" />
     <Content Include="PaginaUsuario\ErrorPago.aspx" />
     <Content Include="PaginaUsuario\HosomakiNigiri.aspx" />
+    <Content Include="PaginaUsuario\img\ImagenesSushi\bannerSushi.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID10_Samurai_Roll.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID11_Ebi_Nikkei.jpg" />
     <Content Include="PaginaUsuario\img\ImagenesSushi\ID12_Ceviche_Roll.jpg" />

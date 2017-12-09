@@ -67,7 +67,7 @@
                         <h3>Soporte electrónico</h3>
                         <p class="text-muted">Escríbenos y déjanos tus comentarios.</p>
                         <ul class="list-style-none">
-                            <li><strong><a href="mailto:">info@fukusukesushi.cl</a></strong>
+                            <li><strong><a href="mailto:">contactofukusukesuhi@gmail.cl</a></strong>
                             </li>
                         </ul>
                     </div>
