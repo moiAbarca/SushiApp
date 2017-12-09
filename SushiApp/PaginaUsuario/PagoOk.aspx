@@ -56,8 +56,8 @@
                     </a>
                 </p>
 
-                <h3>No se pudo procesar su pago.</h3>
-                <h4 class="text-muted">Pago procesado correctamente</h4>
+                <h3>Hemos recibido su Pago.</h3>
+                <h4 class="text-muted">Por favor espere. Será redirigido en unos segundos...</h4>
 
                 <p class="buttons">
                     <a href="Inicio.aspx" class="btn btn-template-main"><i class="fa fa-home"></i>Ir a la página de Inicio</a>

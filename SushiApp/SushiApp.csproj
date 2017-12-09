@@ -163,6 +163,7 @@
     <Content Include="PaginaUsuario\Checkout2.aspx" />
     <Content Include="PaginaUsuario\Checkout3.aspx" />
     <Content Include="PaginaUsuario\Checkout4.aspx" />
+    <Content Include="PaginaUsuario\ConfirmacionCompra.aspx" />
     <Content Include="PaginaUsuario\Contacto.aspx" />
     <Content Include="PaginaUsuario\css\bootstrap.css.map" />
     <Content Include="PaginaUsuario\css\fonts\fontawesome-webfont.eot" />
@@ -171,9 +172,6 @@
     <Content Include="PaginaUsuario\css\fonts\FontAwesome.otf" />
     <Content Include="PaginaAdmin\MenuInterior.Master" />
     <Content Include="PaginaUsuario\CuentaUsuario.aspx" />
-    <Content Include="PaginaUsuario\customer-account.html" />
-    <Content Include="PaginaUsuario\customer-orders.html" />
-    <Content Include="PaginaUsuario\customer-register.html" />
     <Content Include="PaginaUsuario\Despacho.aspx" />
     <Content Include="PaginaUsuario\ErrorPago.aspx" />
     <Content Include="PaginaUsuario\HosomakiNigiri.aspx" />
@@ -1546,6 +1544,13 @@
     </Compile>
     <Compile Include="PaginaUsuario\Checkout4.aspx.designer.cs">
       <DependentUpon>Checkout4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUsuario\ConfirmacionCompra.aspx.cs">
+      <DependentUpon>ConfirmacionCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUsuario\ConfirmacionCompra.aspx.designer.cs">
+      <DependentUpon>ConfirmacionCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>

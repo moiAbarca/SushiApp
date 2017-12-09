@@ -68,7 +68,7 @@ function fechaMenorFecha() {
 
 function ventaOk() {
     swal('Felicitaciones!',
-        'Su compra se ha realizado con éxito',
+        'Su compra se ha procesado con éxito',
         'success');
 }
 

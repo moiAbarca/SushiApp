@@ -21,57 +21,57 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Order</th>
-                                            <th>Date</th>
+                                            <th>Orden</th>
+                                            <th>Fecha</th>
                                             <th>Total</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Estado</th>
+                                            <th>Acción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th># 1735</th>
-                                            <td>22/06/2013</td>
-                                            <td>$ 150.00</td>
-                                            <td><span class="label label-info">Being prepared</span>
+                                            <td>22/11/2017</td>
+                                            <td>$ 22.000</td>
+                                            <td><span class="label label-info">Iniciando Preparación</span>
                                             </td>
-                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th># 1735</th>
-                                            <td>22/06/2013</td>
-                                            <td>$ 150.00</td>
-                                            <td><span class="label label-info">Being prepared</span>
-                                            </td>
-                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
+                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th># 1735</th>
-                                            <td>22/06/2013</td>
-                                            <td>$ 150.00</td>
-                                            <td><span class="label label-success">Received</span>
+                                            <td>22/11/2017</td>
+                                            <td>$ 5.600</td>
+                                            <td><span class="label label-info">Iniciando Preparación</span>
                                             </td>
-                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th># 1735</th>
-                                            <td>22/06/2013</td>
-                                            <td>$ 150.00</td>
-                                            <td><span class="label label-danger">Cancelled</span>
-                                            </td>
-                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
+                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th># 1735</th>
-                                            <td>22/06/2013</td>
-                                            <td>$ 150.00</td>
-                                            <td><span class="label label-warning">On hold</span>
+                                            <td>23/11/2017</td>
+                                            <td>$ 10.250</td>
+                                            <td><span class="label label-success">Recibido</span>
                                             </td>
-                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
+                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th># 1735</th>
+                                            <td>23/11/2017</td>
+                                            <td>$ 15.300</td>
+                                            <td><span class="label label-danger">Cancelado</span>
+                                            </td>
+                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th># 1735</th>
+                                            <td>24/11/2017</td>
+                                            <td>$ 5.400</td>
+                                            <td><span class="label label-warning">Por confirmar</span>
+                                            </td>
+                                            <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
                                             </td>
                                         </tr>
                                     </tbody>

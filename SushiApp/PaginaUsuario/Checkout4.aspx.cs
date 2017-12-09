@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Globalization;
 
 namespace SushiApp.PaginaUsuario
 {
@@ -19,17 +20,17 @@ namespace SushiApp.PaginaUsuario
                 cargarCarrito();
             }
 
-            //if (Session["Usuario"] == null)
-            //{
-            //    mostrarDivLogin();
-            //    Response.Redirect("Inicio.aspx");
-            //}
-            //else
-            //{
-            //    ocultarDivLogin();
-            //    Label us = (Label)Master.FindControl("lblUsuario");
-            //    us.Text = (String)Session["UserName"];
-            //}
+            if (Session["Usuario"] == null)
+            {
+                mostrarDivLogin();
+                Response.Redirect("Inicio.aspx");
+            }
+            else
+            {
+                ocultarDivLogin();
+                Label us = (Label)Master.FindControl("lblUsuario");
+                us.Text = (String)Session["UserName"];
+            }
         }
 
         public void cargarCarrito()
@@ -49,11 +50,12 @@ namespace SushiApp.PaginaUsuario
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
-            Double auxSubtotal = Convert.ToDouble(TotalCarrito((DataTable)Session["Pedido"]));
+            int auxSubtotal = Convert.ToInt32(TotalCarrito((DataTable)Session["Pedido"]));
             lblSubtotal.Text = String.Format("{0:C}", auxSubtotal);
             lblTotalSinTip.Text = String.Format("{0:C}", auxSubtotal);
-            double aux = auxSubtotal * 0.1;
+            int aux = Convert.ToInt32(auxSubtotal * 0.1);
             lblPropina.Text = String.Format("{0:C}", aux);
+            int totaliza = aux + auxSubtotal;
             lblTotal.Text = String.Format("{0:C}", auxSubtotal + aux);
             //Button1_Click(Button1, null);
         }
@@ -101,7 +103,7 @@ namespace SushiApp.PaginaUsuario
         protected void SendEmail(object sender, EventArgs e)
         {
             System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
-            correo.From = new System.Net.Mail.MailAddress("best_will16@hotmail.com");
+            correo.From = new System.Net.Mail.MailAddress("contactofukusukesushi@gmail.com");
             // ***** Agregar el correo del usuario y descomentar *****
             String auxCorreo = (String)Session["UserName"];
             correo.To.Add(auxCorreo);
@@ -136,11 +138,11 @@ namespace SushiApp.PaginaUsuario
             correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
-            //smtp.Host = "smtp.gmail.com"  'para gmail
-            smtp.Host = "smtp.live.com"; //para hotmail
+            smtp.Host = "smtp.gmail.com";  //para gmail
+            //smtp.Host = "smtp.live.com"; //para hotmail
             smtp.Port = 587;
             //Completar con  las credenciales del correo ingresado arriba
-            smtp.Credentials = new System.Net.NetworkCredential("best_will16@hotmail.com", "166938198");
+            smtp.Credentials = new System.Net.NetworkCredential("contactofukusukesushi@gmail.com", "fukusuke");
             smtp.EnableSsl = true;
             try
             {
@@ -149,7 +151,9 @@ namespace SushiApp.PaginaUsuario
             }
             catch (Exception ex)
             {
+                //return;
                 throw new Exception("Error: (" + ex.Message + ")");
+                
             }
         }
 
@@ -181,8 +185,13 @@ namespace SushiApp.PaginaUsuario
             }
             else
             {
+                int totaliza = Int32.Parse(lblTotal.Text, NumberStyles.Currency);
+                SendEmail(sender, e);
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
                 String auxCorreo = (String)Session["UserName"];
-                Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + lblSubtotal.Text);
+                Session["TotalCompra"] = totaliza;
+                //Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + totaliza);
+                Response.Redirect("ConfirmacionCompra.aspx");
             }
         }
 

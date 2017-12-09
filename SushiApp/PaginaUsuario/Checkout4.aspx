@@ -73,34 +73,8 @@
                                     <a href="Inicio.aspx" class="btn btn-default"><i class="fa fa-chevron-left"></i>Seguir comprando</a>
                                 </div>
                                 <div class="pull-right">
-                                   
-
-                                    <%--<asp:ImageButton runat="server" 
-                                        PostBackUrl="http://www.checkbox.cl/PaymentGateway/pay.php" ImageUrl="~/PaginaUsuario/img/logo.png"/>--%>
-
-                                    <%--<form action="http://www.checkbox.cl/PaymentGateway/pay.php" method="post">--%>
-                                        <%--<input type="hidden" name="comercio_id" value="160">
-                                        <input type="hidden" name="comercio_logo" value="">
-
-                                        <input type="hidden" name="item_nombre" value="Pedido de Compra">
-                                        <input type="hidden" name="item_id" value="10101">
-                                        <input type="hidden" name="item_precio" value="1">
-
-                                        <input type="hidden" name="url_return" value="http://localhost:2205/PaginaUsuario/PagoOk.aspx">
-                                        <input type="hidden" name="url_cancel" value="http://localhost:2205/PaginaUsuario/ErrorPago.aspx">
-                                        <input type="hidden" name="url_h2h" value="">
-
-                                        <input type="hidden" name="cliente_nombres" value="FukusukeSushi">
-                                        <input type="hidden" name="cliente_rut" value="16693819-8">
-                                        <input type="hidden" name="cliente_email" value="contactofukusukesushi@gmail.com"> --%>
-
-                                        <%--<input type="submit" value="Pagar Online" onclick="pago()" />--%>
                                         <button runat="server" id="btnPagar" onserverclick="btnPagar_ServerClick" type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Pagar</button>
-                                    <%--</form>--%>
-
                                     <%--<asp:Button ID="btnPagar" runat="server" CssClass="btn btn-template-main" Text="Pagar" OnClick="btnPagar_Click" /><i class="fa fa-chevron-right"></i>--%>
-
-
                                 </div>
                             </div>
                         </div>
