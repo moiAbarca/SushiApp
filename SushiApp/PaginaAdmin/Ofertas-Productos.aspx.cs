@@ -57,21 +57,23 @@ namespace SushiApp.PaginaAdmin
         private void cargarGVOfertaProductos()
         {
             try
-            {
-                var listadtoAdministrador = ofertaProductoClient.obtenerOfertaProducto();
-                var nuevolistadtoAdministrador = (from o in listadtoAdministrador
-                                                      //orderby o.clienteId
-                                                  select new
-                                                  {
-                                                      Id = o.ofertas_producto_Id,
-                                                      Oferta = o.ofertaId,
-                                                      Producto = o.productoId,
-                                                    
-
-                                                  }).ToList();
+            {                
+                var listaDTOOfertaProductos = ofertaProductoClient.obtenerOfertaProducto();
+                var listaOferta = ofertaClient.obtenerOferta();
+                var listaProducto = productoClient.obtenerProducto();
+                var nuevolistadtoAdministrador = (from trns in listaDTOOfertaProductos
+                                                 join st in listaOferta on trns.ofertaId equals st.ofertaId
+                                                 join pt in listaProducto on trns.productoId equals pt.productoId
+                                                 select new
+                                                 {
+                                                     Id = trns.ofertas_producto_Id,
+                                                     Oferta = st.nombre,
+                                                     Producto = pt.nombreProducto
+                                                 }).ToList();
 
                 gvOfertaProducto.DataSource = nuevolistadtoAdministrador;
                 gvOfertaProducto.DataBind();
+                
             }
             catch (Exception)
             {

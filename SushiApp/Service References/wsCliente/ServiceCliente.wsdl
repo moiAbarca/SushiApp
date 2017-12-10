@@ -11,17 +11,17 @@
   <message name="agregarClienteResponse">
     <part name="parameters" element="tns:agregarClienteResponse" />
   </message>
-  <message name="modificarCliente">
-    <part name="parameters" element="tns:modificarCliente" />
-  </message>
-  <message name="modificarClienteResponse">
-    <part name="parameters" element="tns:modificarClienteResponse" />
-  </message>
   <message name="eliminarCliente">
     <part name="parameters" element="tns:eliminarCliente" />
   </message>
   <message name="eliminarClienteResponse">
     <part name="parameters" element="tns:eliminarClienteResponse" />
+  </message>
+  <message name="modificarCliente">
+    <part name="parameters" element="tns:modificarCliente" />
+  </message>
+  <message name="modificarClienteResponse">
+    <part name="parameters" element="tns:modificarClienteResponse" />
   </message>
   <message name="buscarCliente">
     <part name="parameters" element="tns:buscarCliente" />
@@ -35,18 +35,24 @@
   <message name="obtenerClienteResponse">
     <part name="parameters" element="tns:obtenerClienteResponse" />
   </message>
+  <message name="buscarClienteRut">
+    <part name="parameters" element="tns:buscarClienteRut" />
+  </message>
+  <message name="buscarClienteRutResponse">
+    <part name="parameters" element="tns:buscarClienteRutResponse" />
+  </message>
   <portType name="ServiceCliente">
     <operation name="agregarCliente">
       <input wsam:Action="http://WebService/ServiceCliente/agregarClienteRequest" message="tns:agregarCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/agregarClienteResponse" message="tns:agregarClienteResponse" />
     </operation>
-    <operation name="modificarCliente">
-      <input wsam:Action="http://WebService/ServiceCliente/modificarClienteRequest" message="tns:modificarCliente" />
-      <output wsam:Action="http://WebService/ServiceCliente/modificarClienteResponse" message="tns:modificarClienteResponse" />
-    </operation>
     <operation name="eliminarCliente">
       <input wsam:Action="http://WebService/ServiceCliente/eliminarClienteRequest" message="tns:eliminarCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
+    </operation>
+    <operation name="modificarCliente">
+      <input wsam:Action="http://WebService/ServiceCliente/modificarClienteRequest" message="tns:modificarCliente" />
+      <output wsam:Action="http://WebService/ServiceCliente/modificarClienteResponse" message="tns:modificarClienteResponse" />
     </operation>
     <operation name="buscarCliente">
       <input wsam:Action="http://WebService/ServiceCliente/buscarClienteRequest" message="tns:buscarCliente" />
@@ -55,6 +61,10 @@
     <operation name="obtenerCliente">
       <input wsam:Action="http://WebService/ServiceCliente/obtenerClienteRequest" message="tns:obtenerCliente" />
       <output wsam:Action="http://WebService/ServiceCliente/obtenerClienteResponse" message="tns:obtenerClienteResponse" />
+    </operation>
+    <operation name="buscarClienteRut">
+      <input wsam:Action="http://WebService/ServiceCliente/buscarClienteRutRequest" message="tns:buscarClienteRut" />
+      <output wsam:Action="http://WebService/ServiceCliente/buscarClienteRutResponse" message="tns:buscarClienteRutResponse" />
     </operation>
   </portType>
   <binding name="ServiceClientePortBinding" type="tns:ServiceCliente">
@@ -68,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCliente">
+    <operation name="eliminarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarCliente">
+    <operation name="modificarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +106,15 @@
       </output>
     </operation>
     <operation name="obtenerCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarClienteRut">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -4,6 +4,8 @@
   <xs:element name="agregarClienteResponse" type="tns:agregarClienteResponse" />
   <xs:element name="buscarCliente" type="tns:buscarCliente" />
   <xs:element name="buscarClienteResponse" type="tns:buscarClienteResponse" />
+  <xs:element name="buscarClienteRut" type="tns:buscarClienteRut" />
+  <xs:element name="buscarClienteRutResponse" type="tns:buscarClienteRutResponse" />
   <xs:element name="eliminarCliente" type="tns:eliminarCliente" />
   <xs:element name="eliminarClienteResponse" type="tns:eliminarClienteResponse" />
   <xs:element name="modificarCliente" type="tns:modificarCliente" />
@@ -66,5 +68,15 @@
   </xs:complexType>
   <xs:complexType name="eliminarClienteResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarClienteRut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="rut" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarClienteRutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cliente" />
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -26,6 +26,7 @@ namespace SushiApp.PaginaAdmin
                                      select new
                                      {
                                          Id = o.ofertaId,
+                                         Nombre = o.nombre,
                                          Porcentaje = o.porcentajeOferta,
                                          Inicio = o.fechaInicio,
                                          Término = o.fechaTermino
@@ -45,7 +46,7 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                if (txtId.Text.Trim().Length == 0 || txtOferta.Text.Trim().Length == 0)
+                if (txtId.Text.Trim().Length == 0 || txtOferta.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0)
                 {
                     Response.Write("<script>alert('Ningún campo puede estar vacío');</script>");
                     return;
@@ -56,6 +57,7 @@ namespace SushiApp.PaginaAdmin
                     if (id2 == 0)
                     {
                         auxOferta.ofertaId = Convert.ToInt32(this.txtId.Text);
+                        auxOferta.nombre = this.txtNombre.Text;
                         auxOferta.porcentajeOferta = Convert.ToInt32(this.txtOferta.Text);
                         auxOferta.fechaInicio = calFechaInicio.SelectedDate.ToString("yyyyMMdd");
                         auxOferta.fechaTermino = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
@@ -82,6 +84,7 @@ namespace SushiApp.PaginaAdmin
         private void limpiar()
         {
             txtId.Text = string.Empty;
+            txtNombre.Text = string.Empty;
             txtOferta.Text = string.Empty;
             calFechaInicio.SelectedDates.Clear();
             calFechaTermino.SelectedDates.Clear();
@@ -102,6 +105,7 @@ namespace SushiApp.PaginaAdmin
                     if (id2 != 0)
                     {
                         auxOferta.ofertaId = Convert.ToInt32(this.txtId.Text);
+                        auxOferta.nombre = this.txtNombre.Text;
                         auxOferta.porcentajeOferta = Convert.ToInt32(this.txtOferta.Text);
                         auxOferta.fechaInicio = calFechaInicio.SelectedDate.ToString("yyyyMMdd");
                         auxOferta.fechaTermino = calFechaTermino.SelectedDate.ToString("yyyyMMdd");
@@ -144,6 +148,7 @@ namespace SushiApp.PaginaAdmin
             try
             {
                 auxOferta = ofertaClient.buscarOferta(Convert.ToInt32(txtId.Text));
+                txtNombre.Text = auxOferta.nombre;
                 txtOferta.Text = Convert.ToString(auxOferta.porcentajeOferta);               
                 calFechaInicio.SelectedDate = Convert.ToDateTime(auxOferta.fechaInicio);
                 calFechaTermino.SelectedDate = Convert.ToDateTime(auxOferta.fechaTermino);                

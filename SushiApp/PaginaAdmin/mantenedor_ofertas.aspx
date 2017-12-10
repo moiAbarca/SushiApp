@@ -50,13 +50,19 @@
                                             &nbsp;<asp:Button CssClass="btn btn btn-primary" ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click"  />
                                             &nbsp;                                                
                                             <hr />                                         
-                                            <ul class="list-group clear-list">                                                
+                                            <ul class="list-group clear-list">     
                                                 <li class="list-group-item fist-item">
                                                     <span class="pull-right" id="prNombre">
+                                                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                                                    </span>
+                                                    Nombre:
+                                                </li><hr />
+                                                <li class="list-group-item fist-item">
+                                                    <span class="pull-right" id="prDescuento">
                                                         <asp:TextBox ID="txtOferta" runat="server"></asp:TextBox>
                                                     </span>
                                                     Descuento:
-                                                </li>
+                                                </li><hr />
                                                 <li class="list-group-item">                                                    
                                                     <span class="pull-right" id="prFechaInicio">
                                                         <asp:Calendar ID="calFechaInicio" runat="server"></asp:Calendar> 

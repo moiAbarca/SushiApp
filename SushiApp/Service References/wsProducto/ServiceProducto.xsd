@@ -3,6 +3,8 @@
   <xs:element name="agregarProducto" type="tns:agregarProducto" />
   <xs:element name="agregarProductoResponse" type="tns:agregarProductoResponse" />
   <xs:element name="buscarProducto" type="tns:buscarProducto" />
+  <xs:element name="buscarProductoNombre" type="tns:buscarProductoNombre" />
+  <xs:element name="buscarProductoNombreResponse" type="tns:buscarProductoNombreResponse" />
   <xs:element name="buscarProductoResponse" type="tns:buscarProductoResponse" />
   <xs:element name="eliminarProducto" type="tns:eliminarProducto" />
   <xs:element name="eliminarProductoResponse" type="tns:eliminarProductoResponse" />
@@ -63,5 +65,15 @@
   </xs:complexType>
   <xs:complexType name="agregarProductoResponse">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="buscarProductoNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarProductoNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:producto" />
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>

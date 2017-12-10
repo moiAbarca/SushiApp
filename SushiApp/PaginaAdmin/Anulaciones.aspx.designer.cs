@@ -10,7 +10,7 @@
 namespace SushiApp.PaginaAdmin {
     
     
-    public partial class mantenedor_ofertas1 {
+    public partial class Anulaciones {
         
         /// <summary>
         /// Control txtId.
@@ -31,15 +31,6 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// Control btnAgregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
-        
-        /// <summary>
         /// Control btnEditar.
         /// </summary>
         /// <remarks>
@@ -49,57 +40,57 @@ namespace SushiApp.PaginaAdmin {
         protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// Control btnEliminar.
+        /// Control txtEstablecimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.TextBox txtEstablecimiento;
         
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtCliente;
         
         /// <summary>
-        /// Control txtOferta.
+        /// Control txtFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOferta;
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
-        /// Control calFechaInicio.
+        /// Control txtHora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFechaInicio;
+        protected global::System.Web.UI.WebControls.TextBox txtHora;
         
         /// <summary>
-        /// Control calFechaTermino.
+        /// Control txtEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFechaTermino;
+        protected global::System.Web.UI.WebControls.TextBox txtEstado;
         
         /// <summary>
-        /// Control gvOfertas.
+        /// Control gvAnulaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOfertas;
+        protected global::System.Web.UI.WebControls.GridView gvAnulaciones;
     }
 }

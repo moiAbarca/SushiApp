@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend11/ServiceEstablecimiento?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="buscarEstablecimiento">
-    <part name="parameters" element="tns:buscarEstablecimiento" />
-  </message>
-  <message name="buscarEstablecimientoResponse">
-    <part name="parameters" element="tns:buscarEstablecimientoResponse" />
-  </message>
   <message name="obtenerEstablecimiento">
     <part name="parameters" element="tns:obtenerEstablecimiento" />
   </message>
@@ -23,11 +17,11 @@
   <message name="agregarEstablecimientoResponse">
     <part name="parameters" element="tns:agregarEstablecimientoResponse" />
   </message>
-  <message name="modificarEstablecimiento">
-    <part name="parameters" element="tns:modificarEstablecimiento" />
+  <message name="buscarEstablecimiento">
+    <part name="parameters" element="tns:buscarEstablecimiento" />
   </message>
-  <message name="modificarEstablecimientoResponse">
-    <part name="parameters" element="tns:modificarEstablecimientoResponse" />
+  <message name="buscarEstablecimientoResponse">
+    <part name="parameters" element="tns:buscarEstablecimientoResponse" />
   </message>
   <message name="eliminarEstablecimiento">
     <part name="parameters" element="tns:eliminarEstablecimiento" />
@@ -35,11 +29,13 @@
   <message name="eliminarEstablecimientoResponse">
     <part name="parameters" element="tns:eliminarEstablecimientoResponse" />
   </message>
+  <message name="modificarEstablecimiento">
+    <part name="parameters" element="tns:modificarEstablecimiento" />
+  </message>
+  <message name="modificarEstablecimientoResponse">
+    <part name="parameters" element="tns:modificarEstablecimientoResponse" />
+  </message>
   <portType name="ServiceEstablecimiento">
-    <operation name="buscarEstablecimiento">
-      <input wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest" message="tns:buscarEstablecimiento" />
-      <output wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse" message="tns:buscarEstablecimientoResponse" />
-    </operation>
     <operation name="obtenerEstablecimiento">
       <input wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest" message="tns:obtenerEstablecimiento" />
       <output wsam:Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse" message="tns:obtenerEstablecimientoResponse" />
@@ -48,26 +44,21 @@
       <input wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest" message="tns:agregarEstablecimiento" />
       <output wsam:Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse" message="tns:agregarEstablecimientoResponse" />
     </operation>
-    <operation name="modificarEstablecimiento">
-      <input wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest" message="tns:modificarEstablecimiento" />
-      <output wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoResponse" message="tns:modificarEstablecimientoResponse" />
+    <operation name="buscarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest" message="tns:buscarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse" message="tns:buscarEstablecimientoResponse" />
     </operation>
     <operation name="eliminarEstablecimiento">
       <input wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest" message="tns:eliminarEstablecimiento" />
       <output wsam:Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse" message="tns:eliminarEstablecimientoResponse" />
     </operation>
+    <operation name="modificarEstablecimiento">
+      <input wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest" message="tns:modificarEstablecimiento" />
+      <output wsam:Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoResponse" message="tns:modificarEstablecimientoResponse" />
+    </operation>
   </portType>
   <binding name="ServiceEstablecimientoPortBinding" type="tns:ServiceEstablecimiento">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="buscarEstablecimiento">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="obtenerEstablecimiento">
       <soap:operation soapAction="" />
       <input>
@@ -86,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarEstablecimiento">
+    <operation name="buscarEstablecimiento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +87,15 @@
       </output>
     </operation>
     <operation name="eliminarEstablecimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEstablecimiento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -91,6 +91,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="PaginaAdmin\Anulaciones.aspx" />
+    <Content Include="Service References\wsCliente\SushiApp.wsCliente.buscarClienteRutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\wsEstablecimiento\configuration91.svcinfo" />
     <None Include="Service References\wsEstablecimiento\configuration.svcinfo" />
     <None Include="Service References\wsEstablecimiento\Reference.svcmap">
@@ -149,6 +153,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\wsProducto\SushiApp.wsProducto.buscarProductoNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\wsRegistroPago\configuration91.svcinfo" />
     <None Include="Service References\wsRegistroPago\configuration.svcinfo" />
     <None Include="Service References\wsRegistroPago\Reference.svcmap">
@@ -595,9 +602,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.buscarLoginResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.buscarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.eliminarUsuarioResponse.datasource">
@@ -1237,6 +1241,13 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ProductoCollection.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="PaginaAdmin\Anulaciones.aspx.cs">
+      <DependentUpon>Anulaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Anulaciones.aspx.designer.cs">
+      <DependentUpon>Anulaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaAdmin\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
