@@ -100,10 +100,10 @@ namespace SushiApp.PaginaAdmin
                     {
 
                         DateTime dtHora = Convert.ToDateTime(txtHora.Text);
-                        string hora = dtHora.ToString("HH24:MI");
+                        string hora = dtHora.ToString("HH:MM");
 
                         DateTime dtFecha = Convert.ToDateTime(txtFecha.Text);
-                        string fecha = dtHora.ToString("yyyymmdd");
+                        string fecha = dtHora.ToString("yyyyMMdd");
 
                         auxPedidoCabecera.pedidoCabeceraId = Convert.ToInt32(this.txtId.Text);
                         auxPedidoCabecera.establecimientoId = Convert.ToInt32(this.txtEstablecimiento.Text);
