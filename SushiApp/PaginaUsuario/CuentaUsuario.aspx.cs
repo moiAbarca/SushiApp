@@ -29,6 +29,7 @@ namespace SushiApp.PaginaUsuario
                 ocultarDivLogin();
                 Label us = (Label)Master.FindControl("lblUsuario");
                 us.Text = (String)Session["UserName"];
+                txtEmail.Text = (String)Session["UserName"];
             }
         }
 
@@ -149,6 +150,11 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorFecha()", true);
                 return;
             }
+        }
+
+        protected void btnGuardaDatos_ServerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

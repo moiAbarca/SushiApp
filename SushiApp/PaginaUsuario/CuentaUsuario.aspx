@@ -34,13 +34,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblNewPassword" runat="server" Text="Nuevo Password"></asp:Label>
-                                    <asp:TextBox ID="txtNewPassword" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                    <asp:TextBox ID="txtNewPassword" runat="server" CssClass="form-control" MaxLength="20" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblNewPassword2" runat="server" Text="Reingrese Nuevo Password"></asp:Label>
-                                    <asp:TextBox ID="txtNewPassword2" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                    <asp:TextBox ID="txtNewPassword2" runat="server" CssClass="form-control" MaxLength="20" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -62,13 +62,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="30" placeholder="Ingrese su nombre..."></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
-                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="30" placeholder="Ingrese su apellido..."></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -77,61 +77,62 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <asp:Label ID="lblRut" runat="server" Text="Apellido"></asp:Label>
-                                    <asp:TextBox ID="txtRut" runat="server" CssClass="form-control" MaxLength="11"></asp:TextBox>
+                                    <asp:Label ID="lblRut" runat="server" Text="Rut"></asp:Label>
+                                    <asp:TextBox ID="txtRut" runat="server" CssClass="form-control" MaxLength="11" placeholder="Ingrese su Rut..."></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento"></asp:Label>
                                     <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" MaxLength="10" TextMode="Date"></asp:TextBox>
-                                    
-                        
                                 </div>
                             </div>
                         </div>
                         <!-- /.row -->
 
                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Label ID="lblDireccion" runat="server" Text="Dirección"></asp:Label>
+                                    <asp:TextBox ID="txtDireccion" CssClass="form-control" placeholder="Ingrese su dirección..." runat="server" MaxLength="50"></asp:TextBox>
+                                </div>
+                            </div>
+
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
-                                    <label for="city">Company</label>
-                                    <input type="text" class="form-control" id="city">
+                                    <asp:Label ID="lblComuna" runat="server" Text="Comuna"></asp:Label>
+                                    <asp:DropDownList ID="ddlComuna" CssClass="form-control" runat="server">
+                                        <asp:ListItem>Maipú</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
-                                    <label for="zip">ZIP</label>
-                                    <input type="text" class="form-control" id="zip">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="state">State</label>
-                                    <select class="form-control" id="state"></select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="country">Country</label>
-                                    <select class="form-control" id="country"></select>
+                                    <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
+                                    <asp:DropDownList ID="ddlSexo" CssClass="form-control" runat="server">
+                                        <asp:ListItem>Seleccione...</asp:ListItem>
+                                        <asp:ListItem>Masculino</asp:ListItem>
+                                        <asp:ListItem>Femenino</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="phone">Telephone</label>
-                                    <input type="text" class="form-control" id="phone">
+                                    <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
+                                    <asp:TextBox ID="txtTelefono" CssClass="form-control" runat="server" MaxLength="9" placeholder="Ingrese su teléfono"></asp:TextBox>
                                 </div>
                             </div>
+
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="email_account">Email</label>
-                                    <input type="text" class="form-control" id="email_account">
+                                    <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+                                    <%--<span class="input-group-addon" id="basic-addon1">@</span>--%> <%--aria-describedby="basic-addon1"--%>
+                                    <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" ReadOnly="True" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i>Save changes</button>
+                                <button type="submit" class="btn btn-template-main" id="btnGuardaDatos" runat="server" onserverclick="btnGuardaDatos_ServerClick"><i class="fa fa-save"></i>Guardar Cambios</button>
 
                             </div>
                         </div>

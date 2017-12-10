@@ -79,8 +79,6 @@ namespace SushiApp.PaginaUsuario
             
         }
 
-
-
         protected void btnPagar_Click(object sender, EventArgs e)
         {
             carrito = (DataTable)Session["Pedido"];
@@ -133,7 +131,7 @@ namespace SushiApp.PaginaUsuario
 
             }
 
-            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado una compra por la cantidad de : $ " + lblSubtotal.Text + "\r\n " + des +  "\n" +  "Muchas gracias por su compra";
+            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado una compra por la cantidad de : " + lblSubtotal.Text + "\r\n " + "De los siguientes productos en nuestra tienda online Fukusuke Sushi Delivery" +"\r\n " + des +  "\n" +  "Muchas gracias por su compra" + "\r\n " + "Equipo Fukusuke Sushi";
 
             correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;
@@ -147,7 +145,7 @@ namespace SushiApp.PaginaUsuario
             try
             {
                 smtp.Send(correo);
-                this.Response.Write("<script language='JavaScript'>window.alert('Venta Enviada Correctamente')</script>");
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
             }
             catch (Exception ex)
             {
@@ -188,7 +186,6 @@ namespace SushiApp.PaginaUsuario
                 int totaliza = Int32.Parse(lblTotal.Text, NumberStyles.Currency);
                 SendEmail(sender, e);
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
-                String auxCorreo = (String)Session["UserName"];
                 Session["TotalCompra"] = totaliza;
                 //Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + totaliza);
                 Response.Redirect("ConfirmacionCompra.aspx");
