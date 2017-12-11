@@ -5,29 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend11/ServicePedidoDetalle?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="obtenerPedidoDetalle">
-    <part name="parameters" element="tns:obtenerPedidoDetalle" />
-  </message>
-  <message name="obtenerPedidoDetalleResponse">
-    <part name="parameters" element="tns:obtenerPedidoDetalleResponse" />
-  </message>
   <message name="buscarPedidoDetalle">
     <part name="parameters" element="tns:buscarPedidoDetalle" />
   </message>
   <message name="buscarPedidoDetalleResponse">
     <part name="parameters" element="tns:buscarPedidoDetalleResponse" />
-  </message>
-  <message name="eliminarPedidoDetalle">
-    <part name="parameters" element="tns:eliminarPedidoDetalle" />
-  </message>
-  <message name="eliminarPedidoDetalleResponse">
-    <part name="parameters" element="tns:eliminarPedidoDetalleResponse" />
-  </message>
-  <message name="agregarPedidoDetalle">
-    <part name="parameters" element="tns:agregarPedidoDetalle" />
-  </message>
-  <message name="agregarPedidoDetalleResponse">
-    <part name="parameters" element="tns:agregarPedidoDetalleResponse" />
   </message>
   <message name="modificarPedidoDetalle">
     <part name="parameters" element="tns:modificarPedidoDetalle" />
@@ -35,39 +17,48 @@
   <message name="modificarPedidoDetalleResponse">
     <part name="parameters" element="tns:modificarPedidoDetalleResponse" />
   </message>
+  <message name="agregarPedidoDetalle">
+    <part name="parameters" element="tns:agregarPedidoDetalle" />
+  </message>
+  <message name="agregarPedidoDetalleResponse">
+    <part name="parameters" element="tns:agregarPedidoDetalleResponse" />
+  </message>
+  <message name="obtenerPedidoDetalle">
+    <part name="parameters" element="tns:obtenerPedidoDetalle" />
+  </message>
+  <message name="obtenerPedidoDetalleResponse">
+    <part name="parameters" element="tns:obtenerPedidoDetalleResponse" />
+  </message>
+  <message name="eliminarPedidoDetalle">
+    <part name="parameters" element="tns:eliminarPedidoDetalle" />
+  </message>
+  <message name="eliminarPedidoDetalleResponse">
+    <part name="parameters" element="tns:eliminarPedidoDetalleResponse" />
+  </message>
   <portType name="ServicePedidoDetalle">
-    <operation name="obtenerPedidoDetalle">
-      <input wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest" message="tns:obtenerPedidoDetalle" />
-      <output wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse" message="tns:obtenerPedidoDetalleResponse" />
-    </operation>
     <operation name="buscarPedidoDetalle">
       <input wsam:Action="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleRequest" message="tns:buscarPedidoDetalle" />
       <output wsam:Action="http://WebService/ServicePedidoDetalle/buscarPedidoDetalleResponse" message="tns:buscarPedidoDetalleResponse" />
-    </operation>
-    <operation name="eliminarPedidoDetalle">
-      <input wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest" message="tns:eliminarPedidoDetalle" />
-      <output wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse" message="tns:eliminarPedidoDetalleResponse" />
-    </operation>
-    <operation name="agregarPedidoDetalle">
-      <input wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleRequest" message="tns:agregarPedidoDetalle" />
-      <output wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleResponse" message="tns:agregarPedidoDetalleResponse" />
     </operation>
     <operation name="modificarPedidoDetalle">
       <input wsam:Action="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleRequest" message="tns:modificarPedidoDetalle" />
       <output wsam:Action="http://WebService/ServicePedidoDetalle/modificarPedidoDetalleResponse" message="tns:modificarPedidoDetalleResponse" />
     </operation>
+    <operation name="agregarPedidoDetalle">
+      <input wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleRequest" message="tns:agregarPedidoDetalle" />
+      <output wsam:Action="http://WebService/ServicePedidoDetalle/agregarPedidoDetalleResponse" message="tns:agregarPedidoDetalleResponse" />
+    </operation>
+    <operation name="obtenerPedidoDetalle">
+      <input wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleRequest" message="tns:obtenerPedidoDetalle" />
+      <output wsam:Action="http://WebService/ServicePedidoDetalle/obtenerPedidoDetalleResponse" message="tns:obtenerPedidoDetalleResponse" />
+    </operation>
+    <operation name="eliminarPedidoDetalle">
+      <input wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleRequest" message="tns:eliminarPedidoDetalle" />
+      <output wsam:Action="http://WebService/ServicePedidoDetalle/eliminarPedidoDetalleResponse" message="tns:eliminarPedidoDetalleResponse" />
+    </operation>
   </portType>
   <binding name="ServicePedidoDetallePortBinding" type="tns:ServicePedidoDetalle">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="obtenerPedidoDetalle">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="buscarPedidoDetalle">
       <soap:operation soapAction="" />
       <input>
@@ -77,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPedidoDetalle">
+    <operation name="modificarPedidoDetalle">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPedidoDetalle">
+    <operation name="obtenerPedidoDetalle">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPedidoDetalle">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

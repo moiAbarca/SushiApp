@@ -15,15 +15,6 @@ namespace SushiApp.wsEstablecimiento {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsEstablecimiento.ServiceEstablecimiento")]
     public interface ServiceEstablecimiento {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse obtenerEstablecimiento(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request);
-        
         // CODEGEN: El parámetro 'establecimiento' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -31,15 +22,6 @@ namespace SushiApp.wsEstablecimiento {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/agregarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/agregarEstablecimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.agregarEstablecimientoResponse> agregarEstablecimientoAsync(SushiApp.wsEstablecimiento.agregarEstablecimientoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SushiApp.wsEstablecimiento.buscarEstablecimientoResponse buscarEstablecimiento(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> buscarEstablecimientoAsync(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request);
         
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/eliminarEstablecimientoResponse")]
@@ -56,6 +38,24 @@ namespace SushiApp.wsEstablecimiento {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/modificarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/modificarEstablecimientoResponse")]
         System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.modificarEstablecimientoResponse> modificarEstablecimientoAsync(SushiApp.wsEstablecimiento.modificarEstablecimientoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse obtenerEstablecimiento(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/obtenerEstablecimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SushiApp.wsEstablecimiento.buscarEstablecimientoResponse buscarEstablecimiento(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServiceEstablecimiento/buscarEstablecimientoRequest", ReplyAction="http://WebService/ServiceEstablecimiento/buscarEstablecimientoResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> buscarEstablecimientoAsync(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request);
     }
     
     /// <remarks/>
@@ -135,34 +135,6 @@ namespace SushiApp.wsEstablecimiento {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerEstablecimientoRequest {
-        
-        public obtenerEstablecimientoRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class obtenerEstablecimientoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsEstablecimiento.establecimiento[] @return;
-        
-        public obtenerEstablecimientoResponse() {
-        }
-        
-        public obtenerEstablecimientoResponse(SushiApp.wsEstablecimiento.establecimiento[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="agregarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class agregarEstablecimientoRequest {
         
@@ -185,42 +157,6 @@ namespace SushiApp.wsEstablecimiento {
     public partial class agregarEstablecimientoResponse {
         
         public agregarEstablecimientoResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarEstablecimientoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public buscarEstablecimientoRequest() {
-        }
-        
-        public buscarEstablecimientoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class buscarEstablecimientoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsEstablecimiento.establecimiento @return;
-        
-        public buscarEstablecimientoResponse() {
-        }
-        
-        public buscarEstablecimientoResponse(SushiApp.wsEstablecimiento.establecimiento @return) {
-            this.@return = @return;
         }
     }
     
@@ -280,6 +216,70 @@ namespace SushiApp.wsEstablecimiento {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerEstablecimientoRequest {
+        
+        public obtenerEstablecimientoRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class obtenerEstablecimientoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsEstablecimiento.establecimiento[] @return;
+        
+        public obtenerEstablecimientoResponse() {
+        }
+        
+        public obtenerEstablecimientoResponse(SushiApp.wsEstablecimiento.establecimiento[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarEstablecimiento", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarEstablecimientoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public buscarEstablecimientoRequest() {
+        }
+        
+        public buscarEstablecimientoRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarEstablecimientoResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class buscarEstablecimientoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsEstablecimiento.establecimiento @return;
+        
+        public buscarEstablecimientoResponse() {
+        }
+        
+        public buscarEstablecimientoResponse(SushiApp.wsEstablecimiento.establecimiento @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceEstablecimientoChannel : SushiApp.wsEstablecimiento.ServiceEstablecimiento, System.ServiceModel.IClientChannel {
     }
@@ -308,27 +308,6 @@ namespace SushiApp.wsEstablecimiento {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.obtenerEstablecimiento(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request) {
-            return base.Channel.obtenerEstablecimiento(request);
-        }
-        
-        public SushiApp.wsEstablecimiento.establecimiento[] obtenerEstablecimiento() {
-            SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest();
-            SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).obtenerEstablecimiento(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.obtenerEstablecimientoAsync(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request) {
-            return base.Channel.obtenerEstablecimientoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync() {
-            SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest();
-            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).obtenerEstablecimientoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SushiApp.wsEstablecimiento.agregarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.agregarEstablecimiento(SushiApp.wsEstablecimiento.agregarEstablecimientoRequest request) {
             return base.Channel.agregarEstablecimiento(request);
         }
@@ -348,29 +327,6 @@ namespace SushiApp.wsEstablecimiento {
             SushiApp.wsEstablecimiento.agregarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.agregarEstablecimientoRequest();
             inValue.establecimiento = establecimiento;
             return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).agregarEstablecimientoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsEstablecimiento.buscarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.buscarEstablecimiento(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request) {
-            return base.Channel.buscarEstablecimiento(request);
-        }
-        
-        public SushiApp.wsEstablecimiento.establecimiento buscarEstablecimiento(int id) {
-            SushiApp.wsEstablecimiento.buscarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.buscarEstablecimientoRequest();
-            inValue.id = id;
-            SushiApp.wsEstablecimiento.buscarEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).buscarEstablecimiento(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.buscarEstablecimientoAsync(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request) {
-            return base.Channel.buscarEstablecimientoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> buscarEstablecimientoAsync(int id) {
-            SushiApp.wsEstablecimiento.buscarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.buscarEstablecimientoRequest();
-            inValue.id = id;
-            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).buscarEstablecimientoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -415,6 +371,50 @@ namespace SushiApp.wsEstablecimiento {
             SushiApp.wsEstablecimiento.modificarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.modificarEstablecimientoRequest();
             inValue.establecimiento = establecimiento;
             return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).modificarEstablecimientoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.obtenerEstablecimiento(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request) {
+            return base.Channel.obtenerEstablecimiento(request);
+        }
+        
+        public SushiApp.wsEstablecimiento.establecimiento[] obtenerEstablecimiento() {
+            SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest();
+            SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).obtenerEstablecimiento(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.obtenerEstablecimientoAsync(SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest request) {
+            return base.Channel.obtenerEstablecimientoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse> obtenerEstablecimientoAsync() {
+            SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.obtenerEstablecimientoRequest();
+            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).obtenerEstablecimientoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsEstablecimiento.buscarEstablecimientoResponse SushiApp.wsEstablecimiento.ServiceEstablecimiento.buscarEstablecimiento(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request) {
+            return base.Channel.buscarEstablecimiento(request);
+        }
+        
+        public SushiApp.wsEstablecimiento.establecimiento buscarEstablecimiento(int id) {
+            SushiApp.wsEstablecimiento.buscarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.buscarEstablecimientoRequest();
+            inValue.id = id;
+            SushiApp.wsEstablecimiento.buscarEstablecimientoResponse retVal = ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).buscarEstablecimiento(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> SushiApp.wsEstablecimiento.ServiceEstablecimiento.buscarEstablecimientoAsync(SushiApp.wsEstablecimiento.buscarEstablecimientoRequest request) {
+            return base.Channel.buscarEstablecimientoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsEstablecimiento.buscarEstablecimientoResponse> buscarEstablecimientoAsync(int id) {
+            SushiApp.wsEstablecimiento.buscarEstablecimientoRequest inValue = new SushiApp.wsEstablecimiento.buscarEstablecimientoRequest();
+            inValue.id = id;
+            return ((SushiApp.wsEstablecimiento.ServiceEstablecimiento)(this)).buscarEstablecimientoAsync(inValue);
         }
     }
 }

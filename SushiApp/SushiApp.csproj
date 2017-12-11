@@ -48,6 +48,9 @@
     <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -92,6 +95,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="PaginaAdmin\Anulaciones.aspx" />
+    <Content Include="PaginaDespacho\ordenDespacho.aspx" />
     <Content Include="Service References\wsCliente\SushiApp.wsCliente.buscarClienteRutResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1317,6 +1321,13 @@
     </Compile>
     <Compile Include="PaginaAdmin\Ofertas-Productos.aspx.designer.cs">
       <DependentUpon>Ofertas-Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaDespacho\ordenDespacho.aspx.cs">
+      <DependentUpon>ordenDespacho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaDespacho\ordenDespacho.aspx.designer.cs">
+      <DependentUpon>ordenDespacho.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\Bebidas.aspx.cs">
       <DependentUpon>Bebidas.aspx</DependentUpon>

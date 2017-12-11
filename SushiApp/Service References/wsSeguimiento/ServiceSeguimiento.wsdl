@@ -17,12 +17,6 @@
   <message name="modificarSeguimientoResponse">
     <part name="parameters" element="tns:modificarSeguimientoResponse" />
   </message>
-  <message name="eliminarSeguimiento">
-    <part name="parameters" element="tns:eliminarSeguimiento" />
-  </message>
-  <message name="eliminarSeguimientoResponse">
-    <part name="parameters" element="tns:eliminarSeguimientoResponse" />
-  </message>
   <message name="obtenerSeguimiento">
     <part name="parameters" element="tns:obtenerSeguimiento" />
   </message>
@@ -35,6 +29,12 @@
   <message name="buscarSeguimientoResponse">
     <part name="parameters" element="tns:buscarSeguimientoResponse" />
   </message>
+  <message name="eliminarSeguimiento">
+    <part name="parameters" element="tns:eliminarSeguimiento" />
+  </message>
+  <message name="eliminarSeguimientoResponse">
+    <part name="parameters" element="tns:eliminarSeguimientoResponse" />
+  </message>
   <portType name="ServiceSeguimiento">
     <operation name="agregarSeguimiento">
       <input wsam:Action="http://WebService/ServiceSeguimiento/agregarSeguimientoRequest" message="tns:agregarSeguimiento" />
@@ -44,10 +44,6 @@
       <input wsam:Action="http://WebService/ServiceSeguimiento/modificarSeguimientoRequest" message="tns:modificarSeguimiento" />
       <output wsam:Action="http://WebService/ServiceSeguimiento/modificarSeguimientoResponse" message="tns:modificarSeguimientoResponse" />
     </operation>
-    <operation name="eliminarSeguimiento">
-      <input wsam:Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest" message="tns:eliminarSeguimiento" />
-      <output wsam:Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse" message="tns:eliminarSeguimientoResponse" />
-    </operation>
     <operation name="obtenerSeguimiento">
       <input wsam:Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoRequest" message="tns:obtenerSeguimiento" />
       <output wsam:Action="http://WebService/ServiceSeguimiento/obtenerSeguimientoResponse" message="tns:obtenerSeguimientoResponse" />
@@ -55,6 +51,10 @@
     <operation name="buscarSeguimiento">
       <input wsam:Action="http://WebService/ServiceSeguimiento/buscarSeguimientoRequest" message="tns:buscarSeguimiento" />
       <output wsam:Action="http://WebService/ServiceSeguimiento/buscarSeguimientoResponse" message="tns:buscarSeguimientoResponse" />
+    </operation>
+    <operation name="eliminarSeguimiento">
+      <input wsam:Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoRequest" message="tns:eliminarSeguimiento" />
+      <output wsam:Action="http://WebService/ServiceSeguimiento/eliminarSeguimientoResponse" message="tns:eliminarSeguimientoResponse" />
     </operation>
   </portType>
   <binding name="ServiceSeguimientoPortBinding" type="tns:ServiceSeguimiento">
@@ -77,15 +77,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarSeguimiento">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="obtenerSeguimiento">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +87,15 @@
       </output>
     </operation>
     <operation name="buscarSeguimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarSeguimiento">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

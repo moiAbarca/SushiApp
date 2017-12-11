@@ -10,9 +10,12 @@
   <xs:element name="modificarTipoPagoResponse" type="tns:modificarTipoPagoResponse" />
   <xs:element name="obtenerTipoPago" type="tns:obtenerTipoPago" />
   <xs:element name="obtenerTipoPagoResponse" type="tns:obtenerTipoPagoResponse" />
-  <xs:complexType name="agregarTipoPago">
+  <xs:complexType name="obtenerTipoPago">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerTipoPagoResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="tipoPago" type="tns:tipoPago" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoPago" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tipoPago">
@@ -21,16 +24,13 @@
       <xs:element name="tipoPagoId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="agregarTipoPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoPago" type="tns:tipoPago" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="agregarTipoPagoResponse">
     <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="obtenerTipoPago">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="obtenerTipoPagoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoPago" />
-    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarTipoPago">
     <xs:sequence>

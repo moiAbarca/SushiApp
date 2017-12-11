@@ -15,14 +15,6 @@ namespace SushiApp.wsPedidoCabecera {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://WebService/", ConfigurationName="wsPedidoCabecera.ServicePedidoCabecera")]
     public interface ServicePedidoCabecera {
         
-        // CODEGEN: El parámetro 'pedidoCabecera' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse agregarPedidoCabecera(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraResponse")]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request);
-        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/obtenerPedidoCabeceraResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -48,6 +40,14 @@ namespace SushiApp.wsPedidoCabecera {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/buscarPedidoCabeceraResponse")]
         System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.buscarPedidoCabeceraResponse> buscarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.buscarPedidoCabeceraRequest request);
+        
+        // CODEGEN: El parámetro 'pedidoCabecera' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse agregarPedidoCabecera(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/agregarPedidoCabeceraResponse")]
+        System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request);
         
         // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraRequest", ReplyAction="http://WebService/ServicePedidoCabecera/eliminarPedidoCabeceraResponse")]
@@ -163,34 +163,6 @@ namespace SushiApp.wsPedidoCabecera {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPedidoCabecera", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarPedidoCabeceraRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera;
-        
-        public agregarPedidoCabeceraRequest() {
-        }
-        
-        public agregarPedidoCabeceraRequest(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
-            this.pedidoCabecera = pedidoCabecera;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPedidoCabeceraResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
-    public partial class agregarPedidoCabeceraResponse {
-        
-        public agregarPedidoCabeceraResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPedidoCabecera", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class obtenerPedidoCabeceraRequest {
         
@@ -283,6 +255,34 @@ namespace SushiApp.wsPedidoCabecera {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPedidoCabecera", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarPedidoCabeceraRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://WebService/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera;
+        
+        public agregarPedidoCabeceraRequest() {
+        }
+        
+        public agregarPedidoCabeceraRequest(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
+            this.pedidoCabecera = pedidoCabecera;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarPedidoCabeceraResponse", WrapperNamespace="http://WebService/", IsWrapped=true)]
+    public partial class agregarPedidoCabeceraResponse {
+        
+        public agregarPedidoCabeceraResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoCabecera", WrapperNamespace="http://WebService/", IsWrapped=true)]
     public partial class eliminarPedidoCabeceraRequest {
         
@@ -333,28 +333,6 @@ namespace SushiApp.wsPedidoCabecera {
         
         public ServicePedidoCabeceraClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse SushiApp.wsPedidoCabecera.ServicePedidoCabecera.agregarPedidoCabecera(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request) {
-            return base.Channel.agregarPedidoCabecera(request);
-        }
-        
-        public void agregarPedidoCabecera(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
-            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest inValue = new SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest();
-            inValue.pedidoCabecera = pedidoCabecera;
-            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse retVal = ((SushiApp.wsPedidoCabecera.ServicePedidoCabecera)(this)).agregarPedidoCabecera(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> SushiApp.wsPedidoCabecera.ServicePedidoCabecera.agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request) {
-            return base.Channel.agregarPedidoCabeceraAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
-            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest inValue = new SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest();
-            inValue.pedidoCabecera = pedidoCabecera;
-            return ((SushiApp.wsPedidoCabecera.ServicePedidoCabecera)(this)).agregarPedidoCabeceraAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -421,6 +399,28 @@ namespace SushiApp.wsPedidoCabecera {
             SushiApp.wsPedidoCabecera.buscarPedidoCabeceraRequest inValue = new SushiApp.wsPedidoCabecera.buscarPedidoCabeceraRequest();
             inValue.id = id;
             return ((SushiApp.wsPedidoCabecera.ServicePedidoCabecera)(this)).buscarPedidoCabeceraAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse SushiApp.wsPedidoCabecera.ServicePedidoCabecera.agregarPedidoCabecera(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request) {
+            return base.Channel.agregarPedidoCabecera(request);
+        }
+        
+        public void agregarPedidoCabecera(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
+            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest inValue = new SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest();
+            inValue.pedidoCabecera = pedidoCabecera;
+            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse retVal = ((SushiApp.wsPedidoCabecera.ServicePedidoCabecera)(this)).agregarPedidoCabecera(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> SushiApp.wsPedidoCabecera.ServicePedidoCabecera.agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest request) {
+            return base.Channel.agregarPedidoCabeceraAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse> agregarPedidoCabeceraAsync(SushiApp.wsPedidoCabecera.pedidoCabecera pedidoCabecera) {
+            SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest inValue = new SushiApp.wsPedidoCabecera.agregarPedidoCabeceraRequest();
+            inValue.pedidoCabecera = pedidoCabecera;
+            return ((SushiApp.wsPedidoCabecera.ServicePedidoCabecera)(this)).agregarPedidoCabeceraAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

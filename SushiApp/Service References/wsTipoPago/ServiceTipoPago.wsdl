@@ -5,17 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8084/SushiBackend11/ServiceTipoPago?xsd=1" namespace="http://WebService/" />
     </xsd:schema>
   </types>
-  <message name="agregarTipoPago">
-    <part name="parameters" element="tns:agregarTipoPago" />
+  <message name="modificarTipoPago">
+    <part name="parameters" element="tns:modificarTipoPago" />
   </message>
-  <message name="agregarTipoPagoResponse">
-    <part name="parameters" element="tns:agregarTipoPagoResponse" />
-  </message>
-  <message name="obtenerTipoPago">
-    <part name="parameters" element="tns:obtenerTipoPago" />
-  </message>
-  <message name="obtenerTipoPagoResponse">
-    <part name="parameters" element="tns:obtenerTipoPagoResponse" />
+  <message name="modificarTipoPagoResponse">
+    <part name="parameters" element="tns:modificarTipoPagoResponse" />
   </message>
   <message name="eliminarTipoPago">
     <part name="parameters" element="tns:eliminarTipoPago" />
@@ -29,20 +23,22 @@
   <message name="buscarTipoPagoResponse">
     <part name="parameters" element="tns:buscarTipoPagoResponse" />
   </message>
-  <message name="modificarTipoPago">
-    <part name="parameters" element="tns:modificarTipoPago" />
+  <message name="obtenerTipoPago">
+    <part name="parameters" element="tns:obtenerTipoPago" />
   </message>
-  <message name="modificarTipoPagoResponse">
-    <part name="parameters" element="tns:modificarTipoPagoResponse" />
+  <message name="obtenerTipoPagoResponse">
+    <part name="parameters" element="tns:obtenerTipoPagoResponse" />
+  </message>
+  <message name="agregarTipoPago">
+    <part name="parameters" element="tns:agregarTipoPago" />
+  </message>
+  <message name="agregarTipoPagoResponse">
+    <part name="parameters" element="tns:agregarTipoPagoResponse" />
   </message>
   <portType name="ServiceTipoPago">
-    <operation name="agregarTipoPago">
-      <input wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoRequest" message="tns:agregarTipoPago" />
-      <output wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoResponse" message="tns:agregarTipoPagoResponse" />
-    </operation>
-    <operation name="obtenerTipoPago">
-      <input wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest" message="tns:obtenerTipoPago" />
-      <output wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse" message="tns:obtenerTipoPagoResponse" />
+    <operation name="modificarTipoPago">
+      <input wsam:Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest" message="tns:modificarTipoPago" />
+      <output wsam:Action="http://WebService/ServiceTipoPago/modificarTipoPagoResponse" message="tns:modificarTipoPagoResponse" />
     </operation>
     <operation name="eliminarTipoPago">
       <input wsam:Action="http://WebService/ServiceTipoPago/eliminarTipoPagoRequest" message="tns:eliminarTipoPago" />
@@ -52,23 +48,18 @@
       <input wsam:Action="http://WebService/ServiceTipoPago/buscarTipoPagoRequest" message="tns:buscarTipoPago" />
       <output wsam:Action="http://WebService/ServiceTipoPago/buscarTipoPagoResponse" message="tns:buscarTipoPagoResponse" />
     </operation>
-    <operation name="modificarTipoPago">
-      <input wsam:Action="http://WebService/ServiceTipoPago/modificarTipoPagoRequest" message="tns:modificarTipoPago" />
-      <output wsam:Action="http://WebService/ServiceTipoPago/modificarTipoPagoResponse" message="tns:modificarTipoPagoResponse" />
+    <operation name="obtenerTipoPago">
+      <input wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoRequest" message="tns:obtenerTipoPago" />
+      <output wsam:Action="http://WebService/ServiceTipoPago/obtenerTipoPagoResponse" message="tns:obtenerTipoPagoResponse" />
+    </operation>
+    <operation name="agregarTipoPago">
+      <input wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoRequest" message="tns:agregarTipoPago" />
+      <output wsam:Action="http://WebService/ServiceTipoPago/agregarTipoPagoResponse" message="tns:agregarTipoPagoResponse" />
     </operation>
   </portType>
   <binding name="ServiceTipoPagoPortBinding" type="tns:ServiceTipoPago">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="agregarTipoPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerTipoPago">
+    <operation name="modificarTipoPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarTipoPago">
+    <operation name="obtenerTipoPago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarTipoPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
