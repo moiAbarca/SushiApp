@@ -95,7 +95,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="PaginaAdmin\Anulaciones.aspx" />
-    <Content Include="PaginaDespacho\ordenDespacho.aspx" />
+    <Content Include="PaginaAdmin\Despacho.aspx" />
+    <Content Include="PaginaAdmin\ReporteVentas.aspx" />
     <Content Include="Service References\wsCliente\SushiApp.wsCliente.buscarClienteRutResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1252,6 +1253,13 @@
     <Compile Include="PaginaAdmin\Anulaciones.aspx.designer.cs">
       <DependentUpon>Anulaciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaAdmin\Despacho.aspx.cs">
+      <DependentUpon>Despacho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Despacho.aspx.designer.cs">
+      <DependentUpon>Despacho.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaAdmin\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1322,12 +1330,12 @@
     <Compile Include="PaginaAdmin\Ofertas-Productos.aspx.designer.cs">
       <DependentUpon>Ofertas-Productos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PaginaDespacho\ordenDespacho.aspx.cs">
-      <DependentUpon>ordenDespacho.aspx</DependentUpon>
+    <Compile Include="PaginaAdmin\ReporteVentas.aspx.cs">
+      <DependentUpon>ReporteVentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PaginaDespacho\ordenDespacho.aspx.designer.cs">
-      <DependentUpon>ordenDespacho.aspx</DependentUpon>
+    <Compile Include="PaginaAdmin\ReporteVentas.aspx.designer.cs">
+      <DependentUpon>ReporteVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaUsuario\Bebidas.aspx.cs">
       <DependentUpon>Bebidas.aspx</DependentUpon>
