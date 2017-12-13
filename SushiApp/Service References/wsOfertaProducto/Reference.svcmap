@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8084/SushiBackend9/ServiceOfertaProducto?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8084/SushiBackend11/ServiceOfertaProducto?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceOfertaProducto.wsdl" MetadataType="Wsdl" ID="a1561b9c-aa50-4b74-b462-7fb1b74cfd13" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceOfertaProducto?wsdl" />
-    <MetadataFile FileName="ServiceOfertaProducto.xsd" MetadataType="Schema" ID="b45dfaa0-ab32-4b55-9d8e-5078ee60b5ae" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend9/ServiceOfertaProducto?xsd=1" />
+    <MetadataFile FileName="ServiceOfertaProducto1.xsd" MetadataType="Schema" ID="ca351631-bc58-4c1a-9b40-34ff30562be3" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend11/ServiceOfertaProducto?xsd=1" />
+    <MetadataFile FileName="ServiceOfertaProducto1.wsdl" MetadataType="Wsdl" ID="f14fd8eb-aeaf-442a-9916-540c69c27e8b" SourceId="1" SourceUrl="http://localhost:8084/SushiBackend11/ServiceOfertaProducto?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="uE8Z4sMZ/gY+RrpW9WRklFSXCmY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="BpfY/O7YzM7ZqbJSsNuKSkMa0cM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceClientePortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceClientePort" contract="wsCliente.ServiceCliente" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend10/ServiceCliente" bindingConfiguration="ServiceClientePortBinding">
+    <endpoint name="ServiceClientePort" contract="wsCliente.ServiceCliente" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend11/ServiceCliente" bindingConfiguration="ServiceClientePortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8084/SushiBackend10/ServiceCliente</serializedValue>
+          <serializedValue>http://localhost:8084/SushiBackend11/ServiceCliente</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

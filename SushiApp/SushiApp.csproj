@@ -368,14 +368,17 @@
     <Content Include="Service References\wsCliente\SushiApp.wsCliente.obtenerClienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsCategoria\ServiceCategoriaProducto1.wsdl" />
-    <None Include="Service References\wsCategoria\ServiceCategoriaProducto1.xsd">
+    <None Include="Service References\wsCategoria\ServiceCategoriaProducto.wsdl" />
+    <None Include="Service References\wsCategoria\ServiceCategoriaProducto.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsCliente\ServiceCliente1.wsdl" />
-    <None Include="Service References\wsCliente\ServiceCliente1.xsd">
+    <None Include="Service References\wsCliente\ServiceCliente.wsdl" />
+    <None Include="Service References\wsCliente\ServiceCliente.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\wsCliente\SushiApp.wsCliente.buscarClienteRutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\wsComuna\ServiceComuna.wsdl" />
     <None Include="Service References\wsComuna\ServiceComuna.xsd">
       <SubType>Designer</SubType>
@@ -420,10 +423,6 @@
     <Content Include="Service References\wsEstablecimiento\SushiApp.wsEstablecimiento.obtenerEstablecimientoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsOfertaProducto\ServiceOfertaProducto.wsdl" />
-    <None Include="Service References\wsOfertaProducto\ServiceOfertaProducto.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsOfertaProducto\SushiApp.wsOfertaProducto.agregarOfertaProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -442,8 +441,8 @@
     <Content Include="Service References\wsOfertaProducto\SushiApp.wsOfertaProducto.ofertaProducto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsOferta\ServiceOferta.wsdl" />
-    <None Include="Service References\wsOferta\ServiceOferta.xsd">
+    <None Include="Service References\wsOfertaProducto\ServiceOfertaProducto1.wsdl" />
+    <None Include="Service References\wsOfertaProducto\ServiceOfertaProducto1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\wsOfertaProducto\configuration91.svcinfo" />
@@ -470,6 +469,10 @@
     <Content Include="Service References\wsOferta\SushiApp.wsOferta.oferta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsOferta\ServiceOferta1.wsdl" />
+    <None Include="Service References\wsOferta\ServiceOferta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\wsPagina\ServicePagina.wsdl" />
     <None Include="Service References\wsPagina\ServicePagina.xsd">
       <SubType>Designer</SubType>
@@ -492,10 +495,6 @@
     <Content Include="Service References\wsPagina\SushiApp.wsPagina.pagina.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsPedidoCabecera\ServicePedidoCabecera.wsdl" />
-    <None Include="Service References\wsPedidoCabecera\ServicePedidoCabecera.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsPedidoCabecera\SushiApp.wsPedidoCabecera.agregarPedidoCabeceraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -514,8 +513,8 @@
     <Content Include="Service References\wsPedidoCabecera\SushiApp.wsPedidoCabecera.pedidoCabecera.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsPedidoDetalle\ServicePedidoDetalle.wsdl" />
-    <None Include="Service References\wsPedidoDetalle\ServicePedidoDetalle.xsd">
+    <None Include="Service References\wsPedidoCabecera\ServicePedidoCabecera1.wsdl" />
+    <None Include="Service References\wsPedidoCabecera\ServicePedidoCabecera1.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\wsPedidoDetalle\SushiApp.wsPedidoDetalle.agregarPedidoDetalleResponse.datasource">
@@ -536,6 +535,10 @@
     <Content Include="Service References\wsPedidoDetalle\SushiApp.wsPedidoDetalle.pedidoDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsPedidoDetalle\ServicePedidoDetalle1.wsdl" />
+    <None Include="Service References\wsPedidoDetalle\ServicePedidoDetalle1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\wsPerfil\ServicePerfil.wsdl" />
     <None Include="Service References\wsPerfil\ServicePerfil.xsd">
       <SubType>Designer</SubType>
@@ -606,10 +609,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\wsProducto\ServiceProducto.wsdl" />
-    <None Include="Service References\wsProducto\ServiceProducto.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsProducto\SushiApp.wsProducto.agregarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -626,6 +625,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\wsProducto\SushiApp.wsProducto.producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\wsProducto\ServiceProducto1.wsdl" />
+    <None Include="Service References\wsProducto\ServiceProducto1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\wsProducto\SushiApp.wsProducto.buscarProductoNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\wsProvincia\ServiceProvincia.wsdl" />
@@ -744,14 +750,7 @@
     <Content Include="Service References\wsTipoPago\SushiApp.wsTipoPago.tipoPago.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\wsUsuario\ServiceUsuario.wsdl" />
-    <None Include="Service References\wsUsuario\ServiceUsuario.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.agregarUsuarioResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.buscarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.eliminarUsuarioResponse.datasource">
@@ -769,6 +768,10 @@
     <Content Include="Service References\wsUsuario\SushiApp.wsUsuario.buscarLoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\wsUsuario\ServiceUsuario1.wsdl" />
+    <None Include="Service References\wsUsuario\ServiceUsuario1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

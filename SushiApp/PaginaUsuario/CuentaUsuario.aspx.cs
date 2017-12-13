@@ -31,6 +31,10 @@ namespace SushiApp.PaginaUsuario
                 us.Text = (String)Session["UserName"];
                 txtEmail.Text = (String)Session["UserName"];
             }
+            if (!IsPostBack)
+            {
+                ObtieneValoresCliente();
+            }
         }
 
         protected void btnGuardar_ServerClick(object sender, EventArgs e)
@@ -61,7 +65,7 @@ namespace SushiApp.PaginaUsuario
                                 auxUsuario.pass = txtNewPassword.Text;
                                 auxUsuario.usuario1 = (String)Session["UserName"];
                                 auxUsuario.usuarioId = (Int32)Session["UserId"];
-                                auxUsuario.perfilId = 1;
+                                
                                 UsuarioClient.modificarUsuario(auxUsuario);
                                 Session["UserPass"] = txtNewPassword.Text;
                                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "contraModificada()", true);
@@ -154,7 +158,51 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnGuardaDatos_ServerClick(object sender, EventArgs e)
         {
+            
+        }
 
+        private void ObtieneValoresCliente()
+        {
+            
+            int auxIdUsuario = (int)Session["UserId"];
+            var listadto = clienteCliente.obtenerCliente();
+            var nuevolistadto = (from o in listadto
+                                 orderby o.clienteId
+                                 where o.usuarioId == auxIdUsuario
+                                 select new
+                                 {
+                                     clienteId = o.clienteId,
+                                     usuarioId = o.usuarioId,
+                                     rut = o.rut,
+                                     nombre = o.nombre,
+                                     apellido = o.apellido,
+                                     direccion = o.direccion,
+                                     fechaNac = o.fechaNacimiento,
+                                     sexo = o.sexo,
+                                     email = o.email,
+                                     telefono = o.telefono,
+                                     comuna = o.comuna
+                                 }).ToList();
+            foreach (var v in nuevolistadto)
+            {
+                txtNombre.Text = v.nombre;
+                txtApellido.Text = v.apellido;
+                txtDireccion.Text = v.direccion;
+                ddlSexo.SelectedValue = v.sexo;
+                txtFechaNacimiento.Text = "12/12/2017";
+                txtRut.Text = v.rut;
+                txtTelefono.Text = v.telefono.ToString();
+            }
+
+            List < wsCliente.cliente > cli = new List<wsCliente.cliente>();
+            //cli.Add(nuevolistadto);
+
+            //var consulta = nuevolistadto.Where(c => c.usuarioId == auxIdUsuario select)
+
+            
+
+            
+            
         }
     }
 }

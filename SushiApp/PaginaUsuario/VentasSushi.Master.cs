@@ -57,6 +57,8 @@ namespace SushiApp.PaginaUsuario
                             Session["UserName"] = mail;
                             Session["UserId"] = user.usuarioId;
                             Session["UserPass"] = user.pass;
+                            
+
                             Response.Redirect("~/PaginaUsuario/CuentaUsuario.aspx");
                         }
                         else

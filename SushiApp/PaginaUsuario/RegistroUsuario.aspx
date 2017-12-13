@@ -29,6 +29,11 @@
                         </div>
 
                         <div class="form-group">
+                            <asp:Label ID="lblRut" runat="server" Text="Rut"></asp:Label>
+                            <asp:TextBox ID="txtRut" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                        </div>
+
+                        <div class="form-group">
                             <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" MaxLength="50" TextMode="Email"></asp:TextBox>
                         </div>

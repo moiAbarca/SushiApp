@@ -149,9 +149,9 @@ namespace SushiApp.PaginaUsuario
             }
             catch (Exception ex)
             {
-                //return;
-                throw new Exception("Error: (" + ex.Message + ")");
-                
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorConexion()", true);
+                return;
+
             }
         }
 
@@ -184,11 +184,11 @@ namespace SushiApp.PaginaUsuario
             else
             {
                 int totaliza = Int32.Parse(lblTotal.Text, NumberStyles.Currency);
-                SendEmail(sender, e);
+                //SendEmail(sender, e);
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
                 Session["TotalCompra"] = totaliza;
                 //Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + totaliza);
-                Response.Redirect("ConfirmacionCompra.aspx");
+                Response.Redirect("PagoOk.aspx");
             }
         }
 

@@ -11,6 +11,12 @@ function usuarioNoExiste() {
         'error');
 }
 
+function errorConexion() {
+    swal('Mensaje de Sistema',
+        'Error al conectar. Compruebe que tiene acceso a Internet e intente nuevamente',
+        'error');
+}
+
 function errorContraseña() {
     swal('Mensaje de Sistema',
         'Has ingresado una contraseña incorrecta',

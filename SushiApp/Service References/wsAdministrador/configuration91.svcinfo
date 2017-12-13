@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="aEo5EUHdimq/Wf6RpbsuDBOzUmg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Kpb344lt5s/KlMk0efc094T8L6A=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceAdministradorPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceAdministradorPort" contract="wsAdministrador.ServiceAdministrador" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend10/ServiceAdministrador" bindingConfiguration="ServiceAdministradorPortBinding">
+    <endpoint name="ServiceAdministradorPort" contract="wsAdministrador.ServiceAdministrador" bindingType="basicHttpBinding" address="http://localhost:8084/SushiBackend11/ServiceAdministrador" bindingConfiguration="ServiceAdministradorPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8084/SushiBackend10/ServiceAdministrador</serializedValue>
+          <serializedValue>http://localhost:8084/SushiBackend11/ServiceAdministrador</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

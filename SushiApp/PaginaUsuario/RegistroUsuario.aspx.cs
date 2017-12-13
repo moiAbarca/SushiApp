@@ -9,7 +9,7 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class RegistroUsuario : System.Web.UI.Page
     {
-        wsCliente.ServiceClienteClient clienteCliente = new wsCliente.ServiceClienteClient();
+        wsCliente.ServiceClienteClient clienteClient = new wsCliente.ServiceClienteClient();
         wsCliente.cliente auxCliente = new wsCliente.cliente();
 
         wsUsuario.ServiceUsuarioClient UsuarioClient = new wsUsuario.ServiceUsuarioClient();
@@ -31,7 +31,7 @@ namespace SushiApp.PaginaUsuario
         {
             try
             {
-                if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
+                if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtRut.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
                 {
                     ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
                     return;
@@ -39,10 +39,10 @@ namespace SushiApp.PaginaUsuario
                 else
                 {
 
-                    auxCliente.rut = "";
+                    auxCliente.rut = txtRut.Text;
                     auxCliente.direccion = "";
                     auxCliente.apellido = txtApellido.Text;
-                    auxCliente.comunaId = 1;
+                    
                     auxCliente.telefono = 1;
                     auxCliente.email = txtEmail.Text;
                     //auxCliente.usuarioId = 1;
@@ -52,31 +52,35 @@ namespace SushiApp.PaginaUsuario
 
                     try
                     {
-                        int pos = UsuarioClient.obtenerUsuario().Count();
+                        //int pos = UsuarioClient.obtenerUsuario().Count();
                         wsUsuario.usuario user = UsuarioClient.buscarLogin(txtEmail.Text);
                         if (user.usuarioId == 0)
                         {
-                            user.usuarioId = pos + 1;
+                            //user.usuarioId = pos + 1;
                             user.usuario1 = txtEmail.Text;
                             user.pass = txtPassword.Text;
+                            
 
                             UsuarioClient.agregarUsuario(user);
-                            limpiar();
+                            //limpiar();
                             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "UserCreateSuccess()", true);
                             try
                             {
-                                int posCli = clienteCliente.obtenerCliente().Count();
-                                auxCliente.usuarioId = user.usuarioId;
-                                auxCliente.clienteId = posCli + 1;
-                                clienteCliente.agregarCliente(auxCliente);
+                                auxUsuario = UsuarioClient.buscarLogin(txtEmail.Text);
+                                //int posCli = clienteCliente.obtenerCliente().Count();
+                                auxCliente.usuarioId = auxUsuario.usuarioId;
+                                //auxCliente.clienteId = posCli + 1;
+                                clienteClient.agregarCliente(auxCliente);
 
                                 limpiar();
                                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "customerCreateSuccess()", true);
                                 Session["Usuario"] = user;
                                 Session["UserName"] = user.usuario1;
-                                Session["UserId"] = user.usuarioId;
+                                Session["UserId"] = auxUsuario.usuarioId;
                                 Session["UserPass"] = user.pass;
-                                Response.Redirect("CuentaUsuario.aspx");
+                                Session["UserRut"] = auxCliente.rut;
+                                
+                                Response.Redirect("PagoOk.aspx");
                             }
                             catch (Exception ex)
                             {

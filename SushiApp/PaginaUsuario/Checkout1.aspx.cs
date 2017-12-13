@@ -35,7 +35,7 @@ namespace SushiApp.PaginaUsuario
         {
             try
             {
-                if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
+                if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtRut.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
                 {
                     ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
                     return;
@@ -43,10 +43,10 @@ namespace SushiApp.PaginaUsuario
                 else
                 {
 
-                    auxCliente.rut = "";
+                    auxCliente.rut = txtRut.Text;
                     auxCliente.direccion = "";
                     auxCliente.apellido = txtApellido.Text;
-                    auxCliente.comunaId = 1;
+
                     auxCliente.telefono = 1;
                     auxCliente.email = txtEmail.Text;
                     //auxCliente.usuarioId = 1;
@@ -56,37 +56,38 @@ namespace SushiApp.PaginaUsuario
 
                     try
                     {
-                        int pos = UsuarioClient.obtenerUsuario().Count();
+                        //int pos = UsuarioClient.obtenerUsuario().Count();
                         wsUsuario.usuario user = UsuarioClient.buscarLogin(txtEmail.Text);
                         if (user.usuarioId == 0)
                         {
-                            user.usuarioId = pos + 1;
+                            //user.usuarioId = pos + 1;
                             user.usuario1 = txtEmail.Text;
                             user.pass = txtPassword.Text;
 
                             UsuarioClient.agregarUsuario(user);
-                            limpiar();
+                            //limpiar();
                             //ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "UserCreateSuccess()", true);
-                            //try
-                            //{
-                            int posCli = clienteCliente.obtenerCliente().Count();
-                            auxCliente.usuarioId = user.usuarioId;
-                            auxCliente.clienteId = posCli + 1;
-                            clienteCliente.agregarCliente(auxCliente);
+                            try
+                            {
+                                //int posCli = clienteCliente.obtenerCliente().Count();
+                                auxUsuario = UsuarioClient.buscarLogin(txtEmail.Text);
+                                auxCliente.usuarioId = auxUsuario.usuarioId;
+                                //auxCliente.clienteId = posCli + 1;
+                                clienteCliente.agregarCliente(auxCliente);
 
-                            limpiar();
-                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "customerCreateSuccess()", true);
-                            Session["Usuario"] = user;
-                            Session["UserName"] = user.usuario1;
-                            Session["UserId"] = user.usuarioId;
-                            Session["UserPass"] = user.pass;
-                            Response.Redirect("Checkout2.aspx");
-                            //}
-                            //catch (Exception ex)
-                            //{
-                            //    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
-                            //    return;
-                            //}
+                                limpiar();
+                                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "customerCreateSuccess()", true);
+                                Session["Usuario"] = user;
+                                Session["UserName"] = user.usuario1;
+                                Session["UserId"] = user.usuarioId;
+                                Session["UserPass"] = user.pass;
+                                Response.Redirect("Checkout2.aspx");
+                            }
+                            catch (Exception ex)
+                            {
+                                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", ex.ToString(), true);
+                                return;
+                            }
 
                         }
                         else
