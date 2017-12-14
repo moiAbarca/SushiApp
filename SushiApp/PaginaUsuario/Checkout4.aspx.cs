@@ -6,13 +6,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Globalization;
+using System.Threading;
 
 namespace SushiApp.PaginaUsuario
 {
     public partial class Checkout41 : System.Web.UI.Page
     {
+        wsPedidoCabecera.ServicePedidoCabeceraClient pedidoCabeceraClient = new wsPedidoCabecera.ServicePedidoCabeceraClient();
+        wsPedidoCabecera.pedidoCabecera auxPedidoCabecera = new wsPedidoCabecera.pedidoCabecera();
+
         DataTable carrito = new DataTable();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -46,7 +50,7 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
                 return;
             }
-            
+
             // Le pasamos la Session al DataSource del GridView para cargar el listado comprado
             GVCanasta.DataSource = Session["Pedido"];
             GVCanasta.DataBind();
@@ -76,7 +80,7 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
                 return 0;
             }
-            
+
         }
 
         protected void btnPagar_Click(object sender, EventArgs e)
@@ -132,7 +136,11 @@ namespace SushiApp.PaginaUsuario
 
             }
 
-            correo.Body = "Hola " + auxCorreo +  " Usted ha realizado una compra por la cantidad de : " + lblSubtotal.Text + "\r\n " + "De los siguientes productos en nuestra tienda online Fukusuke Sushi Delivery" +"\r\n " + des +  "\n" +  "Muchas gracias por su compra" + "\r\n " + "Equipo Fukusuke Sushi";
+            correo.Body = "Hola " + auxCorreo + " Usted ha realizado una compra por la cantidad de : " + lblSubtotal.Text + "\r\n "
+                + "De los siguientes productos en nuestra tienda online Fukusuke Sushi Delivery" + "\r\n " + des + "\r\n "
+                + "Dirección de Entrega: " + (String)Session["Direccion"] + ", Maipú, Santiago." + "\r\n "
+                + "Detalle de Dirección: " + (String)Session["DetalleDireccion"]
+                + "\n" + "Muchas gracias por su compra" + "\r\n " + "Equipo Fukusuke Sushi";
 
             correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;
@@ -185,11 +193,32 @@ namespace SushiApp.PaginaUsuario
             else
             {
                 int totaliza = Int32.Parse(lblTotal.Text, NumberStyles.Currency);
-                //SendEmail(sender, e);
+                SendEmail(sender, e);
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "ventaOk()", true);
                 Session["TotalCompra"] = totaliza;
-                //Response.Redirect("http://www.checkbox.cl/PaymentGateway/linkPayment.php?id_comercio=160&url_return=http://localhost:2205/PaginaUsuario/PagoOk.aspx&url_cancel=http://localhost:2205/PaginaUsuario/ErrorPago.aspx&item_nombre=" + "Pedido de " + auxCorreo + "&item_id=01" + "&item_precio=" + totaliza);
-                Response.Redirect("PagoOk.aspx");
+
+                String formaPago = (String)Session["FormaPago"];
+                if (formaPago == "efectivo")
+                {
+                    SendEmail(sender, e);
+                    Thread.Sleep(5000);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "UserCreateSuccess()", true);
+                    Response.Redirect("PagoOk.aspx");
+                }
+                else
+                {
+                    if (formaPago == "web")
+                    {
+                        SendEmail(sender, e);
+                        Response.Redirect("ConfirmacionCompra.aspx");
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                        Response.Redirect("Checkout3.aspx");
+                    }
+                }
+
             }
         }
 
@@ -213,5 +242,26 @@ namespace SushiApp.PaginaUsuario
             GVCanasta.DataBind();
             cargarCarrito();
         }
+
+        //private int ObtienePedidoCabecera()
+        //{
+        //    int idPedido;
+        //    int auxIdPedido;
+        //    int auxIdUsuario = (int)Session["UserId"];
+        //    var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
+        //    var auxConsulta = (from o in consulta
+        //                       where o.clienteId == auxIdUsuario
+        //                       orderby o.pedidoCabeceraId ascending
+        //                       select new
+        //                       {
+        //                           cabeceraId = o.pedidoCabeceraId
+        //                       }).ToList();
+        //    foreach (var c in auxConsulta)
+        //    {
+        //        idPedido = c.cabeceraId;
+        //    }
+            
+        //    return idPedido;
+        //}
     }
 }

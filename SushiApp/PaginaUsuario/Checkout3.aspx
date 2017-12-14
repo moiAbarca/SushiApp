@@ -36,26 +36,13 @@
                                     <div class="col-sm-6">
                                         <div class="box payment-method">
 
-                                            <h4>Paypal</h4>
-
-                                            <p>Puedes pagar con tu cuenta de Paypal.</p>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="payment" value="payment1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="box payment-method">
-
-                                            <h4>Tarjeta de Débito o Crédito</h4>
+                                            <h4>Pago Online</h4>
 
                                             <p>Múltiples opciones de pago con tarjeta.</p>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="payment" value="payment2">
+                                                <input type="radio" name="payment" value="PagoWeb" id="web" runat="server">
                                             </div>
                                         </div>
                                     </div>
@@ -65,11 +52,11 @@
 
                                             <h4>Efectivo</h4>
 
-                                            <p>Pagarás cuando recibas tu producto.</p>
+                                            <p>Pagarás cuando recibas tu producto o en caja.</p>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="payment" value="payment3">
+                                                <input type="radio" name="payment" value="efectivo" id="efectivo" runat="server">
                                             </div>
                                         </div>
                                     </div>
@@ -98,39 +85,43 @@
                 <!-- /.col-md-9 -->
 
                 <div class="col-md-3">
-
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Order summary</h3>
+                            <h3>Resumen Pedido</h3>
                         </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                        <p class="text-muted"></p>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <td>Subtotal Pedido</td>
+                                        <th>
+                                            <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <td>Propina Sugerida (10%)</td>
+                                        <th>
+                                            <asp:Label ID="lblPropina" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <td>Total sin propina</td>
+                                        <th>
+                                            <asp:Label ID="lblTotalSinTip" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>
+                                            <asp:Label ID="lblTotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
+                <!-- /.col-md-3 -->
 
-                </div>
+            </div>
                 <!-- /.col-md-3 -->
 
             </div>

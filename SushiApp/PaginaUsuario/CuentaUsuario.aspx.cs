@@ -29,7 +29,6 @@ namespace SushiApp.PaginaUsuario
                 ocultarDivLogin();
                 Label us = (Label)Master.FindControl("lblUsuario");
                 us.Text = (String)Session["UserName"];
-                txtEmail.Text = (String)Session["UserName"];
             }
             if (!IsPostBack)
             {
@@ -174,11 +173,41 @@ namespace SushiApp.PaginaUsuario
                     return;
                 }
                 auxCliente.sexo = ddlSexo.SelectedValue;
+                auxCliente.comuna = ddlComuna.SelectedValue;
+                auxCliente.email = (String)Session["UserName"];
+                auxCliente.usuarioId = (int)Session["UserId"];
                 auxCliente.fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text).ToString("yyyyMMdd");
                 auxCliente.rut = txtRut.Text;
                 auxCliente.telefono = Convert.ToInt32(txtTelefono.Text);
 
-                clienteCliente.modificarCliente(auxCliente);
+                int auxIdUsuario = (int)Session["UserId"];
+                var listadto = clienteCliente.obtenerCliente();
+                var nuevolistadto = (from o in listadto
+                                     orderby o.clienteId
+                                     where o.usuarioId == auxIdUsuario
+                                     select new
+                                     {
+                                         clienteId = o.clienteId
+                                     }).ToList();
+
+                foreach (var v in nuevolistadto)
+                {
+                    auxCliente.clienteId = v.clienteId;
+                }
+
+                //Modificamos cliente
+                try
+                {
+                    clienteCliente.modificarCliente(auxCliente);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "UserCreateSuccess()", true);
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                    return;
+                }
+                
             }
         }
 
@@ -213,7 +242,9 @@ namespace SushiApp.PaginaUsuario
                 txtFechaNacimiento.Text = Convert.ToDateTime(v.fechaNac).ToString("yyyy/MM/dd");
                 txtRut.Text = v.rut;
                 txtTelefono.Text = v.telefono.ToString();
+                ddlComuna.SelectedValue = v.comuna;
             }
+            txtEmail.Text = (String)Session["UserName"];
         }
     }
 }

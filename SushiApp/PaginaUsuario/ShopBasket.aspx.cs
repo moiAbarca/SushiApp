@@ -40,8 +40,8 @@ namespace SushiApp.PaginaUsuario
             GVCanasta.DataBind();
             Double auxSubtotal = Convert.ToDouble(TotalCarrito((DataTable)Session["Pedido"]));
             lblSubtotal.Text = String.Format("{0:C}", auxSubtotal);
-            lblTotalSinTip.Text = String.Format("{0:C}",auxSubtotal);
-            double aux = auxSubtotal*0.1;
+            lblTotalSinTip.Text = String.Format("{0:C}", auxSubtotal);
+            double aux = auxSubtotal * 0.1;
             lblPropina.Text = String.Format("{0:C}", aux);
             lblTotal.Text = String.Format("{0:C}", auxSubtotal + aux);
             //Button1_Click(Button1, null);
@@ -57,25 +57,27 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
                 return;
             }
-            
+
 
         }
 
         public int TotalCarrito(DataTable dt)
         {
-                int tot = 0;
-                foreach (DataRow item in dt.Rows)
-                {
-                    tot += Convert.ToInt32(item[5]);
-                }
-                return tot;
-            
+            int tot = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                tot += Convert.ToInt32(item[5]);
+            }
+
+            Session["TotalCarrito"] = tot;
+            return tot;
+
         }
 
         protected void btnIr1_Click(object sender, EventArgs e)
         {
             carrito = (DataTable)Session["Pedido"];
-            if (carrito.AsEnumerable().Count()==0)
+            if (carrito.AsEnumerable().Count() == 0)
             {
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "shopBasketEmpty()", true);
                 return;
@@ -84,7 +86,7 @@ namespace SushiApp.PaginaUsuario
             {
                 Response.Redirect("Checkout1.aspx");
             }
-            
+
         }
 
         private void ocultarDivLogin()
@@ -119,13 +121,13 @@ namespace SushiApp.PaginaUsuario
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "errorCargaDatos()", true);
                 return;
             }
-            
+
             Session["Pedido"] = dt1;
             GVCanasta.DataSource = dt1;
             GVCanasta.DataBind();
             cargarCarrito();
 
-            
+
 
 
         }

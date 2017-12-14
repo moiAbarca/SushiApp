@@ -30,10 +30,11 @@ function errorIngreso() {
 }
 
 function UserCreateSuccess() {
-    swal('Felicitaciones!',
-        'Usuario creado exitosamente',
+    swal('Exito!',
+        'Datos guardados exitosamente',
         'success');
 }
+
 
 function usuarioExiste() {
     swal('Mensaje de Sistema',

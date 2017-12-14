@@ -97,39 +97,40 @@
                 <!-- /.col-md-9 -->
 
                 <div class="col-md-3">
-
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Order summary</h3>
+                            <h3>Resumen Pedido</h3>
                         </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                        <p class="text-muted"></p>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <td>Subtotal Pedido</td>
+                                        <th>
+                                            <asp:Label ID="lblSubtotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <td>Propina Sugerida (10%)</td>
+                                        <th>
+                                            <asp:Label ID="lblPropina" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr>
-                                        <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <td>Total sin propina</td>
+                                        <th>
+                                            <asp:Label ID="lblTotalSinTip" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>
+                                            <asp:Label ID="lblTotal" runat="server" Text="" CssClass="form-control"></asp:Label></th>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-
-                </div>
                 <!-- /.col-md-3 -->
 
             </div>
