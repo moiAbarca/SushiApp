@@ -158,12 +158,32 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnGuardaDatos_ServerClick(object sender, EventArgs e)
         {
-            
+            if (txtApellido.Text.Trim().Length == 0 || txtNombre.Text.Trim().Length == 0 || txtRut.Text.Trim().Length == 0 || txtEmail.Text.Trim().Length == 0 || txtDireccion.Text.Trim().Length == 0 || txtTelefono.Text.Trim().Length == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                return;
+            }
+            else
+            {
+                auxCliente.nombre = txtNombre.Text;
+                auxCliente.apellido = txtApellido.Text;
+                auxCliente.direccion = txtDireccion.Text;
+                if (ddlSexo.SelectedIndex == 0)
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "modalLoginEmpty()", true);
+                    return;
+                }
+                auxCliente.sexo = ddlSexo.SelectedValue;
+                auxCliente.fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text).ToString("yyyyMMdd");
+                auxCliente.rut = txtRut.Text;
+                auxCliente.telefono = Convert.ToInt32(txtTelefono.Text);
+
+                clienteCliente.modificarCliente(auxCliente);
+            }
         }
 
         private void ObtieneValoresCliente()
         {
-            
             int auxIdUsuario = (int)Session["UserId"];
             var listadto = clienteCliente.obtenerCliente();
             var nuevolistadto = (from o in listadto
@@ -183,26 +203,17 @@ namespace SushiApp.PaginaUsuario
                                      telefono = o.telefono,
                                      comuna = o.comuna
                                  }).ToList();
+            
             foreach (var v in nuevolistadto)
             {
                 txtNombre.Text = v.nombre;
                 txtApellido.Text = v.apellido;
                 txtDireccion.Text = v.direccion;
                 ddlSexo.SelectedValue = v.sexo;
-                txtFechaNacimiento.Text = "12/12/2017";
+                txtFechaNacimiento.Text = Convert.ToDateTime(v.fechaNac).ToString("yyyy/MM/dd");
                 txtRut.Text = v.rut;
                 txtTelefono.Text = v.telefono.ToString();
             }
-
-            List < wsCliente.cliente > cli = new List<wsCliente.cliente>();
-            //cli.Add(nuevolistadto);
-
-            //var consulta = nuevolistadto.Where(c => c.usuarioId == auxIdUsuario select)
-
-            
-
-            
-            
         }
     }
 }

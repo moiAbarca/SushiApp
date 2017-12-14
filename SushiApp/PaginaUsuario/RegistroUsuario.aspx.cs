@@ -78,9 +78,9 @@ namespace SushiApp.PaginaUsuario
                                 Session["UserName"] = user.usuario1;
                                 Session["UserId"] = auxUsuario.usuarioId;
                                 Session["UserPass"] = user.pass;
-                                Session["UserRut"] = auxCliente.rut;
+                                //Session["UserRut"] = auxCliente.rut;
                                 
-                                Response.Redirect("PagoOk.aspx");
+                                Response.Redirect("CuentaUsuario.aspx");
                             }
                             catch (Exception ex)
                             {

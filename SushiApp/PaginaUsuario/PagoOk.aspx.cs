@@ -22,130 +22,89 @@ namespace SushiApp.PaginaUsuario
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["Usuario"] == null)
             {
-                mostrarDivLogin();
                 Response.Redirect("Inicio.aspx");
             }
             else
             {
                 PersisteCompra();
-                //Thread.Sleep(7000);
-                //Response.Redirect("CuentaUsuario.aspx");
+                Thread.Sleep(5000);
+                Response.Redirect("CuentaUsuario.aspx");
             }
 
         }
 
-        private void mostrarDivLogin()
-        {
-            System.Web.UI.HtmlControls.HtmlGenericControl dvLogin = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divLogin");
-            dvLogin.Style.Add("display", "inline");
-
-            System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
-            dvUser.Style.Add("display", "none");
-        }
+        
 
         private void PersisteCompra()
         {
-            String auxRut = (String)Session["UserRut"];
+            
             DataTable dt1 = Session["Pedido"] as DataTable;
             int auxIdUsuario = (int)Session["UserId"];
 
-            if (auxRut == null || auxRut == "" || auxRut == 0.ToString())
+            var listadto = clienteClient.obtenerCliente();
+            var nuevolistadto = (from o in listadto
+                                 orderby o.clienteId
+                                 where o.usuarioId == auxIdUsuario
+                                 select new
+                                 {
+                                     clienteId = o.clienteId,
+                                     usuarioId = o.usuarioId,
+                                     rut = o.rut,
+                                     nombre = o.nombre,
+                                     apellido = o.apellido,
+                                     direccion = o.direccion,
+                                     fechaNac = o.fechaNacimiento,
+                                     sexo = o.sexo,
+                                     email = o.email,
+                                     telefono = o.telefono,
+                                     comuna = o.comuna
+                                 }).ToList();
+
+            foreach (var v in nuevolistadto)
             {
-                // Lógica en caso de no tener rut...
-                
-
-                var listadto = clienteClient.obtenerCliente();
-                var nuevolistadto = (from o in listadto
-                                     orderby o.clienteId
-                                     where o.usuarioId == auxIdUsuario
-                                     select new
-                                     {
-                                         clienteId = o.clienteId,
-                                         usuarioId = o.usuarioId,
-                                         rut = o.rut,
-                                         nombre = o.nombre,
-                                         apellido = o.apellido,
-                                         direccion = o.direccion,
-                                         fechaNac = o.fechaNacimiento,
-                                         sexo = o.sexo,
-                                         email = o.email,
-                                         telefono = o.telefono,
-                                         comuna = o.comuna
-                                     }).ToList();
-
-                foreach (var v in nuevolistadto)
-                {
-                    auxPedidoCabecera.clienteId = v.clienteId;
-                }
-
-                auxPedidoCabecera.establecimientoId = 1;
-                auxPedidoCabecera.fechaPedido = DateTime.Today.ToString("yyyyMMdd");
-                auxPedidoCabecera.horaPedido = DateTime.Now.ToString("HH:MM");
-                auxPedidoCabecera.estadoPedido = "Pagado";
-
-                pedidoCabeceraClient.agregarPedidoCabecera(auxPedidoCabecera);
-
-                var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
-                var auxConsulta = (from o in consulta
-                                   where o.clienteId == auxIdUsuario
-                                   orderby o.horaPedido descending
-                                   select new
-                                   {
-                                       cabeceraId = o.pedidoCabeceraId
-                                   }).ToList();
-                foreach (var c in auxConsulta)
-                {
-                    auxPedidoDetalle.pedidoCabeceraId = c.cabeceraId;
-                }
-
-                //auxPedidoDetalle.pedidoCabeceraId = Convert.ToInt32(auxConsulta.ToString());
-                
-
-                foreach (DataRow row in dt1.Rows)
-                {
-                    auxPedidoDetalle.productoId = Convert.ToInt32(row["ID_PRODUCTO"].ToString());
-                    auxPedidoDetalle.cantidad = Convert.ToInt32(row["CANTIDAD_PRODUCTO"].ToString());
-                    auxPedidoDetalle.total = Convert.ToInt32(row["SUBTOTAL"].ToString());
-                    pedidoDetalleClient.agregarPedidoDetalle(auxPedidoDetalle);
-                }
-
+                auxPedidoCabecera.clienteId = v.clienteId;
             }
-            else
+
+            auxPedidoCabecera.establecimientoId = 1;
+            auxPedidoCabecera.fechaPedido = DateTime.Today.ToString("yyyyMMdd");
+            auxPedidoCabecera.horaPedido = DateTime.Now.ToString("hh:mm");
+            auxPedidoCabecera.estadoPedido = "Pagado";
+
+            pedidoCabeceraClient.agregarPedidoCabecera(auxPedidoCabecera);
+
+            var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
+            var auxConsulta = (from o in consulta
+                               where o.clienteId == auxIdUsuario
+                               orderby o.pedidoCabeceraId ascending
+                               select new
+                               {
+                                   cabeceraId = o.pedidoCabeceraId
+                               }).ToList();
+            foreach (var c in auxConsulta)
             {
-                auxCliente = clienteClient.buscarClienteRut(auxRut);
-
-                auxPedidoCabecera.clienteId = auxCliente.clienteId;
-                auxPedidoCabecera.establecimientoId = 1;
-                auxPedidoCabecera.fechaPedido = DateTime.Today.ToString("yyyyMMdd");
-                auxPedidoCabecera.horaPedido = DateTime.Now.ToString("HH:MM");
-                auxPedidoCabecera.estadoPedido = "Pagado";
-
-                pedidoCabeceraClient.agregarPedidoCabecera(auxPedidoCabecera);
-
-                var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
-                var auxConsulta = (from o in consulta
-                                   where o.clienteId == auxIdUsuario
-                                   orderby o.horaPedido descending
-                                   select new
-                                   {
-                                       cabeceraId = o.pedidoCabeceraId
-                                   }).FirstOrDefault().ToString();
-
-                auxPedidoDetalle.pedidoCabeceraId = Convert.ToInt32(auxConsulta.ToString());
-
-                foreach (DataRow row in dt1.Rows)
-                {
-                    auxPedidoDetalle.productoId = Convert.ToInt32(row["ID_PRODUCTO"].ToString());
-                    auxPedidoDetalle.cantidad = Convert.ToInt32(row["CANTIDAD_PRODUCTO"].ToString());
-                    auxPedidoDetalle.total = Convert.ToInt32(row["SUBTOTAL"].ToString());
-                    pedidoDetalleClient.agregarPedidoDetalle(auxPedidoDetalle);
-                }
+                auxPedidoDetalle.pedidoCabeceraId = c.cabeceraId;
             }
+            //auxPedidoDetalle.pedidoCabeceraId = Convert.ToInt32(auxConsulta);
+
+            //auxPedidoDetalle.pedidoCabeceraId = Convert.ToInt32(auxConsulta.ToString());
+
+
+            foreach (DataRow row in dt1.Rows)
+            {
+                auxPedidoDetalle.productoId = Convert.ToInt32(row["ID_PRODUCTO"].ToString());
+                auxPedidoDetalle.cantidad = Convert.ToInt32(row["CANTIDAD_PRODUCTO"].ToString());
+                auxPedidoDetalle.total = Convert.ToInt32(row["SUBTOTAL"].ToString());
+                pedidoDetalleClient.agregarPedidoDetalle(auxPedidoDetalle);
+            }
+
 
 
         }
 
+
     }
+
 }

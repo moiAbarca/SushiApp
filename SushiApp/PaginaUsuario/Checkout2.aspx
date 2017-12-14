@@ -34,18 +34,18 @@
 
                             <div class="content">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="form-group">
                                             <asp:Label ID="lblDireccion" runat="server" Text="Dirección"></asp:Label>
                                             <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <%--<div class="col-sm-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblNumeroCalle" runat="server" Text="Número"></asp:Label>
                                             <asp:TextBox ID="txtNumeroCalle" runat="server" class="form-control"></asp:TextBox>
                                         </div>
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <!-- /.row -->
 
@@ -54,7 +54,6 @@
                                         <div class="form-group">
                                             <asp:Label ID="lblComuna" runat="server" Text="Comuna"></asp:Label>
                                             <asp:DropDownList ID="ddlComuna" runat="server" CssClass="form-control">
-                                                <asp:ListItem>Seleccione...</asp:ListItem>
                                                 <asp:ListItem>Maipú</asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
@@ -62,7 +61,6 @@
                                     <div class="col-sm-6">
                                         <asp:Label ID="lblCiudad" runat="server" Text="Ciudad"></asp:Label>
                                         <asp:DropDownList ID="ddlCiudad" runat="server" CssClass="form-control">
-                                            <asp:ListItem>Seleccione...</asp:ListItem>
                                             <asp:ListItem>Santiago</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>

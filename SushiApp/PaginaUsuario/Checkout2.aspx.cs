@@ -30,6 +30,9 @@ namespace SushiApp.PaginaUsuario
 
         protected void btnDireccion_Click(object sender, EventArgs e)
         {
+            Session["Direccion"] = txtDireccion.Text;
+            Session["DetalleDireccion"] = txtDetalle.Text;
+
             Response.Redirect("Checkout3.aspx");
             
         }

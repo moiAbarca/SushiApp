@@ -105,12 +105,13 @@ namespace SushiApp.PaginaUsuario
             // ***** Agregar el correo del usuario y descomentar *****
             String auxCorreo = (String)Session["UserName"];
             correo.To.Add(auxCorreo);
+            correo.To.Add("contactofukusukesushi@gmail.com");
             correo.Subject = "Pedido de Compra";
 
             string cod, des;
             int cant, prec;
             var items = (DataTable)Session["Pedido"];
-            decimal total, subtotal, igv;
+            //decimal total, subtotal, igv;
             des = "";
             for (int i = 0; i < GVCanasta.Rows.Count; i++)
             {
