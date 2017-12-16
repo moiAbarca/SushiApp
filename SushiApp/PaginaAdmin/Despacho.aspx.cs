@@ -46,6 +46,7 @@ namespace SushiApp.PaginaAdmin
                                                  Id = cab.pedidoCabeceraId,
                                                  Producto = pr.nombreProducto,
                                                  Cantidad = det.cantidad,
+                                                 Fecha = cab.fechaPedido,
                                                  Nombre = cl.nombre,
                                                  Apellido = cl.apellido,
                                                  Dirección = cl.direccion,

@@ -73,13 +73,21 @@
                            Precio
                        </li>
                         <li class="list-group-item">                           
-                            <span class="pull-right" id="prCategoria">                                                        
-                             <asp:DropDownList ID="dlCategoria" AutoPostBack="false" runat="server">
-                            </asp:DropDownList>
-                             </span>    
-                           Categoria
-                            
+                            <span class="pull-right">                                                    
+                                                    <asp:DropDownList ID="dlCategoria" CssClass="form-control" runat="server">
+                                                        <asp:ListItem>Seleccione...</asp:ListItem>
+                                                        <asp:ListItem>Special Rolls</asp:ListItem>
+                                                        <asp:ListItem>Nikkei Rolls</asp:ListItem>
+                                                        <asp:ListItem>California Rolls</asp:ListItem>
+                                                        <asp:ListItem>Postres</asp:ListItem>
+                                                        <asp:ListItem>Bebidas</asp:ListItem>
+                                                        <asp:ListItem>Témpura y Panko Rolls</asp:ListItem>
+                                                        <asp:ListItem>Hosomaki y Nigiri</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                    </span>
+                                                    Categoría: 
                        </li>
+                        <br /><br />
                         <li class="list-group-item">                           
                             <span class="pull-right" id="prEstado">                                                        
                                 <asp:CheckBox ID="ckDiponible" CssClass="ChkBoxClass" runat="server" />

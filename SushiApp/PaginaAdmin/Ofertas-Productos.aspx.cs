@@ -20,39 +20,39 @@ namespace SushiApp.PaginaAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarGVOfertaProductos();
-            llenadoDropDownList();
+            //llenadoDropDownList();
         }
 
-        private void llenadoDropDownList()
-        {
-            try
-            {
-                //DL de productos
-                var listadto = productoClient.obtenerProducto();
-                dlProducto.DataSource = (from o in listadto
-                                          orderby o.productoId
-                                         select new { o.nombreProducto, o.productoId });
-                dlProducto.DataTextField = "nombreProducto";
-                dlProducto.DataValueField = "productoId";
-                dlProducto.DataBind();
+        //private void llenadoDropDownList()
+        //{
+        //    try
+        //    {
+        //        //DL de productos
+        //        var listadto = productoClient.obtenerProducto();
+        //        dlProducto.DataSource = (from o in listadto
+        //                                  orderby o.productoId
+        //                                 select new { o.nombreProducto, o.productoId });
+        //        dlProducto.DataTextField = "nombreProducto";
+        //        dlProducto.DataValueField = "productoId";
+        //        dlProducto.DataBind();
 
-                //DL de oferta
-                var listadto2 = ofertaClient.obtenerOferta();
-                dlOferta.DataSource = (from o in listadto2
-                                          orderby o.ofertaId
-                                          select new { o.porcentajeOferta, o.ofertaId });
-                dlOferta.DataTextField = "porcentajeOferta";
-                dlOferta.DataValueField = "ofertaId";
-                dlOferta.DataBind();
+        //        //DL de oferta
+        //        var listadto2 = ofertaClient.obtenerOferta();
+        //        dlOferta.DataSource = (from o in listadto2
+        //                                  orderby o.ofertaId
+        //                                  select new { o.porcentajeOferta, o.ofertaId });
+        //        dlOferta.DataTextField = "porcentajeOferta";
+        //        dlOferta.DataValueField = "ofertaId";
+        //        dlOferta.DataBind();
 
 
-            }
-            catch (Exception)
-            {
+        //    }
+        //    catch (Exception)
+        //    {
 
-                Response.Write("<script>alert('No se pudo cargar DropdownList');</script>");
-            }
-        }
+        //        Response.Write("<script>alert('No se pudo cargar DropdownList');</script>");
+        //    }
+        //}
 
         private void cargarGVOfertaProductos()
         {

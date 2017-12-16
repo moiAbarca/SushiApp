@@ -17,31 +17,31 @@ namespace SushiApp.PaginaAdmin
         wsCategoria.categoriaProducto auxCategoria = new wsCategoria.categoriaProducto();
         protected void Page_Load(object sender, EventArgs e)
         {            
-            llenadoDropDownList();
+            //llenadoDropDownList();
             cargarGVProductos();
         }
 
-        private void llenadoDropDownList()
-        {
-            try
-            {
+        //private void llenadoDropDownList()
+        //{
+        //    try
+        //    {
 
-                var listadto = catClient.obtenerCategoriaProducto();
-                dlCategoria.DataSource = (from o in listadto
-                                     orderby o.categoriaProductoId
-                                          select new { o.nombreCategoria, o.categoriaProductoId });
-                dlCategoria.DataTextField = "nombreCategoria";
-                dlCategoria.DataValueField = "categoriaProductoId";                                
-                dlCategoria.DataBind();
+        //        var listadto = catClient.obtenerCategoriaProducto();
+        //        dlCategoria.DataSource = (from o in listadto
+        //                             orderby o.categoriaProductoId
+        //                                  select new { o.nombreCategoria, o.categoriaProductoId });
+        //        dlCategoria.DataTextField = "nombreCategoria";
+        //        dlCategoria.DataValueField = "categoriaProductoId";                                
+        //        dlCategoria.DataBind();
 
                 
-            }
-            catch (Exception)
-            {
+        //    }
+        //    catch (Exception)
+        //    {
 
-                Response.Write("<script>alert('No se pudo cargar DropDownList');</script>");
-            }
-        }
+        //        Response.Write("<script>alert('No se pudo cargar DropDownList');</script>");
+        //    }
+        //}
 
         public void cargarGVProductos()
         {
@@ -82,8 +82,34 @@ namespace SushiApp.PaginaAdmin
                 txtRuta.Text = auxProducto.imagenProdcuto;
                 txtPorcion.Text = Convert.ToString(auxProducto.porcionesProdcuto);
                 txtPrecio.Text = Convert.ToString(auxProducto.precioProducto);
-
-                dlCategoria.SelectedValue = Convert.ToString(auxProducto.categoriaProductoId);
+                if (auxProducto.categoriaProductoId == Convert.ToInt32(1))
+                {
+                    dlCategoria.SelectedValue = "Special Rolls";
+                }
+                else if (auxProducto.categoriaProductoId == Convert.ToInt32(2))
+                {
+                    dlCategoria.SelectedValue = "Nikkei Rolls";
+                }
+                else if (auxProducto.categoriaProductoId == Convert.ToInt32(4))
+                {
+                    dlCategoria.SelectedValue = "California Rolls";
+                }
+                else if (auxProducto.categoriaProductoId == Convert.ToInt32(6))
+                {
+                    dlCategoria.SelectedValue = "Postres";
+                }
+                else if (auxProducto.categoriaProductoId == Convert.ToInt32(7))
+                {
+                    dlCategoria.SelectedValue = "Bebidas";
+                }
+                else if (auxProducto.categoriaProductoId == Convert.ToInt32(3))
+                {
+                    dlCategoria.SelectedValue = "Témpura y Panko Rolls";
+                }
+                else
+                {
+                    dlCategoria.SelectedValue = "Hosomaki y Nigiri";
+                }
 
                 //int idcateg = auxProducto.categoriaProductoId;
                 //auxCategoria = catClient.buscarCategoriaProducto(idcateg);
@@ -128,18 +154,44 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.imagenProdcuto = txtRuta.Text;
                         auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
-                        auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);
-                                                
-                        if (ckDiponible.Checked)
-                    {
-                        auxProducto.disponibilidadProducto = true;
-                    }
-                    else
-                    {
-                        auxProducto.disponibilidadProducto = false;
-                    }
 
-
+                        if (dlCategoria.SelectedValue == "Special Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 1;
+                        }
+                        else if (dlCategoria.SelectedValue == "Nikkei Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 2;
+                        }
+                        else if (dlCategoria.SelectedValue == "California Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 4;
+                        }
+                        else if (dlCategoria.SelectedValue == "Postres")
+                        {
+                            auxProducto.categoriaProductoId = 6;
+                        }
+                        else if (dlCategoria.SelectedValue == "Bebidas")
+                        {
+                            auxProducto.categoriaProductoId = 7;
+                        }
+                        else if (dlCategoria.SelectedValue == "Témpura y Panko Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 3;
+                        }
+                        else
+                        {
+                            auxProducto.categoriaProductoId = 5;
+                        }
+                        //auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);                                                
+                            if (ckDiponible.Checked)
+                        {
+                            auxProducto.disponibilidadProducto = true;
+                        }
+                        else
+                        {
+                            auxProducto.disponibilidadProducto = false;
+                        }
                     productoClient.agregarProducto(auxProducto);
                     limpiar();
                     cargarGVProductos();
@@ -232,8 +284,36 @@ namespace SushiApp.PaginaAdmin
                         auxProducto.imagenProdcuto = txtRuta.Text;
                         auxProducto.porcionesProdcuto = Convert.ToInt32(txtPorcion.Text);
                         auxProducto.precioProducto = Convert.ToInt32(txtPrecio.Text);
-                        auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);
-                        
+                        //auxProducto.categoriaProductoId = Convert.ToInt32(dlCategoria.SelectedValue);
+                        if (dlCategoria.SelectedValue == "Special Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 1;
+                        }
+                        else if (dlCategoria.SelectedValue == "Nikkei Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 2;
+                        }
+                        else if (dlCategoria.SelectedValue == "California Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 4;
+                        }
+                        else if (dlCategoria.SelectedValue == "Postres")
+                        {
+                            auxProducto.categoriaProductoId = 6;
+                        }
+                        else if (dlCategoria.SelectedValue == "Bebidas")
+                        {
+                            auxProducto.categoriaProductoId = 7;
+                        }
+                        else if (dlCategoria.SelectedValue == "Témpura y Panko Rolls")
+                        {
+                            auxProducto.categoriaProductoId = 3;
+                        }
+                        else
+                        {
+                            auxProducto.categoriaProductoId = 5;
+                        }
+
                         if (ckDiponible.Checked)
                         {
                             auxProducto.disponibilidadProducto = true;

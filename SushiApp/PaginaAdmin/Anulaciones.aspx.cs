@@ -59,12 +59,14 @@ namespace SushiApp.PaginaAdmin
             try
             {
                 auxPedidoCabecera = cabeceraClient.buscarPedidoCabecera(Convert.ToInt32(txtId.Text));
+                //auxCliente = clienteClient.buscarClienteRut(txtId.Text);
                 txtCliente.Text = Convert.ToString(auxPedidoCabecera.clienteId);
                 txtEstablecimiento.Text = Convert.ToString(auxPedidoCabecera.establecimientoId);
-                txtEstado.Text = auxPedidoCabecera.estadoPedido;
+                //txtEstado.Text = auxPedidoCabecera.estadoPedido;
                 txtFecha.Text = auxPedidoCabecera.fechaPedido;
                 txtHora.Text = auxPedidoCabecera.horaPedido;
-                
+                ddlSexo.SelectedValue = auxPedidoCabecera.estadoPedido;
+
             }
             catch (Exception)
             {
@@ -88,7 +90,7 @@ namespace SushiApp.PaginaAdmin
         {
             try
             {
-                if (txtId.Text.Trim().Length == 0 || txtCliente.Text.Trim().Length == 0 || txtEstablecimiento.Text.Trim().Length == 0 || txtEstado.Text.Trim().Length == 0 || txtFecha.Text.Trim().Length == 0 || txtHora.Text.Trim().Length == 0)
+                if (txtId.Text.Trim().Length == 0 || txtCliente.Text.Trim().Length == 0 || txtEstablecimiento.Text.Trim().Length == 0 ||  txtFecha.Text.Trim().Length == 0 || txtHora.Text.Trim().Length == 0)
                 {
                     Response.Write("<script>alert('Debe Buscar primero el pedido, antes de cambiar el Estado');</script>");
                     return;
@@ -108,9 +110,10 @@ namespace SushiApp.PaginaAdmin
                         auxPedidoCabecera.pedidoCabeceraId = Convert.ToInt32(this.txtId.Text);
                         auxPedidoCabecera.establecimientoId = Convert.ToInt32(this.txtEstablecimiento.Text);
                         auxPedidoCabecera.clienteId = Convert.ToInt32(this.txtCliente.Text);
-                        auxPedidoCabecera.estadoPedido = this.txtEstado.Text;
+                        //auxPedidoCabecera.estadoPedido = this.txtEstado.Text;
                         auxPedidoCabecera.fechaPedido = fecha;
                         auxPedidoCabecera.horaPedido = hora;
+                        auxPedidoCabecera.estadoPedido = ddlSexo.SelectedValue;
 
                         cabeceraClient.modificarPedidoCabecera(auxPedidoCabecera);
                         limpiar();
@@ -134,10 +137,11 @@ namespace SushiApp.PaginaAdmin
             bool cad = true;
             txtCliente.Text = string.Empty;
             txtEstablecimiento.Text = string.Empty;
-            txtEstado.Text = string.Empty;
+            //txtEstado.Text = string.Empty;
             txtFecha.Text = string.Empty;
             txtHora.Text = string.Empty;
             txtId.Text = string.Empty;
+            ddlSexo.SelectedIndex = -1;
             this.txtId.Focus();
             return cad;
         }
