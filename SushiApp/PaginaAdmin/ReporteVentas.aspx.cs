@@ -41,7 +41,7 @@ namespace SushiApp.PaginaAdmin
                 var nuevolistadtoDespacho = (from det in listaDetalle
                                              join pr in listaProducto on det.productoId equals pr.productoId
                                              join cab in listaCabecera on det.pedidoCabeceraId equals cab.pedidoCabeceraId
-                                             where cab.estadoPedido == "Pagado"
+                                             where cab.estadoPedido == "Pagado" || cab.estadoPedido == "Entregado"
                                              select new
                                              {
                                                  Id = cab.pedidoCabeceraId,
@@ -109,7 +109,7 @@ namespace SushiApp.PaginaAdmin
             Doc.Close();
             string Path = Environment.GetFolderPath
             (Environment.SpecialFolder.Desktop)
-            + "\\Ventas.pdf";
+            + "\\Reporte.pdf";
 
 
             ShowPdf(Path);
