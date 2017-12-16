@@ -41,6 +41,7 @@ namespace SushiApp.PaginaAdmin
                                              join pr in listaProducto on det.productoId equals pr.productoId
                                              join cab in listaCabecera on det.pedidoCabeceraId equals cab.pedidoCabeceraId
                                              join cl in listaCliente on cab.clienteId equals cl.clienteId
+                                             where cab.estadoPedido == "Pagado"
                                              select new
                                              {
                                                  Id = cab.pedidoCabeceraId,

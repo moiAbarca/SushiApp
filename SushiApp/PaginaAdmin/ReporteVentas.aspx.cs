@@ -40,7 +40,8 @@ namespace SushiApp.PaginaAdmin
                 var listaProducto = productoClient.obtenerProducto();
                 var nuevolistadtoDespacho = (from det in listaDetalle
                                              join pr in listaProducto on det.productoId equals pr.productoId
-                                             join cab in listaCabecera on det.pedidoCabeceraId equals cab.pedidoCabeceraId                                             
+                                             join cab in listaCabecera on det.pedidoCabeceraId equals cab.pedidoCabeceraId
+                                             where cab.estadoPedido == "Pagado"
                                              select new
                                              {
                                                  Id = cab.pedidoCabeceraId,
@@ -88,7 +89,7 @@ namespace SushiApp.PaginaAdmin
             Doc.Open();
 
             Chunk c = new Chunk
-            ("Orden de despacho \n\n",
+            ("Reporte Ventas \n\n",
             FontFactory.GetFont("Verdana", 15));
             Paragraph p = new Paragraph();
             p.Alignment = Element.ALIGN_CENTER;
@@ -108,7 +109,7 @@ namespace SushiApp.PaginaAdmin
             Doc.Close();
             string Path = Environment.GetFolderPath
             (Environment.SpecialFolder.Desktop)
-            + "\\Despacho.pdf";
+            + "\\Ventas.pdf";
 
 
             ShowPdf(Path);
