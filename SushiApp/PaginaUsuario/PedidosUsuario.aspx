@@ -1,23 +1,69 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaUsuario/VentasSushi.Master" AutoEventWireup="true" CodeBehind="PedidosUsuario.aspx.cs" Inherits="SushiApp.PaginaUsuario.PedidosUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
-            <div class="container">
+        <div class="container">
 
 
-                <div class="row">
+            <div class="row">
 
-                    <!-- *** LEFT COLUMN ***
+                <!-- *** LEFT COLUMN ***
 			 _________________________________________________________ -->
 
-                    <div class="col-md-9" id="customer-orders">
+                <div class="col-md-9" id="customer-orders">
 
-                        <p class="text-muted lead">Si tienes alguna pregunta, por favor, siéntete libre en <a href="Contacto.aspx">contactarnos</a>.</p>
+                    <p class="text-muted lead">Si tienes alguna pregunta, por favor, siéntete libre en <a href="Contacto.aspx">contactarnos</a>.</p>
 
-                        <div class="box">
+                    <div class="box">
 
-                            <div class="table-responsive">
+                        <asp:ListView runat="server" ID="ComprasListView" GroupItemCount="1" OnSelectedIndexChanged="ProductsListView_SelectedIndexChanged" OnItemCommand="ProductsListView_ItemCommand">
+
+                            <LayoutTemplate>
+                                <table cellpadding="5" runat="server"
+                                    id="tblCompras" cssclass="table-responsive" style="">
+                                    <tr runat="server" id="groupPlaceholder">
+                                    </tr>
+                                </table>
+                                <asp:DataPager runat="server" ID="DataPager" PageSize="20"></asp:DataPager>
+                            </LayoutTemplate>
+
+                            <GroupTemplate>
+                                <tr runat="server" id="productRow"
+                                    style="">
+                                    <td runat="server" id="itemPlaceholder"></td>
+                                </tr>
+                            </GroupTemplate>
+
+                            <ItemTemplate>
+                                <div class="col-md-9 col-sm-9">
+                                    <thead>
+                                        <tr>
+                                            <th>Orden</th>
+                                            <th>Fecha</th>
+                                            <th>Total</th>
+                                            <th>Estado</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <th>
+                                            <asp:Label ID="lblID" runat="server" Text="<%#Eval("Id") %>"></asp:Label></th>
+                                        <td>22/11/2017</td>
+                                        <td>$ 22.000</td>
+                                        <td><span class="label label-info">Iniciando Preparación</span>
+                                        </td>
+                                        <td><a href="customer-order.html" class="btn btn-template-main btn-sm">Ver</a>
+                                        </td>
+                                    </tr>
+
+                                </div>
+                            </ItemTemplate>
+
+                        </asp:ListView>
+
+                        <%--<div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -76,30 +122,30 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <!-- /.table-responsive -->
-
-                        </div>
-                        <!-- /.box -->
+                            </div>--%>
+                        <!-- /.table-responsive -->
 
                     </div>
-                    <!-- /.col-md-9 -->
+                    <!-- /.box -->
 
-                    <!-- *** LEFT COLUMN END *** -->
+                </div>
+                <!-- /.col-md-9 -->
 
-                    <!-- *** RIGHT COLUMN ***
+                <!-- *** LEFT COLUMN END *** -->
+
+                <!-- *** RIGHT COLUMN ***
 			 _________________________________________________________ -->
 
-                    <div class="col-md-3">
-                        <!-- *** CUSTOMER MENU ***
+                <div class="col-md-3">
+                    <!-- *** CUSTOMER MENU ***
  _________________________________________________________ -->
-                        <div class="panel panel-default sidebar-menu">
+                    <div class="panel panel-default sidebar-menu">
 
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Menú Usuario</h3>
-                            </div>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Menú Usuario</h3>
+                        </div>
 
-                            <div class="panel-body">
+                        <div class="panel-body">
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active">
@@ -108,10 +154,10 @@
                                 <li>
                                     <a href="CuentaUsuario.aspx"><i class="fa fa-user"></i>Mi Cuenta</a>
                                 </li>
-                                
+
                             </ul>
-                                <br />
-                                <br /> 
+                            <br />
+                            <br />
                             <ul class="nav nav-pills nav-stacked">
                                 <li>
                                     <button runat="server" id="btnLogout" onserverclick="btnLogout_ServerClick" type="submit" class="btn btn-template-main"><i class="fa fa-sign-out"></i>Logout</button>
@@ -120,19 +166,19 @@
                             </ul>
                         </div>
 
-                        </div>
-                        <!-- /.col-md-3 -->
-
-                        <!-- *** CUSTOMER MENU END *** -->
                     </div>
+                    <!-- /.col-md-3 -->
 
-                    <!-- *** RIGHT COLUMN END *** -->
-
+                    <!-- *** CUSTOMER MENU END *** -->
                 </div>
 
+                <!-- *** RIGHT COLUMN END *** -->
 
             </div>
-            <!-- /.container -->
+
+
         </div>
-        <!-- /#content -->
+        <!-- /.container -->
+    </div>
+    <!-- /#content -->
 </asp:Content>

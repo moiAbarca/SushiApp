@@ -78,7 +78,7 @@
                             <tr runat="server" id="groupPlaceholder">
                             </tr>
                         </table>
-                        <asp:DataPager runat="server" ID="DataPager" PageSize="9"></asp:DataPager>
+                        <asp:DataPager runat="server" ID="DataPager" PageSize="20"></asp:DataPager>
                     </LayoutTemplate>
 
                     <GroupTemplate>

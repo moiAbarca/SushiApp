@@ -1,4 +1,10 @@
 ﻿
+function AddChart() {
+    swal('Exito!',
+        'Producto agregado al carro',
+        'success');
+}
+
 function modalLoginEmpty() {
     swal('Oops!',
         'Debes ingresar datos',

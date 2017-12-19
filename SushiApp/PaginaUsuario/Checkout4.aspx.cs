@@ -243,25 +243,24 @@ namespace SushiApp.PaginaUsuario
             cargarCarrito();
         }
 
-        //private int ObtienePedidoCabecera()
-        //{
-        //    int idPedido;
-        //    int auxIdPedido;
-        //    int auxIdUsuario = (int)Session["UserId"];
-        //    var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
-        //    var auxConsulta = (from o in consulta
-        //                       where o.clienteId == auxIdUsuario
-        //                       orderby o.pedidoCabeceraId ascending
-        //                       select new
-        //                       {
-        //                           cabeceraId = o.pedidoCabeceraId
-        //                       }).ToList();
-        //    foreach (var c in auxConsulta)
-        //    {
-        //        idPedido = c.cabeceraId;
-        //    }
-            
-        //    return idPedido;
-        //}
+        private int ObtienePedidoCabecera()
+        {
+            int idPedido;
+            int auxIdUsuario = (int)Session["UserId"];
+            var consulta = pedidoCabeceraClient.obtenerPedidoCabecera();
+            var auxConsulta = (from o in consulta
+                               where o.clienteId == auxIdUsuario
+                               orderby o.pedidoCabeceraId ascending
+                               select new
+                               {
+                                   cabeceraId = o.pedidoCabeceraId
+                               }).ToList();
+            foreach (var c in auxConsulta)
+            {
+                auxPedidoCabecera.pedidoCabeceraId = c.cabeceraId;
+            }
+            idPedido = auxPedidoCabecera.pedidoCabeceraId;
+            return idPedido;
+        }
     }
 }

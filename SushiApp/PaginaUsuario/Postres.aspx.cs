@@ -86,6 +86,7 @@ namespace SushiApp.PaginaUsuario
                     auxDRow[5] = precio * cant;
 
                     carrito.Rows.Add(auxDRow);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "AddChart()", true);
                     //carrito.AsEnumerable().ToList<DataRow>().ForEach
                     //   (r =>
                     //   {
@@ -108,6 +109,7 @@ namespace SushiApp.PaginaUsuario
                 fila[5] = precio * cant;
                 // Le pasamos la instancia del DataRow (fila) al DataTable carrito
                 carrito.Rows.Add(fila);
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "mensajeUser", "AddChart()", true);
             }
             // Le pasamos todo el DataTable "carrito" a la Session.
             Session["Pedido"] = carrito;

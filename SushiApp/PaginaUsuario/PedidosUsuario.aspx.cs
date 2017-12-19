@@ -9,6 +9,11 @@ namespace SushiApp.PaginaUsuario
 {
     public partial class PedidosUsuario : System.Web.UI.Page
     {
+
+        wsPedidoCabecera.ServicePedidoCabeceraClient cabeceraClient = new wsPedidoCabecera.ServicePedidoCabeceraClient();
+        wsPedidoDetalle.ServicePedidoDetalleClient detalleClient = new wsPedidoDetalle.ServicePedidoDetalleClient();
+        wsProducto.ServiceProductoClient productoClient = new wsProducto.ServiceProductoClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -53,5 +58,38 @@ namespace SushiApp.PaginaUsuario
             System.Web.UI.HtmlControls.HtmlGenericControl dvUser = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("divUsuario");
             dvUser.Style.Add("display", "none");
         }
+
+        //private void cargarGridReporte()
+        //{
+        //    try
+        //    {
+
+        //        var listaCabecera = cabeceraClient.obtenerPedidoCabecera();
+        //        var listaDetalle = detalleClient.obtenerPedidoDetalle();
+        //        var listaProducto = productoClient.obtenerProducto();
+        //        var nuevolistadtoDespacho = (from det in listaCabecera
+        //                                     where det.clienteId = 
+        //                                     join pr in listaProducto on det.productoId equals pr.productoId
+        //                                     join cab in listaCabecera on det.pedidoCabeceraId equals cab.pedidoCabeceraId
+        //                                     select new
+        //                                     {
+        //                                         Id = cab.pedidoCabeceraId,
+        //                                         Producto = pr.nombreProducto,
+        //                                         Fecha = cab.fechaPedido,
+        //                                         PrecioProducto = pr.precioProducto,
+        //                                         Cantidad = det.cantidad,
+        //                                         TotalProducto = det.total
+        //                                     }).ToList();
+
+        //        ComprasListView.DataSource = nuevolistadtoDespacho;
+        //        ComprasListView.DataBind();
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        Response.Write("<script>alert('No se pudo cargar GridView');</script>");
+        //    }
+        //}
     }
 }
